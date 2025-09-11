@@ -1,0 +1,6876 @@
+[
+  {
+    "player_name": "Monique Akoa Makani",
+    "team": "PHX",
+    "avg_points": 8.8,
+    "games_played": 23,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Rickea Jackson",
+    "team": "LAS",
+    "avg_points": 13.2,
+    "games_played": 21,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Rhyne Howard",
+    "team": "ATL",
+    "avg_points": 3.5,
+    "games_played": 32,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Angel Reese",
+    "team": "CHI",
+    "avg_points": 14.2,
+    "games_played": 23,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Shakira Austin",
+    "team": "WAS",
+    "avg_points": 12.7,
+    "games_played": 23,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Brittney Griner",
+    "team": "ATL",
+    "avg_points": 10.4,
+    "games_played": 30,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Aliyah Boston",
+    "team": "IND",
+    "avg_points": 15.2,
+    "games_played": 35,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Natasha Howard",
+    "team": "IND",
+    "avg_points": 11.5,
+    "games_played": 26,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Dearica Hamby",
+    "team": "LAS",
+    "avg_points": 17.5,
+    "games_played": 26,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Tina Charles",
+    "team": "CON",
+    "avg_points": 16.1,
+    "games_played": 25,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Jaylyn Sherrod",
+    "team": "NY",
+    "avg_points": 17.8,
+    "games_played": 16,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Arike Ogunbowale",
+    "team": "DAL",
+    "avg_points": 15.5,
+    "games_played": 29,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Sami Whitcomb",
+    "team": "PHX",
+    "avg_points": 10.1,
+    "games_played": 24,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Marina Mabrey",
+    "team": "CON",
+    "avg_points": 14.6,
+    "games_played": 25,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Alanna Smith",
+    "team": "MIN",
+    "avg_points": 9.5,
+    "games_played": 26,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Paige Bueckers",
+    "team": "DAL",
+    "avg_points": 19.7,
+    "games_played": 29,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Nneka Ogwumike",
+    "team": "SEA",
+    "avg_points": 18.4,
+    "games_played": 36,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Skylar Diggins",
+    "team": "SEA",
+    "avg_points": 16.1,
+    "games_played": 35,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Breanna Stewart",
+    "team": "NY",
+    "avg_points": 18.3,
+    "games_played": 24,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Saniya Rivers",
+    "team": "CON",
+    "avg_points": 8.3,
+    "games_played": 32,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Jonquel Jones",
+    "team": "NY",
+    "avg_points": 14.2,
+    "games_played": 12,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Jessica Shepard",
+    "team": "MIN",
+    "avg_points": 6.8,
+    "games_played": 24,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Marine Johannes",
+    "team": "NY",
+    "avg_points": 6.8,
+    "games_played": 35,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Rebekah Gardner",
+    "team": "NY",
+    "avg_points": 3.5,
+    "games_played": 32,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Kitija Laksa",
+    "team": "PHX",
+    "avg_points": 6.8,
+    "games_played": 26,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Caitlin Clark",
+    "team": "IND",
+    "avg_points": 16.8,
+    "games_played": 18,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Caitlin Clark",
+    "team": "IND",
+    "avg_points": 16.5,
+    "games_played": 13,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Tina Charles",
+    "team": "CON",
+    "avg_points": 16.1,
+    "games_played": 25,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Shakira Austin",
+    "team": "WAS",
+    "avg_points": 12.7,
+    "games_played": 23,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Natasha Howard",
+    "team": "IND",
+    "avg_points": 11.5,
+    "games_played": 26,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Dearica Hamby",
+    "team": "LAS",
+    "avg_points": 17.5,
+    "games_played": 26,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Rickea Jackson",
+    "team": "LAS",
+    "avg_points": 13.2,
+    "games_played": 21,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Kierstan Bell",
+    "team": "LVA",
+    "avg_points": 4.3,
+    "games_played": 29,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Aziaha James",
+    "team": "DAL",
+    "avg_points": 7.2,
+    "games_played": 32,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Sami Whitcomb",
+    "team": "PHX",
+    "avg_points": 10.1,
+    "games_played": 24,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Damiris Dantas",
+    "team": "IND",
+    "avg_points": 5,
+    "games_played": 22,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Monique Akoa Makani",
+    "team": "PHX",
+    "avg_points": 8.8,
+    "games_played": 23,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Aneesah Morrow",
+    "team": "CON",
+    "avg_points": 7.3,
+    "games_played": 31,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Alysha Clark",
+    "team": "SEA",
+    "avg_points": 3.5,
+    "games_played": 27,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Allisha Gray",
+    "team": "ATL",
+    "avg_points": 18.5,
+    "games_played": 35,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Alyssa Thomas",
+    "team": "PHX",
+    "avg_points": 16.1,
+    "games_played": 29,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Ariel Atkins",
+    "team": "CHI",
+    "avg_points": 13.1,
+    "games_played": 27,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Jade Melbourne",
+    "team": "WAS",
+    "avg_points": 6.3,
+    "games_played": 26,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Aaliyah Nye",
+    "team": "LVA",
+    "avg_points": 4.3,
+    "games_played": 36,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Bria Hartley",
+    "team": "CON",
+    "avg_points": 8.8,
+    "games_played": 34,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Alanna Smith",
+    "team": "MIN",
+    "avg_points": 9.6,
+    "games_played": 24,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Alanna Smith",
+    "team": "MIN",
+    "avg_points": 9.5,
+    "games_played": 26,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Angel Reese",
+    "team": "CHI",
+    "avg_points": 14.2,
+    "games_played": 23,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Aari McDonald",
+    "team": "IND",
+    "avg_points": 7.2,
+    "games_played": 18,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Aaliyah Edwards",
+    "team": "WAS",
+    "avg_points": 6.4,
+    "games_played": 18,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Emma Cannon",
+    "team": "LAS",
+    "avg_points": 4.7,
+    "games_played": 20,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Kalani Brown",
+    "team": "PHX",
+    "avg_points": 5.5,
+    "games_played": 22,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Brianna Turner",
+    "team": "IND",
+    "avg_points": 7.8,
+    "games_played": 18,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Kathryn Westbeld",
+    "team": "PHX",
+    "avg_points": 6.3,
+    "games_played": 26,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Bridget Carleton",
+    "team": "MIN",
+    "avg_points": 6.6,
+    "games_played": 24,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Sonia Citron",
+    "team": "WAS",
+    "avg_points": 14.7,
+    "games_played": 30,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Shakira Austin",
+    "team": "WAS",
+    "avg_points": 12.6,
+    "games_played": 20,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Natasha Howard",
+    "team": "IND",
+    "avg_points": 11.7,
+    "games_played": 24,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Sophie Cunningham",
+    "team": "IND",
+    "avg_points": 8,
+    "games_played": 24,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Brionna Jones",
+    "team": "ATL",
+    "avg_points": 12.7,
+    "games_played": 35,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Natasha Cloud",
+    "team": "NY",
+    "avg_points": 9.9,
+    "games_played": 34,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Satou Sabally",
+    "team": "PHX",
+    "avg_points": 17.1,
+    "games_played": 29,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Chelsea Gray",
+    "team": "LVA",
+    "avg_points": 11,
+    "games_played": 36,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Azura Stevens",
+    "team": "LAS",
+    "avg_points": 14.6,
+    "games_played": 32,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Kamilla Cardoso",
+    "team": "CHI",
+    "avg_points": 12.7,
+    "games_played": 30,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Olivia Nelson-Ododa",
+    "team": "CON",
+    "avg_points": 8.7,
+    "games_played": 33,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Elizabeth Williams",
+    "team": "CHI",
+    "avg_points": 8.8,
+    "games_played": 34,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Kiki Iriafen",
+    "team": "WAS",
+    "avg_points": 12.7,
+    "games_played": 35,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Kitija Laksa",
+    "team": "PHX",
+    "avg_points": 7.8,
+    "games_played": 21,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Kelsey Mitchell",
+    "team": "IND",
+    "avg_points": 20.4,
+    "games_played": 35,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Brittney Sykes",
+    "team": "WAS",
+    "avg_points": 15.4,
+    "games_played": 25,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Courtney Williams",
+    "team": "MIN",
+    "avg_points": 14.3,
+    "games_played": 34,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Kennedy Burke",
+    "team": "NY",
+    "avg_points": 8.5,
+    "games_played": 27,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Monique Akoa Makani",
+    "team": "PHX",
+    "avg_points": 8.6,
+    "games_played": 21,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Rachel Banham",
+    "team": "CHI",
+    "avg_points": 9.6,
+    "games_played": 34,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Jackie Young",
+    "team": "LVA",
+    "avg_points": 16.7,
+    "games_played": 36,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Ezi Magbegor",
+    "team": "SEA",
+    "avg_points": 8.1,
+    "games_played": 36,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Kelsey Plum",
+    "team": "LAS",
+    "avg_points": 20.4,
+    "games_played": 34,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Kayla McBride",
+    "team": "MIN",
+    "avg_points": 14.5,
+    "games_played": 30,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Sami Whitcomb",
+    "team": "PHX",
+    "avg_points": 10.8,
+    "games_played": 21,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Jacy Sheldon",
+    "team": "CON",
+    "avg_points": 7.5,
+    "games_played": 28,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Erica Wheeler",
+    "team": "SEA",
+    "avg_points": 10.3,
+    "games_played": 36,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Monique Billings",
+    "team": "GSV",
+    "avg_points": 7.5,
+    "games_played": 21,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Gabby Williams",
+    "team": "SEA",
+    "avg_points": 12.5,
+    "games_played": 33,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Dearica Hamby",
+    "team": "LAS",
+    "avg_points": 17.5,
+    "games_played": 23,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Kia Nurse",
+    "team": "CHI",
+    "avg_points": 6.8,
+    "games_played": 34,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Carla Leite",
+    "team": "GSV",
+    "avg_points": 7.4,
+    "games_played": 29,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Lucy Olsen",
+    "team": "WAS",
+    "avg_points": 3.7,
+    "games_played": 19,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Kayla Thornton",
+    "team": "GSV",
+    "avg_points": 14,
+    "games_played": 22,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Hailey Van Lith",
+    "team": "CHI",
+    "avg_points": 3.8,
+    "games_played": 27,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "NaLyssa Smith",
+    "team": "LVA",
+    "avg_points": 6.7,
+    "games_played": 18,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Myisha Hines-Allen",
+    "team": "DAL",
+    "avg_points": 6.6,
+    "games_played": 32,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "JJ Quinerly",
+    "team": "DAL",
+    "avg_points": 6.5,
+    "games_played": 34,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Dana Evans",
+    "team": "LVA",
+    "avg_points": 6.1,
+    "games_played": 36,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Angel Reese",
+    "team": "CHI",
+    "avg_points": 14.2,
+    "games_played": 23,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Rebecca Allen",
+    "team": "CHI",
+    "avg_points": 5.8,
+    "games_played": 34,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Diamond Miller",
+    "team": "MIN",
+    "avg_points": 3.8,
+    "games_played": 21,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Jade Melbourne",
+    "team": "WAS",
+    "avg_points": 6,
+    "games_played": 21,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Emma Cannon",
+    "team": "LAS",
+    "avg_points": 4.7,
+    "games_played": 19,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Isabelle Harrison",
+    "team": "NY",
+    "avg_points": 5.2,
+    "games_played": 28,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Naz Hillmon",
+    "team": "ATL",
+    "avg_points": 8.4,
+    "games_played": 35,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Nia Coffey",
+    "team": "ATL",
+    "avg_points": 4,
+    "games_played": 35,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Kate Martin",
+    "team": "GSV",
+    "avg_points": 6.2,
+    "games_played": 33,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Tiffany Mitchell",
+    "team": "SEA",
+    "avg_points": 3.7,
+    "games_played": 16,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Dominique Malonga",
+    "team": "SEA",
+    "avg_points": 6.8,
+    "games_played": 35,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Kalani Brown",
+    "team": "PHX",
+    "avg_points": 5.6,
+    "games_played": 20,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Nyara Sabally",
+    "team": "NY",
+    "avg_points": 5.9,
+    "games_played": 15,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Michaela Onyenwere",
+    "team": "CHI",
+    "avg_points": 4.6,
+    "games_played": 32,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Sarah Ashlee Barker",
+    "team": "LAS",
+    "avg_points": 3.7,
+    "games_played": 21,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Natisha Hiedeman",
+    "team": "MIN",
+    "avg_points": 7.4,
+    "games_played": 24,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Sug Sutton",
+    "team": "WAS",
+    "avg_points": 7.3,
+    "games_played": 21,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Damiris Dantas",
+    "team": "IND",
+    "avg_points": 5.1,
+    "games_played": 18,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Kathryn Westbeld",
+    "team": "PHX",
+    "avg_points": 7,
+    "games_played": 22,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Lindsay Allen",
+    "team": "CON",
+    "avg_points": 2,
+    "games_played": 24,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Zia Cooke",
+    "team": "SEA",
+    "avg_points": 3.3,
+    "games_played": 24,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Temi Fagbenle",
+    "team": "GSV",
+    "avg_points": 7.2,
+    "games_played": 30,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Angel Reese",
+    "team": "CHI",
+    "avg_points": 14.2,
+    "games_played": 23,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Haley Peters",
+    "team": "CON",
+    "avg_points": 2.1,
+    "games_played": 27,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Stefanie Dolson",
+    "team": "WAS",
+    "avg_points": 2.9,
+    "games_played": 22,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Emily Engstler",
+    "team": "WAS",
+    "avg_points": 2.3,
+    "games_played": 19,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Sydney Colson",
+    "team": "IND",
+    "avg_points": 2.5,
+    "games_played": 22,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Angel Reese",
+    "team": "CHI",
+    "avg_points": 14.2,
+    "games_played": 23,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Lexie Hull",
+    "team": "IND",
+    "avg_points": 6.8,
+    "games_played": 29,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Brianna Turner",
+    "team": "IND",
+    "avg_points": 0.4,
+    "games_played": 14,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Rickea Jackson",
+    "team": "LAS",
+    "avg_points": 13.1,
+    "games_played": 19,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Sophie Cunningham",
+    "team": "IND",
+    "avg_points": 7.7,
+    "games_played": 20,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Tina Charles",
+    "team": "CON",
+    "avg_points": 16,
+    "games_played": 23,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Monique Akoa Makani",
+    "team": "PHX",
+    "avg_points": 8.6,
+    "games_played": 21,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Lexie Hull",
+    "team": "IND",
+    "avg_points": 7.3,
+    "games_played": 25,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Lucy Olsen",
+    "team": "WAS",
+    "avg_points": 3.6,
+    "games_played": 20,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Bridget Carleton",
+    "team": "MIN",
+    "avg_points": 6.8,
+    "games_played": 25,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Brianna Turner",
+    "team": "IND",
+    "avg_points": 0.4,
+    "games_played": 14,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Natisha Hiedeman",
+    "team": "MIN",
+    "avg_points": 7.3,
+    "games_played": 25,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Sydney Colson",
+    "team": "IND",
+    "avg_points": 2.5,
+    "games_played": 24,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Jessica Shepard",
+    "team": "MIN",
+    "avg_points": 6.8,
+    "games_played": 21,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Kalani Brown",
+    "team": "PHX",
+    "avg_points": 5.5,
+    "games_played": 21,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Natasha Mack",
+    "team": "PHX",
+    "avg_points": 3.8,
+    "games_played": 13,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Sug Sutton",
+    "team": "WAS",
+    "avg_points": 7.4,
+    "games_played": 22,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Damiris Dantas",
+    "team": "IND",
+    "avg_points": 4.6,
+    "games_played": 20,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Julie Allemand",
+    "team": "LAS",
+    "avg_points": 4.8,
+    "games_played": 15,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Emma Cannon",
+    "team": "LAS",
+    "avg_points": 4.7,
+    "games_played": 20,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Jade Melbourne",
+    "team": "WAS",
+    "avg_points": 6,
+    "games_played": 22,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Sania Feagin",
+    "team": "LAS",
+    "avg_points": 1,
+    "games_played": 10,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Lexi Held",
+    "team": "PHX",
+    "avg_points": 8.3,
+    "games_played": 15,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Diamond Miller",
+    "team": "MIN",
+    "avg_points": 4,
+    "games_played": 22,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Maria Kliundikova",
+    "team": "MIN",
+    "avg_points": 3.7,
+    "games_played": 15,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Aaliyah Edwards",
+    "team": "WAS",
+    "avg_points": 6.4,
+    "games_played": 19,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Kitija Laksa",
+    "team": "PHX",
+    "avg_points": 7.5,
+    "games_played": 22,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Karlie Samuelson",
+    "team": "MIN",
+    "avg_points": 3.3,
+    "games_played": 16,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Sarah Ashlee Barker",
+    "team": "LAS",
+    "avg_points": 3.5,
+    "games_played": 23,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Makayla Timpson",
+    "team": "IND",
+    "avg_points": 2.5,
+    "games_played": 16,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Tina Charles",
+    "team": "CON",
+    "avg_points": 16.1,
+    "games_played": 25,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Rickea Jackson",
+    "team": "LAS",
+    "avg_points": 13.2,
+    "games_played": 21,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Shakira Austin",
+    "team": "WAS",
+    "avg_points": 12.7,
+    "games_played": 23,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Shakira Austin",
+    "team": "WAS",
+    "avg_points": 12.7,
+    "games_played": 25,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Natasha Howard",
+    "team": "IND",
+    "avg_points": 11.5,
+    "games_played": 26,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Natasha Howard",
+    "team": "IND",
+    "avg_points": 11.6,
+    "games_played": 29,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Dearica Hamby",
+    "team": "LAS",
+    "avg_points": 17.6,
+    "games_played": 27,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Dearica Hamby",
+    "team": "LAS",
+    "avg_points": 17.6,
+    "games_played": 27,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Rickea Jackson",
+    "team": "LAS",
+    "avg_points": 13.9,
+    "games_played": 22,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Sami Whitcomb",
+    "team": "PHX",
+    "avg_points": 10.8,
+    "games_played": 22,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Aari McDonald",
+    "team": "IND",
+    "avg_points": 8.4,
+    "games_played": 15,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Alanna Smith",
+    "team": "MIN",
+    "avg_points": 9.5,
+    "games_played": 26,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Monique Akoa Makani",
+    "team": "PHX",
+    "avg_points": 8.8,
+    "games_played": 23,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Monique Akoa Makani",
+    "team": "PHX",
+    "avg_points": 8.4,
+    "games_played": 25,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Makayla Timpson",
+    "team": "IND",
+    "avg_points": 2.8,
+    "games_played": 19,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Shatori Walker-Kimbrough",
+    "team": "ATL",
+    "avg_points": 2.2,
+    "games_played": 33,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Damiris Dantas",
+    "team": "IND",
+    "avg_points": 5,
+    "games_played": 23,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Stefanie Dolson",
+    "team": "WAS",
+    "avg_points": 3.1,
+    "games_played": 27,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Kathryn Westbeld",
+    "team": "PHX",
+    "avg_points": 6.8,
+    "games_played": 23,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Sydney Colson",
+    "team": "IND",
+    "avg_points": 2.6,
+    "games_played": 27,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Sania Feagin",
+    "team": "LAS",
+    "avg_points": 1.3,
+    "games_played": 11,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Diamond Miller",
+    "team": "MIN",
+    "avg_points": 4.1,
+    "games_played": 25,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Sarah Ashlee Barker",
+    "team": "LAS",
+    "avg_points": 3.5,
+    "games_played": 23,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Caitlin Clark",
+    "team": "IND",
+    "avg_points": 16.5,
+    "games_played": 13,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Emily Engstler",
+    "team": "WAS",
+    "avg_points": 2.7,
+    "games_played": 23,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Lucy Olsen",
+    "team": "WAS",
+    "avg_points": 3.7,
+    "games_played": 24,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Sydney Colson",
+    "team": "IND",
+    "avg_points": 2.5,
+    "games_played": 28,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Dearica Hamby",
+    "team": "LAS",
+    "avg_points": 17.6,
+    "games_played": 25,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Tina Charles",
+    "team": "CON",
+    "avg_points": 16,
+    "games_played": 23,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Shakira Austin",
+    "team": "WAS",
+    "avg_points": 12.7,
+    "games_played": 21,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Natasha Howard",
+    "team": "IND",
+    "avg_points": 12,
+    "games_played": 25,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Sophie Cunningham",
+    "team": "IND",
+    "avg_points": 7.7,
+    "games_played": 20,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Aaliyah Edwards",
+    "team": "WAS",
+    "avg_points": 6.4,
+    "games_played": 19,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Lexi Held",
+    "team": "PHX",
+    "avg_points": 8,
+    "games_played": 16,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Natasha Mack",
+    "team": "PHX",
+    "avg_points": 4.1,
+    "games_played": 14,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Kitija Laksa",
+    "team": "PHX",
+    "avg_points": 7.2,
+    "games_played": 23,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Bridget Carleton",
+    "team": "MIN",
+    "avg_points": 7.1,
+    "games_played": 26,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Makayla Timpson",
+    "team": "IND",
+    "avg_points": 2.5,
+    "games_played": 16,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Brianna Turner",
+    "team": "IND",
+    "avg_points": 0.4,
+    "games_played": 14,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Kalani Brown",
+    "team": "PHX",
+    "avg_points": 5.5,
+    "games_played": 21,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Lucy Olsen",
+    "team": "WAS",
+    "avg_points": 3.5,
+    "games_played": 21,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Jessica Shepard",
+    "team": "MIN",
+    "avg_points": 6.9,
+    "games_played": 22,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Sydney Colson",
+    "team": "IND",
+    "avg_points": 2.5,
+    "games_played": 24,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Emma Cannon",
+    "team": "LAS",
+    "avg_points": 4.7,
+    "games_played": 20,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Caitlin Clark",
+    "team": "IND",
+    "avg_points": 16.5,
+    "games_played": 13,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Sania Feagin",
+    "team": "LAS",
+    "avg_points": 1.3,
+    "games_played": 11,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Diamond Miller",
+    "team": "MIN",
+    "avg_points": 4.1,
+    "games_played": 23,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Sarah Ashlee Barker",
+    "team": "LAS",
+    "avg_points": 3.5,
+    "games_played": 23,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Natisha Hiedeman",
+    "team": "MIN",
+    "avg_points": 7.2,
+    "games_played": 26,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Karlie Samuelson",
+    "team": "MIN",
+    "avg_points": 3.3,
+    "games_played": 16,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Maria Kliundikova",
+    "team": "MIN",
+    "avg_points": 3.6,
+    "games_played": 16,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Lexie Hull",
+    "team": "IND",
+    "avg_points": 7.3,
+    "games_played": 25,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Julie Allemand",
+    "team": "LAS",
+    "avg_points": 4.8,
+    "games_played": 16,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Dearica Hamby",
+    "team": "LAS",
+    "avg_points": 17.5,
+    "games_played": 26,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Tina Charles",
+    "team": "CON",
+    "avg_points": 16.1,
+    "games_played": 25,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Natasha Howard",
+    "team": "IND",
+    "avg_points": 11.5,
+    "games_played": 26,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Sophie Cunningham",
+    "team": "IND",
+    "avg_points": 7.5,
+    "games_played": 21,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Rickea Jackson",
+    "team": "LAS",
+    "avg_points": 13.2,
+    "games_played": 21,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Alanna Smith",
+    "team": "MIN",
+    "avg_points": 9.5,
+    "games_played": 26,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Monique Akoa Makani",
+    "team": "PHX",
+    "avg_points": 8.8,
+    "games_played": 23,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Maria Kliundikova",
+    "team": "MIN",
+    "avg_points": 3.7,
+    "games_played": 17,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Diamond Miller",
+    "team": "MIN",
+    "avg_points": 4.3,
+    "games_played": 24,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Makayla Timpson",
+    "team": "IND",
+    "avg_points": 3.2,
+    "games_played": 17,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Rae Burrell",
+    "team": "LAS",
+    "avg_points": 6.3,
+    "games_played": 10,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Karlie Samuelson",
+    "team": "MIN",
+    "avg_points": 3.3,
+    "games_played": 16,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Lexi Held",
+    "team": "PHX",
+    "avg_points": 7.6,
+    "games_played": 17,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Caitlin Clark",
+    "team": "IND",
+    "avg_points": 16.5,
+    "games_played": 13,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Damiris Dantas",
+    "team": "IND",
+    "avg_points": 4.6,
+    "games_played": 20,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Jessica Shepard",
+    "team": "MIN",
+    "avg_points": 6.8,
+    "games_played": 23,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Brianna Turner",
+    "team": "IND",
+    "avg_points": 0.4,
+    "games_played": 14,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Julie Allemand",
+    "team": "LAS",
+    "avg_points": 4.5,
+    "games_played": 17,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Sania Feagin",
+    "team": "LAS",
+    "avg_points": 1.3,
+    "games_played": 11,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Aaliyah Edwards",
+    "team": "WAS",
+    "avg_points": 6.4,
+    "games_played": 19,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Stefanie Dolson",
+    "team": "WAS",
+    "avg_points": 3.2,
+    "games_played": 26,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Lexie Hull",
+    "team": "IND",
+    "avg_points": 7.3,
+    "games_played": 26,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Jade Melbourne",
+    "team": "WAS",
+    "avg_points": 6.3,
+    "games_played": 25,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Kitija Laksa",
+    "team": "PHX",
+    "avg_points": 7.4,
+    "games_played": 24,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Lucy Olsen",
+    "team": "WAS",
+    "avg_points": 3.6,
+    "games_played": 23,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Natasha Mack",
+    "team": "PHX",
+    "avg_points": 4.5,
+    "games_played": 15,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Sydney Colson",
+    "team": "IND",
+    "avg_points": 2.4,
+    "games_played": 25,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Sug Sutton",
+    "team": "WAS",
+    "avg_points": 7.5,
+    "games_played": 25,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Natisha Hiedeman",
+    "team": "MIN",
+    "avg_points": 7.3,
+    "games_played": 27,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Dearica Hamby",
+    "team": "LAS",
+    "avg_points": 17.6,
+    "games_played": 25,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Tina Charles",
+    "team": "CON",
+    "avg_points": 16.3,
+    "games_played": 24,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Shakira Austin",
+    "team": "WAS",
+    "avg_points": 13,
+    "games_played": 22,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Shakira Austin",
+    "team": "WAS",
+    "avg_points": 12.6,
+    "games_played": 24,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Natasha Howard",
+    "team": "IND",
+    "avg_points": 11.5,
+    "games_played": 26,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Sophie Cunningham",
+    "team": "IND",
+    "avg_points": 7.7,
+    "games_played": 23,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Tina Charles",
+    "team": "CON",
+    "avg_points": 16.1,
+    "games_played": 26,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Sami Whitcomb",
+    "team": "PHX",
+    "avg_points": 10.1,
+    "games_played": 24,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Kalani Brown",
+    "team": "PHX",
+    "avg_points": 5.5,
+    "games_played": 21,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Rickea Jackson",
+    "team": "LAS",
+    "avg_points": 13.6,
+    "games_played": 20,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Alanna Smith",
+    "team": "MIN",
+    "avg_points": 9.5,
+    "games_played": 26,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Monique Akoa Makani",
+    "team": "PHX",
+    "avg_points": 8.8,
+    "games_played": 23,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Monique Akoa Makani",
+    "team": "PHX",
+    "avg_points": 8.4,
+    "games_played": 25,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Angel Reese",
+    "team": "CHI",
+    "avg_points": 14.2,
+    "games_played": 23,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Caitlin Clark",
+    "team": "IND",
+    "avg_points": 16.5,
+    "games_played": 13,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Lucy Olsen",
+    "team": "WAS",
+    "avg_points": 3.7,
+    "games_played": 24,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Lexi Held",
+    "team": "PHX",
+    "avg_points": 7.2,
+    "games_played": 19,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Jessica Shepard",
+    "team": "MIN",
+    "avg_points": 6.8,
+    "games_played": 24,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Leonie Fiebich",
+    "team": "NY",
+    "avg_points": 9.1,
+    "games_played": 28,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Julie Allemand",
+    "team": "LAS",
+    "avg_points": 4.7,
+    "games_played": 18,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Makayla Timpson",
+    "team": "IND",
+    "avg_points": 2.8,
+    "games_played": 19,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Aari McDonald",
+    "team": "IND",
+    "avg_points": 9.9,
+    "games_played": 17,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Kathryn Westbeld",
+    "team": "PHX",
+    "avg_points": 6.5,
+    "games_played": 24,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Damiris Dantas",
+    "team": "IND",
+    "avg_points": 5,
+    "games_played": 22,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Bridget Carleton",
+    "team": "MIN",
+    "avg_points": 6.9,
+    "games_played": 28,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Lexie Hull",
+    "team": "IND",
+    "avg_points": 7.1,
+    "games_played": 28,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Tina Charles",
+    "team": "CON",
+    "avg_points": 16.1,
+    "games_played": 25,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Rickea Jackson",
+    "team": "LAS",
+    "avg_points": 13.2,
+    "games_played": 21,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Shakira Austin",
+    "team": "WAS",
+    "avg_points": 12.7,
+    "games_played": 23,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Natasha Howard",
+    "team": "IND",
+    "avg_points": 11.5,
+    "games_played": 26,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Dearica Hamby",
+    "team": "LAS",
+    "avg_points": 17.5,
+    "games_played": 26,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Natasha Howard",
+    "team": "IND",
+    "avg_points": 11.3,
+    "games_played": 28,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Alanna Smith",
+    "team": "MIN",
+    "avg_points": 9.5,
+    "games_played": 26,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Alanna Smith",
+    "team": "MIN",
+    "avg_points": 9.6,
+    "games_played": 27,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Monique Akoa Makani",
+    "team": "PHX",
+    "avg_points": 8.8,
+    "games_played": 23,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Monique Akoa Makani",
+    "team": "PHX",
+    "avg_points": 8.4,
+    "games_played": 25,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Caitlin Clark",
+    "team": "IND",
+    "avg_points": 16.5,
+    "games_played": 13,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Emma Cannon",
+    "team": "LAS",
+    "avg_points": 4.7,
+    "games_played": 20,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Kahleah Copper",
+    "team": "PHX",
+    "avg_points": 15.5,
+    "games_played": 11,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Sydney Colson",
+    "team": "IND",
+    "avg_points": 2.6,
+    "games_played": 27,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Rae Burrell",
+    "team": "LAS",
+    "avg_points": 5.9,
+    "games_played": 11,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Diamond Miller",
+    "team": "MIN",
+    "avg_points": 4.1,
+    "games_played": 25,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Aari McDonald",
+    "team": "IND",
+    "avg_points": 9.9,
+    "games_played": 17,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Sania Feagin",
+    "team": "LAS",
+    "avg_points": 1.3,
+    "games_played": 11,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Brianna Turner",
+    "team": "IND",
+    "avg_points": 0.4,
+    "games_played": 14,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Sug Sutton",
+    "team": "WAS",
+    "avg_points": 7.5,
+    "games_played": 26,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Stefanie Dolson",
+    "team": "WAS",
+    "avg_points": 3.1,
+    "games_played": 27,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Makayla Timpson",
+    "team": "IND",
+    "avg_points": 2.8,
+    "games_played": 19,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Lexie Hull",
+    "team": "IND",
+    "avg_points": 7.1,
+    "games_played": 28,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Aaliyah Edwards",
+    "team": "WAS",
+    "avg_points": 6.4,
+    "games_played": 19,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Karlie Samuelson",
+    "team": "MIN",
+    "avg_points": 3.3,
+    "games_played": 16,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Emma Cannon",
+    "team": "LAS",
+    "avg_points": 4.7,
+    "games_played": 20,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Rae Burrell",
+    "team": "LAS",
+    "avg_points": 5.9,
+    "games_played": 11,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Sug Sutton",
+    "team": "WAS",
+    "avg_points": 7.5,
+    "games_played": 26,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Sania Feagin",
+    "team": "LAS",
+    "avg_points": 1.3,
+    "games_played": 11,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Alanna Smith",
+    "team": "MIN",
+    "avg_points": 9.6,
+    "games_played": 27,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Alanna Smith",
+    "team": "MIN",
+    "avg_points": 9.5,
+    "games_played": 26,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Dearica Hamby",
+    "team": "LAS",
+    "avg_points": 17.5,
+    "games_played": 26,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Tina Charles",
+    "team": "CON",
+    "avg_points": 16.1,
+    "games_played": 25,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Rickea Jackson",
+    "team": "LAS",
+    "avg_points": 13.9,
+    "games_played": 22,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Shakira Austin",
+    "team": "WAS",
+    "avg_points": 12.7,
+    "games_played": 23,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Natasha Howard",
+    "team": "IND",
+    "avg_points": 11.3,
+    "games_played": 28,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Natasha Howard",
+    "team": "IND",
+    "avg_points": 11.5,
+    "games_played": 26,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Sophie Cunningham",
+    "team": "IND",
+    "avg_points": 7.7,
+    "games_played": 23,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Dearica Hamby",
+    "team": "LAS",
+    "avg_points": 17.7,
+    "games_played": 32,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Rickea Jackson",
+    "team": "LAS",
+    "avg_points": 13.9,
+    "games_played": 22,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Alanna Smith",
+    "team": "MIN",
+    "avg_points": 9.5,
+    "games_played": 28,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Monique Akoa Makani",
+    "team": "PHX",
+    "avg_points": 8.8,
+    "games_played": 23,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Natisha Hiedeman",
+    "team": "MIN",
+    "avg_points": 7.4,
+    "games_played": 28,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Bridget Carleton",
+    "team": "MIN",
+    "avg_points": 6.9,
+    "games_played": 28,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Damiris Dantas",
+    "team": "IND",
+    "avg_points": 5,
+    "games_played": 22,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Stefanie Dolson",
+    "team": "WAS",
+    "avg_points": 3.1,
+    "games_played": 27,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Sarah Ashlee Barker",
+    "team": "LAS",
+    "avg_points": 3.5,
+    "games_played": 23,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Brianna Turner",
+    "team": "IND",
+    "avg_points": 0.4,
+    "games_played": 14,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Lexi Held",
+    "team": "PHX",
+    "avg_points": 7.2,
+    "games_played": 19,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Kitija Laksa",
+    "team": "PHX",
+    "avg_points": 6.8,
+    "games_played": 26,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Sydney Colson",
+    "team": "IND",
+    "avg_points": 2.6,
+    "games_played": 27,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Natasha Mack",
+    "team": "PHX",
+    "avg_points": 4.4,
+    "games_played": 17,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Jade Melbourne",
+    "team": "WAS",
+    "avg_points": 6.3,
+    "games_played": 26,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Rae Burrell",
+    "team": "LAS",
+    "avg_points": 5.9,
+    "games_played": 11,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Maria Kliundikova",
+    "team": "MIN",
+    "avg_points": 3.5,
+    "games_played": 18,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Lucy Olsen",
+    "team": "WAS",
+    "avg_points": 3.7,
+    "games_played": 24,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Jessica Shepard",
+    "team": "MIN",
+    "avg_points": 6.8,
+    "games_played": 24,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Sarah Ashlee Barker",
+    "team": "LAS",
+    "avg_points": 3.5,
+    "games_played": 23,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Tina Charles",
+    "team": "CON",
+    "avg_points": 16.3,
+    "games_played": 24,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Tina Charles",
+    "team": "CON",
+    "avg_points": 16.1,
+    "games_played": 25,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Rickea Jackson",
+    "team": "LAS",
+    "avg_points": 13.6,
+    "games_played": 20,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Shakira Austin",
+    "team": "WAS",
+    "avg_points": 13,
+    "games_played": 22,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Shakira Austin",
+    "team": "WAS",
+    "avg_points": 12.6,
+    "games_played": 24,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Natasha Howard",
+    "team": "IND",
+    "avg_points": 11.5,
+    "games_played": 26,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Natasha Howard",
+    "team": "IND",
+    "avg_points": 11.3,
+    "games_played": 27,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Natasha Howard",
+    "team": "IND",
+    "avg_points": 11.6,
+    "games_played": 29,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Dearica Hamby",
+    "team": "LAS",
+    "avg_points": 17.6,
+    "games_played": 25,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Dearica Hamby",
+    "team": "LAS",
+    "avg_points": 17.5,
+    "games_played": 26,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Dearica Hamby",
+    "team": "LAS",
+    "avg_points": 17.6,
+    "games_played": 27,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Rickea Jackson",
+    "team": "LAS",
+    "avg_points": 13.2,
+    "games_played": 21,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Shakira Austin",
+    "team": "WAS",
+    "avg_points": 12.6,
+    "games_played": 24,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Alanna Smith",
+    "team": "MIN",
+    "avg_points": 9.5,
+    "games_played": 26,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Alanna Smith",
+    "team": "MIN",
+    "avg_points": 9.6,
+    "games_played": 27,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Monique Akoa Makani",
+    "team": "PHX",
+    "avg_points": 8.8,
+    "games_played": 23,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Monique Akoa Makani",
+    "team": "PHX",
+    "avg_points": 8.5,
+    "games_played": 24,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Monique Akoa Makani",
+    "team": "PHX",
+    "avg_points": 8.4,
+    "games_played": 26,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Karlie Samuelson",
+    "team": "MIN",
+    "avg_points": 3.3,
+    "games_played": 16,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Kalani Brown",
+    "team": "PHX",
+    "avg_points": 5.5,
+    "games_played": 22,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Diamond Miller",
+    "team": "MIN",
+    "avg_points": 4.1,
+    "games_played": 25,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Kahleah Copper",
+    "team": "PHX",
+    "avg_points": 15.5,
+    "games_played": 11,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Aaliyah Edwards",
+    "team": "WAS",
+    "avg_points": 6.4,
+    "games_played": 19,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Julie Allemand",
+    "team": "LAS",
+    "avg_points": 4.7,
+    "games_played": 18,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Lexi Held",
+    "team": "PHX",
+    "avg_points": 7.1,
+    "games_played": 20,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Maria Kliundikova",
+    "team": "MIN",
+    "avg_points": 3.7,
+    "games_played": 19,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Tina Charles",
+    "team": "CON",
+    "avg_points": 16.1,
+    "games_played": 27,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Tina Charles",
+    "team": "CON",
+    "avg_points": 15.6,
+    "games_played": 22,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Shakira Austin",
+    "team": "WAS",
+    "avg_points": 12.7,
+    "games_played": 25,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Shakira Austin",
+    "team": "WAS",
+    "avg_points": 13,
+    "games_played": 22,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Natasha Howard",
+    "team": "IND",
+    "avg_points": 11.5,
+    "games_played": 26,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Natasha Howard",
+    "team": "IND",
+    "avg_points": 11.3,
+    "games_played": 27,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Dearica Hamby",
+    "team": "LAS",
+    "avg_points": 17.6,
+    "games_played": 25,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Dearica Hamby",
+    "team": "LAS",
+    "avg_points": 17.5,
+    "games_played": 26,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Dearica Hamby",
+    "team": "LAS",
+    "avg_points": 17.7,
+    "games_played": 32,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Rickea Jackson",
+    "team": "LAS",
+    "avg_points": 13.6,
+    "games_played": 20,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Rickea Jackson",
+    "team": "LAS",
+    "avg_points": 13.2,
+    "games_played": 21,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Shakira Austin",
+    "team": "WAS",
+    "avg_points": 12.6,
+    "games_played": 24,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Alanna Smith",
+    "team": "MIN",
+    "avg_points": 9.6,
+    "games_played": 27,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Alanna Smith",
+    "team": "MIN",
+    "avg_points": 9.5,
+    "games_played": 28,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Alanna Smith",
+    "team": "MIN",
+    "avg_points": 9.5,
+    "games_played": 28,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Monique Akoa Makani",
+    "team": "PHX",
+    "avg_points": 8.8,
+    "games_played": 23,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Monique Akoa Makani",
+    "team": "PHX",
+    "avg_points": 8.5,
+    "games_played": 24,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Sug Sutton",
+    "team": "WAS",
+    "avg_points": 7.7,
+    "games_played": 27,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Maria Kliundikova",
+    "team": "MIN",
+    "avg_points": 3.5,
+    "games_played": 18,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Aaliyah Edwards",
+    "team": "WAS",
+    "avg_points": 6.1,
+    "games_played": 20,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Julie Allemand",
+    "team": "LAS",
+    "avg_points": 4.7,
+    "games_played": 18,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Natasha Mack",
+    "team": "PHX",
+    "avg_points": 4.4,
+    "games_played": 17,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Kathryn Westbeld",
+    "team": "PHX",
+    "avg_points": 6.3,
+    "games_played": 26,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Emma Cannon",
+    "team": "LAS",
+    "avg_points": 4.7,
+    "games_played": 20,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Natisha Hiedeman",
+    "team": "MIN",
+    "avg_points": 7.4,
+    "games_played": 28,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Kalani Brown",
+    "team": "PHX",
+    "avg_points": 5.5,
+    "games_played": 22,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Dearica Hamby",
+    "team": "LAS",
+    "avg_points": 17.6,
+    "games_played": 25,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Tina Charles",
+    "team": "CON",
+    "avg_points": 16.3,
+    "games_played": 24,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Tina Charles",
+    "team": "CON",
+    "avg_points": 16.1,
+    "games_played": 27,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Shakira Austin",
+    "team": "WAS",
+    "avg_points": 13,
+    "games_played": 22,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Shakira Austin",
+    "team": "WAS",
+    "avg_points": 12.7,
+    "games_played": 25,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Natasha Howard",
+    "team": "IND",
+    "avg_points": 11.5,
+    "games_played": 26,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Natasha Howard",
+    "team": "IND",
+    "avg_points": 11.6,
+    "games_played": 29,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Sophie Cunningham",
+    "team": "IND",
+    "avg_points": 7.7,
+    "games_played": 23,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Dearica Hamby",
+    "team": "LAS",
+    "avg_points": 17.6,
+    "games_played": 27,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Rickea Jackson",
+    "team": "LAS",
+    "avg_points": 13.6,
+    "games_played": 20,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Rickea Jackson",
+    "team": "LAS",
+    "avg_points": 13.9,
+    "games_played": 22,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Alanna Smith",
+    "team": "MIN",
+    "avg_points": 9.5,
+    "games_played": 26,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Monique Akoa Makani",
+    "team": "PHX",
+    "avg_points": 8.8,
+    "games_played": 23,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Monique Akoa Makani",
+    "team": "PHX",
+    "avg_points": 8.4,
+    "games_played": 25,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Angel Reese",
+    "team": "CHI",
+    "avg_points": 14.2,
+    "games_played": 23,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Stefanie Dolson",
+    "team": "WAS",
+    "avg_points": 3.1,
+    "games_played": 28,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Kathryn Westbeld",
+    "team": "PHX",
+    "avg_points": 6.3,
+    "games_played": 26,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Bridget Carleton",
+    "team": "MIN",
+    "avg_points": 6.9,
+    "games_played": 28,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Lexie Hull",
+    "team": "IND",
+    "avg_points": 7.1,
+    "games_played": 28,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Jessica Shepard",
+    "team": "MIN",
+    "avg_points": 7.3,
+    "games_played": 25,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Sug Sutton",
+    "team": "WAS",
+    "avg_points": 7.5,
+    "games_played": 26,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Diamond Miller",
+    "team": "MIN",
+    "avg_points": 4.1,
+    "games_played": 25,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Karlie Samuelson",
+    "team": "MIN",
+    "avg_points": 3.3,
+    "games_played": 16,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Natisha Hiedeman",
+    "team": "MIN",
+    "avg_points": 7.4,
+    "games_played": 28,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Lexi Held",
+    "team": "PHX",
+    "avg_points": 7.2,
+    "games_played": 19,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Lucy Olsen",
+    "team": "WAS",
+    "avg_points": 3.6,
+    "games_played": 25,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Natisha Hiedeman",
+    "team": "MIN",
+    "avg_points": 7.8,
+    "games_played": 29,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Dearica Hamby",
+    "team": "LAS",
+    "avg_points": 17.5,
+    "games_played": 26,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Tina Charles",
+    "team": "CON",
+    "avg_points": 16.1,
+    "games_played": 25,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Shakira Austin",
+    "team": "WAS",
+    "avg_points": 12.7,
+    "games_played": 23,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Natasha Howard",
+    "team": "IND",
+    "avg_points": 11.5,
+    "games_played": 26,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Sophie Cunningham",
+    "team": "IND",
+    "avg_points": 7.5,
+    "games_played": 21,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Monique Akoa Makani",
+    "team": "PHX",
+    "avg_points": 8.8,
+    "games_played": 23,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Natasha Mack",
+    "team": "PHX",
+    "avg_points": 4.5,
+    "games_played": 15,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Diamond Miller",
+    "team": "MIN",
+    "avg_points": 4.3,
+    "games_played": 24,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Kalani Brown",
+    "team": "PHX",
+    "avg_points": 5.5,
+    "games_played": 21,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Natisha Hiedeman",
+    "team": "MIN",
+    "avg_points": 7.3,
+    "games_played": 27,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Makayla Timpson",
+    "team": "IND",
+    "avg_points": 3.2,
+    "games_played": 17,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Bridget Carleton",
+    "team": "MIN",
+    "avg_points": 6.8,
+    "games_played": 27,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Lexi Held",
+    "team": "PHX",
+    "avg_points": 7.6,
+    "games_played": 17,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Stefanie Dolson",
+    "team": "WAS",
+    "avg_points": 3.2,
+    "games_played": 26,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Sug Sutton",
+    "team": "WAS",
+    "avg_points": 7.5,
+    "games_played": 25,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Maria Kliundikova",
+    "team": "MIN",
+    "avg_points": 3.7,
+    "games_played": 17,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Damiris Dantas",
+    "team": "IND",
+    "avg_points": 4.6,
+    "games_played": 20,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Brianna Turner",
+    "team": "IND",
+    "avg_points": 0.4,
+    "games_played": 14,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Aari McDonald",
+    "team": "IND",
+    "avg_points": 8.4,
+    "games_played": 15,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Lexie Hull",
+    "team": "IND",
+    "avg_points": 7.3,
+    "games_played": 26,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Rae Burrell",
+    "team": "LAS",
+    "avg_points": 6.3,
+    "games_played": 10,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Emma Cannon",
+    "team": "LAS",
+    "avg_points": 4.7,
+    "games_played": 20,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Julie Allemand",
+    "team": "LAS",
+    "avg_points": 4.5,
+    "games_played": 17,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Caitlin Clark",
+    "team": "IND",
+    "avg_points": 16.5,
+    "games_played": 13,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Karlie Samuelson",
+    "team": "MIN",
+    "avg_points": 3.3,
+    "games_played": 16,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Kitija Laksa",
+    "team": "PHX",
+    "avg_points": 7.4,
+    "games_played": 24,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Sarah Ashlee Barker",
+    "team": "LAS",
+    "avg_points": 3.5,
+    "games_played": 23,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Sydney Colson",
+    "team": "IND",
+    "avg_points": 2.4,
+    "games_played": 25,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Sania Feagin",
+    "team": "LAS",
+    "avg_points": 1.3,
+    "games_played": 11,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Tina Charles",
+    "team": "CON",
+    "avg_points": 16.1,
+    "games_played": 25,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Tina Charles",
+    "team": "CON",
+    "avg_points": 16.1,
+    "games_played": 26,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Tina Charles",
+    "team": "CON",
+    "avg_points": 16.1,
+    "games_played": 26,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Shakira Austin",
+    "team": "WAS",
+    "avg_points": 12.7,
+    "games_played": 23,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Shakira Austin",
+    "team": "WAS",
+    "avg_points": 12.7,
+    "games_played": 25,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Shakira Austin",
+    "team": "WAS",
+    "avg_points": 12.6,
+    "games_played": 24,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Shakira Austin",
+    "team": "WAS",
+    "avg_points": 12.6,
+    "games_played": 24,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Natasha Howard",
+    "team": "IND",
+    "avg_points": 11.5,
+    "games_played": 26,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Natasha Howard",
+    "team": "IND",
+    "avg_points": 11.6,
+    "games_played": 29,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Natasha Howard",
+    "team": "IND",
+    "avg_points": 11.3,
+    "games_played": 28,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Dearica Hamby",
+    "team": "LAS",
+    "avg_points": 17.5,
+    "games_played": 26,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Dearica Hamby",
+    "team": "LAS",
+    "avg_points": 17.6,
+    "games_played": 27,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Dearica Hamby",
+    "team": "LAS",
+    "avg_points": 17.6,
+    "games_played": 27,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Rickea Jackson",
+    "team": "LAS",
+    "avg_points": 13.2,
+    "games_played": 21,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Rickea Jackson",
+    "team": "LAS",
+    "avg_points": 13.9,
+    "games_played": 22,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Rickea Jackson",
+    "team": "LAS",
+    "avg_points": 13.9,
+    "games_played": 22,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Rickea Jackson",
+    "team": "LAS",
+    "avg_points": 13.9,
+    "games_played": 22,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Alanna Smith",
+    "team": "MIN",
+    "avg_points": 9.5,
+    "games_played": 26,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Alanna Smith",
+    "team": "MIN",
+    "avg_points": 9.6,
+    "games_played": 27,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Alanna Smith",
+    "team": "MIN",
+    "avg_points": 9.5,
+    "games_played": 28,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Monique Akoa Makani",
+    "team": "PHX",
+    "avg_points": 8.8,
+    "games_played": 23,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Angel Reese",
+    "team": "CHI",
+    "avg_points": 14.2,
+    "games_played": 23,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Kathryn Westbeld",
+    "team": "PHX",
+    "avg_points": 6.5,
+    "games_played": 24,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Aari McDonald",
+    "team": "IND",
+    "avg_points": 9.8,
+    "games_played": 18,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Dearica Hamby",
+    "team": "LAS",
+    "avg_points": 17.7,
+    "games_played": 29,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Tina Charles",
+    "team": "CON",
+    "avg_points": 16.2,
+    "games_played": 29,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Tina Charles",
+    "team": "CON",
+    "avg_points": 16.2,
+    "games_played": 29,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Shakira Austin",
+    "team": "WAS",
+    "avg_points": 12.5,
+    "games_played": 27,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Shakira Austin",
+    "team": "WAS",
+    "avg_points": 12.5,
+    "games_played": 27,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Natasha Howard",
+    "team": "IND",
+    "avg_points": 11.6,
+    "games_played": 31,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Natasha Howard",
+    "team": "IND",
+    "avg_points": 11.6,
+    "games_played": 31,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Sophie Cunningham",
+    "team": "IND",
+    "avg_points": 8.4,
+    "games_played": 26,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Dearica Hamby",
+    "team": "LAS",
+    "avg_points": 17.7,
+    "games_played": 29,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Rickea Jackson",
+    "team": "LAS",
+    "avg_points": 14.6,
+    "games_played": 24,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Rickea Jackson",
+    "team": "LAS",
+    "avg_points": 14.6,
+    "games_played": 24,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Sami Whitcomb",
+    "team": "PHX",
+    "avg_points": 10.2,
+    "games_played": 27,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Kalani Brown",
+    "team": "PHX",
+    "avg_points": 5.5,
+    "games_played": 23,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Alanna Smith",
+    "team": "MIN",
+    "avg_points": 9.9,
+    "games_played": 30,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Alanna Smith",
+    "team": "MIN",
+    "avg_points": 9.9,
+    "games_played": 30,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Monique Akoa Makani",
+    "team": "PHX",
+    "avg_points": 8.4,
+    "games_played": 26,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Monique Akoa Makani",
+    "team": "PHX",
+    "avg_points": 8.3,
+    "games_played": 28,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Kitija Laksa",
+    "team": "PHX",
+    "avg_points": 6.7,
+    "games_played": 27,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Natasha Mack",
+    "team": "PHX",
+    "avg_points": 4.6,
+    "games_played": 18,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Kahleah Copper",
+    "team": "PHX",
+    "avg_points": 16.3,
+    "games_played": 12,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Kathryn Westbeld",
+    "team": "PHX",
+    "avg_points": 6.1,
+    "games_played": 27,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Kitija Laksa",
+    "team": "PHX",
+    "avg_points": 6.6,
+    "games_played": 28,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Jordin Canada",
+    "team": "ATL",
+    "avg_points": 12,
+    "games_played": 23,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Natasha Howard",
+    "team": "IND",
+    "avg_points": 11.6,
+    "games_played": 31,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Sophie Cunningham",
+    "team": "IND",
+    "avg_points": 8.4,
+    "games_played": 26,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Dearica Hamby",
+    "team": "LAS",
+    "avg_points": 18,
+    "games_played": 34,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Dearica Hamby",
+    "team": "LAS",
+    "avg_points": 18,
+    "games_played": 34,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Tina Charles",
+    "team": "CON",
+    "avg_points": 16.2,
+    "games_played": 29,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Tina Charles",
+    "team": "CON",
+    "avg_points": 15.9,
+    "games_played": 30,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Tina Charles",
+    "team": "CON",
+    "avg_points": 15.9,
+    "games_played": 30,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Sami Whitcomb",
+    "team": "PHX",
+    "avg_points": 9.9,
+    "games_played": 29,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Angel Reese",
+    "team": "CHI",
+    "avg_points": 14.2,
+    "games_played": 23,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Angel Reese",
+    "team": "CHI",
+    "avg_points": 14.2,
+    "games_played": 23,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Angel Reese",
+    "team": "CHI",
+    "avg_points": 14.2,
+    "games_played": 23,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Napheesa Collier",
+    "team": "MIN",
+    "avg_points": 23.5,
+    "games_played": 26,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Napheesa Collier",
+    "team": "MIN",
+    "avg_points": 23.5,
+    "games_played": 26,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Napheesa Collier",
+    "team": "MIN",
+    "avg_points": 23.5,
+    "games_played": 26,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Gabby Williams",
+    "team": "SEA",
+    "avg_points": 12.5,
+    "games_played": 33,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Gabby Williams",
+    "team": "SEA",
+    "avg_points": 12.5,
+    "games_played": 33,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Dearica Hamby",
+    "team": "LAS",
+    "avg_points": 17.7,
+    "games_played": 29,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Tina Charles",
+    "team": "CON",
+    "avg_points": 16.2,
+    "games_played": 29,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Shakira Austin",
+    "team": "WAS",
+    "avg_points": 12.5,
+    "games_played": 27,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Natasha Howard",
+    "team": "IND",
+    "avg_points": 11.6,
+    "games_played": 31,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Sophie Cunningham",
+    "team": "IND",
+    "avg_points": 8.4,
+    "games_played": 26,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Rickea Jackson",
+    "team": "LAS",
+    "avg_points": 14.6,
+    "games_played": 24,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Lucy Olsen",
+    "team": "WAS",
+    "avg_points": 3.8,
+    "games_played": 27,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Karlie Samuelson",
+    "team": "MIN",
+    "avg_points": 3.3,
+    "games_played": 16,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Diamond Miller",
+    "team": "MIN",
+    "avg_points": 4.1,
+    "games_played": 25,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Damiris Dantas",
+    "team": "IND",
+    "avg_points": 4.9,
+    "games_played": 25,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Kahleah Copper",
+    "team": "PHX",
+    "avg_points": 15.9,
+    "games_played": 14,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Sug Sutton",
+    "team": "WAS",
+    "avg_points": 7.6,
+    "games_played": 29,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Makayla Timpson",
+    "team": "IND",
+    "avg_points": 2.8,
+    "games_played": 25,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Rae Burrell",
+    "team": "LAS",
+    "avg_points": 6.2,
+    "games_played": 13,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Sarah Ashlee Barker",
+    "team": "LAS",
+    "avg_points": 3.3,
+    "games_played": 24,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Natisha Hiedeman",
+    "team": "MIN",
+    "avg_points": 7.6,
+    "games_played": 31,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Aari McDonald",
+    "team": "IND",
+    "avg_points": 9.8,
+    "games_played": 20,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Sydney Colson",
+    "team": "IND",
+    "avg_points": 2.4,
+    "games_played": 30,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Emma Cannon",
+    "team": "LAS",
+    "avg_points": 4.7,
+    "games_played": 20,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Lexie Hull",
+    "team": "IND",
+    "avg_points": 6.5,
+    "games_played": 31,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Sania Feagin",
+    "team": "LAS",
+    "avg_points": 1.3,
+    "games_played": 11,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Caitlin Clark",
+    "team": "IND",
+    "avg_points": 16.5,
+    "games_played": 13,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Lexi Held",
+    "team": "PHX",
+    "avg_points": 6.7,
+    "games_played": 22,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Natasha Mack",
+    "team": "PHX",
+    "avg_points": 4.4,
+    "games_played": 20,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Jessica Shepard",
+    "team": "MIN",
+    "avg_points": 7.4,
+    "games_played": 27,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Stefanie Dolson",
+    "team": "WAS",
+    "avg_points": 3.2,
+    "games_played": 30,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Julie Allemand",
+    "team": "LAS",
+    "avg_points": 5,
+    "games_played": 20,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Maria Kliundikova",
+    "team": "MIN",
+    "avg_points": 4,
+    "games_played": 21,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Aaliyah Edwards",
+    "team": "WAS",
+    "avg_points": 6,
+    "games_played": 21,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Brianna Turner",
+    "team": "IND",
+    "avg_points": 0.5,
+    "games_played": 15,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Tina Charles",
+    "team": "CON",
+    "avg_points": 16.1,
+    "games_played": 27,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Tina Charles",
+    "team": "CON",
+    "avg_points": 16.1,
+    "games_played": 27,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Tina Charles",
+    "team": "CON",
+    "avg_points": 16.1,
+    "games_played": 26,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Gabby Williams",
+    "team": "SEA",
+    "avg_points": 12.3,
+    "games_played": 36,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Gabby Williams",
+    "team": "SEA",
+    "avg_points": 12.3,
+    "games_played": 36,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Aaliyah Edwards",
+    "team": "WAS",
+    "avg_points": 6.4,
+    "games_played": 19,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Shakira Austin",
+    "team": "WAS",
+    "avg_points": 12.6,
+    "games_played": 28,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Natasha Howard",
+    "team": "IND",
+    "avg_points": 11.3,
+    "games_played": 28,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Aari McDonald",
+    "team": "IND",
+    "avg_points": 8.3,
+    "games_played": 14,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Aaliyah Edwards",
+    "team": "WAS",
+    "avg_points": 6.4,
+    "games_played": 19,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Natasha Howard",
+    "team": "IND",
+    "avg_points": 11.5,
+    "games_played": 32,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Natasha Howard",
+    "team": "IND",
+    "avg_points": 11.7,
+    "games_played": 35,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Dearica Hamby",
+    "team": "LAS",
+    "avg_points": 17.7,
+    "games_played": 29,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Dearica Hamby",
+    "team": "LAS",
+    "avg_points": 17.6,
+    "games_played": 30,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Tina Charles",
+    "team": "CON",
+    "avg_points": 16.2,
+    "games_played": 29,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Tina Charles",
+    "team": "CON",
+    "avg_points": 16.2,
+    "games_played": 29,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Rickea Jackson",
+    "team": "LAS",
+    "avg_points": 14.6,
+    "games_played": 24,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Shakira Austin",
+    "team": "WAS",
+    "avg_points": 12.5,
+    "games_played": 27,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Shakira Austin",
+    "team": "WAS",
+    "avg_points": 12.5,
+    "games_played": 27,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Natasha Howard",
+    "team": "IND",
+    "avg_points": 11.6,
+    "games_played": 31,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Natasha Howard",
+    "team": "IND",
+    "avg_points": 11.6,
+    "games_played": 31,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Sophie Cunningham",
+    "team": "IND",
+    "avg_points": 8.4,
+    "games_played": 26,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Sophie Cunningham",
+    "team": "IND",
+    "avg_points": 8.4,
+    "games_played": 26,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Sophie Cunningham",
+    "team": "IND",
+    "avg_points": 8.7,
+    "games_played": 27,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Tina Charles",
+    "team": "CON",
+    "avg_points": 16.2,
+    "games_played": 29,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Rickea Jackson",
+    "team": "LAS",
+    "avg_points": 14.3,
+    "games_played": 25,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Alanna Smith",
+    "team": "MIN",
+    "avg_points": 9.9,
+    "games_played": 30,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Alanna Smith",
+    "team": "MIN",
+    "avg_points": 9.9,
+    "games_played": 30,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Angel Reese",
+    "team": "CHI",
+    "avg_points": 14.2,
+    "games_played": 23,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Angel Reese",
+    "team": "CHI",
+    "avg_points": 14.2,
+    "games_played": 23,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Kalani Brown",
+    "team": "PHX",
+    "avg_points": 5.1,
+    "games_played": 25,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Rae Burrell",
+    "team": "LAS",
+    "avg_points": 6.5,
+    "games_played": 14,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Caitlin Clark",
+    "team": "IND",
+    "avg_points": 16.5,
+    "games_played": 13,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Kathryn Westbeld",
+    "team": "PHX",
+    "avg_points": 5.8,
+    "games_played": 29,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Brianna Turner",
+    "team": "IND",
+    "avg_points": 0.5,
+    "games_played": 15,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Aari McDonald",
+    "team": "IND",
+    "avg_points": 9.8,
+    "games_played": 20,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Sydney Colson",
+    "team": "IND",
+    "avg_points": 2.4,
+    "games_played": 30,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Sania Feagin",
+    "team": "LAS",
+    "avg_points": 1.3,
+    "games_played": 11,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Lexie Hull",
+    "team": "IND",
+    "avg_points": 6.5,
+    "games_played": 31,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Sarah Ashlee Barker",
+    "team": "LAS",
+    "avg_points": 3.2,
+    "games_played": 25,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Makayla Timpson",
+    "team": "IND",
+    "avg_points": 2.8,
+    "games_played": 21,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Damiris Dantas",
+    "team": "IND",
+    "avg_points": 4.9,
+    "games_played": 25,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Dearica Hamby",
+    "team": "LAS",
+    "avg_points": 17.6,
+    "games_played": 30,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Sonia Citron",
+    "team": "WAS",
+    "avg_points": 14.7,
+    "games_played": 30,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Shakira Austin",
+    "team": "WAS",
+    "avg_points": 12.5,
+    "games_played": 27,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Natasha Howard",
+    "team": "IND",
+    "avg_points": 11.5,
+    "games_played": 32,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Sophie Cunningham",
+    "team": "IND",
+    "avg_points": 8.7,
+    "games_played": 27,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Rickea Jackson",
+    "team": "LAS",
+    "avg_points": 14.3,
+    "games_played": 25,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Sami Whitcomb",
+    "team": "PHX",
+    "avg_points": 9.9,
+    "games_played": 29,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Alanna Smith",
+    "team": "MIN",
+    "avg_points": 9.9,
+    "games_played": 30,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Angel Reese",
+    "team": "CHI",
+    "avg_points": 14.2,
+    "games_played": 23,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Maria Kliundikova",
+    "team": "MIN",
+    "avg_points": 4,
+    "games_played": 21,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Jade Melbourne",
+    "team": "WAS",
+    "avg_points": 6,
+    "games_played": 29,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Bridget Carleton",
+    "team": "MIN",
+    "avg_points": 6.9,
+    "games_played": 31,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Kalani Brown",
+    "team": "PHX",
+    "avg_points": 5.1,
+    "games_played": 25,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Lexi Held",
+    "team": "PHX",
+    "avg_points": 6.7,
+    "games_played": 22,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Kathryn Westbeld",
+    "team": "PHX",
+    "avg_points": 5.8,
+    "games_played": 29,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Kahleah Copper",
+    "team": "PHX",
+    "avg_points": 15.9,
+    "games_played": 14,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Jessica Shepard",
+    "team": "MIN",
+    "avg_points": 7.4,
+    "games_played": 27,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Julie Allemand",
+    "team": "LAS",
+    "avg_points": 5.2,
+    "games_played": 21,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Natasha Mack",
+    "team": "PHX",
+    "avg_points": 4.4,
+    "games_played": 20,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Emma Cannon",
+    "team": "LAS",
+    "avg_points": 4.7,
+    "games_played": 20,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Aari McDonald",
+    "team": "IND",
+    "avg_points": 9.8,
+    "games_played": 20,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Aaliyah Edwards",
+    "team": "WAS",
+    "avg_points": 6,
+    "games_played": 21,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Kitija Laksa",
+    "team": "PHX",
+    "avg_points": 6.6,
+    "games_played": 28,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Karlie Samuelson",
+    "team": "MIN",
+    "avg_points": 3.3,
+    "games_played": 16,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Sug Sutton",
+    "team": "WAS",
+    "avg_points": 7.6,
+    "games_played": 29,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Diamond Miller",
+    "team": "MIN",
+    "avg_points": 4.1,
+    "games_played": 25,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Natisha Hiedeman",
+    "team": "MIN",
+    "avg_points": 7.6,
+    "games_played": 31,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Lucy Olsen",
+    "team": "WAS",
+    "avg_points": 3.8,
+    "games_played": 27,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Dearica Hamby",
+    "team": "LAS",
+    "avg_points": 17.6,
+    "games_played": 31,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Tina Charles",
+    "team": "CON",
+    "avg_points": 15.9,
+    "games_played": 30,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Sonia Citron",
+    "team": "WAS",
+    "avg_points": 14.8,
+    "games_played": 31,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Rickea Jackson",
+    "team": "LAS",
+    "avg_points": 14.1,
+    "games_played": 26,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Shakira Austin",
+    "team": "WAS",
+    "avg_points": 12.5,
+    "games_played": 27,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Natasha Howard",
+    "team": "IND",
+    "avg_points": 11.5,
+    "games_played": 32,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Sophie Cunningham",
+    "team": "IND",
+    "avg_points": 8.7,
+    "games_played": 27,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Sophie Cunningham",
+    "team": "IND",
+    "avg_points": 8.7,
+    "games_played": 27,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Tina Charles",
+    "team": "CON",
+    "avg_points": 15.9,
+    "games_played": 30,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Sug Sutton",
+    "team": "WAS",
+    "avg_points": 7.3,
+    "games_played": 30,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Sami Whitcomb",
+    "team": "PHX",
+    "avg_points": 9.9,
+    "games_played": 29,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Alanna Smith",
+    "team": "MIN",
+    "avg_points": 9.9,
+    "games_played": 30,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Alanna Smith",
+    "team": "MIN",
+    "avg_points": 9.8,
+    "games_played": 31,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Angel Reese",
+    "team": "CHI",
+    "avg_points": 14.2,
+    "games_played": 23,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Caitlin Clark",
+    "team": "IND",
+    "avg_points": 16.5,
+    "games_played": 13,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Sarah Ashlee Barker",
+    "team": "LAS",
+    "avg_points": 3.2,
+    "games_played": 25,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Damiris Dantas",
+    "team": "IND",
+    "avg_points": 4.9,
+    "games_played": 26,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Emma Cannon",
+    "team": "LAS",
+    "avg_points": 4.7,
+    "games_played": 20,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Makayla Timpson",
+    "team": "IND",
+    "avg_points": 3,
+    "games_played": 22,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Sydney Colson",
+    "team": "IND",
+    "avg_points": 2.4,
+    "games_played": 30,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Lexie Hull",
+    "team": "IND",
+    "avg_points": 6.8,
+    "games_played": 32,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Napheesa Collier",
+    "team": "MIN",
+    "avg_points": 23.5,
+    "games_played": 26,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Brianna Turner",
+    "team": "IND",
+    "avg_points": 0.4,
+    "games_played": 16,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Sania Feagin",
+    "team": "LAS",
+    "avg_points": 1.2,
+    "games_played": 12,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Julie Allemand",
+    "team": "LAS",
+    "avg_points": 5.2,
+    "games_played": 22,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Natasha Howard",
+    "team": "IND",
+    "avg_points": 11.5,
+    "games_played": 32,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Sophie Cunningham",
+    "team": "IND",
+    "avg_points": 8.7,
+    "games_played": 27,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Sami Whitcomb",
+    "team": "PHX",
+    "avg_points": 9.7,
+    "games_played": 30,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Alanna Smith",
+    "team": "MIN",
+    "avg_points": 9.8,
+    "games_played": 31,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Monique Akoa Makani",
+    "team": "PHX",
+    "avg_points": 8.1,
+    "games_played": 29,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Julie Allemand",
+    "team": "LAS",
+    "avg_points": 5.2,
+    "games_played": 22,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Lucy Olsen",
+    "team": "WAS",
+    "avg_points": 3.7,
+    "games_played": 28,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Kitija Laksa",
+    "team": "PHX",
+    "avg_points": 6.6,
+    "games_played": 28,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Lexi Held",
+    "team": "PHX",
+    "avg_points": 6.7,
+    "games_played": 22,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Natasha Mack",
+    "team": "PHX",
+    "avg_points": 4.2,
+    "games_played": 21,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Lexie Hull",
+    "team": "IND",
+    "avg_points": 6.8,
+    "games_played": 32,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Kalani Brown",
+    "team": "PHX",
+    "avg_points": 5.1,
+    "games_played": 25,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Damiris Dantas",
+    "team": "IND",
+    "avg_points": 4.9,
+    "games_played": 26,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Kahleah Copper",
+    "team": "PHX",
+    "avg_points": 15.4,
+    "games_played": 15,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Rae Burrell",
+    "team": "LAS",
+    "avg_points": 6.6,
+    "games_played": 15,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Natisha Hiedeman",
+    "team": "MIN",
+    "avg_points": 7.8,
+    "games_played": 32,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Bridget Carleton",
+    "team": "MIN",
+    "avg_points": 6.8,
+    "games_played": 32,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Aaliyah Edwards",
+    "team": "WAS",
+    "avg_points": 6,
+    "games_played": 21,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Caitlin Clark",
+    "team": "IND",
+    "avg_points": 16.5,
+    "games_played": 13,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Makayla Timpson",
+    "team": "IND",
+    "avg_points": 3,
+    "games_played": 22,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Stefanie Dolson",
+    "team": "WAS",
+    "avg_points": 3.5,
+    "games_played": 31,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Brianna Turner",
+    "team": "IND",
+    "avg_points": 0.4,
+    "games_played": 16,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Jade Melbourne",
+    "team": "WAS",
+    "avg_points": 6,
+    "games_played": 30,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Karlie Samuelson",
+    "team": "MIN",
+    "avg_points": 3.3,
+    "games_played": 16,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Maria Kliundikova",
+    "team": "MIN",
+    "avg_points": 4.1,
+    "games_played": 22,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Sydney Colson",
+    "team": "IND",
+    "avg_points": 2.4,
+    "games_played": 30,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Sarah Ashlee Barker",
+    "team": "LAS",
+    "avg_points": 3.2,
+    "games_played": 25,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Sania Feagin",
+    "team": "LAS",
+    "avg_points": 1.2,
+    "games_played": 12,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Aari McDonald",
+    "team": "IND",
+    "avg_points": 9.8,
+    "games_played": 20,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Jessica Shepard",
+    "team": "MIN",
+    "avg_points": 7.3,
+    "games_played": 28,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Shakira Austin",
+    "team": "WAS",
+    "avg_points": 12.5,
+    "games_played": 27,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Natasha Howard",
+    "team": "IND",
+    "avg_points": 11.3,
+    "games_played": 28,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Rickea Jackson",
+    "team": "LAS",
+    "avg_points": 13.6,
+    "games_played": 18,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Rickea Jackson",
+    "team": "LAS",
+    "avg_points": 13.9,
+    "games_played": 22,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Rickea Jackson",
+    "team": "LAS",
+    "avg_points": 13.2,
+    "games_played": 21,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Lexi Held",
+    "team": "PHX",
+    "avg_points": 6.7,
+    "games_played": 22,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Natasha Mack",
+    "team": "PHX",
+    "avg_points": 4.2,
+    "games_played": 21,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Bridget Carleton",
+    "team": "MIN",
+    "avg_points": 6.8,
+    "games_played": 32,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Kalani Brown",
+    "team": "PHX",
+    "avg_points": 5.1,
+    "games_played": 25,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Alanna Smith",
+    "team": "MIN",
+    "avg_points": 9.8,
+    "games_played": 31,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Kathryn Westbeld",
+    "team": "PHX",
+    "avg_points": 5.8,
+    "games_played": 30,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Makayla Timpson",
+    "team": "IND",
+    "avg_points": 2.8,
+    "games_played": 21,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Kitija Laksa",
+    "team": "PHX",
+    "avg_points": 6.8,
+    "games_played": 26,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Kitija Laksa",
+    "team": "PHX",
+    "avg_points": 6.6,
+    "games_played": 28,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Stefanie Dolson",
+    "team": "WAS",
+    "avg_points": 3.5,
+    "games_played": 31,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Emma Cannon",
+    "team": "LAS",
+    "avg_points": 4.7,
+    "games_played": 20,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Jade Melbourne",
+    "team": "WAS",
+    "avg_points": 6,
+    "games_played": 30,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Emily Engstler",
+    "team": "WAS",
+    "avg_points": 3,
+    "games_played": 26,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Emily Engstler",
+    "team": "WAS",
+    "avg_points": 3.3,
+    "games_played": 27,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Lucy Olsen",
+    "team": "WAS",
+    "avg_points": 3.6,
+    "games_played": 23,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Lexie Hull",
+    "team": "IND",
+    "avg_points": 7.6,
+    "games_played": 23,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Lucy Olsen",
+    "team": "WAS",
+    "avg_points": 3.7,
+    "games_played": 28,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Jessica Shepard",
+    "team": "MIN",
+    "avg_points": 6.8,
+    "games_played": 20,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Diamond Miller",
+    "team": "MIN",
+    "avg_points": 4.1,
+    "games_played": 25,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Jessica Shepard",
+    "team": "MIN",
+    "avg_points": 6.8,
+    "games_played": 23,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Karlie Samuelson",
+    "team": "MIN",
+    "avg_points": 3.3,
+    "games_played": 16,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Emily Engstler",
+    "team": "WAS",
+    "avg_points": 3.7,
+    "games_played": 30,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Dearica Hamby",
+    "team": "LAS",
+    "avg_points": 17.6,
+    "games_played": 31,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Tina Charles",
+    "team": "CON",
+    "avg_points": 15.9,
+    "games_played": 30,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Sonia Citron",
+    "team": "WAS",
+    "avg_points": 14.8,
+    "games_played": 31,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Rickea Jackson",
+    "team": "LAS",
+    "avg_points": 14.1,
+    "games_played": 26,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Shakira Austin",
+    "team": "WAS",
+    "avg_points": 12.5,
+    "games_played": 27,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Shakira Austin",
+    "team": "WAS",
+    "avg_points": 12.5,
+    "games_played": 27,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Natasha Howard",
+    "team": "IND",
+    "avg_points": 11.5,
+    "games_played": 32,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Natasha Howard",
+    "team": "IND",
+    "avg_points": 11.5,
+    "games_played": 32,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Sophie Cunningham",
+    "team": "IND",
+    "avg_points": 8.7,
+    "games_played": 27,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Tina Charles",
+    "team": "CON",
+    "avg_points": 15.9,
+    "games_played": 30,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Sonia Citron",
+    "team": "WAS",
+    "avg_points": 14.8,
+    "games_played": 31,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Sami Whitcomb",
+    "team": "PHX",
+    "avg_points": 9.7,
+    "games_played": 30,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Alanna Smith",
+    "team": "MIN",
+    "avg_points": 9.8,
+    "games_played": 31,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Alanna Smith",
+    "team": "MIN",
+    "avg_points": 9.8,
+    "games_played": 31,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Monique Akoa Makani",
+    "team": "PHX",
+    "avg_points": 8.1,
+    "games_played": 29,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Angel Reese",
+    "team": "CHI",
+    "avg_points": 14.2,
+    "games_played": 23,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Lucy Olsen",
+    "team": "WAS",
+    "avg_points": 3.7,
+    "games_played": 28,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Brianna Turner",
+    "team": "IND",
+    "avg_points": 0.4,
+    "games_played": 16,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Maria Kliundikova",
+    "team": "MIN",
+    "avg_points": 4.1,
+    "games_played": 22,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Aaliyah Edwards",
+    "team": "WAS",
+    "avg_points": 6,
+    "games_played": 21,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Sug Sutton",
+    "team": "WAS",
+    "avg_points": 7.3,
+    "games_played": 30,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Jessica Shepard",
+    "team": "MIN",
+    "avg_points": 7.3,
+    "games_played": 28,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Kahleah Copper",
+    "team": "PHX",
+    "avg_points": 15.4,
+    "games_played": 15,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Damiris Dantas",
+    "team": "IND",
+    "avg_points": 4.9,
+    "games_played": 26,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Natisha Hiedeman",
+    "team": "MIN",
+    "avg_points": 7.8,
+    "games_played": 32,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Dearica Hamby",
+    "team": "LAS",
+    "avg_points": 17.6,
+    "games_played": 31,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Tina Charles",
+    "team": "CON",
+    "avg_points": 15.9,
+    "games_played": 30,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Sonia Citron",
+    "team": "WAS",
+    "avg_points": 14.8,
+    "games_played": 31,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Rickea Jackson",
+    "team": "LAS",
+    "avg_points": 14.1,
+    "games_played": 26,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Shakira Austin",
+    "team": "WAS",
+    "avg_points": 12.5,
+    "games_played": 27,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Natasha Howard",
+    "team": "IND",
+    "avg_points": 11.5,
+    "games_played": 32,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Sami Whitcomb",
+    "team": "PHX",
+    "avg_points": 9.7,
+    "games_played": 30,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Sophie Cunningham",
+    "team": "IND",
+    "avg_points": 8.7,
+    "games_played": 27,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Sophie Cunningham",
+    "team": "IND",
+    "avg_points": 8.7,
+    "games_played": 27,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Natasha Howard",
+    "team": "IND",
+    "avg_points": 11.5,
+    "games_played": 32,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Alanna Smith",
+    "team": "MIN",
+    "avg_points": 9.8,
+    "games_played": 31,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Julie Allemand",
+    "team": "LAS",
+    "avg_points": 5.2,
+    "games_played": 22,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Brianna Turner",
+    "team": "IND",
+    "avg_points": 0.4,
+    "games_played": 16,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Rae Burrell",
+    "team": "LAS",
+    "avg_points": 6.6,
+    "games_played": 15,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Caitlin Clark",
+    "team": "IND",
+    "avg_points": 16.5,
+    "games_played": 13,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Emma Cannon",
+    "team": "LAS",
+    "avg_points": 4.7,
+    "games_played": 20,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Damiris Dantas",
+    "team": "IND",
+    "avg_points": 4.9,
+    "games_played": 26,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Aari McDonald",
+    "team": "IND",
+    "avg_points": 9.8,
+    "games_played": 20,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Sarah Ashlee Barker",
+    "team": "LAS",
+    "avg_points": 3.2,
+    "games_played": 25,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Sania Feagin",
+    "team": "LAS",
+    "avg_points": 1.2,
+    "games_played": 12,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Makayla Timpson",
+    "team": "IND",
+    "avg_points": 3,
+    "games_played": 22,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Sydney Colson",
+    "team": "IND",
+    "avg_points": 2.4,
+    "games_played": 30,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Lexie Hull",
+    "team": "IND",
+    "avg_points": 6.8,
+    "games_played": 32,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Caitlin Clark",
+    "team": "IND",
+    "avg_points": 16.5,
+    "games_played": 13,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Makayla Timpson",
+    "team": "IND",
+    "avg_points": 3,
+    "games_played": 22,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Tina Charles",
+    "team": "CON",
+    "avg_points": 15.9,
+    "games_played": 30,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Rickea Jackson",
+    "team": "LAS",
+    "avg_points": 14.6,
+    "games_played": 24,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Shakira Austin",
+    "team": "WAS",
+    "avg_points": 12.5,
+    "games_played": 27,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Natasha Howard",
+    "team": "IND",
+    "avg_points": 11.5,
+    "games_played": 32,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Dearica Hamby",
+    "team": "LAS",
+    "avg_points": 17.6,
+    "games_played": 31,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Sonia Citron",
+    "team": "WAS",
+    "avg_points": 14.8,
+    "games_played": 31,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Sonia Citron",
+    "team": "WAS",
+    "avg_points": 14.8,
+    "games_played": 31,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Alanna Smith",
+    "team": "MIN",
+    "avg_points": 9.8,
+    "games_played": 31,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Alanna Smith",
+    "team": "MIN",
+    "avg_points": 9.8,
+    "games_played": 31,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Monique Akoa Makani",
+    "team": "PHX",
+    "avg_points": 8.1,
+    "games_played": 29,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Diamond Miller",
+    "team": "MIN",
+    "avg_points": 4.1,
+    "games_played": 25,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Maria Kliundikova",
+    "team": "MIN",
+    "avg_points": 4.1,
+    "games_played": 22,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Lexi Held",
+    "team": "PHX",
+    "avg_points": 6.7,
+    "games_played": 22,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Kathryn Westbeld",
+    "team": "PHX",
+    "avg_points": 5.8,
+    "games_played": 30,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Natasha Mack",
+    "team": "PHX",
+    "avg_points": 4.2,
+    "games_played": 21,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Kalani Brown",
+    "team": "PHX",
+    "avg_points": 5.1,
+    "games_played": 25,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Jade Melbourne",
+    "team": "WAS",
+    "avg_points": 6,
+    "games_played": 30,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Sug Sutton",
+    "team": "WAS",
+    "avg_points": 7.3,
+    "games_played": 30,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Karlie Samuelson",
+    "team": "MIN",
+    "avg_points": 3.3,
+    "games_played": 16,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Aaliyah Edwards",
+    "team": "WAS",
+    "avg_points": 6,
+    "games_played": 21,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Kahleah Copper",
+    "team": "PHX",
+    "avg_points": 15.4,
+    "games_played": 15,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Natisha Hiedeman",
+    "team": "MIN",
+    "avg_points": 7.8,
+    "games_played": 32,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Bridget Carleton",
+    "team": "MIN",
+    "avg_points": 6.8,
+    "games_played": 32,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Kitija Laksa",
+    "team": "PHX",
+    "avg_points": 6.6,
+    "games_played": 28,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Jessica Shepard",
+    "team": "MIN",
+    "avg_points": 7.3,
+    "games_played": 28,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Lucy Olsen",
+    "team": "WAS",
+    "avg_points": 3.7,
+    "games_played": 28,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Stefanie Dolson",
+    "team": "WAS",
+    "avg_points": 3.5,
+    "games_played": 31,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Dearica Hamby",
+    "team": "LAS",
+    "avg_points": 17.8,
+    "games_played": 33,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Dearica Hamby",
+    "team": "LAS",
+    "avg_points": 17.6,
+    "games_played": 27,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Dearica Hamby",
+    "team": "LAS",
+    "avg_points": 17.6,
+    "games_played": 27,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Tina Charles",
+    "team": "CON",
+    "avg_points": 15.9,
+    "games_played": 31,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Rickea Jackson",
+    "team": "LAS",
+    "avg_points": 14.3,
+    "games_played": 25,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Rickea Jackson",
+    "team": "LAS",
+    "avg_points": 14.1,
+    "games_played": 26,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Sabrina Ionescu",
+    "team": "NY",
+    "avg_points": 19.1,
+    "games_played": 34,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Rickea Jackson",
+    "team": "LAS",
+    "avg_points": 14.1,
+    "games_played": 26,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Sophie Cunningham",
+    "team": "IND",
+    "avg_points": 8.7,
+    "games_played": 27,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Sami Whitcomb",
+    "team": "PHX",
+    "avg_points": 9.7,
+    "games_played": 30,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Angel Reese",
+    "team": "CHI",
+    "avg_points": 14.2,
+    "games_played": 23,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Napheesa Collier",
+    "team": "MIN",
+    "avg_points": 23.5,
+    "games_played": 26,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "A'ja Wilson",
+    "team": "LVA",
+    "avg_points": 22.9,
+    "games_played": 32,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Dearica Hamby",
+    "team": "LAS",
+    "avg_points": 17.6,
+    "games_played": 31,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Dearica Hamby",
+    "team": "LAS",
+    "avg_points": 17.6,
+    "games_played": 31,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Tina Charles",
+    "team": "CON",
+    "avg_points": 15.9,
+    "games_played": 30,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Tina Charles",
+    "team": "CON",
+    "avg_points": 15.9,
+    "games_played": 30,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Sonia Citron",
+    "team": "WAS",
+    "avg_points": 14.8,
+    "games_played": 31,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Sonia Citron",
+    "team": "WAS",
+    "avg_points": 14.8,
+    "games_played": 31,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Rickea Jackson",
+    "team": "LAS",
+    "avg_points": 14.1,
+    "games_played": 26,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Rickea Jackson",
+    "team": "LAS",
+    "avg_points": 14.1,
+    "games_played": 26,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Shakira Austin",
+    "team": "WAS",
+    "avg_points": 12.7,
+    "games_played": 23,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Shakira Austin",
+    "team": "WAS",
+    "avg_points": 12.5,
+    "games_played": 27,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Natasha Howard",
+    "team": "IND",
+    "avg_points": 11.5,
+    "games_played": 32,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Natasha Howard",
+    "team": "IND",
+    "avg_points": 11.5,
+    "games_played": 32,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Natasha Howard",
+    "team": "IND",
+    "avg_points": 11.5,
+    "games_played": 32,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Sophie Cunningham",
+    "team": "IND",
+    "avg_points": 8.7,
+    "games_played": 27,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Sophie Cunningham",
+    "team": "IND",
+    "avg_points": 8.7,
+    "games_played": 27,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Sophie Cunningham",
+    "team": "IND",
+    "avg_points": 8.7,
+    "games_played": 27,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Shakira Austin",
+    "team": "WAS",
+    "avg_points": 12.5,
+    "games_played": 27,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Sami Whitcomb",
+    "team": "PHX",
+    "avg_points": 9.7,
+    "games_played": 30,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Sami Whitcomb",
+    "team": "PHX",
+    "avg_points": 9.7,
+    "games_played": 30,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Alanna Smith",
+    "team": "MIN",
+    "avg_points": 9.8,
+    "games_played": 31,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Angel Reese",
+    "team": "CHI",
+    "avg_points": 14.2,
+    "games_played": 23,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Aari McDonald",
+    "team": "IND",
+    "avg_points": 9.8,
+    "games_played": 20,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Lexie Hull",
+    "team": "IND",
+    "avg_points": 6.8,
+    "games_played": 32,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Rickea Jackson",
+    "team": "LAS",
+    "avg_points": 14.1,
+    "games_played": 26,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Shakira Austin",
+    "team": "WAS",
+    "avg_points": 12.5,
+    "games_played": 27,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Tina Charles",
+    "team": "CON",
+    "avg_points": 15.9,
+    "games_played": 30,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Sonia Citron",
+    "team": "WAS",
+    "avg_points": 14.8,
+    "games_played": 31,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Monique Akoa Makani",
+    "team": "PHX",
+    "avg_points": 8.1,
+    "games_played": 29,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Aaliyah Edwards",
+    "team": "WAS",
+    "avg_points": 6,
+    "games_played": 21,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Emma Cannon",
+    "team": "LAS",
+    "avg_points": 4.7,
+    "games_played": 20,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Rae Burrell",
+    "team": "LAS",
+    "avg_points": 6.6,
+    "games_played": 15,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Diamond Miller",
+    "team": "MIN",
+    "avg_points": 4.1,
+    "games_played": 25,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Sarah Ashlee Barker",
+    "team": "LAS",
+    "avg_points": 3.2,
+    "games_played": 25,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Bridget Carleton",
+    "team": "MIN",
+    "avg_points": 6.8,
+    "games_played": 32,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Stefanie Dolson",
+    "team": "WAS",
+    "avg_points": 3.5,
+    "games_played": 31,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Sug Sutton",
+    "team": "WAS",
+    "avg_points": 7.3,
+    "games_played": 30,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Kalani Brown",
+    "team": "PHX",
+    "avg_points": 5.1,
+    "games_played": 25,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Kathryn Westbeld",
+    "team": "PHX",
+    "avg_points": 5.8,
+    "games_played": 30,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Sydney Colson",
+    "team": "IND",
+    "avg_points": 2.4,
+    "games_played": 30,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Lexi Held",
+    "team": "PHX",
+    "avg_points": 6.7,
+    "games_played": 22,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Julie Allemand",
+    "team": "LAS",
+    "avg_points": 5.2,
+    "games_played": 22,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Sania Feagin",
+    "team": "LAS",
+    "avg_points": 1.2,
+    "games_played": 12,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Natisha Hiedeman",
+    "team": "MIN",
+    "avg_points": 7.8,
+    "games_played": 32,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Natasha Mack",
+    "team": "PHX",
+    "avg_points": 4.2,
+    "games_played": 21,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Karlie Samuelson",
+    "team": "MIN",
+    "avg_points": 3.3,
+    "games_played": 16,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Maria Kliundikova",
+    "team": "MIN",
+    "avg_points": 4.1,
+    "games_played": 22,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Lucy Olsen",
+    "team": "WAS",
+    "avg_points": 3.7,
+    "games_played": 28,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Kitija Laksa",
+    "team": "PHX",
+    "avg_points": 6.6,
+    "games_played": 28,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Jessica Shepard",
+    "team": "MIN",
+    "avg_points": 7.3,
+    "games_played": 28,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Damiris Dantas",
+    "team": "IND",
+    "avg_points": 4.8,
+    "games_played": 27,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Kahleah Copper",
+    "team": "PHX",
+    "avg_points": 15.4,
+    "games_played": 15,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Dearica Hamby",
+    "team": "LAS",
+    "avg_points": 17.7,
+    "games_played": 32,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Dearica Hamby",
+    "team": "LAS",
+    "avg_points": 17.7,
+    "games_played": 32,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Tina Charles",
+    "team": "CON",
+    "avg_points": 15.9,
+    "games_played": 30,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Tina Charles",
+    "team": "CON",
+    "avg_points": 15.9,
+    "games_played": 30,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Sonia Citron",
+    "team": "WAS",
+    "avg_points": 14.8,
+    "games_played": 31,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Sonia Citron",
+    "team": "WAS",
+    "avg_points": 14.8,
+    "games_played": 31,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Rickea Jackson",
+    "team": "LAS",
+    "avg_points": 14.2,
+    "games_played": 27,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Rickea Jackson",
+    "team": "LAS",
+    "avg_points": 14.2,
+    "games_played": 27,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Shakira Austin",
+    "team": "WAS",
+    "avg_points": 12.6,
+    "games_played": 24,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Shakira Austin",
+    "team": "WAS",
+    "avg_points": 12.5,
+    "games_played": 27,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Natasha Howard",
+    "team": "IND",
+    "avg_points": 11.5,
+    "games_played": 33,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Natasha Howard",
+    "team": "IND",
+    "avg_points": 11.5,
+    "games_played": 33,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Natasha Howard",
+    "team": "IND",
+    "avg_points": 11.5,
+    "games_played": 33,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Sophie Cunningham",
+    "team": "IND",
+    "avg_points": 8.9,
+    "games_played": 28,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Sophie Cunningham",
+    "team": "IND",
+    "avg_points": 8.9,
+    "games_played": 28,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Sophie Cunningham",
+    "team": "IND",
+    "avg_points": 8.9,
+    "games_played": 28,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Sami Whitcomb",
+    "team": "PHX",
+    "avg_points": 9.7,
+    "games_played": 30,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Sami Whitcomb",
+    "team": "PHX",
+    "avg_points": 9.7,
+    "games_played": 30,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Sami Whitcomb",
+    "team": "PHX",
+    "avg_points": 9.7,
+    "games_played": 30,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Alanna Smith",
+    "team": "MIN",
+    "avg_points": 9.8,
+    "games_played": 31,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Alanna Smith",
+    "team": "MIN",
+    "avg_points": 9.8,
+    "games_played": 31,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Alanna Smith",
+    "team": "MIN",
+    "avg_points": 9.8,
+    "games_played": 31,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Angel Reese",
+    "team": "CHI",
+    "avg_points": 14.2,
+    "games_played": 23,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Shakira Austin",
+    "team": "WAS",
+    "avg_points": 12.5,
+    "games_played": 27,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Diamond Miller",
+    "team": "MIN",
+    "avg_points": 4.1,
+    "games_played": 25,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Dearica Hamby",
+    "team": "LAS",
+    "avg_points": 17.5,
+    "games_played": 26,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Diamond Miller",
+    "team": "MIN",
+    "avg_points": 4.1,
+    "games_played": 25,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Bridget Carleton",
+    "team": "MIN",
+    "avg_points": 6.8,
+    "games_played": 27,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Dearica Hamby",
+    "team": "LAS",
+    "avg_points": 17.7,
+    "games_played": 29,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Dearica Hamby",
+    "team": "LAS",
+    "avg_points": 17.6,
+    "games_played": 31,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Tina Charles",
+    "team": "CON",
+    "avg_points": 16.1,
+    "games_played": 26,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Tina Charles",
+    "team": "CON",
+    "avg_points": 15.9,
+    "games_played": 31,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Shakira Austin",
+    "team": "WAS",
+    "avg_points": 12.5,
+    "games_played": 27,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Lexie Hull",
+    "team": "IND",
+    "avg_points": 6.6,
+    "games_played": 34,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Shakira Austin",
+    "team": "WAS",
+    "avg_points": 12.5,
+    "games_played": 27,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Shakira Austin",
+    "team": "WAS",
+    "avg_points": 12.5,
+    "games_played": 27,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Natasha Howard",
+    "team": "IND",
+    "avg_points": 11.6,
+    "games_played": 29,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Stefanie Dolson",
+    "team": "WAS",
+    "avg_points": 3.1,
+    "games_played": 23,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Natasha Howard",
+    "team": "IND",
+    "avg_points": 11.5,
+    "games_played": 32,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Stefanie Dolson",
+    "team": "WAS",
+    "avg_points": 3.1,
+    "games_played": 24,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Bridget Carleton",
+    "team": "MIN",
+    "avg_points": 6.5,
+    "games_played": 34,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Kathryn Westbeld",
+    "team": "PHX",
+    "avg_points": 5.7,
+    "games_played": 32,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Natasha Howard",
+    "team": "IND",
+    "avg_points": 11.5,
+    "games_played": 32,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Stefanie Dolson",
+    "team": "WAS",
+    "avg_points": 3.7,
+    "games_played": 34,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Dearica Hamby",
+    "team": "LAS",
+    "avg_points": 17.7,
+    "games_played": 32,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Dearica Hamby",
+    "team": "LAS",
+    "avg_points": 17.7,
+    "games_played": 32,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Tina Charles",
+    "team": "CON",
+    "avg_points": 15.9,
+    "games_played": 30,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Tina Charles",
+    "team": "CON",
+    "avg_points": 15.9,
+    "games_played": 30,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Rickea Jackson",
+    "team": "LAS",
+    "avg_points": 14.2,
+    "games_played": 27,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Rickea Jackson",
+    "team": "LAS",
+    "avg_points": 14.2,
+    "games_played": 27,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Rickea Jackson",
+    "team": "LAS",
+    "avg_points": 14.2,
+    "games_played": 27,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Shakira Austin",
+    "team": "WAS",
+    "avg_points": 12.5,
+    "games_played": 27,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Shakira Austin",
+    "team": "WAS",
+    "avg_points": 12.5,
+    "games_played": 27,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Natasha Howard",
+    "team": "IND",
+    "avg_points": 11.5,
+    "games_played": 33,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Natasha Howard",
+    "team": "IND",
+    "avg_points": 11.5,
+    "games_played": 33,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Sophie Cunningham",
+    "team": "IND",
+    "avg_points": 8.9,
+    "games_played": 28,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Sophie Cunningham",
+    "team": "IND",
+    "avg_points": 8.9,
+    "games_played": 28,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Dearica Hamby",
+    "team": "LAS",
+    "avg_points": 17.7,
+    "games_played": 32,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Tina Charles",
+    "team": "CON",
+    "avg_points": 15.9,
+    "games_played": 30,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Sami Whitcomb",
+    "team": "PHX",
+    "avg_points": 9.7,
+    "games_played": 30,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Sami Whitcomb",
+    "team": "PHX",
+    "avg_points": 9.7,
+    "games_played": 30,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Alanna Smith",
+    "team": "MIN",
+    "avg_points": 9.8,
+    "games_played": 31,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Alanna Smith",
+    "team": "MIN",
+    "avg_points": 9.8,
+    "games_played": 31,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Sonia Citron",
+    "team": "WAS",
+    "avg_points": 14.8,
+    "games_played": 31,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Sonia Citron",
+    "team": "WAS",
+    "avg_points": 14.8,
+    "games_played": 31,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Sonia Citron",
+    "team": "WAS",
+    "avg_points": 14.8,
+    "games_played": 31,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Dearica Hamby",
+    "team": "LAS",
+    "avg_points": 17.7,
+    "games_played": 32,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Dearica Hamby",
+    "team": "LAS",
+    "avg_points": 17.7,
+    "games_played": 32,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Tina Charles",
+    "team": "CON",
+    "avg_points": 15.9,
+    "games_played": 30,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Tina Charles",
+    "team": "CON",
+    "avg_points": 15.9,
+    "games_played": 30,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Sonia Citron",
+    "team": "WAS",
+    "avg_points": 14.8,
+    "games_played": 31,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Sonia Citron",
+    "team": "WAS",
+    "avg_points": 14.8,
+    "games_played": 31,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Rickea Jackson",
+    "team": "LAS",
+    "avg_points": 14.2,
+    "games_played": 27,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Rickea Jackson",
+    "team": "LAS",
+    "avg_points": 14.2,
+    "games_played": 27,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Shakira Austin",
+    "team": "WAS",
+    "avg_points": 12.5,
+    "games_played": 27,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Shakira Austin",
+    "team": "WAS",
+    "avg_points": 12.5,
+    "games_played": 27,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Natasha Howard",
+    "team": "IND",
+    "avg_points": 11.5,
+    "games_played": 33,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Natasha Howard",
+    "team": "IND",
+    "avg_points": 11.5,
+    "games_played": 33,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Natasha Howard",
+    "team": "IND",
+    "avg_points": 11.5,
+    "games_played": 33,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Sophie Cunningham",
+    "team": "IND",
+    "avg_points": 8.9,
+    "games_played": 28,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Sophie Cunningham",
+    "team": "IND",
+    "avg_points": 8.9,
+    "games_played": 28,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Sophie Cunningham",
+    "team": "IND",
+    "avg_points": 8.9,
+    "games_played": 28,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Rickea Jackson",
+    "team": "LAS",
+    "avg_points": 13.9,
+    "games_played": 22,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Sami Whitcomb",
+    "team": "PHX",
+    "avg_points": 9.7,
+    "games_played": 30,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Sami Whitcomb",
+    "team": "PHX",
+    "avg_points": 9.7,
+    "games_played": 30,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Sami Whitcomb",
+    "team": "PHX",
+    "avg_points": 9.7,
+    "games_played": 30,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Alanna Smith",
+    "team": "MIN",
+    "avg_points": 9.8,
+    "games_played": 31,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Alanna Smith",
+    "team": "MIN",
+    "avg_points": 9.8,
+    "games_played": 31,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Alanna Smith",
+    "team": "MIN",
+    "avg_points": 9.8,
+    "games_played": 31,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Angel Reese",
+    "team": "CHI",
+    "avg_points": 14.2,
+    "games_played": 23,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Dearica Hamby",
+    "team": "LAS",
+    "avg_points": 17.7,
+    "games_played": 32,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Dearica Hamby",
+    "team": "LAS",
+    "avg_points": 17.7,
+    "games_played": 32,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Tina Charles",
+    "team": "CON",
+    "avg_points": 15.9,
+    "games_played": 30,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Tina Charles",
+    "team": "CON",
+    "avg_points": 15.9,
+    "games_played": 30,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Rickea Jackson",
+    "team": "LAS",
+    "avg_points": 14.2,
+    "games_played": 27,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Rickea Jackson",
+    "team": "LAS",
+    "avg_points": 14.2,
+    "games_played": 27,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Shakira Austin",
+    "team": "WAS",
+    "avg_points": 12.5,
+    "games_played": 27,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Shakira Austin",
+    "team": "WAS",
+    "avg_points": 12.5,
+    "games_played": 27,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Natasha Howard",
+    "team": "IND",
+    "avg_points": 11.5,
+    "games_played": 33,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Natasha Howard",
+    "team": "IND",
+    "avg_points": 11.5,
+    "games_played": 33,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Sophie Cunningham",
+    "team": "IND",
+    "avg_points": 8.9,
+    "games_played": 28,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Sophie Cunningham",
+    "team": "IND",
+    "avg_points": 8.9,
+    "games_played": 28,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Dearica Hamby",
+    "team": "LAS",
+    "avg_points": 17.7,
+    "games_played": 32,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Tina Charles",
+    "team": "CON",
+    "avg_points": 15.9,
+    "games_played": 30,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Sami Whitcomb",
+    "team": "PHX",
+    "avg_points": 9.7,
+    "games_played": 30,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Sami Whitcomb",
+    "team": "PHX",
+    "avg_points": 9.7,
+    "games_played": 30,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Alanna Smith",
+    "team": "MIN",
+    "avg_points": 9.8,
+    "games_played": 31,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Alanna Smith",
+    "team": "MIN",
+    "avg_points": 9.8,
+    "games_played": 31,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Sonia Citron",
+    "team": "WAS",
+    "avg_points": 14.8,
+    "games_played": 31,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Sonia Citron",
+    "team": "WAS",
+    "avg_points": 14.8,
+    "games_played": 31,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Sonia Citron",
+    "team": "WAS",
+    "avg_points": 14.8,
+    "games_played": 31,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Dearica Hamby",
+    "team": "LAS",
+    "avg_points": 17.7,
+    "games_played": 32,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Dearica Hamby",
+    "team": "LAS",
+    "avg_points": 17.7,
+    "games_played": 32,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Tina Charles",
+    "team": "CON",
+    "avg_points": 15.9,
+    "games_played": 30,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Tina Charles",
+    "team": "CON",
+    "avg_points": 15.9,
+    "games_played": 30,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Rickea Jackson",
+    "team": "LAS",
+    "avg_points": 14.2,
+    "games_played": 27,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Rickea Jackson",
+    "team": "LAS",
+    "avg_points": 14.2,
+    "games_played": 27,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Shakira Austin",
+    "team": "WAS",
+    "avg_points": 12.5,
+    "games_played": 27,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Shakira Austin",
+    "team": "WAS",
+    "avg_points": 12.5,
+    "games_played": 27,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Shakira Austin",
+    "team": "WAS",
+    "avg_points": 12.5,
+    "games_played": 27,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Natasha Howard",
+    "team": "IND",
+    "avg_points": 11.5,
+    "games_played": 33,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Natasha Howard",
+    "team": "IND",
+    "avg_points": 11.5,
+    "games_played": 33,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Sophie Cunningham",
+    "team": "IND",
+    "avg_points": 8.9,
+    "games_played": 28,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Sophie Cunningham",
+    "team": "IND",
+    "avg_points": 8.9,
+    "games_played": 28,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Sonia Citron",
+    "team": "WAS",
+    "avg_points": 14.8,
+    "games_played": 31,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Sonia Citron",
+    "team": "WAS",
+    "avg_points": 14.8,
+    "games_played": 31,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Rickea Jackson",
+    "team": "LAS",
+    "avg_points": 14.2,
+    "games_played": 27,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Sami Whitcomb",
+    "team": "PHX",
+    "avg_points": 9.7,
+    "games_played": 30,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Alanna Smith",
+    "team": "MIN",
+    "avg_points": 9.8,
+    "games_played": 31,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Sami Whitcomb",
+    "team": "PHX",
+    "avg_points": 9.7,
+    "games_played": 30,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Sami Whitcomb",
+    "team": "PHX",
+    "avg_points": 9.7,
+    "games_played": 30,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Alanna Smith",
+    "team": "MIN",
+    "avg_points": 9.8,
+    "games_played": 31,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Alanna Smith",
+    "team": "MIN",
+    "avg_points": 9.8,
+    "games_played": 31,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Angel Reese",
+    "team": "CHI",
+    "avg_points": 14.2,
+    "games_played": 23,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Shakira Austin",
+    "team": "WAS",
+    "avg_points": 12.5,
+    "games_played": 27,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Damiris Dantas",
+    "team": "IND",
+    "avg_points": 4.6,
+    "games_played": 20,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Damiris Dantas",
+    "team": "IND",
+    "avg_points": 4.8,
+    "games_played": 29,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Damiris Dantas",
+    "team": "IND",
+    "avg_points": 4.8,
+    "games_played": 29,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Damiris Dantas",
+    "team": "IND",
+    "avg_points": 4.8,
+    "games_played": 29,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Shakira Austin",
+    "team": "WAS",
+    "avg_points": 12.5,
+    "games_played": 27,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Shakira Austin",
+    "team": "WAS",
+    "avg_points": 12.5,
+    "games_played": 27,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Sophie Cunningham",
+    "team": "IND",
+    "avg_points": 8.9,
+    "games_played": 28,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Dearica Hamby",
+    "team": "LAS",
+    "avg_points": 17.6,
+    "games_played": 30,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Dearica Hamby",
+    "team": "LAS",
+    "avg_points": 17.6,
+    "games_played": 31,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Dearica Hamby",
+    "team": "LAS",
+    "avg_points": 17.6,
+    "games_played": 31,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Dearica Hamby",
+    "team": "LAS",
+    "avg_points": 17.7,
+    "games_played": 32,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Dearica Hamby",
+    "team": "LAS",
+    "avg_points": 17.7,
+    "games_played": 32,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Tina Charles",
+    "team": "CON",
+    "avg_points": 15.9,
+    "games_played": 30,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Tina Charles",
+    "team": "CON",
+    "avg_points": 15.9,
+    "games_played": 30,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Sonia Citron",
+    "team": "WAS",
+    "avg_points": 14.8,
+    "games_played": 31,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Rickea Jackson",
+    "team": "LAS",
+    "avg_points": 14.2,
+    "games_played": 27,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Rickea Jackson",
+    "team": "LAS",
+    "avg_points": 14.2,
+    "games_played": 27,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Shakira Austin",
+    "team": "WAS",
+    "avg_points": 12.5,
+    "games_played": 27,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Shakira Austin",
+    "team": "WAS",
+    "avg_points": 12.5,
+    "games_played": 27,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Natasha Howard",
+    "team": "IND",
+    "avg_points": 11.5,
+    "games_played": 33,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Natasha Howard",
+    "team": "IND",
+    "avg_points": 11.5,
+    "games_played": 33,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Sophie Cunningham",
+    "team": "IND",
+    "avg_points": 8.9,
+    "games_played": 28,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Sophie Cunningham",
+    "team": "IND",
+    "avg_points": 8.9,
+    "games_played": 28,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Sonia Citron",
+    "team": "WAS",
+    "avg_points": 14.8,
+    "games_played": 31,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Natasha Howard",
+    "team": "IND",
+    "avg_points": 11.5,
+    "games_played": 33,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Sami Whitcomb",
+    "team": "PHX",
+    "avg_points": 9.7,
+    "games_played": 30,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Sami Whitcomb",
+    "team": "PHX",
+    "avg_points": 9.7,
+    "games_played": 30,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Alanna Smith",
+    "team": "MIN",
+    "avg_points": 9.8,
+    "games_played": 31,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Alanna Smith",
+    "team": "MIN",
+    "avg_points": 9.8,
+    "games_played": 31,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Aari McDonald",
+    "team": "IND",
+    "avg_points": 9.8,
+    "games_played": 20,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Lexie Hull",
+    "team": "IND",
+    "avg_points": 6.6,
+    "games_played": 33,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Kathryn Westbeld",
+    "team": "PHX",
+    "avg_points": 5.8,
+    "games_played": 30,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Brianna Turner",
+    "team": "IND",
+    "avg_points": 0.5,
+    "games_played": 17,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Shakira Austin",
+    "team": "WAS",
+    "avg_points": 12.5,
+    "games_played": 27,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Dearica Hamby",
+    "team": "LAS",
+    "avg_points": 17.7,
+    "games_played": 32,
+    "has_game_logs": true
+  },
+  {
+    "player_name": "Tina Charles",
+    "team": "CON",
+    "avg_points": 15.9,
+    "games_played": 30,
+    "has_game_logs": true
+  }
+]

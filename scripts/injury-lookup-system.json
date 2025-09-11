@@ -1,0 +1,386 @@
+{
+  "Jordin Canada": {
+    "status": "Out",
+    "injury": "Hamstring",
+    "severity": 1,
+    "team": "ATL",
+    "expected_return": "2025-09-01",
+    "last_updated": "2025-08-25T19:48:58.352+00:00"
+  },
+  "ATL": [
+    {
+      "player_name": "Jordin Canada",
+      "status": "Out",
+      "injury": "Hamstring",
+      "severity": 1
+    }
+  ],
+  "Ariel Atkins": {
+    "status": "Day-to-Day",
+    "injury": "Leg",
+    "severity": 0.4,
+    "team": "CHI",
+    "expected_return": "2025-08-25",
+    "last_updated": "2025-08-25T19:48:58.352+00:00"
+  },
+  "CHI": [
+    {
+      "player_name": "Ariel Atkins",
+      "status": "Day-to-Day",
+      "injury": "Leg",
+      "severity": 0.4
+    },
+    {
+      "player_name": "Courtney Vandersloot",
+      "status": "Out",
+      "injury": "Knee",
+      "severity": 1
+    }
+  ],
+  "Courtney Vandersloot": {
+    "status": "Out",
+    "injury": "Knee",
+    "severity": 1,
+    "team": "CHI",
+    "expected_return": "2026-05-01",
+    "last_updated": "2025-08-25T19:48:58.352+00:00"
+  },
+  "Rayah Marshall": {
+    "status": "Out",
+    "injury": "Personal",
+    "severity": 1,
+    "team": "CONN",
+    "expected_return": "2025-08-27",
+    "last_updated": "2025-08-25T19:48:58.352+00:00"
+  },
+  "CONN": [
+    {
+      "player_name": "Rayah Marshall",
+      "status": "Out",
+      "injury": "Personal",
+      "severity": 1
+    },
+    {
+      "player_name": "Leila Lacan",
+      "status": "Day-to-Day",
+      "injury": "Eye",
+      "severity": 0.4
+    }
+  ],
+  "Leila Lacan": {
+    "status": "Day-to-Day",
+    "injury": "Eye",
+    "severity": 0.4,
+    "team": "CONN",
+    "expected_return": "2025-08-25",
+    "last_updated": "2025-08-25T19:48:58.352+00:00"
+  },
+  "JJ Quinerly": {
+    "status": "Out",
+    "injury": "Knee",
+    "severity": 1,
+    "team": "DAL",
+    "expected_return": "2026-05-01",
+    "last_updated": "2025-08-25T19:48:58.352+00:00"
+  },
+  "DAL": [
+    {
+      "player_name": "JJ Quinerly",
+      "status": "Out",
+      "injury": "Knee",
+      "severity": 1
+    },
+    {
+      "player_name": "Arike Ogunbowale",
+      "status": "Out",
+      "injury": "Knee",
+      "severity": 1
+    },
+    {
+      "player_name": "Li Yueru",
+      "status": "Out",
+      "injury": "Knee",
+      "severity": 1
+    },
+    {
+      "player_name": "Tyasha Harris",
+      "status": "Out",
+      "injury": "Knee",
+      "severity": 1
+    }
+  ],
+  "Arike Ogunbowale": {
+    "status": "Out",
+    "injury": "Knee",
+    "severity": 1,
+    "team": "DAL",
+    "expected_return": "2025-09-01",
+    "last_updated": "2025-08-25T19:48:58.352+00:00"
+  },
+  "Li Yueru": {
+    "status": "Out",
+    "injury": "Knee",
+    "severity": 1,
+    "team": "DAL",
+    "expected_return": "2026-05-01",
+    "last_updated": "2025-08-25T19:48:58.352+00:00"
+  },
+  "Tyasha Harris": {
+    "status": "Out",
+    "injury": "Knee",
+    "severity": 1,
+    "team": "DAL",
+    "expected_return": "2026-05-01",
+    "last_updated": "2025-08-25T19:48:58.352+00:00"
+  },
+  "Carla Leite": {
+    "status": "Day-to-Day",
+    "injury": "Ankle",
+    "severity": 0.4,
+    "team": "GS",
+    "expected_return": "2025-08-30",
+    "last_updated": "2025-08-25T19:48:58.352+00:00"
+  },
+  "GS": [
+    {
+      "player_name": "Carla Leite",
+      "status": "Day-to-Day",
+      "injury": "Ankle",
+      "severity": 0.4
+    },
+    {
+      "player_name": "Tiffany Hayes",
+      "status": "Day-to-Day",
+      "injury": "Knee",
+      "severity": 0.4
+    },
+    {
+      "player_name": "Monique Billings",
+      "status": "Out",
+      "injury": "Ankle",
+      "severity": 1
+    },
+    {
+      "player_name": "Cecilia Zandalasini",
+      "status": "Out",
+      "injury": "Calf",
+      "severity": 1
+    },
+    {
+      "player_name": "Kayla Thornton",
+      "status": "Out",
+      "injury": "Knee",
+      "severity": 1
+    }
+  ],
+  "Tiffany Hayes": {
+    "status": "Day-to-Day",
+    "injury": "Knee",
+    "severity": 0.4,
+    "team": "GS",
+    "expected_return": "2025-08-30",
+    "last_updated": "2025-08-25T19:48:58.352+00:00"
+  },
+  "Monique Billings": {
+    "status": "Out",
+    "injury": "Ankle",
+    "severity": 1,
+    "team": "GS",
+    "expected_return": "2025-08-30",
+    "last_updated": "2025-08-25T19:48:58.352+00:00"
+  },
+  "Cecilia Zandalasini": {
+    "status": "Out",
+    "injury": "Calf",
+    "severity": 1,
+    "team": "GS",
+    "expected_return": "2025-08-30",
+    "last_updated": "2025-08-25T19:48:58.352+00:00"
+  },
+  "Kayla Thornton": {
+    "status": "Out",
+    "injury": "Knee",
+    "severity": 1,
+    "team": "GS",
+    "expected_return": "2026-05-01",
+    "last_updated": "2025-08-25T19:48:58.352+00:00"
+  },
+  "Chloe Bibby": {
+    "status": "Day-to-Day",
+    "injury": "Knee",
+    "severity": 0.4,
+    "team": "IND",
+    "expected_return": "2025-08-26",
+    "last_updated": "2025-08-25T19:48:58.352+00:00"
+  },
+  "IND": [
+    {
+      "player_name": "Chloe Bibby",
+      "status": "Day-to-Day",
+      "injury": "Knee",
+      "severity": 0.4
+    },
+    {
+      "player_name": "Caitlin Clark",
+      "status": "Out",
+      "injury": "Groin",
+      "severity": 1
+    },
+    {
+      "player_name": "Sophie Cunningham",
+      "status": "Out",
+      "injury": "Knee",
+      "severity": 1
+    },
+    {
+      "player_name": "Sydney Colson",
+      "status": "Out",
+      "injury": "Knee",
+      "severity": 1
+    },
+    {
+      "player_name": "Aari McDonald",
+      "status": "Out",
+      "injury": "Foot",
+      "severity": 1
+    }
+  ],
+  "Caitlin Clark": {
+    "status": "Out",
+    "injury": "Groin",
+    "severity": 1,
+    "team": "IND",
+    "expected_return": "2025-09-02",
+    "last_updated": "2025-08-25T19:48:58.352+00:00"
+  },
+  "Sophie Cunningham": {
+    "status": "Out",
+    "injury": "Knee",
+    "severity": 1,
+    "team": "IND",
+    "expected_return": "2026-05-01",
+    "last_updated": "2025-08-25T19:48:58.352+00:00"
+  },
+  "Sydney Colson": {
+    "status": "Out",
+    "injury": "Knee",
+    "severity": 1,
+    "team": "IND",
+    "expected_return": "2026-05-01",
+    "last_updated": "2025-08-25T19:48:58.352+00:00"
+  },
+  "Aari McDonald": {
+    "status": "Out",
+    "injury": "Foot",
+    "severity": 1,
+    "team": "IND",
+    "expected_return": "2026-05-01",
+    "last_updated": "2025-08-25T19:48:58.352+00:00"
+  },
+  "Cheyenne Parker-Tyus": {
+    "status": "Out",
+    "injury": "Not Injury Related",
+    "severity": 1,
+    "team": "LVA",
+    "expected_return": "2025-09-04",
+    "last_updated": "2025-08-25T19:48:58.352+00:00"
+  },
+  "LVA": [
+    {
+      "player_name": "Cheyenne Parker-Tyus",
+      "status": "Out",
+      "injury": "Not Injury Related",
+      "severity": 1
+    }
+  ],
+  "Isabelle Harrison": {
+    "status": "Out",
+    "injury": "Concussion",
+    "severity": 1,
+    "team": "NYL",
+    "expected_return": "2025-08-25",
+    "last_updated": "2025-08-25T19:48:58.352+00:00"
+  },
+  "NYL": [
+    {
+      "player_name": "Isabelle Harrison",
+      "status": "Out",
+      "injury": "Concussion",
+      "severity": 1
+    },
+    {
+      "player_name": "Natasha Cloud",
+      "status": "Day-to-Day",
+      "injury": "Nose",
+      "severity": 0.4
+    },
+    {
+      "player_name": "Nyara Sabally",
+      "status": "Out",
+      "injury": "Knee",
+      "severity": 1
+    }
+  ],
+  "Natasha Cloud": {
+    "status": "Day-to-Day",
+    "injury": "Nose",
+    "severity": 0.4,
+    "team": "NYL",
+    "expected_return": "2025-08-25",
+    "last_updated": "2025-08-25T19:48:58.352+00:00"
+  },
+  "Nyara Sabally": {
+    "status": "Out",
+    "injury": "Knee",
+    "severity": 1,
+    "team": "NYL",
+    "expected_return": "2025-08-30",
+    "last_updated": "2025-08-25T19:48:58.352+00:00"
+  },
+  "Katie Lou Samuelson": {
+    "status": "Out",
+    "injury": "Knee",
+    "severity": 1,
+    "team": "SEA",
+    "expected_return": "2026-05-01",
+    "last_updated": "2025-08-25T19:48:58.352+00:00"
+  },
+  "SEA": [
+    {
+      "player_name": "Katie Lou Samuelson",
+      "status": "Out",
+      "injury": "Knee",
+      "severity": 1
+    }
+  ],
+  "Jacy Sheldon": {
+    "status": "Out",
+    "injury": "Ankle",
+    "severity": 1,
+    "team": "WAS",
+    "expected_return": "2025-08-28",
+    "last_updated": "2025-08-25T19:48:58.352+00:00"
+  },
+  "WAS": [
+    {
+      "player_name": "Jacy Sheldon",
+      "status": "Out",
+      "injury": "Ankle",
+      "severity": 1
+    },
+    {
+      "player_name": "Georgia Amoore",
+      "status": "Out",
+      "injury": "Knee",
+      "severity": 1
+    }
+  ],
+  "Georgia Amoore": {
+    "status": "Out",
+    "injury": "Knee",
+    "severity": 1,
+    "team": "WAS",
+    "expected_return": "2026-05-01",
+    "last_updated": "2025-08-25T19:48:58.352+00:00"
+  }
+}

@@ -1,0 +1,830 @@
+@import url('https://fonts.googleapis.com/css2?family=Lexend:wght@400;500;700;900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Lexend Font */
+.lexend-regular {
+  font-family: "Lexend", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+/* Custom global styles migrated from global.scss */
+body, html {
+  min-height: 100vh;
+  height: auto;
+  font-family: 'Lexend', Arial, Helvetica, sans-serif;
+  background: #181C24;
+  background-attachment: initial;
+  margin: 0;
+  padding: 0;
+}
+
+/* Force header to be at the very top */
+header {
+  margin: 0 !important;
+  padding-top: 0 !important;
+  top: 0 !important;
+}
+
+/* Force dashboard heading color */
+.dashboard-heading {
+  color: #d1d5db !important;
+}
+
+/* Tomorrow game row styling */
+.tomorrow-game-row {
+  padding-top: 10px !important;
+  padding-bottom: 10px !important;
+  max-width: 400px !important;
+  border-radius: 20px !important;
+  min-height: 40px !important;
+  height: 40px !important;
+  margin-bottom: 16px !important;
+  background: linear-gradient(135deg, #1a3d1a 0%, #2d5a2d 50%, #1a3d1a 100%) !important;
+  overflow: hidden !important;
+}
+
+/* Team logo styling */
+.tomorrow-game-row .flex.flex-col {
+  height: 100% !important;
+  justify-content: center !important;
+}
+
+.tomorrow-game-row img {
+  width: 80px !important;
+  height: 160px !important;
+  margin-top: 0 !important;
+  object-fit: contain !important;
+  opacity: 0.7 !important;
+}
+
+.tomorrow-game-row .flex.flex-col {
+  height: 100% !important;
+  justify-content: center !important;
+  overflow: hidden !important;
+  position: relative !important;
+}
+
+.tomorrow-game-row .flex.flex-col span {
+  position: absolute !important;
+  top: 50% !important;
+  left: 50% !important;
+  transform: translate(-50%, -50%) !important;
+  z-index: 10 !important;
+}
+
+/* Team logo container */
+.team-logo-container {
+  position: relative !important;
+  width: 80px !important;
+  height: 160px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+/* Move away team logos to the left */
+.tomorrow-game-row .flex.flex-col:first-child,
+.upcoming-game-row .flex.flex-col:first-child {
+  margin-left: -15px !important;
+}
+
+/* Make VS text smaller */
+.tomorrow-game-row .text-xs,
+.upcoming-game-row .text-xs {
+  font-size: 0.75rem !important;
+}
+
+/* Blended team gradient for the entire game row */
+.tomorrow-game-row {
+  background: linear-gradient(45deg, var(--away-team-color, rgba(113, 253, 8, 1)) 0%, var(--home-team-color, rgba(113, 253, 8, 1)) 100%) !important;
+  background-size: 100% 100% !important;
+  background-position: left top !important;
+  background-repeat: no-repeat !important;
+  border: 1px solid rgba(0, 0, 0, 1) !important;
+  max-width: 400px !important;
+}
+
+/* Upcoming games styling - same as tomorrow games */
+.upcoming-game-row {
+  padding-top: 10px !important;
+  padding-bottom: 10px !important;
+  max-width: 280px !important;
+  border-radius: 20px !important;
+  min-height: 40px !important;
+  height: 40px !important;
+  margin-bottom: 16px !important;
+  background: linear-gradient(45deg, var(--away-team-color, rgba(113, 253, 8, 1)) 0%, var(--home-team-color, rgba(113, 253, 8, 1)) 100%) !important;
+  background-size: 100% 100% !important;
+  background-position: left top !important;
+  background-repeat: no-repeat !important;
+  border: 1px solid rgba(0, 0, 0, 1) !important;
+  overflow: hidden !important;
+}
+
+.upcoming-game-row .absolute {
+  position: absolute !important;
+  top: 8px !important;
+  left: 16px !important;
+  z-index: 10 !important;
+}
+
+.upcoming-game-row .flex.flex-col {
+  height: 100% !important;
+  justify-content: center !important;
+  overflow: hidden !important;
+  position: relative !important;
+}
+
+.upcoming-game-row img {
+  width: 80px !important;
+  height: 160px !important;
+  margin-top: 0 !important;
+  object-fit: contain !important;
+  opacity: 0.7 !important;
+}
+
+/* Upcoming games text styling - smaller text */
+.upcoming-game-row .text-gray-300 {
+  font-size: 0.875rem !important; /* 14px */
+  line-height: 1.25rem !important;
+}
+
+.upcoming-game-row .absolute {
+  position: absolute !important;
+  top: 8px !important;
+  left: 8px !important;
+  z-index: 10 !important;
+  font-size: 0.875rem !important; /* 14px */
+  line-height: 1.25rem !important;
+}
+
+/* Today games styling - same as tomorrow and upcoming games */
+.today-game-row {
+  padding-top: 10px !important;
+  padding-bottom: 10px !important;
+  max-width: 280px !important;
+  border-radius: 20px !important;
+  min-height: 40px !important;
+  height: 40px !important;
+  margin-bottom: 16px !important;
+  background: linear-gradient(45deg, var(--away-team-color, rgba(113, 253, 8, 1)) 0%, var(--home-team-color, rgba(113, 253, 8, 1)) 100%) !important;
+  background-size: 100% 100% !important;
+  background-position: left top !important;
+  background-repeat: no-repeat !important;
+  border: 1px solid rgba(0, 0, 0, 1) !important;
+  overflow: hidden !important;
+}
+
+.today-game-row .absolute {
+  position: absolute !important;
+  top: 8px !important;
+  left: 8px !important;
+  z-index: 10 !important;
+  font-size: 0.875rem !important; /* 14px */
+  line-height: 1.25rem !important;
+}
+
+.today-game-row .flex.flex-col {
+  height: 100% !important;
+  justify-content: center !important;
+  overflow: hidden !important;
+  position: relative !important;
+}
+
+.today-game-row img {
+  width: 80px !important;
+  height: 160px !important;
+  margin-top: 0 !important;
+  object-fit: contain !important;
+  opacity: 0.7 !important;
+}
+
+/* Move away team logos to the left for today games */
+.today-game-row .flex.flex-col:first-child {
+  margin-left: -15px !important;
+}
+
+/* Make VS text smaller for today games */
+.today-game-row .text-xs {
+  font-size: 0.75rem !important;
+}
+
+/* Add padding to Today games */
+.today-game-row {
+  margin-left: 38px !important;
+}
+
+
+/* Center the section headings */
+.upcoming-schedule-section .text-3xl {
+  text-align: center !important;
+  width: 100% !important;
+  padding-left: 0 !important;
+  margin-left: 0 !important;
+  text-transform: uppercase !important;
+  background-color: rgba(113, 253, 8, 0.8) !important;
+  color: black !important;
+  padding: 4px 12px !important;
+  border-radius: 8px !important;
+  display: inline-block !important;
+  margin-bottom: 20px !important;
+  font-weight: bold !important;
+  position: relative !important;
+  box-shadow: inset 0 0 0 2px rgba(113, 253, 8, 0.6) !important;
+}
+
+/* Rotated black squares for cut-off effect */
+.upcoming-schedule-section .text-3xl::before,
+.upcoming-schedule-section .text-3xl::after {
+  content: '' !important;
+  position: absolute !important;
+  width: 16px !important;
+  height: 16px !important;
+  background: linear-gradient(135deg, #111827 0%, #000000 50%, #111827 100%) !important;
+  transform: rotate(45deg) !important;
+  top: 50% !important;
+  transform: translateY(-50%) rotate(45deg) !important;
+}
+
+/* Today's cut-off squares should be solid black */
+.upcoming-schedule-section > div:first-child .text-3xl::before,
+.upcoming-schedule-section > div:first-child .text-3xl::after {
+  background: #000000 !important;
+}
+
+/* Tomorrow's cut-off squares should be solid black */
+.upcoming-schedule-section > div:nth-child(2) .text-3xl::before,
+.upcoming-schedule-section > div:nth-child(2) .text-3xl::after {
+  background: #000000 !important;
+}
+
+/* Upcoming's LEFT cut-off square should be solid black */
+.upcoming-schedule-section > div:last-child .text-3xl::before {
+  background: #000000 !important;
+}
+
+.upcoming-schedule-section .text-3xl::before {
+  left: -6px !important;
+}
+
+.upcoming-schedule-section .text-3xl::after {
+  right: -6px !important;
+}
+
+/* Reduce Tomorrow heading background width */
+.upcoming-schedule-section > div:nth-child(2) .text-3xl {
+  width: 280px !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  display: block !important;
+}
+
+/* Move Tomorrow games to the left */
+.upcoming-schedule-section > div:nth-child(2) .tomorrow-game-row {
+  margin-left: -18px !important;
+}
+
+/* Move Upcoming games to the right */
+.upcoming-schedule-section > div:last-child .upcoming-game-row {
+  margin-right: 0px !important;
+}
+
+/* Make Upcoming heading match Tomorrow properties */
+.upcoming-schedule-section > div:last-child .text-3xl {
+  width: 280px !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  display: block !important;
+  transform: translateX(10px) !important;
+}
+
+/* Make Today heading match Tomorrow properties */
+.upcoming-schedule-section > div:first-child .text-3xl {
+  width: 280px !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  display: block !important;
+  transform: translateX(10px) !important;
+}
+
+/* Center Tomorrow column content */
+.upcoming-schedule-section > div:nth-child(2) {
+  text-align: center !important;
+}
+
+/* Add padding to left and right columns */
+.upcoming-schedule-section > div:first-child {
+  padding-left: 40px !important;
+}
+
+.upcoming-schedule-section > div:last-child {
+  padding-right: 95px !important;
+}
+
+/* Move Upcoming games further right */
+.upcoming-schedule-section > div:last-child .upcoming-game-row {
+  margin-right: 5px !important;
+}
+
+/* Time positioning */
+.tomorrow-game-row .absolute {
+  position: absolute !important;
+  top: 8px !important;
+  left: 8px !important;
+  z-index: 10 !important;
+  font-size: 0.875rem !important; /* 14px */
+  line-height: 1.25rem !important;
+}
+
+
+
+/* Team color glow effect for dashboard cards */
+.team-glow-hover {
+  transition: all 0.3s ease;
+}
+
+.team-glow-hover:hover {
+  box-shadow: 
+    0 0 20px var(--team-glow-color, rgba(255, 255, 255, 0.15)),
+    0 0 40px var(--team-glow-color-secondary, rgba(255, 255, 255, 0.08)),
+    0 0 60px var(--team-glow-color-tertiary, rgba(255, 255, 255, 0.03)) !important;
+}
+
+/* Remove border background from X button */
+.team-glow-hover button {
+  background: transparent !important;
+  background-color: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  outline: none !important;
+  -webkit-appearance: none !important;
+  -moz-appearance: none !important;
+  appearance: none !important;
+}
+
+.team-glow-hover button:hover {
+  background: transparent !important;
+  background-color: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  outline: none !important;
+  -webkit-appearance: none !important;
+  -moz-appearance: none !important;
+  appearance: none !important;
+}
+
+.team-glow-hover button:focus {
+  background: transparent !important;
+  background-color: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  outline: none !important;
+  -webkit-appearance: none !important;
+  -moz-appearance: none !important;
+  appearance: none !important;
+}
+
+.team-glow-hover button:active {
+  background: transparent !important;
+  background-color: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  outline: none !important;
+  -webkit-appearance: none !important;
+  -moz-appearance: none !important;
+  appearance: none !important;
+}
+
+.nextgenhoops-title {
+  font-size: 4rem;
+  line-height: 1.1;
+  letter-spacing: -0.04em;
+  font-weight: 900;
+  color: #71FD08;
+  border: none;
+  display: block;
+  font-family: 'Lexend', Arial, Helvetica, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+@media (min-width: 640px) {
+  .nextgenhoops-title {
+    font-size: 6rem;
+  }
+}
+
+.animate-fade-in-out {
+  animation: fadeInOut 3s ease-in-out;
+}
+@keyframes fadeInOut {
+  0% { opacity: 0; }
+  15% { opacity: 1; }
+  85% { opacity: 1; }
+  100% { opacity: 0; }
+}
+
+.animated-bg {
+  background: linear-gradient(-45deg, #f97316, #6366f1, #3b82f6, #f43f5e);
+  background-size: 400% 400%;
+  animation: gradientMove 15s ease infinite;
+}
+@keyframes gradientMove {
+  0% {background-position: 0% 50%;}
+  50% {background-position: 100% 50%;}
+  100% {background-position: 0% 50%;}
+}
+
+/* Header navigation styles - more targeted */
+header nav a {
+  color: #fff;
+  text-decoration: none;
+  transition: color 0.2s, transform 0.2s, box-shadow 0.2s;
+  position: relative;
+  font-size: 1.125rem;
+  font-weight: 700;
+}
+
+header nav a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  width: 100%;
+  height: 2px;
+  background: #71FD08;
+  border-radius: 1px;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.25s cubic-bezier(0.4,0,0.2,1);
+  z-index: 1;
+}
+
+header nav a:hover, 
+header nav a:active, 
+header nav a:focus {
+  text-decoration: none;
+  color: #71FD08;
+  transform: translateY(-6px) scale(1.07);
+  text-shadow: none;
+  box-shadow: none;
+  background: none;
+  outline: none;
+  border: none;
+}
+
+header nav a:hover::after, 
+header nav a:active::after, 
+header nav a:focus::after {
+  transform: scaleX(1);
+}
+
+.not-allowed {
+  cursor: not-allowed;
+}
+
+.not-allowed:hover, 
+.not-allowed:active, 
+.not-allowed:focus {
+  color: #f44336;
+}
+
+.not-allowed::after {
+  background: transparent;
+}
+
+.not-allowed:hover::after,
+.not-allowed:active::after,
+.not-allowed:focus::after {
+  background: #ff4444;
+  transform: scaleX(1);
+}
+
+/* Red animated line for non-accessible projections link */
+header nav a[href="#"]:hover::after,
+header nav a[href="#"]:active::after,
+header nav a[href="#"]:focus::after {
+  background: #ff4444;
+  transform: scaleX(1);
+}
+
+@keyframes shake {
+  0% { transform: translateX(0); }
+  20% { transform: translateX(-4px); }
+  40% { transform: translateX(4px); }
+  60% { transform: translateX(-4px); }
+  80% { transform: translateX(4px); }
+  100% { transform: translateX(0); }
+}
+
+header nav {
+  padding-right: 60px;
+}
+
+.nav-link {
+  color: #fff;
+  text-decoration: none;
+  transition: color 0.2s, transform 0.2s, box-shadow 0.2s;
+  position: relative;
+  font-size: 1.125rem;
+  font-weight: 700;
+  background: transparent;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 0.25rem 0.5rem;
+  user-select: none;
+  white-space: nowrap;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  width: 100%;
+  height: 2px;
+  background: #71FD08;
+  border-radius: 1px;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.25s cubic-bezier(0.4,0,0.2,1);
+  z-index: 1;
+}
+
+.nav-link:hover,
+.nav-link:active,
+.nav-link:focus {
+  color: #71FD08;
+  transform: translateY(-6px) scale(1.07);
+  background: none;
+  outline: none;
+  border: none;
+}
+
+.nav-link:hover::after,
+.nav-link:active::after,
+.nav-link:focus::after {
+  transform: scaleX(1);
+}
+
+.beveled-embossed {
+  text-shadow:
+    1px 1px 2px #fff, /* top-left highlight */
+    -1px -1px 2px #bbb, /* bottom-right highlight */
+    2px 2px 6px rgba(0,0,0,0.18), /* soft shadow */
+    0 8px 32px rgba(0,0,0,0.13),
+    0 2px 0 rgba(0,0,0,0.18);
+}
+
+@keyframes slideInLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-60px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.slide-in-left {
+  animation: slideInLeft 2s cubic-bezier(0.23, 1, 0.32, 1) both;
+}
+
+.shimmer-btn {
+  position: relative;
+  overflow: hidden;
+}
+
+.shimmer-btn::after {
+  content: '';
+  position: absolute;
+  top: 0; left: -75%;
+  width: 50%; height: 100%;
+  background: linear-gradient(120deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0.45) 50%, rgba(255,255,255,0) 100%);
+  transform: skewX(-20deg);
+  transition: none;
+  pointer-events: none;
+}
+
+.shimmer-btn:hover::after {
+  animation: shimmer-move 1.1s linear 1;
+}
+
+@keyframes shimmer-move {
+  0% { left: -75%; }
+  100% { left: 120%; }
+} 
+
+.animated-gradient {
+  background: linear-gradient(90deg, #71FD08 0%, #3b82f6 100%);
+  background-size: 200% 200%;
+  animation: gradient-move 5s linear infinite;
+}
+
+@keyframes gradient-move {
+  0% { background-position: 0% 50%; }
+  100% { background-position: 100% 50%; }
+} 
+
+.animated-gradient.gradient-text {
+  position: relative;
+  color: transparent;
+  z-index: 1;
+}
+
+.animated-gradient.gradient-text::before {
+  content: attr(data-text);
+  position: absolute;
+  left: 0; top: 0; width: 100%; height: 100%;
+  background: linear-gradient(90deg, #f97316, #6366f1, #71FD08, #f43f5e);
+  background-size: 300% 300%;
+  animation: gradient-move 8s linear infinite normal;
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
+  z-index: 2;
+  pointer-events: none;
+} 
+
+.nextgen-outline {
+  -webkit-text-stroke: 2px #111;
+  text-stroke: 2px #111;
+}
+
+.nextgen-outline-wrapper {
+  position: relative;
+  display: inline-block;
+}
+
+.nextgen-outline-text {
+  color: #111;
+  position: absolute;
+  left: 0; top: 0;
+  z-index: 1;
+  -webkit-text-stroke: 2px #111;
+  text-stroke: 2px #111;
+  pointer-events: none;
+} 
+
+.home-bg-image {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  opacity: 0.25;
+  background: url('/gradient.jpg') center center / cover no-repeat;
+  pointer-events: none;
+  filter: grayscale(1);
+} 
+
+.home-bg-green-tint {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+  background: rgba(113, 253, 8, 0.2); /* #71FD08 with 20% opacity */
+  pointer-events: none;
+  mix-blend-mode: color;
+}
+
+/* Dashboard specific styles to override home background */
+.dashboard-page .home-bg-image,
+.dashboard-page .home-bg-green-tint,
+.dashboard-page .home-bg-darken {
+  display: none !important;
+}
+
+/* Ensure dashboard has proper background */
+.dashboard-page {
+  background: linear-gradient(135deg, #111827 0%, #000000 50%, #111827 100%) !important;
+  position: relative !important;
+  z-index: 1 !important;
+}
+
+/* Don't override positioning for specific elements that need absolute positioning */
+.dashboard-page button.absolute,
+.dashboard-page .absolute {
+  position: absolute !important;
+}
+
+/* Ensure the remove button stays in the top right */
+.dashboard-page .team-glow-hover button {
+  position: absolute !important;
+  top: 7px !important;
+  right: 12px !important;
+  z-index: 30 !important;
+} 
+
+@font-face {
+  font-family: 'Highrise Demo';
+  src: url('/Users/simp/Library/fonts/HighriseFont-Demo-Regular.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+} 
+
+/* Ensure white text is visible on projections page - using inline styles instead of !important */
+/* Remove default dropdown styling - HIGH PRIORITY */
+.projections-page select,
+.projections-page select *,
+.projections-page select option,
+.projections-page select::-webkit-listbox,
+.projections-page select::-webkit-dropdown,
+.projections-page select::-webkit-select {
+  background-image: none !important;
+  background-repeat: no-repeat !important;
+  background-position: right center !important;
+  background-size: auto !important;
+  -webkit-appearance: none !important;
+  -moz-appearance: none !important;
+  appearance: none !important;
+}
+
+.projections-page select::-ms-expand {
+  display: none !important;
+}
+
+/* Style the dropdown options menu - FORCE OVERRIDE */
+.projections-page select option,
+.projections-page select option *,
+.projections-page select option:hover,
+.projections-page select option:focus,
+.projections-page select option:checked,
+.projections-page select option:active {
+  background-color: #14171F !important;
+  color: #f3f3f3 !important;
+  padding: 12px 16px !important;
+  border: none !important;
+  font-family: 'Lexend', Arial, Helvetica, sans-serif !important;
+  font-size: 0.875rem !important;
+  font-weight: 500 !important;
+  cursor: pointer !important;
+  -webkit-appearance: none !important;
+  -moz-appearance: none !important;
+  appearance: none !important;
+}
+
+/* Force hover states */
+.projections-page select option:hover,
+.projections-page select option:focus,
+.projections-page select option:checked {
+  background-color: #71FD08 !important;
+  color: #000000 !important;
+  box-shadow: 0 2px 8px rgba(113, 253, 8, 0.3) !important;
+}
+
+/* Style the dropdown list container */
+.projections-page select:focus,
+.projections-page select:active {
+  outline: none !important;
+  border-color: #71FD08 !important;
+  box-shadow: 0 4px 20px rgba(113, 253, 8, 0.4), 0 4px 12px rgba(0,0,0,0.8), 0 2px 6px rgba(0,0,0,0.9) !important;
+}
+
+/* Webkit specific dropdown styling - FORCE OVERRIDE */
+.projections-page select::-webkit-listbox,
+.projections-page select::-webkit-dropdown {
+  background-color: #14171F !important;
+  border: 2px solid #71FD08 !important;
+  border-radius: 16px !important;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.8), 0 2px 6px rgba(0,0,0,0.9) !important;
+  -webkit-appearance: none !important;
+}
+
+/* Firefox specific dropdown styling */
+.projections-page select:-moz-focusring {
+  color: transparent !important;
+  text-shadow: 0 0 0 #f3f3f3 !important;
+}
+
+/* Additional specificity for stubborn browsers */
+body .projections-page select,
+html .projections-page select,
+#__next .projections-page select {
+  background-image: none !important;
+  -webkit-appearance: none !important;
+  -moz-appearance: none !important;
+  appearance: none !important;
+}
+
+.projections-page h1,
+.projections-page h2,
+.projections-page h3,
+.projections-page h4,
+.projections-page h5,
+.projections-page h6,
+.projections-page label {
+  color: #ffffff;
+} 

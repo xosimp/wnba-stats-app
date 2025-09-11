@@ -1,0 +1,810 @@
+"use client";
+
+import { useState, useEffect } from 'react';
+import { TEAMS } from '../../lib/constants/team-data';
+import { injuryAPI, Injury } from '../../lib/api/injury-api';
+
+interface Game {
+  id: string;
+  date: string;
+  completed: boolean;
+  status: {
+    state: string;
+    detail: string;
+  };
+  teams: Array<{
+    id: string;
+    abbrev: string;
+    name: string;
+    shortName: string;
+    isHome: boolean;
+    score?: number;
+    winner?: boolean;
+  }>;
+  venue: {
+    fullName: string;
+  };
+}
+
+interface ScheduleData {
+  schedule: Record<string, Game[]>;
+  totalDates: number;
+  totalGames: number;
+}
+
+interface UpcomingScheduleProps {
+  onLoadingChange?: (loading: boolean) => void;
+}
+
+export default function UpcomingSchedule({ onLoadingChange }: UpcomingScheduleProps) {
+  const [scheduleData, setScheduleData] = useState<ScheduleData | null>(null);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState<string | null>(null);
+  const [today, setToday] = useState(new Date());
+  const [tomorrow, setTomorrow] = useState(() => {
+    const tomorrowDate = new Date();
+    tomorrowDate.setDate(tomorrowDate.getDate() + 1);
+    return tomorrowDate;
+  });
+  const [flippedCards, setFlippedCards] = useState<Set<string>>(new Set());
+  const [injuries, setInjuries] = useState<Injury[]>([]);
+  const [injuriesLoading, setInjuriesLoading] = useState(false);
+
+  // Notify parent component when loading state changes
+  useEffect(() => {
+    onLoadingChange?.(loading);
+  }, [loading, onLoadingChange]);
+
+  // Add CSS animation for pulse effect and flip animation
+  useEffect(() => {
+    const style = document.createElement('style');
+    style.textContent = `
+      @keyframes pulse {
+        0%, 100% {
+          opacity: 1;
+        }
+        50% {
+          opacity: 0.5;
+        }
+      }
+      
+      .game-card {
+        position: relative;
+        width: 100%;
+        height: 120px;
+        perspective: 1000px;
+        cursor: pointer;
+        transition: transform 0.3s ease;
+      }
+      
+      .game-card:hover {
+        transform: translateY(-2px);
+      }
+      
+      .game-card-inner {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        text-align: center;
+        transition: transform 0.6s;
+        transform-style: preserve-3d;
+      }
+      
+      .game-card.flipped .game-card-inner {
+        transform: rotateY(180deg);
+      }
+      
+      .game-card-front, .game-card-back {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        backface-visibility: hidden;
+        border-radius: 12px;
+        padding: 12px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
+      
+      .game-card-back {
+        transform: rotateY(180deg);
+        background: linear-gradient(135deg, #1f2937 0%, #374151 100%);
+        border: 2px solid rgba(113, 253, 8, 0.3);
+        overflow-y: auto;
+      }
+      
+      .injury-item {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        padding: 4px 8px;
+        margin: 2px 0;
+        background: rgba(0, 0, 0, 0.3);
+        border-radius: 6px;
+        font-size: 12px;
+      }
+      
+      .injury-player {
+        font-weight: bold;
+        color: #ffffff;
+      }
+      
+      .injury-status {
+        display: flex;
+        align-items: center;
+        gap: 4px;
+      }
+      
+      .no-injuries {
+        color: #10b981;
+        font-weight: bold;
+        text-align: center;
+        padding: 20px;
+      }
+    `;
+    document.head.appendChild(style);
+    
+    return () => {
+      document.head.removeChild(style);
+    };
+  }, []);
+
+  // Calculate the date range for upcoming games (2 days starting from tomorrow)
+  const twoDaysAfterTomorrow = new Date(today);
+  twoDaysAfterTomorrow.setDate(today.getDate() + 2); // 2 days from today = 8/6
+  const threeDaysAfterToday = new Date(today);
+  threeDaysAfterToday.setDate(today.getDate() + 3); // 3 days from today = 8/7
+
+  const fetchSchedule = async () => {
+    try {
+      setLoading(true);
+      setError(null);
+
+      console.log('🔍 Fetching schedule...');
+      
+      // Get current date and next week's date
+      const today = new Date();
+      const nextWeek = new Date(today);
+      nextWeek.setDate(today.getDate() + 7);
+      
+      // Build URL with date parameters to get future games
+      const params = new URLSearchParams({
+        year: today.getFullYear().toString(),
+        month: (today.getMonth() + 1).toString().padStart(2, '0'),
+        day: today.getDate().toString().padStart(2, '0')
+      });
+      
+      const response = await fetch(`/api/schedule/lightweight?${params}`);
+      console.log('🔍 Response status:', response.status);
+      
+      if (!response.ok) {
+        throw new Error('Failed to fetch schedule');
+      }
+
+      const data: ScheduleData = await response.json();
+      
+      // Filter schedule to only include games from today to next week
+      const allGames: Game[] = [];
+      Object.values(data.schedule).forEach(gamesForDate => {
+        allGames.push(...gamesForDate);
+      });
+      
+      // Filter games by their individual dates (include live games and future games)
+      const filteredGames = allGames.filter(game => {
+        const gameDate = new Date(game.date);
+        const now = new Date();
+        const gameStartTime = new Date(game.date);
+        const gameEndTime = new Date(game.date);
+        gameEndTime.setHours(gameEndTime.getHours() + 3); // Assume games last ~3 hours
+        
+        // Include games that are:
+        // 1. Future games (not started yet)
+        // 2. Live games (started but not completed)
+        // 3. Games that started within the last 3 hours (in case they're still ongoing)
+        return (gameDate >= today && !game.completed) || 
+               (gameStartTime <= now && gameEndTime >= now && !game.completed);
+      });
+      
+      // Group filtered games by date
+      const groupedGames: Record<string, Game[]> = {};
+      filteredGames.forEach(game => {
+        const gameDate = new Date(game.date);
+        const dateKey = gameDate.toISOString().split('T')[0]; // YYYY-MM-DD format
+        if (!groupedGames[dateKey]) {
+          groupedGames[dateKey] = [];
+        }
+        groupedGames[dateKey].push(game);
+      });
+
+      setScheduleData({
+        schedule: groupedGames,
+        totalDates: Object.keys(groupedGames).length,
+        totalGames: Object.values(groupedGames).reduce((sum, games) => sum + games.length, 0)
+      });
+
+    } catch (err) {
+      console.error('Error fetching schedule:', err);
+      setError(err instanceof Error ? err.message : 'Failed to fetch schedule');
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  useEffect(() => {
+    fetchSchedule();
+    fetchInjuries();
+  }, []);
+
+  const fetchInjuries = async () => {
+    try {
+      setInjuriesLoading(true);
+      const data = await injuryAPI.fetchInjuries();
+      setInjuries(data);
+    } catch (error) {
+      console.error('Error fetching injuries:', error);
+    } finally {
+      setInjuriesLoading(false);
+    }
+  };
+
+  const handleCardClick = (gameId: string) => {
+    setFlippedCards(prev => {
+      const newSet = new Set(prev);
+      if (newSet.has(gameId)) {
+        newSet.delete(gameId);
+      } else {
+        newSet.add(gameId);
+      }
+      return newSet;
+    });
+  };
+
+  const getInjuriesForTeams = (homeTeamAbbrev: string, awayTeamAbbrev: string) => {
+    return injuries.filter(injury => 
+      injury.teamAbbrev === homeTeamAbbrev || injury.teamAbbrev === awayTeamAbbrev
+    );
+  };
+
+  const getStatusIcon = (status: string) => {
+    switch (status) {
+      case 'Out': return '❌';
+      case 'Questionable': return '❓';
+      case 'Probable': return '✅';
+      case 'Doubtful': return '⚠️';
+      case 'Day-to-Day': return '🔄';
+      default: return '❓';
+    }
+  };
+
+  const getStatusColor = (status: string) => {
+    switch (status) {
+      case 'Out': return '#ef4444';
+      case 'Questionable': return '#f59e0b';
+      case 'Probable': return '#10b981';
+      case 'Doubtful': return '#f97316';
+      case 'Day-to-Day': return '#3b82f6';
+      default: return '#6b7280';
+    }
+  };
+
+  // Update dates at midnight
+  useEffect(() => {
+    const checkMidnight = () => {
+      const now = new Date();
+      const currentHour = now.getHours();
+      const currentMinute = now.getMinutes();
+      
+      // If it's between 12:00 AM and 12:01 AM, update the dates
+      if (currentHour === 0 && currentMinute <= 1) {
+        setToday(now);
+        const newTomorrow = new Date();
+        newTomorrow.setDate(now.getDate() + 1);
+        setTomorrow(newTomorrow);
+      }
+    };
+
+    // Check every minute
+    const interval = setInterval(checkMidnight, 60000);
+    
+    // Initial check
+    checkMidnight();
+
+    return () => clearInterval(interval);
+  }, []);
+
+  const formatDate = (dateString: string) => {
+    // Extract just the date part (YYYY-MM-DD) to avoid timezone issues
+    const datePart = dateString.split('T')[0];
+    const [year, month, day] = datePart.split('-');
+    
+    // Create date using local timezone to avoid day shift
+    const date = new Date(parseInt(year), parseInt(month) - 1, parseInt(day));
+    const today = new Date();
+    const tomorrow = new Date(today);
+    tomorrow.setDate(today.getDate() + 1);
+
+    if (date.toDateString() === today.toDateString()) {
+      return 'Today';
+    } else if (date.toDateString() === tomorrow.toDateString()) {
+      return 'Tomorrow';
+    } else {
+      return date.toLocaleDateString('en-US', { 
+        weekday: 'short', 
+        month: 'short', 
+        day: 'numeric' 
+      });
+    }
+  };
+
+  const formatTime = (dateString: string) => {
+    const date = new Date(dateString);
+    return date.toLocaleTimeString('en-US', { 
+      hour: 'numeric', 
+      minute: '2-digit',
+      hour12: true 
+    });
+  };
+
+  const getTeamInfo = (teamAbbrev: string) => {
+    // Handle different abbreviation variations
+    const normalizedAbbrev = teamAbbrev.toLowerCase();
+    console.log('Looking for team with abbrev:', teamAbbrev, 'normalized:', normalizedAbbrev);
+    let team = TEAMS.find(t => t.abbreviation?.toLowerCase() === normalizedAbbrev);
+    
+    // Handle specific variations
+    if (!team) {
+      if (normalizedAbbrev === 'conn') {
+        team = TEAMS.find(t => t.abbreviation === 'CON');
+      } else if (normalizedAbbrev === 'gsv') {
+        team = TEAMS.find(t => t.abbreviation === 'GSV');
+      } else if (normalizedAbbrev === 'val') {
+        team = TEAMS.find(t => t.abbreviation === 'GSV');
+      } else if (normalizedAbbrev === 'gsw') {
+        team = TEAMS.find(t => t.abbreviation === 'GSV');
+      } else if (normalizedAbbrev === 'gs') {
+        team = TEAMS.find(t => t.abbreviation === 'GSV');
+      } else if (normalizedAbbrev === 'wsh') {
+        team = TEAMS.find(t => t.abbreviation === 'WAS');
+      } else if (normalizedAbbrev === 'las' || normalizedAbbrev === 'la') {
+        team = TEAMS.find(t => t.abbreviation === 'LAS');
+      } else if (normalizedAbbrev === 'lva' || normalizedAbbrev === 'lv') {
+        team = TEAMS.find(t => t.abbreviation === 'LVA');
+      } else if (normalizedAbbrev === 'nyl' || normalizedAbbrev === 'ny') {
+        team = TEAMS.find(t => t.abbreviation === 'NYL');
+      }
+    }
+    
+    if (team) {
+      console.log('Found team:', team.name);
+    } else {
+      console.log('No team found for abbrev:', teamAbbrev);
+    }
+    
+    return team || null;
+  };
+
+  const getGameStatus = (game: Game) => {
+    if (game.completed) {
+      return 'Final';
+    }
+    
+    const gameDate = new Date(game.date);
+    const now = new Date();
+    
+    if (gameDate < now) {
+      return 'Live';
+    }
+    
+    return 'Upcoming';
+  };
+
+  const renderLiveIndicator = () => {
+    return (
+      <div style={{ marginTop: '1px', display: 'flex', alignItems: 'center', gap: '6px' }}>
+        <div 
+          style={{
+            width: '8px',
+            height: '8px',
+            backgroundColor: '#ef4444',
+            borderRadius: '50%',
+            animation: 'pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite'
+          }}
+        ></div>
+        <span 
+          className="text-xs font-bold"
+          style={{
+            color: '#ef4444',
+            animation: 'pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite'
+          }}
+        >
+          Live
+        </span>
+      </div>
+    );
+  };
+
+  if (loading) {
+    return (
+      <div className="flex justify-center items-center py-8">
+        <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-green-500"></div>
+      </div>
+    );
+  }
+
+  if (error) {
+    return (
+      <div className="text-center py-8">
+        <div className="text-red-400 text-lg mb-4">Failed to load schedule</div>
+        <button 
+          onClick={fetchSchedule}
+          className="px-6 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700 transition-colors"
+        >
+          Retry
+        </button>
+      </div>
+    );
+  }
+
+  // Always render the three sections, even if there are no games
+  // This allows individual "no games" messages to be shown for each section
+
+  // Sort dates and get all games
+  const sortedDates = scheduleData ? Object.keys(scheduleData.schedule).sort() : [];
+  const allGames = scheduleData ? sortedDates.flatMap(date => 
+    scheduleData.schedule[date].map(game => ({ ...game, displayDate: date }))
+  ) : [];
+
+  return (
+    <div className="max-w-7xl mx-auto">
+      <div className="flex items-center mb-8" style={{ gap: '32px', marginTop: '5px' }}>
+        <div style={{
+          flex: '1.3',
+          height: '4px',
+          backgroundColor: '#71FD08',
+          borderRadius: '2px',
+          marginLeft: '32px'
+        }}></div>
+        <h1 className="text-7xl dashboard-heading flex-shrink-0" style={{
+          textShadow: '2px 2px 4px rgba(0,0,0,0.8), -2px -2px 4px rgba(0,0,0,0.8), 2px -2px 4px rgba(0,0,0,0.8), -2px 2px 4px rgba(0,0,0,0.8)',
+          fontWeight: '700 !important'
+        }}>
+          Upcoming Schedule
+        </h1>
+        <div style={{
+          flex: '1.3',
+          height: '4px',
+          backgroundColor: '#71FD08',
+          borderRadius: '2px',
+          marginRight: '32px'
+        }}></div>
+      </div>
+
+      <div className="grid grid-cols-3 gap-8 upcoming-schedule-section">
+        {/* Today's Games - Left */}
+        <div>
+          {(() => {
+            const todayGames = allGames.filter(game => {
+              const gameDate = new Date(game.date);
+              const today = new Date();
+              return gameDate.toDateString() === today.toDateString();
+            });
+            
+            if (todayGames.length > 0) {
+              return (
+                <div>
+                  <div className="text-3xl font-bold text-white mb-4" style={{ color: '#d1d5db', paddingLeft: '20px' }}>
+                    Today
+                  </div>
+                  <div className="space-y-3" style={{ paddingLeft: '30px' }}>
+                    {todayGames.map((game) => {
+                      const homeTeam = game.teams.find(team => team.isHome);
+                      const awayTeam = game.teams.find(team => !team.isHome);
+                      const gameStatus = getGameStatus(game);
+
+                      const isFlipped = flippedCards.has(game.id);
+                      const teamInjuries = getInjuriesForTeams(homeTeam?.abbrev || '', awayTeam?.abbrev || '');
+
+                      return (
+                        <div
+                          key={game.id}
+                          className={`game-card ${isFlipped ? 'flipped' : ''}`}
+                          onClick={() => handleCardClick(game.id)}
+                        >
+                          <div className="game-card-inner">
+                            {/* Front of card - original game display */}
+                            <div className="game-card-front flex items-center space-x-3 px-3 py-3 rounded-xl today-game-row"
+                              style={{
+                                paddingLeft: '30px',
+                                position: 'relative',
+                                '--away-team-color': `${getTeamInfo(awayTeam?.abbrev || '')?.colors?.[0] || '#71FD08'}80`,
+                                '--home-team-color': `${getTeamInfo(homeTeam?.abbrev || '')?.colors?.[0] || '#71FD08'}80`
+                              } as React.CSSProperties}
+                            >
+                          {/* Time */}
+                          <div className="absolute top-2 left-4">
+                            <div className="text-sm font-bold" style={{ color: '#d1d5db', textShadow: '2px 2px 4px rgba(0,0,0,0.8)' }}>
+                              {formatTime(game.date)}
+                            </div>
+                            {gameStatus === 'Live' && renderLiveIndicator()}
+                          </div>
+
+                          {/* Teams */}
+                          <div className="flex items-center justify-between w-full" style={{ paddingLeft: '80px' }}>
+                            <div className="flex flex-col items-center">
+                              {awayTeam && getTeamInfo(awayTeam.abbrev)?.logo && (
+                                <div className="team-logo-container">
+                                  <img 
+                                    src={getTeamInfo(awayTeam.abbrev)?.logo} 
+                                    alt={`${awayTeam.abbrev} logo`}
+                                  />
+                                </div>
+                              )}
+                            </div>
+                            <span className="text-xs font-bold" style={{ color: '#d1d5db', textShadow: '2px 2px 4px rgba(0,0,0,0.8)' }}>VS</span>
+                            <div className="flex flex-col items-center">
+                              {homeTeam && getTeamInfo(homeTeam.abbrev)?.logo && (
+                                <div className="team-logo-container">
+                                  <img 
+                                    src={getTeamInfo(homeTeam.abbrev)?.logo} 
+                                    alt={`${homeTeam.abbrev} logo`}
+                                  />
+                                </div>
+                              )}
+                            </div>
+                          </div>
+
+                          {/* Status */}
+                          <div className="ml-auto">
+                            <span 
+                              className="px-2 py-1 rounded-full text-xs font-bold"
+                              style={{
+                                backgroundColor: gameStatus === 'Final' ? '#4b5563' : '#22c55e',
+                                color: gameStatus === 'Final' ? '#d1d5db' : '#ffffff'
+                              }}
+                            >
+                              {gameStatus === 'Final' ? 'Final' : ''}
+                            </span>
+                          </div>
+                        </div>
+                      );
+                    })}
+                  </div>
+                </div>
+              );
+            }
+            
+            // Check if there were games today but they've all been completed
+            const today = new Date();
+            const hadGamesToday = scheduleData && scheduleData.schedule[today.toISOString().split('T')[0]];
+            
+            if (hadGamesToday && hadGamesToday.length > 0) {
+              // All games today have been completed
+              return (
+                <div>
+                  <div className="text-3xl font-bold text-white mb-4" style={{ color: '#d1d5db', paddingLeft: '20px' }}>
+                    Today
+                  </div>
+                  <div className="space-y-3" style={{ paddingLeft: '35px', textAlign: 'center' }}>
+                    <div className="text-lg font-bold" style={{ color: '#FFD700' }}>All games have ended</div>
+                  </div>
+                </div>
+              );
+            }
+            
+            // No games scheduled for today
+            return (
+              <div>
+                <div className="text-3xl font-bold text-white mb-4" style={{ color: '#d1d5db', paddingLeft: '20px' }}>
+                  Today
+                </div>
+                <div className="space-y-3" style={{ paddingLeft: '35px', textAlign: 'center' }}>
+                  <div className="text-lg font-bold" style={{ color: '#FFD700' }}>No games today</div>
+                </div>
+              </div>
+            );
+          })()}
+        </div>
+
+        {/* Tomorrow's Games - Center */}
+        <div className="flex justify-center">
+          {(() => {
+            const tomorrowGames = allGames.filter(game => {
+              const gameDate = new Date(game.date);
+              return gameDate.toDateString() === tomorrow.toDateString();
+            });
+            
+            if (tomorrowGames.length > 0) {
+              return (
+                <div>
+                  <div className="text-3xl font-bold text-white mb-4" style={{ color: '#d1d5db', paddingLeft: '20px', paddingBottom: '20px' }}>
+                    Tomorrow
+                  </div>
+                  <div className="space-y-4" style={{ paddingLeft: '20px', gap: '16px !important' }}>
+                    {tomorrowGames.map((game) => {
+                      const homeTeam = game.teams.find(team => team.isHome);
+                      const awayTeam = game.teams.find(team => !team.isHome);
+                      const gameStatus = getGameStatus(game);
+
+                      return (
+                        <div
+                          key={game.id}
+                          className="flex items-center space-x-3 px-3 py-3 rounded-xl tomorrow-game-row"
+                          style={{
+                            paddingLeft: '20px',
+                            position: 'relative',
+                            width: '280px',
+                            '--away-team-color': `${getTeamInfo(awayTeam?.abbrev || '')?.colors?.[0] || '#71FD08'}80`,
+                            '--home-team-color': `${getTeamInfo(homeTeam?.abbrev || '')?.colors?.[0] || '#71FD08'}80`
+                          } as React.CSSProperties}
+                        >
+                          {/* Time */}
+                          <div className="absolute top-2 left-4">
+                            <div className="text-sm font-bold" style={{ color: '#d1d5db', textShadow: '2px 2px 4px rgba(0,0,0,0.8)' }}>
+                              {formatTime(game.date)}
+                            </div>
+                            {gameStatus === 'Live' && renderLiveIndicator()}
+                          </div>
+
+                          {/* Teams */}
+                          <div className="flex items-center justify-between w-full" style={{ paddingLeft: '80px' }}>
+                            <div className="flex flex-col items-center">
+                              {awayTeam && getTeamInfo(awayTeam.abbrev)?.logo && (
+                                <div className="team-logo-container">
+                                  <img 
+                                    src={getTeamInfo(awayTeam.abbrev)?.logo} 
+                                    alt={`${awayTeam.abbrev} logo`}
+                                  />
+                                </div>
+                              )}
+                            </div>
+                            <span className="text-xs font-bold" style={{ color: '#d1d5db', textShadow: '2px 2px 4px rgba(0,0,0,0.8)' }}>VS</span>
+                            <div className="flex flex-col items-center">
+                              {homeTeam && getTeamInfo(homeTeam.abbrev)?.logo && (
+                                <div className="team-logo-container">
+                                  <img 
+                                    src={getTeamInfo(homeTeam.abbrev)?.logo} 
+                                    alt={`${homeTeam.abbrev} logo`}
+                                  />
+                                </div>
+                              )}
+                            </div>
+                          </div>
+
+                          {/* Status */}
+                          <div className="ml-auto">
+                            <span 
+                              className="px-2 py-1 rounded-full text-xs font-bold"
+                              style={{
+                                backgroundColor: gameStatus === 'Final' ? '#4b5563' : '#22c55e',
+                                color: gameStatus === 'Final' ? '#d1d5db' : '#ffffff'
+                              }}
+                            >
+                              {gameStatus === 'Final' ? 'Final' : ''}
+                            </span>
+                          </div>
+                        </div>
+                      );
+                    })}
+                  </div>
+                </div>
+              );
+            }
+            return (
+              <div>
+                <div className="text-3xl font-bold text-white mb-4" style={{ color: '#d1d5db', paddingLeft: '20px', paddingBottom: '20px' }}>
+                  Tomorrow
+                </div>
+                <div className="space-y-3" style={{ paddingLeft: '20px', textAlign: 'center' }}>
+                  <div className="text-lg font-bold" style={{ color: '#FFD700' }}>No games tomorrow</div>
+                </div>
+              </div>
+            );
+          })()}
+        </div>
+
+        {/* Upcoming Games - Right */}
+        <div className="flex justify-end">
+          {(() => {
+            const otherGames = allGames.filter(game => {
+              const gameDate = new Date(game.date);
+              // Only show games from 2 days after today (8/6) to 4 days after today (8/8 exclusive), so 8/6 and 8/7
+              return gameDate >= twoDaysAfterTomorrow && gameDate < new Date(today.getTime() + (4 * 24 * 60 * 60 * 1000));
+            });
+            
+            if (otherGames.length > 0) {
+              return (
+                <div>
+                  <div className="text-3xl font-bold text-white mb-4" style={{ color: '#d1d5db', paddingLeft: '20px', paddingBottom: '20px' }}>
+                    Upcoming
+                  </div>
+                  <div className="space-y-3" style={{ paddingLeft: '20px' }}>
+                    {otherGames.map((game) => {
+                      const homeTeam = game.teams.find(team => team.isHome);
+                      const awayTeam = game.teams.find(team => !team.isHome);
+                      const gameStatus = getGameStatus(game);
+
+                      return (
+                        <div
+                          key={game.id}
+                          className="flex items-center space-x-3 px-3 py-3 rounded-xl upcoming-game-row"
+                          style={{
+                            paddingLeft: '20px',
+                            position: 'relative',
+                            width: '280px',
+                            marginLeft: '2px',
+                            '--away-team-color': `${getTeamInfo(awayTeam?.abbrev || '')?.colors?.[0] || '#71FD08'}80`,
+                            '--home-team-color': `${getTeamInfo(homeTeam?.abbrev || '')?.colors?.[0] || '#71FD08'}80`
+                          } as React.CSSProperties}
+                        >
+                          {/* Date and Time */}
+                          <div className="absolute top-2 left-4">
+                            <div className="text-sm font-bold" style={{ color: '#d1d5db', textShadow: '2px 2px 4px rgba(0,0,0,0.8)' }}>
+                              {formatDate(game.date)}
+                            </div>
+                            <div className="text-xs font-bold" style={{ color: '#d1d5db', textShadow: '2px 2px 4px rgba(0,0,0,0.8)' }}>
+                              {formatTime(game.date)}
+                            </div>
+                            {gameStatus === 'Live' && renderLiveIndicator()}
+                          </div>
+
+                          {/* Teams */}
+                          <div className="flex items-center justify-between w-full" style={{ paddingLeft: '80px' }}>
+                            <div className="flex flex-col items-center">
+                              {awayTeam && getTeamInfo(awayTeam.abbrev)?.logo && (
+                                <div className="team-logo-container">
+                                  <img 
+                                    src={getTeamInfo(awayTeam.abbrev)?.logo} 
+                                    alt={`${awayTeam.abbrev} logo`}
+                                  />
+                                </div>
+                              )}
+                            </div>
+                            <span className="text-xs font-bold" style={{ color: '#d1d5db', textShadow: '2px 2px 4px rgba(0,0,0,0.8)' }}>VS</span>
+                            <div className="flex flex-col items-center">
+                              {homeTeam && getTeamInfo(homeTeam.abbrev)?.logo && (
+                                <div className="team-logo-container">
+                                  <img 
+                                    src={getTeamInfo(homeTeam.abbrev)?.logo} 
+                                    alt={`${homeTeam.abbrev} logo`}
+                                  />
+                                </div>
+                              )}
+                            </div>
+                          </div>
+
+                          {/* Status */}
+                          <div className="ml-auto">
+                            <span 
+                              className="px-2 py-1 rounded-full text-xs font-bold"
+                              style={{
+                                backgroundColor: gameStatus === 'Final' ? '#4b5563' : '#22c55e',
+                                color: gameStatus === 'Final' ? '#d1d5db' : '#ffffff'
+                              }}
+                            >
+                              {gameStatus === 'Final' ? 'Final' : ''}
+                            </span>
+                          </div>
+                        </div>
+                      );
+                    })}
+                  </div>
+                </div>
+              );
+            }
+            return (
+              <div>
+                <div className="text-3xl font-bold text-white mb-4" style={{ color: '#d1d5db', paddingLeft: '20px', paddingBottom: '20px' }}>
+                  Upcoming
+                </div>
+                <div className="space-y-3" style={{ paddingLeft: '20px', textAlign: 'center' }}>
+                  <div className="text-lg font-bold" style={{ color: '#FFD700' }}>No upcoming games</div>
+                </div>
+              </div>
+            );
+          })()}
+        </div>
+      </div>
+    </div>
+  );
+} 

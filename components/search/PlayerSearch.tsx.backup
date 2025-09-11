@@ -1,0 +1,386 @@
+'use client';
+
+import React, { useState, useEffect } from 'react';
+import { LoadingSkeleton } from '../ui/LoadingSkeleton';
+import { PlayerProps } from '../sportsbook/PlayerProps';
+import { motion, AnimatePresence } from 'framer-motion';
+import { Autocomplete } from './Autocomplete';
+import { usePlayerSearch } from '../../hooks/usePlayerSearch';
+import { PlayerPhoto } from '../player/PlayerPhoto';
+
+// Define animations
+const pulseKeyframes = `
+@keyframes pulse-ring {
+  0% {
+    transform: scale(0.33);
+  }
+  80%, 100% {
+    opacity: 0;
+  }
+}
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}`;
+
+interface Player {
+  id: string;
+  playerId: string;
+  name: string;
+  team: string;
+  photo_url: string;
+}
+
+export function PlayerSearch() {
+  const {
+    query,
+    results,
+    stats,
+    loading,
+    notFound,
+    hasSearched,
+    setQuery,
+    handleSearch,
+    handleSelectPlayer,
+    clearResults,
+  } = usePlayerSearch();
+  
+  const [placeholderActive, setPlaceholderActive] = useState(true);
+  const [l5AvgPoints, setL5AvgPoints] = useState<string | null>(null);
+  const [insightsLoading, setInsightsLoading] = useState(false);
+
+  // Add animations on client side only
+  useEffect(() => {
+    // Check if style already exists to prevent duplicates
+    const existingStyle = document.getElementById('player-search-animations');
+    if (!existingStyle) {
+      const style = document.createElement('style');
+      style.id = 'player-search-animations';
+      style.textContent = pulseKeyframes;
+      document.head.appendChild(style);
+    }
+
+    // Cleanup on unmount
+    return () => {
+      const style = document.getElementById('player-search-animations');
+      if (style) {
+        style.remove();
+      }
+    };
+  }, []);
+
+  const placeholderText = 'Search (i.e. Caitlin Clark, Fever, etc.)';
+
+  const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
+    console.log('Key pressed:', e.key);
+    if (e.key === 'Enter') {
+      console.log('Enter pressed, calling handleSearch with query:', query);
+      handleSearch();
+    }
+  };
+
+  const handleFocus = () => {
+    setPlaceholderActive(false);
+  };
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const newValue = e.target.value;
+    setQuery(newValue);
+    if (newValue === '') {
+      clearResults();
+    }
+  };
+
+  const getBorderColor = () => {
+    if (!hasSearched) return '#3f3f46'; // zinc-700
+    if (notFound) return '#ef4444'; // red-500
+    if (results.length > 0) return '#71FD08'; // success green
+    return '#3f3f46'; // zinc-700
+  };
+
+  // Debug logging for every render
+  console.log('Current state:', {
+    query,
+    notFound,
+    hasSearched,
+    resultsLength: results.length,
+    borderColor: getBorderColor()
+  });
+
+  // Fetch L5 average points when results[0] changes (i.e., when a player is selected)
+  useEffect(() => {
+    async function fetchL5AvgPoints() {
+      if (!results || results.length === 0) return;
+      setInsightsLoading(true);
+      try {
+        const res = await fetch(
+          `https://wnba-api.p.rapidapi.com/player-gamelog?playerId=${results[0].id}`,
+          {
+            headers: {
+              'x-rapidapi-key': 'b9fef5cbcbmsh3ae24f367e6e0acp12f58ejsn3c7ad2cc0f9f',
+              'x-rapidapi-host': 'wnba-api.p.rapidapi.com',
+            },
+          }
+        );
+        const data = await res.json();
+        if (Array.isArray(data) && data.length > 0) {
+          const last5 = data.slice(0, 5);
+          const sum = last5.reduce((acc, game) => acc + Number(game.points), 0);
+          setL5AvgPoints((sum / last5.length).toFixed(1));
+        } else {
+          setL5AvgPoints('--');
+        }
+      } catch (e) {
+        setL5AvgPoints('--');
+      } finally {
+        setInsightsLoading(false);
+      }
+    }
+    fetchL5AvgPoints();
+  }, [results]);
+
+  return (
+    <div className="w-full h-full min-h-screen relative">
+      {/* Large faded player image background */}
+      {results.length > 0 && results[0].photo_url && (
+        <div 
+          className="fixed left-0 top-0 w-1/2 h-full pointer-events-none z-0"
+          style={{
+            backgroundImage: `url(${results[0].photo_url})`,
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+            backgroundRepeat: 'no-repeat',
+            opacity: 0.15,
+            filter: 'blur(1px)'
+          }}
+        />
+      )}
+      {/* Main content starts at middle of screen */}
+      <div className="relative z-10" style={{ marginLeft: '50vw', paddingTop: '48px' }}>
+        <div className="w-[300px]">
+          <Autocomplete
+            query={query}
+            onQueryChange={setQuery}
+            onSelectPlayer={handleSelectPlayer}
+            placeholder="Search (i.e. Caitlin Clark, Fever, etc.)"
+            className="w-full"
+          />
+        </div>
+        {loading && <LoadingSkeleton height="2rem" />}
+        {!loading && hasSearched && query && results.length === 0 && (
+          <div className="text-gray-500 text-sm mt-[6px]">No players found.</div>
+        )}
+        {!loading && results.length > 0 && (
+          <React.Fragment>
+            <div className="h-12" />
+            <div className="flex flex-row w-full max-w-3xl justify-center items-stretch mx-auto px-4 gap-6 overflow-x-auto whitespace-nowrap min-h-[420px]" style={{flexWrap: 'nowrap'}}>
+              <FlippableCard front={
+                <div className="relative group bg-gradient-to-br from-zinc-900 via-black to-zinc-800 rounded-2xl overflow-hidden shadow-2xl shadow-black/60 shadow-inner pt-6 pb-6 px-6 min-h-[300px] w-[300px] flex flex-col justify-start items-center transition-transform duration-200 ease-in-out hover:scale-110 hover:shadow-[0_0_0_4px_#71FD08,0_16px_48px_0_rgba(113,253,8,0.35),0_12px_36px_0_rgba(59,130,246,0.25),0_8px_32px_0_rgba(0,0,0,0.37)] hover:border-[#71FD08] cursor-pointer animated-accent hover:rounded-2xl" style={{ borderRadius: '1rem', background: 'linear-gradient(135deg, #232323 0%, #71FD08 100%)', height: '340px' }}>
+                  <h2 className="text-3xl font-extrabold text-white mb-4 text-center w-full" style={{ textShadow: '0 2px 8px #000, 0 1px 2px #000, 0 0px 4px #000' }}>Season Stats</h2>
+                  <div className="space-y-6">
+                    <div className="text-center">
+                      {stats && (
+                        <div className="grid grid-cols-2 gap-4">
+                          <div>
+                            <p className="text-gray-400 font-semibold">PPG</p>
+                            <p className="text-4xl font-extrabold text-gray-400" style={{ textShadow: '0 2px 8px #000, 0 1px 2px #000, 0 0px 4px #000' }}>{stats.ppg}</p>
+                          </div>
+                          <div>
+                            <p className="text-gray-400 font-semibold">RPG</p>
+                            <p className="text-4xl font-extrabold text-gray-400" style={{ textShadow: '0 2px 8px #000, 0 1px 2px #000, 0 0px 4px #000' }}>{stats.rpg}</p>
+                          </div>
+                          <div>
+                            <p className="text-gray-400 font-semibold">APG</p>
+                            <p className="text-4xl font-extrabold text-gray-400" style={{ textShadow: '0 2px 8px #000, 0 1px 2px #000, 0 0px 4px #000' }}>{stats.apg}</p>
+                          </div>
+                          <div>
+                            <p className="text-gray-400 font-semibold">FG%</p>
+                            <p className="text-4xl font-extrabold text-gray-400" style={{ textShadow: '0 2px 8px #000, 0 1px 2px #000, 0 0px 4px #000' }}>{stats.fgPercent}</p>
+                          </div>
+                        </div>
+                      )}
+                    </div>
+                  </div>
+                </div>
+              } back={
+                <div className="relative group bg-gradient-to-br from-zinc-900 via-black to-zinc-800 rounded-2xl overflow-hidden shadow-2xl shadow-black/60 shadow-inner pt-6 pb-6 px-6 min-h-[300px] w-[300px] flex flex-col justify-start items-center transition-transform duration-200 ease-in-out hover:scale-110 hover:shadow-[0_0_0_4px_#71FD08,0_16px_48px_0_rgba(113,253,8,0.35),0_12px_36px_0_rgba(59,130,246,0.25),0_8px_32px_0_rgba(0,0,0,0.37)] hover:border-[#71FD08] cursor-pointer animated-accent hover:rounded-2xl" style={{ borderRadius: '1rem', background: 'linear-gradient(135deg, #232323 0%, #71FD08 100%)', height: '340px' }}>
+                  <h2 className="text-3xl font-extrabold text-white mb-2" style={{ textShadow: '0 2px 8px #000, 0 1px 2px #000, 0 0px 4px #000' }}>Advanced Stats</h2>
+                  {stats && (
+                    <div className="grid grid-cols-2 gap-4">
+                      <div>
+                        <p className="text-gray-400 font-semibold">3PT%</p>
+                        <p className="text-4xl font-extrabold text-gray-400" style={{ textShadow: '0 2px 8px #000, 0 1px 2px #000, 0 0px 4px #000' }}>{stats.threePtPercent || '--'}</p>
+                      </div>
+                      <div>
+                        <p className="text-gray-400 font-semibold">FT%</p>
+                        <p className="text-4xl font-extrabold text-gray-400" style={{ textShadow: '0 2px 8px #000, 0 1px 2px #000, 0 0px 4px #000' }}>{stats.ftPercent || '--'}</p>
+                      </div>
+                      <div>
+                        <p className="text-gray-400 font-semibold">TO/G</p>
+                        <p className="text-4xl font-extrabold text-gray-400" style={{ textShadow: '0 2px 8px #000, 0 1px 2px #000, 0 0px 4px #000' }}>{stats.turnovers || '--'}</p>
+                      </div>
+                      <div>
+                        <p className="text-gray-400 font-semibold">+/-</p>
+                        <p className="text-4xl font-extrabold text-gray-400" style={{ textShadow: '0 2px 8px #000, 0 1px 2px #000, 0 0px 4px #000' }}>{stats.plusMinus || '--'}</p>
+                      </div>
+                    </div>
+                  )}
+                </div>
+              } />
+              <FlippableCard front={
+                <div className="relative group bg-gradient-to-br from-zinc-900 via-black to-zinc-800 rounded-2xl overflow-hidden shadow-2xl shadow-black/60 shadow-inner pt-6 pb-6 px-6 min-h-[300px] w-[300px] flex flex-col justify-start items-center transition-transform duration-200 ease-in-out hover:scale-110 hover:shadow-[0_0_0_4px_#71FD08,0_16px_48px_0_rgba(113,253,8,0.35),0_12px_36px_0_rgba(59,130,246,0.25),0_8px_32px_0_rgba(0,0,0,0.37)] hover:border-[#71FD08] cursor-pointer animated-accent hover:rounded-2xl" style={{ borderRadius: '1rem', background: 'linear-gradient(135deg, #232323 0%, #71FD08 100%)', height: '340px' }}>
+                  <h2 className="text-3xl font-extrabold text-white mb-4 text-center" style={{ textShadow: '0 2px 8px #000, 0 1px 2px #000, 0 0px 4px #000' }}>Player Props</h2>
+                  <PlayerProps teamName={results[0].team || ''} />
+                </div>
+              } back={
+                <div className="relative group bg-gradient-to-br from-zinc-900 via-black to-zinc-800 rounded-2xl overflow-hidden shadow-2xl shadow-black/60 shadow-inner pt-6 pb-6 px-6 min-h-[300px] w-[300px] flex flex-col justify-start items-center transition-transform duration-200 ease-in-out hover:scale-110 hover:shadow-[0_0_0_4px_#71FD08,0_16px_48px_0_rgba(113,253,8,0.35),0_12px_36px_0_rgba(59,130,246,0.25),0_8px_32px_0_rgba(0,0,0,0.37)] hover:border-[#71FD08] cursor-pointer animated-accent hover:rounded-2xl" style={{ borderRadius: '1rem', background: 'linear-gradient(135deg, #232323 0%, #71FD08 100%)', height: '340px' }}>
+                  <h2 className="text-3xl font-extrabold text-white mb-2" style={{ textShadow: '0 2px 8px #000, 0 1px 2px #000, 0 0px 4px #000' }}>Prop History</h2>
+                  <ul className="text-gray-400 text-sm space-y-1">
+                    <li>Last 5 Games:</li>
+                    <li>O/U: 18.5, Result: Over</li>
+                    <li>O/U: 20.0, Result: Under</li>
+                    <li>O/U: 17.0, Result: Over</li>
+                    <li>O/U: 19.5, Result: Under</li>
+                    <li>O/U: 21.0, Result: Over</li>
+                  </ul>
+                </div>
+              } />
+              <FlippableCard front={
+                <div className="relative group bg-gradient-to-br from-zinc-900 via-black to-zinc-800 rounded-2xl overflow-hidden shadow-2xl shadow-black/60 shadow-inner pt-6 pb-6 px-6 min-h-[300px] w-[300px] flex flex-col justify-start items-center transition-transform duration-200 ease-in-out hover:scale-110 hover:shadow-[0_0_0_4px_#71FD08,0_16px_48px_0_rgba(113,253,8,0.35),0_12px_36px_0_rgba(59,130,246,0.25),0_8px_32px_0_rgba(0,0,0,0.37)] hover:border-[#71FD08] cursor-pointer animated-accent hover:rounded-2xl" style={{ borderRadius: '1rem', background: 'linear-gradient(135deg, #232323 0%, #71FD08 100%)', height: '340px' }}>
+                  <h2 className="text-3xl font-extrabold text-white mb-4 text-center w-full" style={{ textShadow: '0 2px 8px #000, 0 1px 2px #000, 0 0px 4px #000' }}>Player Insights</h2>
+                  <div className="grid grid-cols-1 gap-4">
+                    <div>
+                      <p className="text-gray-400 font-semibold">Last 5 Games Avg</p>
+                      <p className="text-4xl font-extrabold text-gray-400" style={{ textShadow: '0 2px 8px #000, 0 1px 2px #000, 0 0px 4px #000' }}>
+                        {insightsLoading ? '...' : l5AvgPoints || '--'}
+                      </p>
+                    </div>
+                    <div>
+                      <p className="text-gray-400 font-semibold">Hot/Cold Streak</p>
+                      <p className="text-4xl font-extrabold text-gray-400" style={{ textShadow: '0 2px 8px #000, 0 1px 2px #000, 0 0px 4px #000' }}>{stats?.streak || '--'}</p>
+                    </div>
+                    <div>
+                      <p className="text-gray-400 font-semibold">Matchup Rating</p>
+                      <p className="text-4xl font-extrabold text-gray-400" style={{ textShadow: '0 2px 8px #000, 0 1px 2px #000, 0 0px 4px #000' }}>{stats?.matchupRating || '--'}</p>
+                    </div>
+                  </div>
+                </div>
+              } back={
+                <div className="relative group bg-gradient-to-br from-zinc-900 via-black to-zinc-800 rounded-2xl overflow-hidden shadow-2xl shadow-black/60 shadow-inner pt-6 pb-6 px-6 min-h-[300px] w-[300px] flex flex-col justify-start items-center transition-transform duration-200 ease-in-out hover:scale-110 hover:shadow-[0_0_0_4px_#71FD08,0_16px_48px_0_rgba(113,253,8,0.35),0_12px_36px_0_rgba(59,130,246,0.25),0_8px_32px_0_rgba(0,0,0,0.37)] hover:border-[#71FD08] cursor-pointer animated-accent hover:rounded-2xl" style={{ borderRadius: '1rem', background: 'linear-gradient(135deg, #232323 0%, #71FD08 100%)', height: '340px' }}>
+                  <h2 className="text-3xl font-extrabold text-white mb-2" style={{ textShadow: '0 2px 8px #000, 0 1px 2px #000, 0 0px 4px #000' }}>Matchup Notes</h2>
+                  <ul className="text-gray-400 text-sm space-y-1">
+                    <li>Vs. Top 5 Defense: 12.3 PPG</li>
+                    <li>Vs. Bottom 5 Defense: 21.7 PPG</li>
+                    <li>Last 3 Home Games: 19.0 PPG</li>
+                    <li>Last 3 Away Games: 15.5 PPG</li>
+                    <li>Streak: 3 games over 20 points</li>
+                  </ul>
+                </div>
+              } />
+              </div>
+            </React.Fragment>
+          )}
+          {/* Spacer to guarantee 3 inches of blank space at bottom */}
+          <div className="h-32" />
+        </div>
+      </div>
+    );
+  }
+}
+
+function FlippableCard({ front, back }: { front: React.ReactNode; back: React.ReactNode }) {
+  const [flipped, setFlipped] = React.useState(false);
+  const [hovered, setHovered] = React.useState(false);
+
+  // Arrow SVGs
+  const rightArrow = (
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#71FD08" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="arrow-indicator" style={{ filter: 'drop-shadow(0 0 6px #71FD08)', transition: 'transform 0.2s', transform: hovered ? 'scale(1.15)' : 'scale(1)' }}>
+      <path d="M9 18l6-6-6-6" />
+    </svg>
+  );
+  const leftArrow = (
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#71FD08" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="arrow-indicator" style={{ filter: 'drop-shadow(0 0 6px #71FD08)', transition: 'transform 0.2s', transform: hovered ? 'scale(1.15)' : 'scale(1)' }}>
+      <path d="M15 18l-6-6 6-6" />
+    </svg>
+  );
+
+  // Arrow button style
+  const arrowBtnStyle = {
+    position: 'absolute' as const,
+    top: 10,
+    right: 10,
+    zIndex: 10,
+    background: 'rgba(0,0,0,0.55)',
+    border: 'none',
+    borderRadius: '50%',
+    padding: 2,
+    cursor: 'pointer',
+    boxShadow: '0 2px 8px #000',
+    transition: 'background 0.2s',
+    outline: 'none',
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+  };
+
+  return (
+    <div
+      style={{ perspective: 1200, width: 300, minHeight: 300 }}
+      onMouseEnter={() => setHovered(true)}
+      onMouseLeave={() => setHovered(false)}
+    >
+      <motion.div
+        className="relative w-full h-full"
+        style={{ width: '100%', minHeight: 300, transformStyle: 'preserve-3d' }}
+        animate={{ rotateY: flipped ? 180 : 0, scale: flipped ? 1.06 : (hovered ? 1.04 : 1) }}
+        transition={{ type: 'spring', stiffness: 400, damping: 30 }}
+      >
+        {/* Front Side */}
+        <div
+          className="absolute w-full h-full top-0 left-0"
+          style={{ backfaceVisibility: 'hidden', zIndex: flipped ? 0 : 2 }}
+        >
+          {/* Arrow indicator (right) */}
+          <button
+            aria-label="Flip card"
+            style={arrowBtnStyle}
+            onClick={e => { e.stopPropagation(); setFlipped(true); }}
+            tabIndex={0}
+            onKeyDown={e => { if (e.key === 'Enter' || e.key === ' ') { setFlipped(true); } }}
+          >
+            {rightArrow}
+          </button>
+          <div onClick={() => setFlipped(f => !f)} style={{ width: '100%', height: '100%' }}>
+            {front}
+          </div>
+        </div>
+        {/* Back Side */}
+        <div
+          className="absolute w-full h-full top-0 left-0 flex items-center justify-center"
+          style={{ transform: 'rotateY(180deg)', backfaceVisibility: 'hidden', zIndex: flipped ? 2 : 0 }}
+        >
+          {/* Arrow indicator (left) */}
+          <button
+            aria-label="Flip card"
+            style={arrowBtnStyle}
+            onClick={e => { e.stopPropagation(); setFlipped(false); }}
+            tabIndex={0}
+            onKeyDown={e => { if (e.key === 'Enter' || e.key === ' ') { setFlipped(false); } }}
+          >
+            {leftArrow}
+          </button>
+          <div onClick={() => setFlipped(f => !f)} style={{ width: '100%', height: '100%' }}>
+            {back}
+          </div>
+        </div>
+      </motion.div>
+    </div>
+  );
+}

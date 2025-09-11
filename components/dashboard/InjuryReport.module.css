@@ -1,0 +1,324 @@
+.injuryReportContainer {
+  padding: 24px;
+  margin-bottom: 24px;
+}
+
+.injuryReportHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 24px;
+}
+
+.injuryReportTitle {
+  display: flex;
+  align-items: center;
+}
+
+.injuryReportIcon {
+  width: 32px;
+  height: 32px;
+  background: #ef4444;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 12px;
+}
+
+.injuryReportTitleText {
+  font-size: 24px;
+  font-weight: bold;
+  color: #ffffff !important;
+}
+
+.injuryReportLastUpdated {
+  font-size: 14px;
+  color: #9ca3af;
+}
+
+.filterButtons {
+  display: flex;
+  gap: 6px;
+  margin-bottom: 16px;
+}
+
+.filterButton {
+  padding: 6px 12px;
+  border-radius: 9999px;
+  font-size: 12px;
+  font-weight: 700;
+  transition: all 0.2s;
+  cursor: pointer;
+  border: none;
+  outline: none;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  box-shadow: inset 0 0 0 2px #5ED800;
+}
+
+.filterButtonAll {
+  background: #71FD08;
+  color: #000000;
+}
+
+.filterButtonAll:hover {
+  background: #5ED800;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(113, 253, 8, 0.3);
+}
+
+.filterButtonOut {
+  background: #71FD08;
+  color: #000000;
+}
+
+.filterButtonOut:hover {
+  background: #5ED800;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(113, 253, 8, 0.3);
+}
+
+.filterButtonQuestionable {
+  background: #71FD08;
+  color: #000000;
+}
+
+.filterButtonQuestionable:hover {
+  background: #5ED800;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(113, 253, 8, 0.3);
+}
+
+.filterButtonProbable {
+  background: #71FD08;
+  color: #000000;
+}
+
+.filterButtonProbable:hover {
+  background: #5ED800;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(113, 253, 8, 0.3);
+}
+
+.filterButtonDayToDay {
+  background: #71FD08;
+  color: #000000;
+}
+
+.filterButtonDayToDay:hover {
+  background: #5ED800;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(113, 253, 8, 0.3);
+}
+
+.filterButtonInactive {
+  background: #71FD08;
+  color: #000000;
+}
+
+.filterButtonInactive:hover {
+  background: #5ED800;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(113, 253, 8, 0.3);
+}
+
+.injuryList {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.injuryCard {
+  background: #1f2937;
+  border-radius: 8px;
+  padding: 16px;
+  transition: background-color 0.2s;
+}
+
+.injuryCard:hover {
+  background: #374151;
+}
+
+.injuryCardContent {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.playerInfo {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.teamLogo {
+  width: 48px;
+  height: 48px;
+  background: #4b5563;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.teamLogoText {
+  color: #ffffff !important;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.playerDetails {
+  display: flex;
+  flex-direction: column;
+}
+
+.playerName {
+  color: #d1d5db !important;
+  font-weight: 600;
+  font-size: 18px;
+}
+
+.playerPosition {
+  color: #9ca3af;
+  font-size: 14px;
+}
+
+.teamName {
+  color: #9ca3af;
+  font-size: 14px;
+}
+
+.injuryStatus {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.statusInfo {
+  text-align: right;
+}
+
+.statusDisplay {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-weight: 600;
+}
+
+.statusOut {
+  color: #f87171 !important;
+}
+
+.statusQuestionable {
+  color: #fbbf24 !important;
+}
+
+.statusProbable {
+  color: #34d399 !important;
+}
+
+.statusDoubtful {
+  color: #fb923c !important;
+}
+
+.statusDayToDay {
+  color: #60a5fa !important;
+}
+
+.statusDefault {
+  color: #ffffff !important;
+}
+
+.injuryDescription {
+  color: #9ca3af;
+  font-size: 14px;
+}
+
+.additionalInfo {
+  margin-top: 12px;
+  padding-top: 12px;
+  border-top: 1px solid #4b5563;
+}
+
+.additionalInfoContent {
+  display: flex;
+  justify-content: space-between;
+  font-size: 14px;
+}
+
+.expectedReturn {
+  color: #9ca3af;
+}
+
+.expectedReturnLabel {
+  font-weight: 500;
+}
+
+.lastUpdated {
+  color: #6b7280;
+}
+
+.injuryReportFooter {
+  margin-top: 24px;
+  padding-top: 16px;
+  border-top: 1px solid #374151;
+}
+
+.footerContent {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 14px;
+  color: #9ca3af;
+}
+
+.totalInjuries {
+  font-weight: 500;
+}
+
+.injuryCounts {
+  display: flex;
+  gap: 16px;
+}
+
+.loadingContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.loadingSpinner {
+  animation: spin 1s linear infinite;
+  border-radius: 50%;
+  height: 32px;
+  width: 32px;
+  border: 2px solid transparent;
+  border-top-color: #10b981;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.loadingText {
+  margin-left: 12px;
+  color: #d1d5db;
+}
+
+.emptyState {
+  text-align: center;
+  padding: 32px;
+}
+
+.emptyStateTitle {
+  color: #9ca3af;
+  font-size: 18px;
+}
+
+.emptyStateSubtitle {
+  color: #6b7280;
+  font-size: 14px;
+} 
