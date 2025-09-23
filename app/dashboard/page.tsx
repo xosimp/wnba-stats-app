@@ -613,7 +613,8 @@ export default function DashboardHome() {
             borderRadius: '2px',
             marginLeft: '32px'
           }}></div>
-          <h1 className="text-7xl font-bold dashboard-heading flex-shrink-0" style={{
+          <h1 className="dashboard-heading flex-shrink-0 font-bold" style={{
+            fontSize: 'clamp(2rem, 4vw, 4rem)',
             textShadow: '2px 2px 4px rgba(0,0,0,0.8), -2px -2px 4px rgba(0,0,0,0.8), 2px -2px 4px rgba(0,0,0,0.8), -2px 2px 4px rgba(0,0,0,0.8)'
           }}>
             Favorite Players
@@ -642,7 +643,7 @@ export default function DashboardHome() {
             <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-green-500"></div>
           </div>
         ) : (
-          <div className="grid grid-cols-5 gap-8 justify-items-center">
+          <div className="grid grid-cols-5 gap-4 lg:gap-6 justify-items-center">
             {favoritePlayers.map((player, index) => {
               const playerHotStreakData = hotStreakData[player.player_name] || { isOnHotStreak: false, loading: false };
               
@@ -651,7 +652,11 @@ export default function DashboardHome() {
               return (
                 <div
                   key={player.id}
-                  className="w-[225px] h-[300px] rounded-2xl shadow-lg transition-all duration-300 hover:scale-105 hover:shadow-2xl cursor-pointer group hover:ring-2 hover:ring-white/20 relative team-glow-hover"
+                  className="rounded-2xl shadow-lg transition-all duration-300 hover:scale-105 hover:shadow-2xl cursor-pointer group hover:ring-2 hover:ring-white/20 relative team-glow-hover"
+                  style={{
+                    width: '225px !important',
+                    height: '350px !important'
+                  }}
                   onClick={() => handlePlayerCardClick(player.player_name)}
                 style={{
                   ...(() => {
@@ -786,7 +791,7 @@ export default function DashboardHome() {
                   <div style={{ 
                     marginTop: '-40px',
                     width: '210px',
-                    height: '200px',
+                    height: '250px',
                     position: 'relative',
                     zIndex: 10
                   }}>
@@ -848,7 +853,11 @@ export default function DashboardHome() {
             {Array.from({ length: Math.max(0, 5 - favoritePlayers.length) }).map((_, index) => (
               <div
                 key={`placeholder-${index}`}
-                className="w-[225px] h-[300px] rounded-2xl shadow-lg overflow-hidden opacity-50"
+                className="rounded-2xl shadow-lg overflow-hidden opacity-50"
+                style={{
+                  width: '225px !important',
+                  height: '350px !important'
+                }}
                 style={{
                   background: 'linear-gradient(135deg, #2d3748 0%, #4a5568 100%)',
                   border: '2px solid rgba(255, 255, 255, 0.1)',
@@ -860,7 +869,7 @@ export default function DashboardHome() {
                 }}
               >
                 <div className="w-full h-full flex flex-col items-center justify-center p-4 text-center">
-                  <div className="text-white/60 font-bold text-lg">
+                  <div className="text-white/60 font-bold" style={{ fontSize: 'clamp(1rem, 1.5vw, 1.2rem)' }}>
                     Empty
                   </div>
                 </div>

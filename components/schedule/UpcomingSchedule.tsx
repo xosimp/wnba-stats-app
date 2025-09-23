@@ -91,6 +91,92 @@ export default function UpcomingSchedule({ onLoadingChange }: UpcomingSchedulePr
       .game-card-hover {
         transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
         cursor: pointer;
+        min-width: 20vw !important;
+        width: 20vw !important;
+        height: 10vh !important;
+        flex-shrink: 0 !important;
+      }
+      
+      div.today-game-row {
+        min-width: 20vw !important;
+        width: 20vw !important;
+        height: 10vh !important;
+        flex-shrink: 0 !important;
+        margin-left: -3vw !important;
+      }
+      
+      div.tomorrow-game-row {
+        min-width: 20vw !important;
+        width: 20vw !important;
+        height: 10vh !important;
+        flex-shrink: 0 !important;
+      }
+      
+      div.upcoming-game-row {
+        min-width: 20vw !important;
+        width: 20vw !important;
+        height: 10vh !important;
+        flex-shrink: 0 !important;
+      }
+      
+      /* Remove max-width constraints from parent containers only */
+      .stacked-games {
+        max-width: none !important;
+      }
+      
+      /* Prevent horizontal scrolling */
+      body {
+        overflow-x: hidden !important;
+      }
+      
+      html {
+        overflow-x: hidden !important;
+      }
+      
+      /* Ensure the main container doesn't exceed viewport width */
+      .upcoming-schedule-section {
+        max-width: 100vw !important;
+        overflow-x: hidden !important;
+      }
+      
+      .team-logo-container img {
+        width: 12vw !important;
+        height: 12vw !important;
+        max-width: 150px !important;
+        max-height: 150px !important;
+        min-width: 60px !important;
+        min-height: 60px !important;
+      }
+      
+      /* Additional selectors to ensure logo sizing works */
+      .team-logo-container {
+        width: 12vw !important;
+        height: 12vw !important;
+        max-width: 150px !important;
+        max-height: 150px !important;
+      }
+      
+      img[alt*="logo"] {
+        width: 12vw !important;
+        height: 12vw !important;
+        max-width: 150px !important;
+        max-height: 150px !important;
+      }
+      
+      .game-time-text {
+        font-size: clamp(0.7rem, 1.2vw, 1rem) !important;
+      }
+      
+      .game-date-text {
+        font-size: clamp(0.6rem, 1vw, 0.8rem) !important;
+      }
+      
+      .vs-text {
+        font-size: clamp(0.8rem, 1.4vw, 1.1rem) !important;
+      }
+      
+      .game-status-text {
+        font-size: clamp(0.7rem, 1.2vw, 0.9rem) !important;
       }
       
       .game-card-hover:hover {
@@ -110,11 +196,11 @@ export default function UpcomingSchedule({ onLoadingChange }: UpcomingSchedulePr
       
       .injury-report-link {
         position: absolute !important;
-        right: -100px !important;
+        right: -4vw !important;
         top: 50% !important;
-        transform: translateY(calc(-50% - 35px)) !important;
+        transform: translateY(calc(-50% - 2vh)) !important;
         color: #71FD08 !important;
-        font-size: 0.8125rem !important;
+        font-size: clamp(0.6rem, 1vw, 0.8rem) !important;
         font-weight: bold !important;
         text-decoration: none !important;
         opacity: 0 !important;
@@ -128,7 +214,7 @@ export default function UpcomingSchedule({ onLoadingChange }: UpcomingSchedulePr
         align-items: center !important;
         justify-content: center !important;
         line-height: 1.2 !important;
-        gap: 4px !important;
+        gap: 0.2vh !important;
         overflow: visible !important;
         white-space: nowrap !important;
         width: auto !important;
@@ -145,13 +231,13 @@ export default function UpcomingSchedule({ onLoadingChange }: UpcomingSchedulePr
       
       .game-card-hover:hover ~ .injury-report-link {
         opacity: 1 !important;
-        transform: translateY(calc(-50% - 20px)) scale(1.05) !important;
+        transform: translateY(calc(-50% - 1vh)) scale(1.05) !important;
         pointer-events: auto !important;
       }
       
       .injury-report-link:hover {
         color: #71FD08 !important;
-        transform: translateY(calc(-50% - 20px)) scale(1.1) !important;
+        transform: translateY(calc(-50% - 1vh)) scale(1.1) !important;
       }
       
       .stacked-games {
@@ -161,12 +247,14 @@ export default function UpcomingSchedule({ onLoadingChange }: UpcomingSchedulePr
       }
       
       .stacked-games > * {
-        margin-bottom: -25px !important;
+        margin-bottom: -2.5vh !important;
         position: relative !important;
         z-index: 1 !important;
-        border-radius: 16px !important;
-        border: 1px solid rgba(0, 0, 0, 1) !important;
-        box-shadow: 0 -8px 16px rgba(0, 0, 0, 0.8) !important;
+      }
+      
+      .stacked-games .game-card-hover {
+        border-radius: clamp(8px, 1vw, 16px) !important;
+        box-shadow: 0 -0.5vh 1vh rgba(0, 0, 0, 0.8) !important;
       }
       
       .stacked-games > *:nth-child(2) {
@@ -313,8 +401,11 @@ export default function UpcomingSchedule({ onLoadingChange }: UpcomingSchedulePr
   };
 
   useEffect(() => {
-    fetchSchedule();
-  }, []);
+    // Only fetch schedule after today is initialized
+    if (today) {
+      fetchSchedule();
+    }
+  }, [today]);
 
   // Update dates at midnight
   useEffect(() => {
@@ -512,33 +603,35 @@ export default function UpcomingSchedule({ onLoadingChange }: UpcomingSchedulePr
   }) : allGames;
 
   return (
-    <div className="max-w-7xl mx-auto" style={{ paddingBottom: '50px' }}>
-      <div className="flex items-center mb-8" style={{ gap: '32px', marginTop: '5px' }}>
+    <div className="w-full mx-auto" style={{ paddingBottom: '5vh', paddingLeft: '2vw', paddingRight: '2vw' }}>
+      <div className="flex items-center" style={{ gap: '2vw', marginTop: '2vh', marginBottom: '4vh' }}>
         <div style={{
           flex: '1.3',
-          height: '4px',
+          height: '0.5vh',
           backgroundColor: '#71FD08',
-          borderRadius: '2px',
-          marginLeft: '32px'
+          borderRadius: '0.3vh',
+          marginLeft: '0vw'
         }}></div>
-        <h1 className="text-7xl dashboard-heading flex-shrink-0" style={{
+        <h1 className="dashboard-heading flex-shrink-0" style={{
+          fontSize: 'clamp(2.5rem, 5vw, 5rem)',
           textShadow: '2px 2px 4px rgba(0,0,0,0.8), -2px -2px 4px rgba(0,0,0,0.8), 2px -2px 4px rgba(0,0,0,0.8), -2px 2px 4px rgba(0,0,0,0.8)',
-          fontWeight: '700 !important'
+          fontWeight: '700 !important',
+          marginLeft: '-1.0vw'
         }}>
           Upcoming Schedule
         </h1>
         <div style={{
           flex: '1.3',
-          height: '4px',
+          height: '0.5vh',
           backgroundColor: '#71FD08',
-          borderRadius: '2px',
-          marginRight: '32px'
+          borderRadius: '0.3vh',
+          marginRight: '3vw'
         }}></div>
       </div>
 
-      <div className="grid grid-cols-3 gap-8 upcoming-schedule-section">
+      <div className="grid grid-cols-3 gap-4 lg:gap-6 upcoming-schedule-section">
         {/* Today's Games - Left */}
-        <div>
+        <div className="flex justify-center">
           {(() => {
             const todayGames = today ? allGames.filter(game => {
               const gameDate = new Date(game.date);
@@ -548,28 +641,32 @@ export default function UpcomingSchedule({ onLoadingChange }: UpcomingSchedulePr
             if (todayGames.length > 0) {
               return (
                 <div>
-                  <div className="text-3xl font-bold text-white mb-4" style={{ color: '#d1d5db', paddingLeft: '20px' }}>
+                  <div className="font-bold text-white mb-2" style={{ color: '#d1d5db', fontSize: 'clamp(1.2rem, 2.5vw, 2rem)', textAlign: 'left', paddingBottom: '1vh', textTransform: 'uppercase', fontWeight: 'bold', marginLeft: '-3vw' }}>
                     Today
                   </div>
-                  <div className="stacked-games" style={{ paddingLeft: '30px' }}>
+                   <div className="stacked-games" style={{ paddingLeft: '-5vw', paddingRight: 'auto' }}>
                     {todayGames.map((game) => {
                       const homeTeam = game.teams.find(team => team.isHome);
                       const awayTeam = game.teams.find(team => !team.isHome);
                       const gameStatus = getGameStatus(game);
                       
+                      console.log('Rendering game card:', game.id);
+                      
                         return (
                           <div key={game.id} style={{ position: 'relative' }}>
                             <div
-                              className="flex items-center space-x-3 px-3 py-3 rounded-xl today-game-row h-full team-gradient-outline game-card-hover cursor-pointer"
+                              className="flex items-center space-x-3 py-3 rounded-xl today-game-row h-full team-gradient-outline game-card-hover cursor-pointer"
                               onClick={(e) => {
                                 e.preventDefault();
                                 e.stopPropagation();
                                 handleInjuryReportClick(game);
                               }}
-                              style={{
-                                paddingLeft: '30px',
-                                position: 'relative',
-                                height: '120px',
+                               style={{
+                                 paddingLeft: '-0.5vw',
+                                 position: 'relative',
+                                 width: '100vw',
+                                 height: '12vh',
+                                 backgroundColor: 'red !important',
                                 background: (() => {
                                   const awayTeamInfo = getTeamInfo(awayTeam?.abbrev || '');
                                   const homeTeamInfo = getTeamInfo(homeTeam?.abbrev || '');
@@ -591,15 +688,15 @@ export default function UpcomingSchedule({ onLoadingChange }: UpcomingSchedulePr
                               } as React.CSSProperties}
                             >
                               {/* Time */}
-                              <div className="absolute top-2 left-4">
-                                <div className="text-sm font-bold" style={{ color: '#d1d5db', textShadow: '2px 2px 4px rgba(0,0,0,0.8)' }}>
+                              <div className="absolute" style={{ top: '0.5vh', left: '1vw' }}>
+                                <div className="font-bold game-time-text" style={{ color: '#d1d5db', textShadow: '2px 2px 4px rgba(0,0,0,0.8)' }}>
                                   {formatTime(game.date)}
                                 </div>
                                 {gameStatus === 'Live' && renderLiveIndicator()}
                               </div>
 
                               {/* Teams */}
-                              <div className="flex items-center justify-between w-full" style={{ paddingLeft: '80px' }}>
+                              <div className="flex items-center justify-between w-full" style={{ paddingLeft: 'clamp(60px, 8vw, 80px)' }}>
                                 <div className="flex flex-col items-center">
                                   {awayTeam && getTeamInfo(awayTeam.abbrev)?.logo && (
                                     <div className="team-logo-container">
@@ -610,7 +707,7 @@ export default function UpcomingSchedule({ onLoadingChange }: UpcomingSchedulePr
                                     </div>
                                   )}
                                 </div>
-                                <span className="text-xs font-bold" style={{ color: '#d1d5db', textShadow: '2px 2px 4px rgba(0,0,0,0.8)' }}>VS</span>
+                                 <span className="font-bold vs-text" style={{ color: '#d1d5db', textShadow: '2px 2px 4px rgba(0,0,0,0.8)' }}>VS</span>
                                 <div className="flex flex-col items-center">
                                   {homeTeam && getTeamInfo(homeTeam.abbrev)?.logo && (
                                     <div className="team-logo-container">
@@ -625,12 +722,12 @@ export default function UpcomingSchedule({ onLoadingChange }: UpcomingSchedulePr
 
                               {/* Status */}
                               <div className="ml-auto">
-                                <span 
-                                  className="px-2 py-1 rounded-full text-xs font-bold"
-                                  style={{
-                                    backgroundColor: gameStatus === 'Final' ? '#4b5563' : '#22c55e',
-                                    color: gameStatus === 'Final' ? '#d1d5db' : '#ffffff'
-                                  }}
+                                 <span 
+                                   className="px-1 py-0.5 rounded-full font-bold game-status-text"
+                                   style={{
+                                     backgroundColor: gameStatus === 'Final' ? '#4b5563' : '#22c55e',
+                                     color: gameStatus === 'Final' ? '#d1d5db' : '#ffffff'
+                                   }}
                                 >
                                   {gameStatus === 'Final' ? 'Final' : ''}
                                 </span>
@@ -664,33 +761,33 @@ export default function UpcomingSchedule({ onLoadingChange }: UpcomingSchedulePr
             if (hadGamesToday && hadGamesToday.length > 0) {
               // All games today have been completed
               return (
-                <div>
-                  <div className="text-3xl font-bold text-white mb-4" style={{ color: '#d1d5db', paddingLeft: '20px' }}>
-                    Today
-                  </div>
-                  <div className="space-y-3" style={{ paddingLeft: '35px', textAlign: 'center' }}>
-                    <div className="text-lg font-bold" style={{ color: '#FFD700' }}>All games have ended</div>
-                  </div>
-                </div>
+                 <div>
+                   <div className="font-bold text-white mb-2" style={{ color: '#d1d5db', fontSize: 'clamp(1.2rem, 2.5vw, 2rem)', textAlign: 'left', textTransform: 'uppercase', fontWeight: 'bold', marginLeft: '-3vw' }}>
+                     Today
+                   </div>
+                   <div className="space-y-2" style={{ paddingLeft: '-5vw', textAlign: 'center' }}>
+                     <div className="font-bold" style={{ color: '#FFD700', fontSize: 'clamp(1rem, 1.5vw, 1.2rem)' }}>All games have ended</div>
+                   </div>
+                 </div>
               );
             }
             
-            // No games scheduled for today
-            return (
-              <div>
-                <div className="text-3xl font-bold text-white mb-4" style={{ color: '#d1d5db', paddingLeft: '20px' }}>
-                  Today
-                </div>
-                <div className="space-y-3" style={{ paddingLeft: '35px', textAlign: 'center' }}>
-                  <div className="text-lg font-bold" style={{ color: '#FFD700' }}>No games today</div>
-                </div>
-              </div>
-            );
+             // No games scheduled for today
+             return (
+               <div>
+                 <div className="text-3xl font-bold text-white mb-4" style={{ color: '#d1d5db', textAlign: 'left', marginLeft: '-3vw' }}>
+                   Today
+                 </div>
+                 <div className="space-y-2" style={{ paddingLeft: '-5vw', textAlign: 'center' }}>
+                   <div className="font-bold" style={{ color: '#FFD700', fontSize: 'clamp(1rem, 1.5vw, 1.2rem)' }}>No games today</div>
+                 </div>
+               </div>
+             );
           })()}
         </div>
 
         {/* Tomorrow's Games - Center */}
-        <div className="flex justify-center">
+        <div className="flex justify-start">
           {(() => {
             const tomorrowGames = tomorrow ? filteredGames.filter(game => {
               const gameDate = new Date(game.date);
@@ -701,10 +798,10 @@ export default function UpcomingSchedule({ onLoadingChange }: UpcomingSchedulePr
             if (tomorrowGames.length > 0) {
               return (
                 <div>
-                  <div className="text-3xl font-bold text-white mb-4" style={{ color: '#d1d5db', paddingLeft: '20px', paddingBottom: '20px' }}>
+                  <div className="font-bold text-white mb-2" style={{ color: '#d1d5db', fontSize: 'clamp(1.2rem, 2.5vw, 2rem)', textAlign: 'left', paddingBottom: '1vh', textTransform: 'uppercase', fontWeight: 'bold', marginLeft: '0vw' }}>
                     Tomorrow
                   </div>
-                  <div className="stacked-games" style={{ paddingLeft: '20px' }}>
+                  <div className="stacked-games" style={{ paddingLeft: '1vw' }}>
                     {tomorrowGames.map((game) => {
                       const homeTeam = game.teams.find(team => team.isHome);
                       const awayTeam = game.teams.find(team => !team.isHome);
@@ -719,10 +816,10 @@ export default function UpcomingSchedule({ onLoadingChange }: UpcomingSchedulePr
                                 e.stopPropagation();
                                 handleInjuryReportClick(game);
                               }}
-                            style={{
-                              paddingLeft: '20px',
-                              position: 'relative',
-                              height: '120px',
+                               style={{
+                                 position: 'relative',
+                                 width: '100vw',
+                                 height: '12vh',
                               background: (() => {
                                 const awayTeamInfo = getTeamInfo(awayTeam?.abbrev || '');
                                 const homeTeamInfo = getTeamInfo(homeTeam?.abbrev || '');
@@ -744,15 +841,15 @@ export default function UpcomingSchedule({ onLoadingChange }: UpcomingSchedulePr
                             } as React.CSSProperties}
                           >
                             {/* Time */}
-                            <div className="absolute top-2 left-4">
-                              <div className="text-sm font-bold" style={{ color: '#d1d5db', textShadow: '2px 2px 4px rgba(0,0,0,0.8)' }}>
+                            <div className="absolute" style={{ top: '0.5vh', left: '1vw' }}>
+                              <div className="font-bold" style={{ color: '#d1d5db', textShadow: '2px 2px 4px rgba(0,0,0,0.8)', fontSize: 'clamp(0.7rem, 1.2vw, 0.9rem)' }}>
                                 {formatTime(game.date)}
                               </div>
                               {gameStatus === 'Live' && renderLiveIndicator()}
                             </div>
 
                             {/* Teams */}
-                            <div className="flex items-center justify-between w-full" style={{ paddingLeft: '80px' }}>
+                            <div className="flex items-center justify-between w-full" style={{ paddingLeft: 'clamp(60px, 8vw, 80px)' }}>
                               <div className="flex flex-col items-center">
                                 {awayTeam && getTeamInfo(awayTeam.abbrev)?.logo && (
                                   <div className="team-logo-container">
@@ -763,7 +860,7 @@ export default function UpcomingSchedule({ onLoadingChange }: UpcomingSchedulePr
                                   </div>
                                 )}
                               </div>
-                              <span className="text-xs font-bold" style={{ color: '#d1d5db', textShadow: '2px 2px 4px rgba(0,0,0,0.8)' }}>VS</span>
+                                 <span className="font-bold vs-text" style={{ color: '#d1d5db', textShadow: '2px 2px 4px rgba(0,0,0,0.8)' }}>VS</span>
                               <div className="flex flex-col items-center">
                                 {homeTeam && getTeamInfo(homeTeam.abbrev)?.logo && (
                                   <div className="team-logo-container">
@@ -778,12 +875,12 @@ export default function UpcomingSchedule({ onLoadingChange }: UpcomingSchedulePr
 
                             {/* Status */}
                             <div className="ml-auto">
-                              <span 
-                                className="px-2 py-1 rounded-full text-xs font-bold"
-                                style={{
-                                  backgroundColor: gameStatus === 'Final' ? '#4b5563' : '#22c55e',
-                                  color: gameStatus === 'Final' ? '#d1d5db' : '#ffffff'
-                                }}
+                                 <span 
+                                   className="px-1 py-0.5 rounded-full font-bold game-status-text"
+                                   style={{
+                                     backgroundColor: gameStatus === 'Final' ? '#4b5563' : '#22c55e',
+                                     color: gameStatus === 'Final' ? '#d1d5db' : '#ffffff'
+                                   }}
                               >
                                 {gameStatus === 'Final' ? 'Final' : ''}
                               </span>
@@ -812,11 +909,11 @@ export default function UpcomingSchedule({ onLoadingChange }: UpcomingSchedulePr
             }
             return (
               <div>
-                <div className="text-3xl font-bold text-white mb-4" style={{ color: '#d1d5db', paddingLeft: '20px', paddingBottom: '20px' }}>
+                <div className="font-bold text-white mb-2" style={{ color: '#d1d5db', fontSize: 'clamp(1.2rem, 2.5vw, 2rem)', textAlign: 'left', paddingBottom: '1vh', textTransform: 'uppercase', fontWeight: 'bold', marginLeft: '0vw' }}>
                   Tomorrow
                 </div>
-                <div className="space-y-3" style={{ paddingLeft: '20px', textAlign: 'center' }}>
-                  <div className="text-lg font-bold" style={{ color: '#FFD700' }}>No games tomorrow</div>
+                <div className="space-y-2" style={{ textAlign: 'center', textAlign: 'center' }}>
+                  <div className="font-bold" style={{ color: '#FFD700', fontSize: 'clamp(1rem, 1.5vw, 1.2rem)' }}>No games tomorrow</div>
                 </div>
               </div>
             );
@@ -824,7 +921,7 @@ export default function UpcomingSchedule({ onLoadingChange }: UpcomingSchedulePr
         </div>
 
         {/* Upcoming Games - Right */}
-        <div className="flex justify-end">
+        <div className="flex justify-center">
           {(() => {
             const otherGames = twoDaysAfterTomorrow ? filteredGames.filter(game => {
               const gameDate = new Date(game.date);
@@ -847,10 +944,10 @@ export default function UpcomingSchedule({ onLoadingChange }: UpcomingSchedulePr
             if (otherGames.length > 0) {
               return (
                 <div>
-                  <div className="text-3xl font-bold text-white mb-4" style={{ color: '#d1d5db', paddingLeft: '20px', paddingBottom: '20px' }}>
+                  <div className="font-bold text-white mb-2" style={{ color: '#d1d5db', fontSize: 'clamp(1.2rem, 2.5vw, 2rem)', textAlign: 'left', paddingBottom: '1vh', textTransform: 'uppercase', fontWeight: 'bold', marginLeft: '1vw' }}>
                     Upcoming
                   </div>
-                  <div className="stacked-games" style={{ paddingLeft: '20px' }}>
+                  <div className="stacked-games" style={{ paddingLeft: '1vw' }}>
                     {otherGames.map((game) => {
                       const homeTeam = game.teams.find(team => team.isHome);
                       const awayTeam = game.teams.find(team => !team.isHome);
@@ -859,13 +956,17 @@ export default function UpcomingSchedule({ onLoadingChange }: UpcomingSchedulePr
                       return (
                         <div key={game.id} style={{ position: 'relative' }}>
                           <div
-                            className="flex items-center space-x-3 px-3 py-3 rounded-xl upcoming-game-row h-full team-gradient-outline"
-                            style={{
-                              paddingLeft: '20px',
-                              position: 'relative',
-                              width: '280px',
-                              height: '120px',
-                              marginLeft: '2px',
+                            className="flex items-center space-x-3 px-3 py-3 rounded-xl upcoming-game-row h-full team-gradient-outline game-card-hover cursor-pointer"
+                            onClick={(e) => {
+                              e.preventDefault();
+                              e.stopPropagation();
+                              handleInjuryReportClick(game);
+                            }}
+                               style={{
+                                 position: 'relative',
+                                 width: '100vw',
+                                 height: '12vh',
+                              marginLeft: '0.2vw',
                               background: (() => {
                                 const awayTeamInfo = getTeamInfo(awayTeam?.abbrev || '');
                                 const homeTeamInfo = getTeamInfo(homeTeam?.abbrev || '');
@@ -887,18 +988,18 @@ export default function UpcomingSchedule({ onLoadingChange }: UpcomingSchedulePr
                             } as React.CSSProperties}
                           >
                             {/* Date and Time */}
-                            <div className="absolute top-2 left-4">
-                              <div className="text-sm font-bold" style={{ color: '#d1d5db', textShadow: '2px 2px 4px rgba(0,0,0,0.8)' }}>
-                                {formatDate(game.date)}
-                              </div>
-                              <div className="text-xs font-bold" style={{ color: '#d1d5db', textShadow: '2px 2px 4px rgba(0,0,0,0.8)' }}>
+                            <div className="absolute" style={{ top: '0.5vh', left: '1vw' }}>
+                               <div className="font-bold game-date-text" style={{ color: '#d1d5db', textShadow: '2px 2px 4px rgba(0,0,0,0.8)' }}>
+                                 {formatDate(game.date)}
+                               </div>
+                              <div className="font-bold game-time-text" style={{ color: '#d1d5db', textShadow: '2px 2px 4px rgba(0,0,0,0.8)' }}>
                                 {formatTime(game.date)}
                               </div>
                               {gameStatus === 'Live' && renderLiveIndicator()}
                             </div>
 
                             {/* Teams */}
-                            <div className="flex items-center justify-between w-full" style={{ paddingLeft: '80px' }}>
+                            <div className="flex items-center justify-between w-full" style={{ paddingLeft: 'clamp(60px, 8vw, 80px)' }}>
                               <div className="flex flex-col items-center">
                                 {awayTeam && getTeamInfo(awayTeam.abbrev)?.logo && (
                                   <div className="team-logo-container">
@@ -909,7 +1010,7 @@ export default function UpcomingSchedule({ onLoadingChange }: UpcomingSchedulePr
                                   </div>
                                 )}
                               </div>
-                              <span className="text-xs font-bold" style={{ color: '#d1d5db', textShadow: '2px 2px 4px rgba(0,0,0,0.8)' }}>VS</span>
+                                 <span className="font-bold vs-text" style={{ color: '#d1d5db', textShadow: '2px 2px 4px rgba(0,0,0,0.8)' }}>VS</span>
                               <div className="flex flex-col items-center">
                                 {homeTeam && getTeamInfo(homeTeam.abbrev)?.logo && (
                                   <div className="team-logo-container">
@@ -924,12 +1025,12 @@ export default function UpcomingSchedule({ onLoadingChange }: UpcomingSchedulePr
 
                             {/* Status */}
                             <div className="ml-auto">
-                              <span 
-                                className="px-2 py-1 rounded-full text-xs font-bold"
-                                style={{
-                                  backgroundColor: gameStatus === 'Final' ? '#4b5563' : '#22c55e',
-                                  color: gameStatus === 'Final' ? '#d1d5db' : '#ffffff'
-                                }}
+                                 <span 
+                                   className="px-1 py-0.5 rounded-full font-bold game-status-text"
+                                   style={{
+                                     backgroundColor: gameStatus === 'Final' ? '#4b5563' : '#22c55e',
+                                     color: gameStatus === 'Final' ? '#d1d5db' : '#ffffff'
+                                   }}
                               >
                                 {gameStatus === 'Final' ? 'Final' : ''}
                               </span>
@@ -944,11 +1045,11 @@ export default function UpcomingSchedule({ onLoadingChange }: UpcomingSchedulePr
             }
             return (
               <div>
-                <div className="text-3xl font-bold text-white mb-4" style={{ color: '#d1d5db', paddingLeft: '20px', paddingBottom: '20px' }}>
+                <div className="font-bold text-white mb-2" style={{ color: '#d1d5db', fontSize: 'clamp(1.2rem, 2.5vw, 2rem)', textAlign: 'left', paddingBottom: '1vh', textTransform: 'uppercase', fontWeight: 'bold', marginLeft: '1vw' }}>
                   Upcoming
                 </div>
-                <div className="space-y-3" style={{ paddingLeft: '20px', textAlign: 'center' }}>
-                  <div className="text-lg font-bold" style={{ color: '#FFD700' }}>No upcoming games</div>
+                <div className="space-y-2" style={{ textAlign: 'center', textAlign: 'center' }}>
+                  <div className="font-bold" style={{ color: '#FFD700', fontSize: 'clamp(1rem, 1.5vw, 1.2rem)' }}>No upcoming games</div>
                 </div>
               </div>
             );
