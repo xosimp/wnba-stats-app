@@ -40,12 +40,18 @@ export default function UpcomingSchedule({ onLoadingChange }: UpcomingSchedulePr
   const [scheduleData, setScheduleData] = useState<ScheduleData | null>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
-  const [today, setToday] = useState(new Date());
-  const [tomorrow, setTomorrow] = useState(() => {
+  const [today, setToday] = useState<Date | null>(null);
+  const [tomorrow, setTomorrow] = useState<Date | null>(null);
+  
+  // Initialize dates on client side to avoid hydration mismatch
+  useEffect(() => {
+    const now = new Date();
+    setToday(now);
+    
     const tomorrowDate = new Date();
     tomorrowDate.setDate(tomorrowDate.getDate() + 1);
-    return tomorrowDate;
-  });
+    setTomorrow(tomorrowDate);
+  }, []);
 
   // Notify parent component when loading state changes
   useEffect(() => {
@@ -180,10 +186,14 @@ export default function UpcomingSchedule({ onLoadingChange }: UpcomingSchedulePr
   }, []);
 
   // Calculate the date range for upcoming games (2 days starting from tomorrow)
-  const twoDaysAfterTomorrow = new Date(today);
-  twoDaysAfterTomorrow.setDate(today.getDate() + 2); // 2 days from today = 8/6
-  const threeDaysAfterToday = new Date(today);
-  threeDaysAfterToday.setDate(today.getDate() + 3); // 3 days from today = 8/7
+  const twoDaysAfterTomorrow = today ? new Date(today) : null;
+  if (twoDaysAfterTomorrow) {
+    twoDaysAfterTomorrow.setDate(today!.getDate() + 2); // 2 days from today = 8/6
+  }
+  const threeDaysAfterToday = today ? new Date(today) : null;
+  if (threeDaysAfterToday) {
+    threeDaysAfterToday.setDate(today!.getDate() + 3); // 3 days from today = 8/7
+  }
 
   const fetchSchedule = async () => {
     try {
@@ -221,8 +231,15 @@ export default function UpcomingSchedule({ onLoadingChange }: UpcomingSchedulePr
         allGames.push(...gamesForDate);
       });
       
-      // Filter games by their individual dates (only future games)
+      // Filter games by their individual dates (today's games and future games)
+      if (!today) {
+        console.log('🔍 Today not initialized yet, skipping filtering');
+        return;
+      }
+      
       console.log('🔍 Today state:', today);
+      console.log('🔍 Today timezone offset:', today.getTimezoneOffset());
+      console.log('🔍 Today ISO string:', today.toISOString());
       console.log('🔍 Total games before filtering:', allGames.length);
       
       const filteredGames = allGames.filter(game => {
@@ -232,14 +249,18 @@ export default function UpcomingSchedule({ onLoadingChange }: UpcomingSchedulePr
         const gameDateOnly = new Date(gameDate.getFullYear(), gameDate.getMonth(), gameDate.getDate());
         const todayOnly = new Date(today.getFullYear(), today.getMonth(), today.getDate());
         
-        const isFutureGame = gameDateOnly > todayOnly;
+        // Include today's games AND future games
+        const isTodayOrFuture = gameDateOnly >= todayOnly;
         
-        if (isFutureGame) {
-          console.log('🔍 Future game:', game.date, game.teams?.map(t => t.abbrev).join(' vs '));
+        if (isTodayOrFuture) {
+          console.log('🔍 Today/Future game:', game.date, 'Game date object:', gameDate, 'Game timezone offset:', gameDate.getTimezoneOffset(), game.teams?.map(t => t.abbrev).join(' vs '));
         }
         
-        // Only include future games (not today's games)
-        return isFutureGame;
+        // Include today's games and future games
+        if (!isTodayOrFuture) {
+          console.log('🔍 Filtered out past game:', game.date, 'Game date object:', gameDate, 'Game timezone offset:', gameDate.getTimezoneOffset(), game.teams?.map(t => t.abbrev).join(' vs '));
+        }
+        return isTodayOrFuture;
       });
       
       console.log('🔍 Filtered games count:', filteredGames.length);
@@ -474,11 +495,10 @@ export default function UpcomingSchedule({ onLoadingChange }: UpcomingSchedulePr
         {/* Today's Games - Left */}
         <div>
           {(() => {
-            const todayGames = allGames.filter(game => {
+            const todayGames = today ? allGames.filter(game => {
               const gameDate = new Date(game.date);
-              const today = new Date();
               return gameDate.toDateString() === today.toDateString();
-            });
+            }) : [];
             
             if (todayGames.length > 0) {
               return (
@@ -582,8 +602,7 @@ export default function UpcomingSchedule({ onLoadingChange }: UpcomingSchedulePr
             }
             
             // Check if there were games today but they've all been completed
-            const today = new Date();
-            const hadGamesToday = scheduleData && scheduleData.schedule[today.toISOString().split('T')[0]];
+            const hadGamesToday = scheduleData && today && scheduleData.schedule[today.toISOString().split('T')[0]];
             
             if (hadGamesToday && hadGamesToday.length > 0) {
               // All games today have been completed
@@ -738,17 +757,21 @@ export default function UpcomingSchedule({ onLoadingChange }: UpcomingSchedulePr
         {/* Upcoming Games - Right */}
         <div className="flex justify-end">
           {(() => {
-            const otherGames = allGames.filter(game => {
+            const otherGames = twoDaysAfterTomorrow ? allGames.filter(game => {
               const gameDate = new Date(game.date);
               // Show games from 2 days after today onwards (expanded range)
               return gameDate >= twoDaysAfterTomorrow;
-            });
+            }) : [];
             
             console.log('🔍 Upcoming games debug:');
             console.log('🔍 Total allGames:', allGames.length);
-            console.log('🔍 Today:', today.toDateString());
-            console.log('🔍 Two days after tomorrow:', twoDaysAfterTomorrow.toDateString());
-            console.log('🔍 Four days from today:', new Date(today.getTime() + (4 * 24 * 60 * 60 * 1000)).toDateString());
+            if (today) {
+              console.log('🔍 Today:', today.toDateString());
+              console.log('🔍 Four days from today:', new Date(today.getTime() + (4 * 24 * 60 * 60 * 1000)).toDateString());
+            }
+            if (twoDaysAfterTomorrow) {
+              console.log('🔍 Two days after tomorrow:', twoDaysAfterTomorrow.toDateString());
+            }
             console.log('🔍 Filtered upcoming games:', otherGames.length);
             console.log('🔍 Upcoming games:', otherGames.map(g => ({ date: g.date, teams: g.teams?.map(t => t.abbrev).join(' vs ') })));
             

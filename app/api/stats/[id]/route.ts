@@ -153,12 +153,33 @@ export async function GET(
     // Get player info from database
     const playerInfo = await getPlayerFromDatabase(id);
 
-    // Redis cache setup
-    const redis = new Redis(process.env.REDIS_URL || 'redis://localhost:6379');
-    const cacheKey = `player_stats_${id}`;
+    // Redis cache setup with error handling
+    let redis = null;
+    let cachedData = null;
     
-    // Try to get from cache first
-    const cachedData = await redis.get(cacheKey);
+    try {
+      redis = new Redis(process.env.REDIS_URL || 'redis://localhost:6379', {
+        lazyConnect: true,
+        maxRetriesPerRequest: 0,
+        retryDelayOnFailover: 0,
+        enableReadyCheck: false,
+        connectTimeout: 1000,
+        commandTimeout: 1000,
+      });
+      
+      // Handle connection errors silently
+      redis.on('error', (err) => {
+        if (err.message.includes('ECONNREFUSED')) {
+          redis = null;
+        }
+      });
+      
+      const cacheKey = `player_stats_${id}`;
+      cachedData = await redis.get(cacheKey);
+    } catch (error) {
+      // Redis not available, continue without cache
+      redis = null;
+    }
     if (cachedData) {
       const parsedData = JSON.parse(cachedData);
       parsedData.player = playerInfo || { name: 'Unknown Player', team: 'TBD', id };
@@ -231,8 +252,15 @@ export async function GET(
       message: gameStats.length > 0 ? 'Complete player statistics' : 'Season statistics available, but game-by-game data not available'
     };
 
-    // Cache the response (5 minutes)
-    await redis.setex(cacheKey, 300, JSON.stringify(responseData));
+    // Cache the response (5 minutes) if Redis is available
+    if (redis) {
+      try {
+        await redis.setex(cacheKey, 300, JSON.stringify(responseData));
+      } catch (error) {
+        // Redis error, continue without caching
+        console.log('Redis cache error, continuing without cache');
+      }
+    }
 
     logPerformance({
       timestamp: new Date().toISOString(),

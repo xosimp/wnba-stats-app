@@ -55,12 +55,28 @@ function logPerformance(log: PerformanceLog) {
 // Singleton Redis connection to avoid creating new connections for each request
 let redis: Redis | null = null;
 
-function getRedis(): Redis {
+function getRedis(): Redis | null {
   if (!redis) {
-    redis = new Redis(process.env.REDIS_URL || 'redis://localhost:6379', {
-      lazyConnect: true,
-      maxRetriesPerRequest: 3,
-    });
+    try {
+      redis = new Redis(process.env.REDIS_URL || 'redis://localhost:6379', {
+        lazyConnect: true,
+        maxRetriesPerRequest: 0, // Don't retry on connection failure
+        retryDelayOnFailover: 0,
+        enableReadyCheck: false,
+        connectTimeout: 1000, // 1 second timeout
+        commandTimeout: 1000,
+      });
+      
+      // Handle connection errors silently
+      redis.on('error', (err) => {
+        if (err.message.includes('ECONNREFUSED')) {
+          redis = null;
+        }
+      });
+    } catch (error) {
+      console.error('Failed to create Redis connection:', error);
+      return null;
+    }
   }
   return redis;
 }
@@ -199,7 +215,8 @@ export async function GET(request: NextRequest, { params }: { params: Promise<{ 
     // Check Redis cache first
     const recentGamesCacheKey = `wnba:recentgames:${id}`;
     let usedCache = false;
-    const cachedRecentGames = await getRedis().get(recentGamesCacheKey);
+    const redisClient = getRedis();
+    const cachedRecentGames = redisClient ? await redisClient.get(recentGamesCacheKey) : null;
     
     if (cachedRecentGames) {
       usedCache = true;
@@ -213,7 +230,7 @@ export async function GET(request: NextRequest, { params }: { params: Promise<{ 
         endpoint: '/api/stats/[id]/recent',
         cacheHit: true,
         responseTime,
-        cacheSize: await getRedis().dbsize()
+        cacheSize: redisClient ? await redisClient.dbsize() : 0
       });
       
       return NextResponse.json(JSON.parse(cachedRecentGames));
@@ -250,7 +267,13 @@ export async function GET(request: NextRequest, { params }: { params: Promise<{ 
       };
       
       // Cache empty response for a shorter time
-      await getRedis().set(recentGamesCacheKey, JSON.stringify(emptyResponse), 'EX', 1800); // 30 minutes
+      if (redisClient) {
+        try {
+          await redisClient.set(recentGamesCacheKey, JSON.stringify(emptyResponse), 'EX', 1800); // 30 minutes
+        } catch (error) {
+          console.log('Redis cache error, continuing without cache');
+        }
+      }
       
       logPerformance({
         timestamp: new Date().toISOString(),
@@ -323,7 +346,13 @@ export async function GET(request: NextRequest, { params }: { params: Promise<{ 
     };
     
     // Cache the response for 12 hours
-    await getRedis().set(recentGamesCacheKey, JSON.stringify(responseData), 'EX', 43200);
+    if (redisClient) {
+      try {
+        await redisClient.set(recentGamesCacheKey, JSON.stringify(responseData), 'EX', 43200);
+      } catch (error) {
+        console.log('Redis cache error, continuing without cache');
+      }
+    }
     
     console.log(`[RecentGamesAPI] playerId=${id} | source=api | TTL=43200s (12 hours) | games=${recentGames.length}`);
     
@@ -333,7 +362,7 @@ export async function GET(request: NextRequest, { params }: { params: Promise<{ 
       endpoint: '/api/stats/[id]/recent',
       cacheHit: false,
       responseTime,
-      cacheSize: await getRedis().dbsize()
+        cacheSize: redisClient ? await redisClient.dbsize() : 0
     });
     
     return NextResponse.json(responseData);

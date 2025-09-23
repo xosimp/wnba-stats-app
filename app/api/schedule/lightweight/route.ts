@@ -9,10 +9,23 @@ function getRedis(): Redis | null {
     try {
       redis = new Redis(process.env.REDIS_URL || 'redis://localhost:6379', {
         lazyConnect: true,
-        maxRetriesPerRequest: 3,
+        maxRetriesPerRequest: 0, // Don't retry on connection failure
+        retryDelayOnFailover: 0,
+        enableReadyCheck: false,
+        connectTimeout: 1000, // 1 second timeout
+        commandTimeout: 1000,
       });
+      
+      // Handle connection errors silently
+      redis.on('error', (err) => {
+        // Silently handle Redis connection errors
+        if (err.message.includes('ECONNREFUSED')) {
+          redis = null; // Reset redis to null so it can be recreated
+        }
+      });
+      
     } catch (error) {
-      console.error('Failed to create Redis connection:', error);
+      console.log('Redis not available, proceeding without cache');
       return null;
     }
   }

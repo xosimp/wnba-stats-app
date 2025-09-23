@@ -11,13 +11,19 @@ import Link from 'next/link';
 
 function AdminCacheClearButton() {
   const [show, setShow] = useState(false);
+  const [mounted, setMounted] = useState(false);
+  
   useEffect(() => {
+    setMounted(true);
     // Show button if ?admin=1 in URL or localStorage.admin=1
-    if (window.location.search.includes('admin=1') || localStorage.getItem('admin') === '1') {
-      setShow(true);
+    if (typeof window !== 'undefined') {
+      if (window.location.search.includes('admin=1') || localStorage.getItem('admin') === '1') {
+        setShow(true);
+      }
     }
   }, []);
-  if (!show) return null;
+  
+  if (!mounted || !show) return null;
   const handleClearCache = async () => {
     const res = await fetch('/api/debug/players', {
       method: 'POST',
@@ -31,13 +37,19 @@ function AdminCacheClearButton() {
 
 function AdminCacheDashboard() {
   const [show, setShow] = useState(false);
+  const [mounted, setMounted] = useState(false);
   const [stats, setStats] = useState<any>(null);
   const [loading, setLoading] = useState(false);
+  
   useEffect(() => {
-    if (window.location.search.includes('admin=1') || localStorage.getItem('admin') === '1') {
-      setShow(true);
+    setMounted(true);
+    if (typeof window !== 'undefined') {
+      if (window.location.search.includes('admin=1') || localStorage.getItem('admin') === '1') {
+        setShow(true);
+      }
     }
   }, []);
+  
   const fetchStats = async () => {
     setLoading(true);
     const res = await fetch('/api/debug/players', {
@@ -48,7 +60,7 @@ function AdminCacheDashboard() {
     setStats(data);
     setLoading(false);
   };
-  if (!show) return null;
+  if (!mounted || !show) return null;
   return (
     <div style={{position:'fixed',bottom:80,right:20,zIndex:1000,background:'#fff',border:'2px solid #71FD08',borderRadius:8,padding:16,maxHeight:400,overflowY:'auto',boxShadow:'0 2px 12px rgba(0,0,0,0.15)'}}>
       <button onClick={fetchStats} style={{marginBottom:8,padding:6,background:'#71FD08',color:'#222',borderRadius:6,fontWeight:700}}>Show Cache Stats</button>
@@ -100,7 +112,7 @@ export default function Home() {
   useEffect(() => {
     if (status === 'authenticated' && session?.user?.email) {
       const key = `ngh_first_time_${session.user.email}`;
-      if (!localStorage.getItem(key)) {
+      if (typeof window !== 'undefined' && !localStorage.getItem(key)) {
         setShowFirstTime(true);
       }
     }
@@ -254,7 +266,7 @@ export default function Home() {
       });
       const data = await res.json();
       if (!res.ok) throw new Error(data.error || 'Failed to update avatar');
-      if (session?.user?.email) {
+      if (session?.user?.email && typeof window !== 'undefined') {
         localStorage.setItem(`ngh_first_time_${session.user.email}`, 'true');
       }
       setShowSuccess(true);

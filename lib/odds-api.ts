@@ -351,7 +351,18 @@ function getRedis(): Redis | null {
       console.log('Connecting to Redis at:', redisUrl);
       redis = new Redis(redisUrl, {
         lazyConnect: true,
-        maxRetriesPerRequest: 3,
+        maxRetriesPerRequest: 0, // Don't retry on connection failure
+        retryDelayOnFailover: 0,
+        enableReadyCheck: false,
+        connectTimeout: 1000, // 1 second timeout
+        commandTimeout: 1000,
+      });
+      
+      // Handle connection errors silently
+      redis.on('error', (err) => {
+        if (err.message.includes('ECONNREFUSED')) {
+          redis = null;
+        }
       });
     } catch (error) {
       console.error('Failed to create Redis connection:', error);

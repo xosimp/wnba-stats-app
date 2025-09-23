@@ -93,19 +93,49 @@ async function validateCacheData(): Promise<ValidationIssue[]> {
   const issues: ValidationIssue[] = [];
   
   try {
-    const redis = new Redis(process.env.REDIS_URL || 'redis://localhost:6379');
+    let redis = null;
+    try {
+      redis = new Redis(process.env.REDIS_URL || 'redis://localhost:6379', {
+        lazyConnect: true,
+        maxRetriesPerRequest: 0,
+        retryDelayOnFailover: 0,
+        enableReadyCheck: false,
+        connectTimeout: 1000,
+        commandTimeout: 1000,
+      });
+      
+      // Handle connection errors silently
+      redis.on('error', (err) => {
+        if (err.message.includes('ECONNREFUSED')) {
+          redis = null;
+        }
+      });
+    } catch (error) {
+      console.log('Redis not available, continuing without cache');
+      redis = null;
+    }
     
     // Check Redis connection
-    try {
-      await redis.ping();
-    } catch (error) {
+    if (redis) {
+      try {
+        await redis.ping();
+      } catch (error) {
+        issues.push({
+          type: 'cache_issue',
+          severity: 'high',
+          message: 'Redis connection failed',
+          details: error instanceof Error ? error.message : 'Unknown error'
+        });
+        await redis.disconnect();
+        return issues;
+      }
+    } else {
       issues.push({
         type: 'cache_issue',
-        severity: 'high',
-        message: 'Redis connection failed',
-        details: error instanceof Error ? error.message : 'Unknown error'
+        severity: 'medium',
+        message: 'Redis not available',
+        details: 'Redis connection could not be established'
       });
-      await redis.disconnect();
       return issues;
     }
     
@@ -146,7 +176,9 @@ async function validateCacheData(): Promise<ValidationIssue[]> {
       }
     }
     
-    await redis.disconnect();
+    if (redis) {
+      await redis.disconnect();
+    }
     
   } catch (error) {
     issues.push({
