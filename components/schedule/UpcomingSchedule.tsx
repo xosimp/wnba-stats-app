@@ -91,31 +91,31 @@ export default function UpcomingSchedule({ onLoadingChange }: UpcomingSchedulePr
       .game-card-hover {
         transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
         cursor: pointer;
-        min-width: 20vw !important;
-        width: 20vw !important;
-        height: 10vh !important;
+        min-width: 24vw !important;
+        width: 24vw !important;
+        height: 8vh !important;
         flex-shrink: 0 !important;
       }
       
       div.today-game-row {
-        min-width: 20vw !important;
-        width: 20vw !important;
-        height: 10vh !important;
+        min-width: 24vw !important;
+        width: 24vw !important;
+        height: 8vh !important;
         flex-shrink: 0 !important;
-        margin-left: -3vw !important;
+        margin-left: -2.5vw !important;
       }
       
       div.tomorrow-game-row {
-        min-width: 20vw !important;
-        width: 20vw !important;
-        height: 10vh !important;
+        min-width: 24vw !important;
+        width: 24vw !important;
+        height: 8vh !important;
         flex-shrink: 0 !important;
       }
       
       div.upcoming-game-row {
-        min-width: 20vw !important;
-        width: 20vw !important;
-        height: 10vh !important;
+        min-width: 24vw !important;
+        width: 24vw !important;
+        height: 8vh !important;
         flex-shrink: 0 !important;
       }
       
@@ -140,43 +140,43 @@ export default function UpcomingSchedule({ onLoadingChange }: UpcomingSchedulePr
       }
       
       .team-logo-container img {
-        width: 12vw !important;
-        height: 12vw !important;
-        max-width: 150px !important;
-        max-height: 150px !important;
-        min-width: 60px !important;
-        min-height: 60px !important;
+        width: 10vw !important;
+        height: 10vw !important;
+        max-width: 120px !important;
+        max-height: 120px !important;
+        min-width: 50px !important;
+        min-height: 50px !important;
       }
       
       /* Additional selectors to ensure logo sizing works */
       .team-logo-container {
-        width: 12vw !important;
-        height: 12vw !important;
-        max-width: 150px !important;
-        max-height: 150px !important;
+        width: 10vw !important;
+        height: 10vw !important;
+        max-width: 120px !important;
+        max-height: 120px !important;
       }
       
       img[alt*="logo"] {
-        width: 12vw !important;
-        height: 12vw !important;
-        max-width: 150px !important;
-        max-height: 150px !important;
+        width: 10vw !important;
+        height: 10vw !important;
+        max-width: 120px !important;
+        max-height: 120px !important;
       }
       
       .game-time-text {
-        font-size: clamp(0.7rem, 1.2vw, 1rem) !important;
-      }
-      
-      .game-date-text {
         font-size: clamp(0.6rem, 1vw, 0.8rem) !important;
       }
       
+      .game-date-text {
+        font-size: clamp(0.5rem, 0.8vw, 0.7rem) !important;
+      }
+      
       .vs-text {
-        font-size: clamp(0.8rem, 1.4vw, 1.1rem) !important;
+        font-size: clamp(0.7rem, 1.1vw, 0.9rem) !important;
       }
       
       .game-status-text {
-        font-size: clamp(0.7rem, 1.2vw, 0.9rem) !important;
+        font-size: clamp(0.6rem, 1vw, 0.8rem) !important;
       }
       
       .game-card-hover:hover {
@@ -613,7 +613,7 @@ export default function UpcomingSchedule({ onLoadingChange }: UpcomingSchedulePr
           marginLeft: '0vw'
         }}></div>
         <h1 className="dashboard-heading flex-shrink-0" style={{
-          fontSize: 'clamp(2.5rem, 5vw, 5rem)',
+          fontSize: 'clamp(1.75rem, 3.5vw, 3.5rem)',
           textShadow: '2px 2px 4px rgba(0,0,0,0.8), -2px -2px 4px rgba(0,0,0,0.8), 2px -2px 4px rgba(0,0,0,0.8), -2px 2px 4px rgba(0,0,0,0.8)',
           fontWeight: '700 !important',
           marginLeft: '-1.0vw'
@@ -631,7 +631,7 @@ export default function UpcomingSchedule({ onLoadingChange }: UpcomingSchedulePr
 
       <div className="grid grid-cols-3 gap-4 lg:gap-6 upcoming-schedule-section">
         {/* Today's Games - Left */}
-        <div className="flex justify-center">
+        <div className="flex justify-start">
           {(() => {
             const todayGames = today ? allGames.filter(game => {
               const gameDate = new Date(game.date);
@@ -641,7 +641,7 @@ export default function UpcomingSchedule({ onLoadingChange }: UpcomingSchedulePr
             if (todayGames.length > 0) {
               return (
                 <div>
-                  <div className="font-bold text-white mb-2" style={{ color: '#d1d5db', fontSize: 'clamp(1.2rem, 2.5vw, 2rem)', textAlign: 'left', paddingBottom: '1vh', textTransform: 'uppercase', fontWeight: 'bold', marginLeft: '-3vw' }}>
+                  <div className="font-bold text-white mb-2" style={{ color: '#d1d5db', fontSize: 'clamp(0.9rem, 1.8vw, 1.5rem)', textAlign: 'left', paddingBottom: '1vh', textTransform: 'uppercase', fontWeight: 'bold', marginLeft: '0vw' }}>
                     Today
                   </div>
                    <div className="stacked-games" style={{ paddingLeft: '-5vw', paddingRight: 'auto' }}>
@@ -665,7 +665,7 @@ export default function UpcomingSchedule({ onLoadingChange }: UpcomingSchedulePr
                                  paddingLeft: '-0.5vw',
                                  position: 'relative',
                                  width: '100vw',
-                                 height: '12vh',
+                                 height: '10vh',
                                  backgroundColor: 'red !important',
                                 background: (() => {
                                   const awayTeamInfo = getTeamInfo(awayTeam?.abbrev || '');
@@ -762,10 +762,10 @@ export default function UpcomingSchedule({ onLoadingChange }: UpcomingSchedulePr
               // All games today have been completed
               return (
                  <div>
-                   <div className="font-bold text-white mb-2" style={{ color: '#d1d5db', fontSize: 'clamp(1.2rem, 2.5vw, 2rem)', textAlign: 'left', textTransform: 'uppercase', fontWeight: 'bold', marginLeft: '-3vw' }}>
+                   <div className="font-bold text-white mb-2" style={{ color: '#d1d5db', fontSize: 'clamp(0.9rem, 1.8vw, 1.5rem)', textAlign: 'left', paddingBottom: '1vh', textTransform: 'uppercase', fontWeight: 'bold', marginLeft: '0vw' }}>
                      Today
                    </div>
-                   <div className="space-y-2" style={{ paddingLeft: '-5vw', textAlign: 'center' }}>
+                   <div className="space-y-2" style={{ textAlign: 'center' }}>
                      <div className="font-bold" style={{ color: '#FFD700', fontSize: 'clamp(1rem, 1.5vw, 1.2rem)' }}>All games have ended</div>
                    </div>
                  </div>
@@ -775,10 +775,10 @@ export default function UpcomingSchedule({ onLoadingChange }: UpcomingSchedulePr
              // No games scheduled for today
              return (
                <div>
-                 <div className="text-3xl font-bold text-white mb-4" style={{ color: '#d1d5db', textAlign: 'left', marginLeft: '-3vw' }}>
+                 <div className="font-bold text-white mb-2" style={{ color: '#d1d5db', fontSize: 'clamp(0.9rem, 1.8vw, 1.5rem)', textAlign: 'left', paddingBottom: '1vh', textTransform: 'uppercase', fontWeight: 'bold', marginLeft: '0vw' }}>
                    Today
                  </div>
-                 <div className="space-y-2" style={{ paddingLeft: '-5vw', textAlign: 'center' }}>
+                 <div className="space-y-2" style={{ textAlign: 'center' }}>
                    <div className="font-bold" style={{ color: '#FFD700', fontSize: 'clamp(1rem, 1.5vw, 1.2rem)' }}>No games today</div>
                  </div>
                </div>
@@ -798,7 +798,7 @@ export default function UpcomingSchedule({ onLoadingChange }: UpcomingSchedulePr
             if (tomorrowGames.length > 0) {
               return (
                 <div>
-                  <div className="font-bold text-white mb-2" style={{ color: '#d1d5db', fontSize: 'clamp(1.2rem, 2.5vw, 2rem)', textAlign: 'left', paddingBottom: '1vh', textTransform: 'uppercase', fontWeight: 'bold', marginLeft: '0vw' }}>
+                  <div className="font-bold text-white mb-2" style={{ color: '#d1d5db', fontSize: 'clamp(0.9rem, 1.8vw, 1.5rem)', textAlign: 'left', paddingBottom: '1vh', textTransform: 'uppercase', fontWeight: 'bold', marginLeft: '0vw' }}>
                     Tomorrow
                   </div>
                   <div className="stacked-games" style={{ paddingLeft: '1vw' }}>
@@ -819,7 +819,7 @@ export default function UpcomingSchedule({ onLoadingChange }: UpcomingSchedulePr
                                style={{
                                  position: 'relative',
                                  width: '100vw',
-                                 height: '12vh',
+                                 height: '10vh',
                               background: (() => {
                                 const awayTeamInfo = getTeamInfo(awayTeam?.abbrev || '');
                                 const homeTeamInfo = getTeamInfo(homeTeam?.abbrev || '');
@@ -909,10 +909,10 @@ export default function UpcomingSchedule({ onLoadingChange }: UpcomingSchedulePr
             }
             return (
               <div>
-                <div className="font-bold text-white mb-2" style={{ color: '#d1d5db', fontSize: 'clamp(1.2rem, 2.5vw, 2rem)', textAlign: 'left', paddingBottom: '1vh', textTransform: 'uppercase', fontWeight: 'bold', marginLeft: '0vw' }}>
+                <div className="font-bold text-white mb-2" style={{ color: '#d1d5db', fontSize: 'clamp(0.9rem, 1.8vw, 1.5rem)', textAlign: 'left', paddingBottom: '1vh', textTransform: 'uppercase', fontWeight: 'bold', marginLeft: '0vw' }}>
                   Tomorrow
                 </div>
-                <div className="space-y-2" style={{ textAlign: 'center', textAlign: 'center' }}>
+                <div className="space-y-2" style={{ textAlign: 'center' }}>
                   <div className="font-bold" style={{ color: '#FFD700', fontSize: 'clamp(1rem, 1.5vw, 1.2rem)' }}>No games tomorrow</div>
                 </div>
               </div>
@@ -944,7 +944,7 @@ export default function UpcomingSchedule({ onLoadingChange }: UpcomingSchedulePr
             if (otherGames.length > 0) {
               return (
                 <div>
-                  <div className="font-bold text-white mb-2" style={{ color: '#d1d5db', fontSize: 'clamp(1.2rem, 2.5vw, 2rem)', textAlign: 'left', paddingBottom: '1vh', textTransform: 'uppercase', fontWeight: 'bold', marginLeft: '1vw' }}>
+                  <div className="font-bold text-white mb-2" style={{ color: '#d1d5db', fontSize: 'clamp(0.9rem, 1.8vw, 1.5rem)', textAlign: 'left', paddingBottom: '1vh', textTransform: 'uppercase', fontWeight: 'bold', marginLeft: '1vw' }}>
                     Upcoming
                   </div>
                   <div className="stacked-games" style={{ paddingLeft: '1vw' }}>
@@ -965,7 +965,7 @@ export default function UpcomingSchedule({ onLoadingChange }: UpcomingSchedulePr
                                style={{
                                  position: 'relative',
                                  width: '100vw',
-                                 height: '12vh',
+                                 height: '10vh',
                               marginLeft: '0.2vw',
                               background: (() => {
                                 const awayTeamInfo = getTeamInfo(awayTeam?.abbrev || '');
@@ -1045,10 +1045,10 @@ export default function UpcomingSchedule({ onLoadingChange }: UpcomingSchedulePr
             }
             return (
               <div>
-                <div className="font-bold text-white mb-2" style={{ color: '#d1d5db', fontSize: 'clamp(1.2rem, 2.5vw, 2rem)', textAlign: 'left', paddingBottom: '1vh', textTransform: 'uppercase', fontWeight: 'bold', marginLeft: '1vw' }}>
+                <div className="font-bold text-white mb-2" style={{ color: '#d1d5db', fontSize: 'clamp(0.9rem, 1.8vw, 1.5rem)', textAlign: 'left', paddingBottom: '1vh', textTransform: 'uppercase', fontWeight: 'bold', marginLeft: '1vw' }}>
                   Upcoming
                 </div>
-                <div className="space-y-2" style={{ textAlign: 'center', textAlign: 'center' }}>
+                <div className="space-y-2" style={{ textAlign: 'center' }}>
                   <div className="font-bold" style={{ color: '#FFD700', fontSize: 'clamp(1rem, 1.5vw, 1.2rem)' }}>No upcoming games</div>
                 </div>
               </div>

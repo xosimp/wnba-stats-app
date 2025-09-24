@@ -77,9 +77,9 @@ export async function POST(request: NextRequest) {
               maxFeatures: model.model_data.max_features || 'sqrt'
             },
             performance: {
-              rSquared: model.model_data.r_squared || 0,
-              rmse: model.model_data.rmse || 0,
-              mae: model.model_data.mae || 0
+              rSquared: model.model_data.r_squared || model.r_squared || 0,
+              rmse: model.model_data.rmse || model.rmse || 0,
+              mae: model.model_data.mae || model.mae || 0
             },
             features: model.model_data.feature_names || [],
             trainingData: {
@@ -472,7 +472,11 @@ export async function POST(request: NextRequest) {
       console.log(`🎯 STAT-MODEL API: Prediction: ${prediction} ${statType}`);
 
       // Calculate confidence based on model performance
-      const rSquared = model.model_data.rSquared || 0;
+      // Handle different data structures: model_data.performance.rSquared, model_data.rSquared, or database r_squared field
+      const rSquared = model.model_data?.performance?.rSquared || 
+                      model.model_data?.rSquared || 
+                      model.r_squared || 
+                      0;
       let confidence = 0;
       
       // Random Forest optimized confidence thresholds
@@ -491,23 +495,23 @@ export async function POST(request: NextRequest) {
         const sportsbookValue = parseFloat(sportsbookLine);
         edge = prediction - sportsbookValue;
         
-        // Random Forest optimized edge thresholds
-        if (Math.abs(edge) < 0.5) {
-          recommendation = 'PASS'; // Edge too small
+        // Random Forest optimized edge thresholds - more conservative
+        if (Math.abs(edge) < 1.0) {
+          recommendation = 'PASS'; // Edge too small - need at least 1.0 edge
           riskLevel = 'HIGH';
         } else if (edge > 0) {
           recommendation = 'OVER';
           // Risk based on edge size
           if (Math.abs(edge) >= 2.5) riskLevel = 'LOW'; // Very strong edge
           else if (Math.abs(edge) >= 1.5) riskLevel = 'LOW'; // Strong edge
-          else if (Math.abs(edge) >= 0.5) riskLevel = 'MEDIUM'; // Moderate edge
+          else if (Math.abs(edge) >= 1.0) riskLevel = 'MEDIUM'; // Moderate edge
           else riskLevel = 'HIGH'; // Small edge
         } else {
           recommendation = 'UNDER';
           // Risk based on edge size
           if (Math.abs(edge) >= 2.5) riskLevel = 'LOW'; // Very strong edge
           else if (Math.abs(edge) >= 1.5) riskLevel = 'LOW'; // Strong edge
-          else if (Math.abs(edge) >= 0.5) riskLevel = 'MEDIUM'; // Moderate edge
+          else if (Math.abs(edge) >= 1.0) riskLevel = 'MEDIUM'; // Moderate edge
           else riskLevel = 'HIGH'; // Small edge
         }
       }
@@ -544,15 +548,14 @@ export async function POST(request: NextRequest) {
         seasonGamesCount: allSeasonGames?.length || recentGames.length,
         teammateInjuries: [],
         modelQuality: rSquared >= 0.7 ? 'Excellent' : rSquared >= 0.5 ? 'Good' : rSquared >= 0.3 ? 'Fair' : 'Poor',
-        modelWarning: rSquared < 0.3 ? `Model has low accuracy (R² = ${(rSquared * 100).toFixed(1)}%)` : null,
         // Additional fields for compatibility
         method: 'linear_regression',
         statType: statType,
         modelId: model.id,
         modelPerformance: {
           rSquared: rSquared,
-          rmse: model.model_data.rmse,
-          mae: model.model_data.mae
+          rmse: model.model_data?.performance?.rmse || model.model_data?.rmse || model.rmse || 0,
+          mae: model.model_data?.performance?.mae || model.model_data?.mae || model.mae || 0
         },
         recentForm: recentForm,
         matchupAnalysisText: `${isHome ? 'Home' : 'Away'} game vs ${opponent} (Pace: ${teamPace} vs ${opponentPace})`,

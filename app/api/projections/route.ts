@@ -350,7 +350,7 @@ export async function POST(request: NextRequest) {
                       riskLevel,
                       edge,
                       // Add recommendation based on edge and confidence
-                      recommendation: sportsbookLine ? (Math.abs(edge) >= confidence * 0.5 ? 
+                      recommendation: sportsbookLine ? (Math.abs(edge) >= 1.0 ? 
                         (edge > 0 ? 'Over' : 'Under') : 'Pass') : 'Pass',
                       factors: {
                         seasonAverage: features.season_avg * 100,
@@ -377,7 +377,6 @@ export async function POST(request: NextRequest) {
                       confidenceLevel: Math.round(confidenceScore * 100),
                       riskAssessment: generateRiskAssessment(confidenceScore, Math.abs(edge)),
                       modelQuality: rSquared >= 0.7 ? 'Excellent' : rSquared >= 0.5 ? 'Good' : rSquared >= 0.3 ? 'Fair' : rSquared >= 0.1 ? 'Poor' : 'Worthless',
-                      modelWarning: rSquared < 0.1 ? '⚠️ This model has very poor predictive power (R² < 0.1). Projections may be unreliable.' : null,
                       paceAdvantage: teamPace.pace > opponentPace.pace ? 'Favorable' : teamPace.pace < opponentPace.pace ? 'Unfavorable' : 'Neutral',
                       // Injury impact calculation
                       injuryImpact: calculateInjuryImpact(teammateInjuries, playerStats.position, team),

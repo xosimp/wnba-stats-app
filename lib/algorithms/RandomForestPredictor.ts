@@ -60,7 +60,6 @@ export interface PredictionResult {
   seasonGamesCount: number;
   teammateInjuries: any[];
   modelQuality: 'Excellent' | 'Good' | 'Fair' | 'Poor';
-  modelWarning: string | null;
   method: string;
   statType: string;
   modelId: string;
@@ -595,7 +594,8 @@ export class RandomForestPredictor {
     }
 
     // Calculate confidence based on betting edge and pick strength
-    const rSquared = this.model.performance.rSquared;
+    // Handle case where performance object might be missing (fallback to database fields)
+    const rSquared = this.model.performance?.rSquared || 0;
     let confidence = 0;
     
     // Base confidence from model quality (minimum threshold)
@@ -614,23 +614,23 @@ export class RandomForestPredictor {
     if (input.sportsbookLine) {
       edge = prediction - input.sportsbookLine;
       
-      // Random Forest optimized edge thresholds
-      if (Math.abs(edge) < 0.5) {
-        recommendation = 'PASS'; // Edge too small
+      // Random Forest optimized edge thresholds - more conservative
+      if (Math.abs(edge) < 1.0) {
+        recommendation = 'PASS'; // Edge too small - need at least 1.0 edge
         riskLevel = 'HIGH';
       } else if (edge > 0) {
         recommendation = 'OVER';
         // Risk based on edge size
         if (Math.abs(edge) >= 2.5) riskLevel = 'LOW'; // Very strong edge
         else if (Math.abs(edge) >= 1.5) riskLevel = 'LOW'; // Strong edge
-        else if (Math.abs(edge) >= 0.5) riskLevel = 'MEDIUM'; // Moderate edge
+        else if (Math.abs(edge) >= 1.0) riskLevel = 'MEDIUM'; // Moderate edge
         else riskLevel = 'HIGH'; // Small edge
       } else {
         recommendation = 'UNDER';
         // Risk based on edge size
         if (Math.abs(edge) >= 2.5) riskLevel = 'LOW'; // Very strong edge
         else if (Math.abs(edge) >= 1.5) riskLevel = 'LOW'; // Strong edge
-        else if (Math.abs(edge) >= 0.5) riskLevel = 'MEDIUM'; // Moderate edge
+        else if (Math.abs(edge) >= 1.0) riskLevel = 'MEDIUM'; // Moderate edge
         else riskLevel = 'HIGH'; // Small edge
       }
       
@@ -747,14 +747,13 @@ export class RandomForestPredictor {
       seasonGamesCount: additionalData.gamesPlayed || 0,
       teammateInjuries: additionalData.teammateInjuries || [],
       modelQuality: rSquared >= 0.7 ? 'Excellent' : rSquared >= 0.5 ? 'Good' : rSquared >= 0.3 ? 'Fair' : 'Poor',
-      modelWarning: rSquared < 0.3 ? `Model has low accuracy (R² = ${(rSquared * 100).toFixed(1)}%)` : null,
       method: 'random_forest',
       statType: input.statType,
       modelId: 'RANDOM_FOREST_' + input.statType.toUpperCase(),
       modelPerformance: {
         rSquared: rSquared,
-        rmse: this.model.performance.rmse,
-        mae: this.model.performance.mae
+        rmse: this.model.performance?.rmse || 0,
+        mae: this.model.performance?.mae || 0
       },
       recentForm: recentForm,
       matchupAnalysisText: `${input.isHome ? 'Home' : 'Away'} game vs ${input.opponent} (Pace: ${teamPace} vs ${opponentPace})`,
@@ -1316,7 +1315,7 @@ export class RandomForestPredictor {
     }
     
     // Scale based on model performance (R²)
-    const rSquared = this.model.performance.rSquared;
+    const rSquared = this.model.performance?.rSquared || 0;
     if (rSquared > 0.7) {
       return 1.2; // High performance model
     } else if (rSquared > 0.5) {

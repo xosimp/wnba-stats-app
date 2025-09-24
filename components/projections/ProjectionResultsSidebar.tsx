@@ -168,16 +168,6 @@ export function ProjectionResultsSidebar(props: ProjectionResultsSidebarProps) {
                 </span>
               </div>
               
-              {/* Model Quality Warning */}
-              {projection.modelWarning && (
-                <div className="mt-3 p-2 rounded text-center" style={{
-                  backgroundColor: '#fef3c7',
-                  border: '1px solid #f59e0b',
-                  color: '#92400e'
-                }}>
-                  <span className="text-xs font-medium">{projection.modelWarning}</span>
-                </div>
-              )}
             </div>
 
             <div style={{position: 'absolute', bottom: '-75px', left: '0', right: '0'}}>

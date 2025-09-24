@@ -888,8 +888,8 @@ export class ProjectionDataService {
       let edgeRisk = 0;
       if (request.sportsbookLine) {
         const edgeAbs = Math.abs(edge);
-        if (edgeAbs <= 0.5) edgeRisk = 1;        // Very close = HIGH risk
-        else if (edgeAbs <= 1.0) edgeRisk = 1;   // Close = HIGH risk (0.8 is very close!)
+        if (edgeAbs <= 1.0) edgeRisk = 1;        // Very close = HIGH risk (below recommendation threshold)
+        else if (edgeAbs <= 1.5) edgeRisk = 1;   // Close = HIGH risk
         else if (edgeAbs <= 2.0) edgeRisk = 0.6; // Moderate = MEDIUM-HIGH risk
         else if (edgeAbs <= 3.0) edgeRisk = 0.3; // Good = MEDIUM risk
         else edgeRisk = 0;                        // Large edge = LOW risk
@@ -1092,20 +1092,20 @@ export class ProjectionDataService {
       console.log(`Actually, with 0.525: LOW if ≤0.20, MEDIUM if 0.21-0.50, HIGH if >0.50`);
       console.log(`Since 0.525 > 0.50, it should be HIGH (which makes sense for a close game!)`);
       
-      // Generate recommendation with more defined thresholds
+      // Generate recommendation with more defined thresholds - more conservative
       let recommendation: 'OVER' | 'UNDER' | 'PASS' = 'PASS';
       if (confidenceScore >= 0.6) {
         // More defined thresholds to avoid picks on games that are too close
         if (edge >= 2.0) {
           recommendation = 'OVER'; // Strong edge - clear OVER
-        } else if (edge >= 1.0) {
-          recommendation = 'OVER'; // Moderate edge - OVER
+        } else if (edge >= 1.5) {
+          recommendation = 'OVER'; // Strong edge - OVER
         } else if (edge <= -2.0) {
           recommendation = 'UNDER'; // Strong edge - clear UNDER
-        } else if (edge <= -1.0) {
-          recommendation = 'UNDER'; // Moderate edge - UNDER
+        } else if (edge <= -1.5) {
+          recommendation = 'UNDER'; // Strong edge - UNDER
         } else {
-          recommendation = 'PASS'; // Edge between -1.0 and +1.0 - too close to call
+          recommendation = 'PASS'; // Edge between -1.5 and +1.5 - too close to call
         }
       }
       
@@ -1115,12 +1115,12 @@ export class ProjectionDataService {
       console.log(`Confidence Score: ${(confidenceScore * 100).toFixed(1)}%`);
       if (edge >= 2.0) {
         console.log(`🎯 RECOMMENDATION: OVER (Strong edge: +${edge.toFixed(1)} points)`);
-      } else if (edge >= 1.0) {
-        console.log(`🎯 RECOMMENDATION: OVER (Moderate edge: +${edge.toFixed(1)} points)`);
+      } else if (edge >= 1.5) {
+        console.log(`🎯 RECOMMENDATION: OVER (Strong edge: +${edge.toFixed(1)} points)`);
       } else if (edge <= -2.0) {
         console.log(`🎯 RECOMMENDATION: UNDER (Strong edge: ${edge.toFixed(1)} points)`);
-      } else if (edge <= -1.0) {
-        console.log(`🎯 RECOMMENDATION: UNDER (Moderate edge: ${edge.toFixed(1)} points)`);
+      } else if (edge <= -1.5) {
+        console.log(`🎯 RECOMMENDATION: UNDER (Strong edge: ${edge.toFixed(1)} points)`);
       } else {
         console.log(`🎯 RECOMMENDATION: PASS (Edge too close: ${edge.toFixed(1)} points)`);
       }

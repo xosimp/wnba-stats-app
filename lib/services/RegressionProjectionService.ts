@@ -182,7 +182,7 @@ export class RegressionProjectionService {
 
       // Determine recommendation
       let recommendation: 'OVER' | 'UNDER' | 'PASS' = 'PASS';
-      if (Math.abs(edge) >= confidence * 0.5) {
+      if (Math.abs(edge) >= 1.0) {
         recommendation = edge > 0 ? 'OVER' : 'UNDER';
       }
 

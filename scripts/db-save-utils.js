@@ -172,12 +172,12 @@ function validateModelData(modelData) {
     }
   }
   
-  if (!modelData.model_data.r_squared && modelData.model_data.r_squared !== 0) {
-    throw new Error('Missing r_squared in model_data');
+  if (!modelData.r_squared && modelData.r_squared !== 0) {
+    throw new Error('Missing r_squared in model data');
   }
   
-  if (!modelData.model_data.rmse && modelData.model_data.rmse !== 0) {
-    throw new Error('Missing rmse in model_data');
+  if (!modelData.rmse && modelData.rmse !== 0) {
+    throw new Error('Missing rmse in model data');
   }
   
   console.log('✅ Model data validation passed');

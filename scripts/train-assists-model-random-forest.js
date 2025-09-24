@@ -1069,6 +1069,10 @@ async function trainRandomForestAssistsModel() {
           stat_type: 'assists',
           season: '2025',
           model_data: modelData,
+          r_squared: testMetrics.r2,
+          rmse: testMetrics.rmse,
+          mae: testMetrics.mae,
+          training_samples: trainingData.length,
           created_at: new Date().toISOString()
         }, { onConflict: 'player_id,stat_type,season' });
 

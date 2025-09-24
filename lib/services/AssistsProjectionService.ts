@@ -950,8 +950,8 @@ export class AssistsProjectionService {
    * Generate betting recommendation
    */
   private generateRecommendation(edge: number, confidence: number): string {
-    if (Math.abs(edge) < 0.5 || confidence < 0.6) {
-      return 'PASS';
+    if (Math.abs(edge) < 1.0 || confidence < 0.6) {
+      return 'PASS'; // Need at least 1.0 edge and 60% confidence
     }
     return edge > 0 ? 'OVER' : 'UNDER';
   }

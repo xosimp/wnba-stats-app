@@ -95,7 +95,6 @@ export interface ProjectionResult {
   teammateInjuries?: string[]; // List of significant injured teammates
   // Enhanced model quality indicators
   modelQuality?: string; // 'Excellent', 'Good', 'Fair', 'Poor', 'Worthless'
-  modelWarning?: string | null; // Warning message for poor models
 }
 
 export interface TeamDefensiveStats {
@@ -681,7 +680,7 @@ export class ProjectionEngine {
   private static generateRecommendation(edge: number, confidenceScore: number): 'OVER' | 'UNDER' | 'PASS' {
     if (confidenceScore < 0.5) return 'PASS'; // Not confident enough
     
-    const edgeThreshold = 0.5; // Minimum edge to make recommendation
+    const edgeThreshold = 1.0; // Minimum edge to make recommendation - more conservative
     
     if (edge > edgeThreshold) return 'OVER';
     if (edge < -edgeThreshold) return 'UNDER';

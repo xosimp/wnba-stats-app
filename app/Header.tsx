@@ -267,40 +267,33 @@ export function Header() {
 
   return (
     // Use position: fixed for guaranteed sticky header
-    <header className="w-full bg-darkheader font-bold fixed top-0 left-0 z-50 pb-4 pt-0 min-h-[90px]" style={{ width: '100%', backgroundColor: '#14171F', margin: 0, paddingTop: 0 }}>
-      <style jsx>{`
-        .nextgenhoops-title {
-          font-size: clamp(2.5rem, 6vw, 4.5rem) !important;
-        }
-        
-        .nav-link {
-          font-size: clamp(1rem, 2.5vw, 1.8rem) !important;
-        }
-        
-        .nav-container {
-          padding: clamp(8px, 1.5vw, 12px) clamp(16px, 2vw, 24px) !important;
-        }
-        
-        .header-logo {
-          width: clamp(60px, 8vw, 100px) !important;
-          height: clamp(60px, 8vw, 100px) !important;
-        }
-      `}</style>
-      <div className="flex w-full items-center px-12" style={{ overflow: 'visible' }}>
+    <header className="w-full bg-darkheader font-bold fixed top-0 left-0 z-50 pb-4 pt-0" style={{ 
+      width: '100%', 
+      backgroundColor: '#14171F', 
+      margin: 0, 
+      paddingTop: 0,
+      minHeight: 'clamp(80px, 8vh, 120px)'
+    }}>
+      <div className="flex w-full items-center" style={{ 
+        overflow: 'visible',
+        paddingLeft: 'clamp(0.75rem, 2vw, 1.5rem)',
+        paddingRight: 'clamp(0.75rem, 2vw, 1.5rem)'
+      }}>
         <span
           className="nextgenhoops-title font-extrabold font-sans text-secondary select-none"
           style={{
             position: 'relative',
             fontFamily: 'Lexend, Arial, Helvetica, sans-serif',
+            fontSize: 'clamp(2rem, 4vw, 4rem)',
             lineHeight: 1.1,
             letterSpacing: '-0.04em',
             margin: 0,
-            padding: 6,
+            padding: 'clamp(0.25rem, 0.5vw, 0.5rem)',
             border: 'none',
             display: 'block',
-            marginRight: '0.25em',
-            marginLeft:'0.25em',
-            marginTop: '1px',
+            marginRight: 'clamp(0.25rem, 0.5vw, 0.5rem)',
+            marginLeft: 'clamp(0.25rem, 0.5vw, 0.5rem)',
+            marginTop: 'clamp(1px, 0.1vh, 4px)',
             overflow: 'visible',
             flexShrink: 0,
             minWidth: 'fit-content',
@@ -313,14 +306,15 @@ export function Header() {
             alt="NGH Logo"
             width={100}
             height={100}
-            className="header-logo"
             style={{
               display: 'inline-block',
               verticalAlign: 'middle',
-              marginRight: '10px',
-              marginBottom: '2px',
-              marginTop: '-5px',
-              marginLeft: '-4px',
+              marginRight: 'clamp(0.5rem, 1vw, 1rem)',
+              marginBottom: 'clamp(1px, 0.2vh, 4px)',
+              marginTop: 'clamp(-4px, -0.5vh, -2px)',
+              marginLeft: 'clamp(-4px, -0.5vw, -2px)',
+              width: 'clamp(40px, 6vw, 80px)',
+              height: 'clamp(40px, 6vw, 80px)',
               filter: 'drop-shadow(0 0 12px rgba(0, 0, 0, 0.9)) drop-shadow(0 0 6px rgba(0, 0, 0, 1)) drop-shadow(0 0 3px rgba(0, 0, 0, 1))'
             }}
           />
@@ -329,33 +323,33 @@ export function Header() {
         </span>
         <span
           className="flex items-center"
-          style={{ height: '5.5rem', alignSelf: 'center' }}
+          style={{ height: 'clamp(4rem, 6vh, 5.5rem)', alignSelf: 'center' }}
         >
         </span>
         {/*Nav Border*/}
         <div className="flex-1 flex items-center">
-          <nav className="flex items-end justify-end w-full pr-[40px] nav-container" style={{ 
-            paddingRight: '40px !important', 
-            marginTop: '7px',
-            marginRight: '20px',
-            marginLeft: '20px',
+          <nav className="flex items-end justify-between w-full" style={{ 
+            paddingRight: 'clamp(0.125rem, 0.5vw, 0.5rem)', 
+            marginTop: 'clamp(4px, 0.5vh, 8px)',
+            marginRight: 'clamp(0.0625rem, 0.25vw, 0.25rem)',
+            marginLeft: 'clamp(0.5rem, 1.5vw, 1rem)',
+            padding: 'clamp(0.375rem, 0.75vw, 0.5rem) clamp(0.125rem, 0.5vw, 0.375rem)',
             backgroundColor: '#1A1E28',
-            borderRadius: '12px',
+            borderRadius: 'clamp(6px, 0.8vw, 10px)',
             border: '1px solid #2A2F3A',
             justifyContent: 'space-between'
           }}>
             <Link
               href={session ? "/dashboard" : "/"}
-              className="font-bold text-white hover:text-[#71FD08] cursor-pointer px-2 py-1 whitespace-nowrap"
+              className="text-lg font-bold text-white hover:text-[#71FD08] cursor-pointer px-2 py-1 whitespace-nowrap"
               style={{ 
                 userSelect: 'none', 
                 whiteSpace: 'nowrap', 
                 textShadow: '0 1px 4px rgba(0,0,0,0.45)', 
-                marginLeft: '30px', 
+                marginLeft: 'clamp(0.75rem, 2vw, 1.5rem)', 
                 transform: session ? 'translateY(-7px)' : 'none',
                 transition: 'all 0.2s ease-in-out !important',
-                fontSize: 'clamp(1rem, 2.5vw, 1.8rem)',
-                marginTop: '0.5vh'
+                fontSize: 'clamp(0.875rem, 1.2vw, 1rem)'
               }}
               onMouseEnter={(e) => {
                 e.currentTarget.style.transform = session ? 'translateY(-7px) scale(1.15)' : 'scale(1.15)';
@@ -373,16 +367,15 @@ export function Header() {
             </Link>
             <Link
               href="/players"
-              className="font-bold text-white hover:text-[#71FD08] cursor-pointer px-2 py-1 whitespace-nowrap"
+              className="text-lg font-bold text-white hover:text-[#71FD08] cursor-pointer px-2 py-1 whitespace-nowrap"
               style={{ 
                 userSelect: 'none', 
                 whiteSpace: 'nowrap', 
                 textShadow: '0 1px 4px rgba(0,0,0,0.45)', 
-                marginLeft: '5px', 
+                marginLeft: 'clamp(0.0625rem, 0.3vw, 0.25rem)', 
                 transform: session ? 'translateY(-7px)' : 'none',
                 transition: 'all 0.2s ease-in-out !important',
-                fontSize: 'clamp(1rem, 2.5vw, 1.8rem)',
-                marginTop: '0.5vh'
+                fontSize: 'clamp(0.875rem, 1.2vw, 1rem)'
               }}
               onMouseEnter={(e) => {
                 e.currentTarget.style.transform = session ? 'translateY(-7px) scale(1.15)' : 'scale(1.15)';
@@ -402,16 +395,15 @@ export function Header() {
             {(isPaid || session?.user?.email === 'wcavnar@hotmail.com' || session?.user?.email === 'ryancavnar@gmail.com') ? (
               <Link
                 href="/projections"
-                className="font-bold text-white hover:text-[#71FD08] cursor-pointer px-2 py-1 whitespace-nowrap"
+                className="text-lg font-bold text-white hover:text-[#71FD08] cursor-pointer px-2 py-1 whitespace-nowrap"
                 style={{ 
                   userSelect: 'none', 
                   whiteSpace: 'nowrap', 
                   textShadow: '0 1px 4px rgba(0,0,0,0.45)', 
-                  marginLeft: '5px', 
+                  marginLeft: 'clamp(0.0625rem, 0.3vw, 0.25rem)', 
                   transform: session ? 'translateY(-7px)' : 'none',
                   transition: 'all 0.2s ease-in-out !important',
-                  fontSize: 'clamp(1rem, 2.5vw, 1.8rem)',
-                marginTop: '0.5vh'
+                  fontSize: 'clamp(0.875rem, 1.2vw, 1rem)'
                 }}
                 onMouseEnter={(e) => {
                   e.currentTarget.style.transform = session ? 'translateY(-7px) scale(1.15)' : 'scale(1.15)';
@@ -432,15 +424,14 @@ export function Header() {
                 <a
                   href="#"
                   tabIndex={-1}
-                  className="font-bold text-white cursor-not-allowed px-2 py-1 whitespace-nowrap"
+                  className="text-lg font-bold text-white cursor-not-allowed px-2 py-1 whitespace-nowrap"
                   style={{ 
                     userSelect: 'none', 
                     whiteSpace: 'nowrap', 
-                    marginLeft: '5px', 
+                    marginLeft: 'clamp(0.0625rem, 0.3vw, 0.25rem)', 
                     transform: session ? 'translateY(-7px)' : 'none',
                     transition: 'all 0.2s ease-in-out !important',
-                    fontSize: 'clamp(1rem, 2.5vw, 1.8rem)',
-                marginTop: '0.5vh'
+                    fontSize: 'clamp(0.875rem, 1.2vw, 1rem)'
                   }}
                   onMouseEnter={(e) => {
                     e.currentTarget.style.transform = session ? 'translateY(-7px) scale(1.15)' : 'scale(1.15)';
@@ -484,7 +475,7 @@ export function Header() {
                 <div className="animate-pulse bg-gray-600 h-8 w-20 rounded" style={{ marginRight: '20px' }}></div>
               </div>
             ) : session ? (
-              <div className="relative flex flex-col items-center" style={{ marginLeft: '5px' }}>
+              <div className="relative flex flex-col items-center" style={{ marginLeft: 'clamp(-1rem, -2vw, -0.5rem)' }}>
                 <span
                   role="button"
                   tabIndex={0}
@@ -497,8 +488,8 @@ export function Header() {
                     boxShadow: '0 0 8px 2px #71FD08',
                     outline: 'none',
                     background: 'transparent',
-                    width: 36,
-                    height: 36,
+                    width: 'clamp(32px, 4vw, 40px)',
+                    height: 'clamp(32px, 4vw, 40px)',
                     minWidth: 0,
                     minHeight: 0,
                     cursor: 'pointer',
@@ -543,7 +534,13 @@ export function Header() {
                     alt="User avatar"
                     width={36}
                     height={36}
-                    style={{ borderRadius: '50%', objectFit: 'cover', display: 'block' }}
+                    style={{ 
+                      borderRadius: '50%', 
+                      objectFit: 'cover', 
+                      display: 'block',
+                      width: 'clamp(32px, 4vw, 40px)',
+                      height: 'clamp(32px, 4vw, 40px)'
+                    }}
                     onError={e => { e.currentTarget.src = defaultAvatar; }}
                   />
                   <style>{`
@@ -868,14 +865,14 @@ export function Header() {
             ) : (
               <Link 
                 href="/auth/signin" 
-                className="font-bold text-white hover:text-[#71FD08] cursor-pointer px-2 py-1 whitespace-nowrap"
+                className="text-lg font-bold text-white hover:text-[#71FD08] cursor-pointer px-2 py-1 whitespace-nowrap"
                 style={{ 
                   userSelect: 'none', 
                   whiteSpace: 'nowrap', 
                   textShadow: '0 1px 4px rgba(0,0,0,0.45)',
                   transition: 'all 0.2s ease-in-out !important',
-                  fontSize: 'clamp(1rem, 2.5vw, 1.8rem)',
-                marginTop: '0.5vh'
+                  fontSize: 'clamp(0.875rem, 1.2vw, 1rem)',
+                  marginLeft: 'clamp(0.0625rem, 0.3vw, 0.25rem)'
                 }}
                 onMouseEnter={(e) => {
                   e.currentTarget.style.transform = 'scale(1.15)';

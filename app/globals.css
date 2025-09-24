@@ -36,13 +36,13 @@ header {
 
 /* Tomorrow game row styling */
 .tomorrow-game-row {
-  padding-top: 10px !important;
-  padding-bottom: 10px !important;
-  max-width: 400px !important;
-  border-radius: 20px !important;
-  min-height: 40px !important;
-  height: 40px !important;
-  margin-bottom: 16px !important;
+  padding-top: clamp(6px, 0.8vh, 10px) !important;
+  padding-bottom: clamp(6px, 0.8vh, 10px) !important;
+  max-width: clamp(320px, 32vw, 420px) !important;
+  border-radius: clamp(12px, 1.5vw, 16px) !important;
+  min-height: clamp(28px, 3.2vh, 40px) !important;
+  height: clamp(28px, 3.2vh, 40px) !important;
+  margin-bottom: clamp(10px, 1.2vh, 16px) !important;
   background: linear-gradient(135deg, #1a3d1a 0%, #2d5a2d 50%, #1a3d1a 100%) !important;
   overflow: hidden !important;
 }
@@ -54,8 +54,8 @@ header {
 }
 
 .tomorrow-game-row img {
-  width: 80px !important;
-  height: 160px !important;
+  width: clamp(50px, 6vw, 70px) !important;
+  height: clamp(100px, 12vh, 140px) !important;
   margin-top: 0 !important;
   object-fit: contain !important;
   opacity: 0.7 !important;
@@ -79,8 +79,8 @@ header {
 /* Team logo container */
 .team-logo-container {
   position: relative !important;
-  width: 80px !important;
-  height: 160px !important;
+  width: clamp(50px, 6vw, 70px) !important;
+  height: clamp(100px, 12vh, 140px) !important;
   display: flex !important;
   align-items: center !important;
   justify-content: center !important;
@@ -89,13 +89,13 @@ header {
 /* Move away team logos to the left */
 .tomorrow-game-row .flex.flex-col:first-child,
 .upcoming-game-row .flex.flex-col:first-child {
-  margin-left: -15px !important;
+  margin-left: clamp(-12px, -1.5vw, -15px) !important;
 }
 
 /* Make VS text smaller */
 .tomorrow-game-row .text-xs,
 .upcoming-game-row .text-xs {
-  font-size: 0.75rem !important;
+  font-size: clamp(0.625rem, 1vw, 0.75rem) !important;
 }
 
 /* Blended team gradient for the entire game row */
@@ -105,18 +105,18 @@ header {
   background-position: left top !important;
   background-repeat: no-repeat !important;
   border: 1px solid rgba(0, 0, 0, 1) !important;
-  max-width: 400px !important;
+  max-width: clamp(320px, 32vw, 420px) !important;
 }
 
 /* Upcoming games styling - same as tomorrow games */
 .upcoming-game-row {
-  padding-top: 10px !important;
-  padding-bottom: 10px !important;
-  max-width: 280px !important;
-  border-radius: 20px !important;
-  min-height: 40px !important;
-  height: 40px !important;
-  margin-bottom: 16px !important;
+  padding-top: clamp(6px, 0.8vh, 10px) !important;
+  padding-bottom: clamp(6px, 0.8vh, 10px) !important;
+  max-width: clamp(280px, 28vw, 360px) !important;
+  border-radius: clamp(12px, 1.5vw, 16px) !important;
+  min-height: clamp(28px, 3.2vh, 40px) !important;
+  height: clamp(28px, 3.2vh, 40px) !important;
+  margin-bottom: clamp(10px, 1.2vh, 16px) !important;
   background: linear-gradient(45deg, var(--away-team-color, rgba(113, 253, 8, 1)) 0%, var(--home-team-color, rgba(113, 253, 8, 1)) 100%) !important;
   background-size: 100% 100% !important;
   background-position: left top !important;
@@ -127,8 +127,8 @@ header {
 
 .upcoming-game-row .absolute {
   position: absolute !important;
-  top: 8px !important;
-  left: 16px !important;
+  top: clamp(6px, 0.8vh, 8px) !important;
+  left: clamp(12px, 1.5vw, 16px) !important;
   z-index: 10 !important;
 }
 
@@ -140,8 +140,8 @@ header {
 }
 
 .upcoming-game-row img {
-  width: 80px !important;
-  height: 160px !important;
+  width: clamp(50px, 6vw, 70px) !important;
+  height: clamp(100px, 12vh, 140px) !important;
   margin-top: 0 !important;
   object-fit: contain !important;
   opacity: 0.7 !important;
@@ -149,28 +149,28 @@ header {
 
 /* Upcoming games text styling - smaller text */
 .upcoming-game-row .text-gray-300 {
-  font-size: 0.875rem !important; /* 14px */
-  line-height: 1.25rem !important;
+  font-size: clamp(0.75rem, 1.2vw, 0.875rem) !important; /* 14px */
+  line-height: clamp(1rem, 1.5vw, 1.25rem) !important;
 }
 
 .upcoming-game-row .absolute {
   position: absolute !important;
-  top: 8px !important;
-  left: 8px !important;
+  top: clamp(6px, 0.8vh, 8px) !important;
+  left: clamp(6px, 0.8vw, 8px) !important;
   z-index: 10 !important;
-  font-size: 0.875rem !important; /* 14px */
-  line-height: 1.25rem !important;
+  font-size: clamp(0.75rem, 1.2vw, 0.875rem) !important; /* 14px */
+  line-height: clamp(1rem, 1.5vw, 1.25rem) !important;
 }
 
 /* Today games styling - same as tomorrow and upcoming games */
 .today-game-row {
-  padding-top: 10px !important;
-  padding-bottom: 10px !important;
-  max-width: 280px !important;
-  border-radius: 20px !important;
-  min-height: 40px !important;
-  height: 40px !important;
-  margin-bottom: 16px !important;
+  padding-top: clamp(6px, 0.8vh, 10px) !important;
+  padding-bottom: clamp(6px, 0.8vh, 10px) !important;
+  max-width: clamp(280px, 28vw, 360px) !important;
+  border-radius: clamp(12px, 1.5vw, 16px) !important;
+  min-height: clamp(28px, 3.2vh, 40px) !important;
+  height: clamp(28px, 3.2vh, 40px) !important;
+  margin-bottom: clamp(10px, 1.2vh, 16px) !important;
   background: linear-gradient(45deg, var(--away-team-color, rgba(113, 253, 8, 1)) 0%, var(--home-team-color, rgba(113, 253, 8, 1)) 100%) !important;
   background-size: 100% 100% !important;
   background-position: left top !important;
@@ -181,11 +181,11 @@ header {
 
 .today-game-row .absolute {
   position: absolute !important;
-  top: 8px !important;
-  left: 8px !important;
+  top: clamp(6px, 0.8vh, 8px) !important;
+  left: clamp(6px, 0.8vw, 8px) !important;
   z-index: 10 !important;
-  font-size: 0.875rem !important; /* 14px */
-  line-height: 1.25rem !important;
+  font-size: clamp(0.75rem, 1.2vw, 0.875rem) !important; /* 14px */
+  line-height: clamp(1rem, 1.5vw, 1.25rem) !important;
 }
 
 .today-game-row .flex.flex-col {
@@ -196,8 +196,8 @@ header {
 }
 
 .today-game-row img {
-  width: 80px !important;
-  height: 160px !important;
+  width: clamp(50px, 6vw, 70px) !important;
+  height: clamp(100px, 12vh, 140px) !important;
   margin-top: 0 !important;
   object-fit: contain !important;
   opacity: 0.7 !important;
@@ -205,17 +205,17 @@ header {
 
 /* Move away team logos to the left for today games */
 .today-game-row .flex.flex-col:first-child {
-  margin-left: -15px !important;
+  margin-left: clamp(-12px, -1.5vw, -15px) !important;
 }
 
 /* Make VS text smaller for today games */
 .today-game-row .text-xs {
-  font-size: 0.75rem !important;
+  font-size: clamp(0.625rem, 1vw, 0.75rem) !important;
 }
 
 /* Add padding to Today games */
 .today-game-row {
-  margin-left: 38px !important;
+  margin-left: clamp(24px, 3vw, 38px) !important;
 }
 
 
@@ -226,58 +226,29 @@ header {
   padding-left: 0 !important;
   margin-left: 0 !important;
   text-transform: uppercase !important;
-  background-color: rgba(113, 253, 8, 0.8) !important;
-  color: black !important;
-  padding: 4px 12px !important;
-  border-radius: 8px !important;
+  background-color: transparent !important;
+  color: #d1d5db !important;
+  padding: 0 !important;
+  border-radius: 0 !important;
   display: inline-block !important;
-  margin-bottom: 20px !important;
+  margin-bottom: clamp(12px, 2vh, 20px) !important;
   font-weight: bold !important;
   position: relative !important;
-  box-shadow: inset 0 0 0 2px rgba(113, 253, 8, 0.6) !important;
+  box-shadow: none !important;
+  font-size: clamp(1.5rem, 2.5vw, 1.875rem) !important;
 }
 
-/* Rotated black squares for cut-off effect */
+/* Rotated black squares for cut-off effect - REMOVED */
 .upcoming-schedule-section .text-3xl::before,
 .upcoming-schedule-section .text-3xl::after {
-  content: '' !important;
-  position: absolute !important;
-  width: 16px !important;
-  height: 16px !important;
-  background: linear-gradient(135deg, #111827 0%, #000000 50%, #111827 100%) !important;
-  transform: rotate(45deg) !important;
-  top: 50% !important;
-  transform: translateY(-50%) rotate(45deg) !important;
+  content: none !important;
 }
 
-/* Today's cut-off squares should be solid black */
-.upcoming-schedule-section > div:first-child .text-3xl::before,
-.upcoming-schedule-section > div:first-child .text-3xl::after {
-  background: #000000 !important;
-}
+/* Black squares removed - no longer needed */
 
-/* Tomorrow's cut-off squares should be solid black */
-.upcoming-schedule-section > div:nth-child(2) .text-3xl::before,
-.upcoming-schedule-section > div:nth-child(2) .text-3xl::after {
-  background: #000000 !important;
-}
-
-/* Upcoming's LEFT cut-off square should be solid black */
-.upcoming-schedule-section > div:last-child .text-3xl::before {
-  background: #000000 !important;
-}
-
-.upcoming-schedule-section .text-3xl::before {
-  left: -6px !important;
-}
-
-.upcoming-schedule-section .text-3xl::after {
-  right: -6px !important;
-}
-
-/* Reduce Tomorrow heading background width */
+/* Tomorrow heading styling - simple text */
 .upcoming-schedule-section > div:nth-child(2) .text-3xl {
-  width: 280px !important;
+  width: auto !important;
   margin-left: auto !important;
   margin-right: auto !important;
   display: block !important;
@@ -285,7 +256,7 @@ header {
 
 /* Move Tomorrow games to the left */
 .upcoming-schedule-section > div:nth-child(2) .tomorrow-game-row {
-  margin-left: -18px !important;
+  margin-left: clamp(-12px, -1.5vw, -18px) !important;
 }
 
 /* Move Upcoming games to the right */
@@ -295,20 +266,20 @@ header {
 
 /* Make Upcoming heading match Tomorrow properties */
 .upcoming-schedule-section > div:last-child .text-3xl {
-  width: 280px !important;
+  width: auto !important;
   margin-left: auto !important;
   margin-right: auto !important;
   display: block !important;
-  transform: translateX(10px) !important;
+  transform: translateX(clamp(6px, 1vw, 10px)) !important;
 }
 
 /* Make Today heading match Tomorrow properties */
 .upcoming-schedule-section > div:first-child .text-3xl {
-  width: 280px !important;
+  width: auto !important;
   margin-left: auto !important;
   margin-right: auto !important;
   display: block !important;
-  transform: translateX(10px) !important;
+  transform: translateX(clamp(6px, 1vw, 10px)) !important;
 }
 
 /* Center Tomorrow column content */
@@ -318,26 +289,26 @@ header {
 
 /* Add padding to left and right columns */
 .upcoming-schedule-section > div:first-child {
-  padding-left: 40px !important;
+  padding-left: clamp(24px, 3vw, 40px) !important;
 }
 
 .upcoming-schedule-section > div:last-child {
-  padding-right: 95px !important;
+  padding-right: clamp(48px, 6vw, 95px) !important;
 }
 
 /* Move Upcoming games further right */
 .upcoming-schedule-section > div:last-child .upcoming-game-row {
-  margin-right: 5px !important;
+  margin-right: clamp(3px, 0.5vw, 5px) !important;
 }
 
 /* Time positioning */
 .tomorrow-game-row .absolute {
   position: absolute !important;
-  top: 8px !important;
-  left: 8px !important;
+  top: clamp(6px, 0.8vh, 8px) !important;
+  left: clamp(6px, 0.8vw, 8px) !important;
   z-index: 10 !important;
-  font-size: 0.875rem !important; /* 14px */
-  line-height: 1.25rem !important;
+  font-size: clamp(0.75rem, 1.2vw, 0.875rem) !important; /* 14px */
+  line-height: clamp(1rem, 1.5vw, 1.25rem) !important;
 }
 
 
@@ -400,7 +371,7 @@ header {
 }
 
 .nextgenhoops-title {
-  font-size: 4rem;
+  font-size: clamp(3rem, 6vw, 5rem);
   line-height: 1.1;
   letter-spacing: -0.04em;
   font-weight: 900;
@@ -414,7 +385,7 @@ header {
 
 @media (min-width: 640px) {
   .nextgenhoops-title {
-    font-size: 6rem;
+    font-size: clamp(4rem, 7vw, 6rem);
   }
 }
 
@@ -445,7 +416,7 @@ header nav a {
   text-decoration: none;
   transition: color 0.2s, transform 0.2s, box-shadow 0.2s;
   position: relative;
-  font-size: 1.125rem;
+  font-size: clamp(0.875rem, 1.2vw, 1rem);
   font-weight: 700;
 }
 
@@ -453,11 +424,11 @@ header nav a::after {
   content: "";
   position: absolute;
   left: 0;
-  bottom: -2px;
+  bottom: clamp(-1px, -0.2vh, -2px);
   width: 100%;
-  height: 2px;
+  height: clamp(1px, 0.2vh, 2px);
   background: #71FD08;
-  border-radius: 1px;
+  border-radius: clamp(0.5px, 0.1vw, 1px);
   transform: scaleX(0);
   transform-origin: left;
   transition: transform 0.25s cubic-bezier(0.4,0,0.2,1);
@@ -469,7 +440,7 @@ header nav a:active,
 header nav a:focus {
   text-decoration: none;
   color: #71FD08;
-  transform: translateY(-6px) scale(1.07);
+  transform: translateY(clamp(-4px, -0.6vh, -6px)) scale(1.07);
   text-shadow: none;
   box-shadow: none;
   background: none;
@@ -522,7 +493,7 @@ header nav a[href="#"]:focus::after {
 }
 
 header nav {
-  padding-right: 60px;
+  padding-right: clamp(1rem, 2vw, 2rem);
 }
 
 .nav-link {
@@ -530,13 +501,13 @@ header nav {
   text-decoration: none;
   transition: color 0.2s, transform 0.2s, box-shadow 0.2s;
   position: relative;
-  font-size: 1.125rem;
+  font-size: clamp(0.875rem, 1.2vw, 1rem);
   font-weight: 700;
   background: transparent;
   border: none;
   outline: none;
   cursor: pointer;
-  padding: 0.25rem 0.5rem;
+  padding: clamp(0.125rem, 0.3vw, 0.25rem) clamp(0.25rem, 0.5vw, 0.5rem);
   user-select: none;
   white-space: nowrap;
   display: inline-block;
@@ -547,11 +518,11 @@ header nav {
   content: '';
   position: absolute;
   left: 0;
-  bottom: -2px;
+  bottom: clamp(-1px, -0.2vh, -2px);
   width: 100%;
-  height: 2px;
+  height: clamp(1px, 0.2vh, 2px);
   background: #71FD08;
-  border-radius: 1px;
+  border-radius: clamp(0.5px, 0.1vw, 1px);
   transform: scaleX(0);
   transform-origin: left;
   transition: transform 0.25s cubic-bezier(0.4,0,0.2,1);
@@ -562,7 +533,7 @@ header nav {
 .nav-link:active,
 .nav-link:focus {
   color: #71FD08;
-  transform: translateY(-6px) scale(1.07);
+  transform: translateY(clamp(-4px, -0.6vh, -6px)) scale(1.07);
   background: none;
   outline: none;
   border: none;

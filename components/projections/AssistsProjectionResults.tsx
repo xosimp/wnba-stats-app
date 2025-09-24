@@ -33,12 +33,12 @@ export const AssistsProjectionResults: React.FC<AssistsProjectionResultsProps> =
 
   // Determine edge color and text
   const getEdgeColor = (edge: number) => {
-    if (Math.abs(edge) < 0.5) return 'text-gray-500';
+    if (Math.abs(edge) < 1.0) return 'text-gray-500';
     return edge > 0 ? 'text-green-600' : 'text-red-600';
   };
 
   const getEdgeText = (edge: number) => {
-    if (Math.abs(edge) < 0.5) return 'NEUTRAL';
+    if (Math.abs(edge) < 1.0) return 'NEUTRAL';
     return edge > 0 ? `+${edge.toFixed(1)}` : `${edge.toFixed(1)}`;
   };
 

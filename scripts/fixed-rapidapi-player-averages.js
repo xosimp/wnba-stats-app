@@ -282,7 +282,10 @@ async function fetchPlayerAverages() {
         
         const { error: insertError } = await supabase
           .from('player_season_stats')
-          .insert(batch);
+          .upsert(batch, { 
+            onConflict: 'player_name,season',
+            ignoreDuplicates: false 
+          });
 
         if (insertError) {
           throw new Error(`Error inserting batch ${Math.floor(i/insertBatchSize) + 1}: ${insertError.message}`);

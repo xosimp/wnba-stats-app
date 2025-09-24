@@ -1,7 +1,7 @@
 const puppeteer = require('puppeteer-extra');
 const StealthPlugin = require('puppeteer-extra-plugin-stealth');
 const { createClient } = require('@supabase/supabase-js');
-require('dotenv').config({ path: '../.env.local' });
+require('dotenv').config({ path: '.env.local' });
 
 puppeteer.use(StealthPlugin());
 

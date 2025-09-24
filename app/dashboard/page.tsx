@@ -494,9 +494,12 @@ export default function DashboardHome() {
   }, [session?.user?.id]);
 
   return (
-    <div className="dashboard-page min-h-screen bg-gradient-to-br from-gray-900 via-black to-gray-900 pt-24 pb-8 px-8" style={{ 
+    <div className="dashboard-page min-h-screen bg-gradient-to-br from-gray-900 via-black to-gray-900" style={{ 
       margin: 0, 
-      paddingTop: '96px',
+      paddingTop: 'clamp(80px, 10vh, 120px)',
+      paddingBottom: 'clamp(2rem, 4vh, 4rem)',
+      paddingLeft: 'clamp(1rem, 3vw, 2rem)',
+      paddingRight: 'clamp(1rem, 3vw, 2rem)',
       background: 'linear-gradient(135deg, #111827 0%, #000000 50%, #111827 100%) !important',
       position: 'relative',
       zIndex: 1,
@@ -525,10 +528,10 @@ export default function DashboardHome() {
         }}>
           {/* Loading Spinner */}
           <div style={{
-            width: '60px',
-            height: '60px',
-            border: '4px solid rgba(113, 253, 8, 0.2)',
-            borderTop: '4px solid #71FD08',
+            width: 'clamp(50px, 6vw, 80px)',
+            height: 'clamp(50px, 6vw, 80px)',
+            border: 'clamp(3px, 0.5vw, 4px) solid rgba(113, 253, 8, 0.2)',
+            borderTop: 'clamp(3px, 0.5vw, 4px) solid #71FD08',
             borderRadius: '50%',
             animation: 'spin 1s linear infinite'
           }} />
@@ -536,7 +539,7 @@ export default function DashboardHome() {
           {/* Loading Text */}
           <div style={{
             color: '#71FD08',
-            fontSize: '24px',
+            fontSize: 'clamp(1.25rem, 2.5vw, 2rem)',
             fontWeight: 'bold',
             textShadow: '2px 2px 4px rgba(0,0,0,0.8)',
             textAlign: 'center'
@@ -547,7 +550,7 @@ export default function DashboardHome() {
           {/* Loading Progress */}
           <div style={{
             color: '#d1d5db',
-            fontSize: '16px',
+            fontSize: 'clamp(0.875rem, 1.5vw, 1.125rem)',
             textAlign: 'center',
             opacity: 0.8
           }}>
@@ -569,13 +572,13 @@ export default function DashboardHome() {
       {isPreloading && preloadStatus.total > 0 && (
         <div style={{
           position: 'fixed',
-          top: '10px',
-          right: '10px',
+          top: 'clamp(8px, 1vh, 12px)',
+          right: 'clamp(8px, 1vw, 12px)',
           background: 'rgba(0, 0, 0, 0.8)',
           color: '#71FD08',
-          padding: '8px 12px',
-          borderRadius: '6px',
-          fontSize: '12px',
+          padding: 'clamp(6px, 1vw, 10px) clamp(8px, 1.5vw, 12px)',
+          borderRadius: 'clamp(4px, 0.5vw, 6px)',
+          fontSize: 'clamp(0.75rem, 1vw, 0.875rem)',
           fontWeight: 'bold',
           zIndex: 9999,
           border: '1px solid #71FD08',
@@ -583,10 +586,10 @@ export default function DashboardHome() {
         }}>
           <div style={{ marginBottom: '4px' }}>Preloading Images</div>
           <div style={{ 
-            width: '100px', 
-            height: '4px', 
+            width: 'clamp(80px, 10vw, 120px)', 
+            height: 'clamp(3px, 0.4vw, 4px)', 
             background: 'rgba(113, 253, 8, 0.3)', 
-            borderRadius: '2px',
+            borderRadius: 'clamp(1px, 0.2vw, 2px)',
             overflow: 'hidden'
           }}>
             <div style={{
@@ -594,10 +597,10 @@ export default function DashboardHome() {
               height: '100%',
               background: '#71FD08',
               transition: 'width 0.3s ease',
-              borderRadius: '2px'
+              borderRadius: 'clamp(1px, 0.2vw, 2px)'
             }} />
           </div>
-          <div style={{ fontSize: '10px', marginTop: '2px', opacity: 0.8 }}>
+          <div style={{ fontSize: 'clamp(0.625rem, 0.8vw, 0.75rem)', marginTop: 'clamp(1px, 0.2vh, 2px)', opacity: 0.8 }}>
             {preloadStatus.loaded}/{preloadStatus.total}
           </div>
         </div>
@@ -605,32 +608,39 @@ export default function DashboardHome() {
 
       {/* Favorite Players Section */}
       <div className="max-w-7xl mx-auto">
-        <div className="flex items-center mb-12" style={{ gap: '32px' }}>
+        <div className="flex items-center" style={{ 
+          gap: 'clamp(1rem, 3vw, 2rem)',
+          marginBottom: 'clamp(2rem, 4vh, 4rem)'
+        }}>
           <div style={{
             flex: '1.3',
-            height: '4px',
+            height: 'clamp(3px, 0.4vw, 4px)',
             backgroundColor: '#71FD08',
-            borderRadius: '2px',
-            marginLeft: '32px'
+            borderRadius: 'clamp(1px, 0.2vw, 2px)',
+            marginLeft: 'clamp(1rem, 2vw, 2rem)'
           }}></div>
-          <h1 className="dashboard-heading flex-shrink-0 font-bold" style={{
-            fontSize: 'clamp(2rem, 4vw, 4rem)',
+          <h1 className="font-bold dashboard-heading flex-shrink-0" style={{
+            fontSize: 'clamp(1.75rem, 3.5vw, 3rem)',
             textShadow: '2px 2px 4px rgba(0,0,0,0.8), -2px -2px 4px rgba(0,0,0,0.8), 2px -2px 4px rgba(0,0,0,0.8), -2px 2px 4px rgba(0,0,0,0.8)'
           }}>
             Favorite Players
           </h1>
           <div style={{
             flex: '1.3',
-            height: '4px',
+            height: 'clamp(3px, 0.4vw, 4px)',
             backgroundColor: '#71FD08',
-            borderRadius: '2px',
-            marginRight: '32px'
+            borderRadius: 'clamp(1px, 0.2vw, 2px)',
+            marginRight: 'clamp(1rem, 2vw, 2rem)'
           }}></div>
         </div>
         
         {/* User instruction note */}
-        <div className="text-center mb-4" style={{ marginTop: '-30px' }}>
-          <p className="text-lg text-gray-300 font-medium" style={{
+        <div className="text-center" style={{ 
+          marginTop: 'clamp(-1.5rem, -2vh, -1rem)',
+          marginBottom: 'clamp(1rem, 2vh, 1.5rem)'
+        }}>
+          <p className="text-gray-300 font-medium" style={{
+            fontSize: 'clamp(0.875rem, 1.5vw, 1.125rem)',
             textShadow: '1px 1px 2px rgba(0,0,0,0.8)',
             color: '#71FD08'
           }}>
@@ -640,10 +650,16 @@ export default function DashboardHome() {
         
         {loading ? (
           <div className="flex justify-center">
-            <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-green-500"></div>
+            <div className="animate-spin rounded-full border-b-2 border-green-500" style={{
+              height: 'clamp(3rem, 4vw, 4rem)',
+              width: 'clamp(3rem, 4vw, 4rem)'
+            }}></div>
           </div>
         ) : (
-          <div className="grid grid-cols-5 gap-4 lg:gap-6 justify-items-center">
+          <div className="grid justify-items-center" style={{
+            gridTemplateColumns: 'repeat(auto-fit, minmax(clamp(160px, 16vw, 200px), 1fr))',
+            gap: 'clamp(1rem, 2vw, 1.5rem)'
+          }}>
             {favoritePlayers.map((player, index) => {
               const playerHotStreakData = hotStreakData[player.player_name] || { isOnHotStreak: false, loading: false };
               
@@ -653,12 +669,10 @@ export default function DashboardHome() {
                 <div
                   key={player.id}
                   className="rounded-2xl shadow-lg transition-all duration-300 hover:scale-105 hover:shadow-2xl cursor-pointer group hover:ring-2 hover:ring-white/20 relative team-glow-hover"
-                  style={{
-                    width: '225px !important',
-                    height: '350px !important'
-                  }}
                   onClick={() => handlePlayerCardClick(player.player_name)}
                 style={{
+                  width: 'clamp(160px, 16vw, 200px)',
+                  height: 'clamp(200px, 20vh, 260px)',
                   ...(() => {
                     const team = findTeamWithAbbreviations(player.team);
                     
@@ -749,11 +763,11 @@ export default function DashboardHome() {
                       }
                     }
                   }}
-                  className="absolute top-3 right-3 z-30 opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-white font-bold text-3xl hover:text-red-400 transform hover:scale-110 transition-all duration-200 cursor-pointer"
+                  className="absolute z-30 opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-white font-bold hover:text-red-400 transform hover:scale-110 transition-all duration-200 cursor-pointer"
                   style={{
-                    right: '12px',
-                    top: '7px',
-                    fontSize: '32px',
+                    right: 'clamp(8px, 1vw, 12px)',
+                    top: 'clamp(6px, 0.8vh, 8px)',
+                    fontSize: 'clamp(1.5rem, 2.5vw, 2rem)',
                     textShadow: '0 0 8px rgba(0, 0, 0, 0.8)'
                   }}
                 >
@@ -773,11 +787,11 @@ export default function DashboardHome() {
                         alt={team.name + ' logo'}
                         style={{
                           position: 'absolute',
-                          left: '-35px',
-                          top: 'calc(50% - 70px)',
+                          left: 'clamp(-25px, -3vw, -35px)',
+                          top: 'calc(50% - clamp(50px, 6vh, 70px))',
                           transform: 'translateY(-50%)',
-                          width: '140px',
-                          height: '140px',
+                          width: 'clamp(100px, 12vw, 140px)',
+                          height: 'clamp(100px, 12vw, 140px)',
                           opacity: 1,
                           filter: 'drop-shadow(0 0 16px #000)',
                           pointerEvents: 'none',
@@ -789,9 +803,9 @@ export default function DashboardHome() {
                   
                   {/* Player Image */}
                   <div style={{ 
-                    marginTop: '-40px',
-                    width: '210px',
-                    height: '250px',
+                    marginTop: 'clamp(-25px, -2.5vh, -35px)',
+                    width: 'clamp(140px, 14vw, 170px)',
+                    height: 'clamp(130px, 13vh, 160px)',
                     position: 'relative',
                     zIndex: 10
                   }}>
@@ -810,18 +824,18 @@ export default function DashboardHome() {
                   
                   {/* Player Text - Separated from image */}
                   <div className="rounded-2xl" style={{ 
-                    marginTop: '-5px',
-                    padding: '10px 25px',
+                    marginTop: 'clamp(-4px, -0.5vh, -6px)',
+                    padding: 'clamp(6px, 0.8vw, 10px) clamp(12px, 1.5vw, 20px)',
                     background: '#14171F',
                     border: '2px solid #3a3f4a',
-                    borderRadius: '16px',
+                    borderRadius: 'clamp(10px, 1.2vw, 14px)',
                     position: 'relative',
                     zIndex: 20,
-                    width: '165px',
+                    width: 'clamp(110px, 12vw, 135px)',
                     boxShadow: '0 4px 8px rgba(0, 0, 0, 0.6), 0 -4px 8px rgba(0, 0, 0, 0.6)'
                   }}>
                     <div className="font-bold leading-tight text-center" style={{
-                      fontSize: '20px',
+                      fontSize: 'clamp(0.875rem, 1.2vw, 1rem)',
                       lineHeight: '1.2',
                       color: '#d1d5db'
                     }}>
@@ -831,8 +845,8 @@ export default function DashboardHome() {
                         const lastName = nameParts.slice(1).join(' ');
                         return (
                           <>
-                            <div style={{ fontSize: '18px' }}>{firstName}</div>
-                            <div style={{ fontSize: '22px', fontWeight: 'bold' }}>{lastName}</div>
+                            <div style={{ fontSize: 'clamp(0.75rem, 1vw, 0.875rem)' }}>{firstName}</div>
+                            <div style={{ fontSize: 'clamp(0.875rem, 1.2vw, 1rem)', fontWeight: 'bold' }}>{lastName}</div>
                           </>
                         );
                       })()}
@@ -855,21 +869,23 @@ export default function DashboardHome() {
                 key={`placeholder-${index}`}
                 className="rounded-2xl shadow-lg overflow-hidden opacity-50"
                 style={{
-                  width: '225px !important',
-                  height: '350px !important'
-                }}
-                style={{
+                  width: 'clamp(160px, 16vw, 200px)',
+                  height: 'clamp(200px, 20vh, 260px)',
                   background: 'linear-gradient(135deg, #2d3748 0%, #4a5568 100%)',
                   border: '2px solid rgba(255, 255, 255, 0.1)',
                   backdropFilter: 'blur(10px)',
                   boxShadow: '2px 2px 8px rgba(0, 0, 0, 0.8), -2px -2px 8px rgba(0, 0, 0, 0.8), 2px -2px 8px rgba(0, 0, 0, 0.8), -2px 2px 8px rgba(0, 0, 0, 0.8), 0 0 0 1px rgba(255, 255, 255, 0.3)',
-                  borderRadius: '16px',
+                  borderRadius: 'clamp(12px, 1.5vw, 16px)',
                   outline: '2px solid rgba(255, 255, 255, 0.3)',
-                  outlineOffset: '-10px'
+                  outlineOffset: 'clamp(-8px, -1vw, -10px)'
                 }}
               >
-                <div className="w-full h-full flex flex-col items-center justify-center p-4 text-center">
-                  <div className="text-white/60 font-bold" style={{ fontSize: 'clamp(1rem, 1.5vw, 1.2rem)' }}>
+                <div className="w-full h-full flex flex-col items-center justify-center text-center" style={{
+                  padding: 'clamp(1rem, 2vw, 1.5rem)'
+                }}>
+                  <div className="text-white/60 font-bold" style={{
+                    fontSize: 'clamp(0.875rem, 1.3vw, 1.125rem)'
+                  }}>
                     Empty
                   </div>
                 </div>
@@ -880,7 +896,7 @@ export default function DashboardHome() {
       </div>
 
       {/* Upcoming Schedule Section */}
-      <div className="mt-16">
+      <div style={{ marginTop: 'clamp(2rem, 4vh, 4rem)' }}>
         <UpcomingSchedule onLoadingChange={setScheduleLoading} />
       </div>
     </div>
