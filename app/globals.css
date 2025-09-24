@@ -609,6 +609,25 @@ body input[type="text"] {
   color: #111827 !important;
 }
 
+/* Ensure projections page background extends to full viewport */
+.projections-page {
+  background: linear-gradient(135deg, #111827 0%, #000000 50%, #111827 100%) !important;
+  background-attachment: fixed !important;
+  min-height: 100vh !important;
+}
+
+/* Ensure body background matches projections page on larger displays */
+@media (min-width: 1920px) {
+  body {
+    background: linear-gradient(135deg, #111827 0%, #000000 50%, #111827 100%) !important;
+    background-attachment: fixed !important;
+  }
+  
+  .projections-page {
+    min-height: 100vh !important;
+  }
+}
+
 /* Nuclear option - force font size on ALL inputs in auth layout */
 .auth-layout input {
   font-size: clamp(1rem, 2vw, 1.5rem) !important;

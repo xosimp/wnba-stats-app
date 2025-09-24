@@ -345,19 +345,21 @@ export default function ProjectionsPage() {
 
       <div className="dashboard-page projections-page pt-24 px-8" style={{ 
         margin: 0, 
-        paddingTop: '120px',
-        paddingBottom: '0px',
+        paddingTop: 'clamp(80px, 8vh, 120px)',
+        paddingBottom: 'clamp(20px, 3vh, 40px)',
         marginBottom: '0px',
-        height: 'auto',
+        minHeight: '100vh',
         position: 'relative',
         zIndex: 1,
         background: 'linear-gradient(135deg, #111827 0%, #000000 50%, #111827 100%)',
         backgroundSize: 'cover',
         backgroundPosition: 'center',
-        backgroundRepeat: 'no-repeat'
+        backgroundRepeat: 'no-repeat',
+        backgroundAttachment: 'fixed'
       }}>
         <div className="max-w-7xl mx-auto" style={{ 
-          minHeight: 'auto'
+          minHeight: 'clamp(60vh, 70vh, 80vh)',
+          paddingBottom: 'clamp(20px, 3vh, 40px)'
         }}>
         
         {/* NBA Projections Coming Soon Text */}
@@ -404,7 +406,7 @@ export default function ProjectionsPage() {
 
 
         {/* Main Content and Projection Results */}
-        <div className="flex gap-8 justify-between" style={{ minHeight: 'auto' }}>
+        <div className="flex gap-8 justify-between" style={{ minHeight: 'clamp(50vh, 60vh, 70vh)' }}>
           {/* Projection History - Left Side */}
           <div className="flex-shrink-0" style={{
             width: 'clamp(250px, 20vw, 290px)',
@@ -529,11 +531,11 @@ export default function ProjectionsPage() {
         </div>
       </div>
 
-      {/* Notes positioned outside main container to avoid affecting background */}
-      {/* Center Information Section - Moved down below columns */}
+      {/* Notes positioned with proper viewport-based sizing */}
+      {/* Center Information Section */}
       <div style={{
         position: 'absolute',
-        top: 'calc(100vh + 200px)',
+        top: 'calc(clamp(75vh, 80vh, 85vh))',
         left: '50%',
         transform: 'translateX(-50%)',
         padding: 'clamp(6px, 1vw, 8px) clamp(8px, 1.5vw, 12px)',
@@ -551,10 +553,10 @@ export default function ProjectionsPage() {
         Always use projections as one tool in your betting strategy, not as the sole decision maker.
       </div>
 
-      {/* Note about projection limits - Moved down below columns */}
+      {/* Note about projection limits */}
       <div style={{
         position: 'absolute',
-        top: 'calc(100vh + 200px)',
+        top: 'calc(clamp(75vh, 80vh, 85vh))',
         left: 'clamp(1rem, 2vw, 2rem)',
         padding: 'clamp(6px, 1vw, 8px) clamp(8px, 1.5vw, 12px)',
         backgroundColor: 'rgba(59, 130, 246, 0.1)',
@@ -569,10 +571,10 @@ export default function ProjectionsPage() {
         💡 <strong>Note:</strong> Only one projection per player/stat per day is saved to prevent duplicate history entries.
       </div>
 
-      {/* Note about hovering over i icons - Moved down below columns */}
+      {/* Note about hovering over i icons */}
       <div style={{
         position: 'absolute',
-        top: 'calc(100vh + 200px)',
+        top: 'calc(clamp(75vh, 80vh, 85vh))',
         right: 'clamp(1rem, 2vw, 2rem)',
         padding: 'clamp(6px, 1vw, 8px) clamp(8px, 1.5vw, 12px)',
         backgroundColor: 'rgba(59, 130, 246, 0.1)',
