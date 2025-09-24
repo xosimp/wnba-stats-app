@@ -477,7 +477,7 @@ export default function Home() {
                   <span
                     className={`home-tagline${showTagline ? ' fade-in' : ''}`}
                     style={{
-                      fontSize: '3rem',
+                      fontSize: 'clamp(2rem, 3vw, 3.5rem)',
                       fontWeight: 700,
                       color: '#D1D5DB',
                       letterSpacing: '-0.5px',
@@ -490,7 +490,7 @@ export default function Home() {
                       lineHeight: 1.18,
                       border: undefined,
                       borderRadius: undefined,
-                      padding: 0,
+                      padding: '0 0 clamp(4rem, 8vh, 8rem) 0',
                       background: 'none',
                       position: 'relative',
                       display: 'inline-block',
@@ -502,8 +502,8 @@ export default function Home() {
                   <div
                     style={{
                       position: 'absolute',
-                      left: '10%',
-                      top: 'calc(20% - 50px + 2.5rem - 3.3125rem)',
+                      left: 'clamp(5%, 8vw, 12%)',
+                      top: 'calc(20% - clamp(2.5rem, 4vw, 3.5rem) + clamp(3.5rem, 6vh, 5rem) - 3.3125rem)',
                       opacity: showFeatureBadge ? 1 : 0,
                       transform: showFeatureBadge ? 'translateY(0)' : 'translateY(30px)',
                       transition: 'opacity 1.2s cubic-bezier(0.4,0,0.2,1), transform 1.2s cubic-bezier(0.4,0,0.2,1)',
@@ -512,6 +512,7 @@ export default function Home() {
                     }}
                   >
                     <div
+                      className="feature-badge"
                       style={{
                         background: 'rgba(113, 253, 8, 0.1)',
                         border: '2px solid rgba(113, 253, 8, 0.3)',
@@ -553,12 +554,12 @@ export default function Home() {
                       {/* Mini Odds Board */}
                       <div
                         style={{
-                          width: '200px',
-                          height: '100px',
+                          width: 'clamp(160px, 15vw, 240px)',
+                          height: 'clamp(80px, 8vh, 120px)',
                           background: 'rgba(113, 253, 8, 0.08)',
                           border: '2px solid rgba(113, 253, 8, 0.2)',
                           borderRadius: '12px',
-                          padding: '8px',
+                          padding: 'clamp(6px, 1vw, 12px)',
                           display: 'flex',
                           flexDirection: 'column',
                           justifyContent: 'space-between',
@@ -570,7 +571,7 @@ export default function Home() {
                             display: 'flex',
                             justifyContent: 'space-between',
                             alignItems: 'center',
-                            fontSize: '0.65rem',
+                            fontSize: 'clamp(0.5rem, 1vw, 0.75rem)',
                             color: 'rgba(255, 255, 255, 0.8)',
                             fontFamily: 'Lexend, Arial, sans-serif',
                             fontWeight: 500,
@@ -585,7 +586,7 @@ export default function Home() {
                             display: 'flex',
                             justifyContent: 'space-between',
                             alignItems: 'center',
-                            fontSize: '0.65rem',
+                            fontSize: 'clamp(0.5rem, 1vw, 0.75rem)',
                             color: 'rgba(255, 255, 255, 0.8)',
                             fontFamily: 'Lexend, Arial, sans-serif',
                             fontWeight: 500,
@@ -600,7 +601,7 @@ export default function Home() {
                             display: 'flex',
                             justifyContent: 'space-between',
                             alignItems: 'center',
-                            fontSize: '0.65rem',
+                            fontSize: 'clamp(0.5rem, 1vw, 0.75rem)',
                             color: 'rgba(255, 255, 255, 0.8)',
                             fontFamily: 'Lexend, Arial, sans-serif',
                             fontWeight: 500,
@@ -615,7 +616,7 @@ export default function Home() {
                             display: 'flex',
                             justifyContent: 'space-between',
                             alignItems: 'center',
-                            fontSize: '0.65rem',
+                            fontSize: 'clamp(0.5rem, 1vw, 0.75rem)',
                             color: 'rgba(255, 255, 255, 0.8)',
                             fontFamily: 'Lexend, Arial, sans-serif',
                             fontWeight: 500,
@@ -630,7 +631,7 @@ export default function Home() {
                             display: 'flex',
                             justifyContent: 'space-between',
                             alignItems: 'center',
-                            fontSize: '0.65rem',
+                            fontSize: 'clamp(0.5rem, 1vw, 0.75rem)',
                             color: 'rgba(255, 255, 255, 0.8)',
                             fontFamily: 'Lexend, Arial, sans-serif',
                             fontWeight: 500,
@@ -666,7 +667,7 @@ export default function Home() {
                         </div>
                         <span
                           style={{
-                            fontSize: '0.9rem',
+                            fontSize: 'clamp(0.8rem, 1.6vw, 1.1rem)',
                             color: 'rgba(113, 253, 8, 0.9)',
                             fontFamily: 'Lexend, Arial, sans-serif',
                             fontWeight: 600,
@@ -692,7 +693,7 @@ export default function Home() {
                             display: 'flex',
                             alignItems: 'center',
                             gap: '8px',
-                            fontSize: '0.8rem',
+                            fontSize: 'clamp(0.7rem, 1.4vw, 0.9rem)',
                             color: 'rgba(255, 255, 255, 0.7)',
                             fontFamily: 'Lexend, Arial, sans-serif',
                             fontWeight: 500,
@@ -707,7 +708,7 @@ export default function Home() {
                             display: 'flex',
                             alignItems: 'center',
                             gap: '8px',
-                            fontSize: '0.8rem',
+                            fontSize: 'clamp(0.7rem, 1.4vw, 0.9rem)',
                             color: 'rgba(255, 255, 255, 0.7)',
                             fontFamily: 'Lexend, Arial, sans-serif',
                             fontWeight: 500,
@@ -724,8 +725,8 @@ export default function Home() {
                   <div
                     style={{
                       position: 'absolute',
-                      left: 'calc(35% - 30px)',
-                      top: 'calc(20% - 50px + 2.5rem - 3.3125rem)',
+                      left: 'calc(clamp(25%, 30vw, 40%) - clamp(20px, 2vw, 40px))',
+                      top: 'calc(20% - clamp(2.5rem, 4vw, 3.5rem) + clamp(3.5rem, 6vh, 5rem) - 3.3125rem)',
                       opacity: showFeatureBadge ? 1 : 0,
                       transform: showFeatureBadge ? 'translateY(0)' : 'translateY(30px)',
                       transition: 'opacity 1.2s cubic-bezier(0.4,0,0.2,1), transform 1.2s cubic-bezier(0.4,0,0.2,1)',
@@ -734,6 +735,7 @@ export default function Home() {
                     }}
                   >
                     <div
+                      className="feature-badge"
                       style={{
                         background: 'rgba(113, 253, 8, 0.1)',
                         border: '2px solid rgba(113, 253, 8, 0.3)',
@@ -771,12 +773,12 @@ export default function Home() {
                       {/* Live Stats Display */}
                       <div
                         style={{
-                          width: '175px',
-                          height: '100px',
+                          width: 'clamp(140px, 13vw, 200px)',
+                          height: 'clamp(80px, 8vh, 120px)',
                           background: 'rgba(113, 253, 8, 0.08)',
                           border: '2px solid rgba(113, 253, 8, 0.2)',
                           borderRadius: '12px',
-                          padding: '8px',
+                          padding: 'clamp(6px, 1vw, 12px)',
                           display: 'flex',
                           flexDirection: 'column',
                           justifyContent: 'space-between',
@@ -788,7 +790,7 @@ export default function Home() {
                             display: 'flex',
                             justifyContent: 'space-between',
                             alignItems: 'center',
-                            fontSize: '0.65rem',
+                            fontSize: 'clamp(0.5rem, 1vw, 0.75rem)',
                             color: 'rgba(255, 255, 255, 0.8)',
                             fontFamily: 'Lexend, Arial, sans-serif',
                             fontWeight: 500,
@@ -803,7 +805,7 @@ export default function Home() {
                             display: 'flex',
                             justifyContent: 'space-between',
                             alignItems: 'center',
-                            fontSize: '0.65rem',
+                            fontSize: 'clamp(0.5rem, 1vw, 0.75rem)',
                             color: 'rgba(255, 255, 255, 0.8)',
                             fontFamily: 'Lexend, Arial, sans-serif',
                             fontWeight: 500,
@@ -818,7 +820,7 @@ export default function Home() {
                             display: 'flex',
                             justifyContent: 'space-between',
                             alignItems: 'center',
-                            fontSize: '0.65rem',
+                            fontSize: 'clamp(0.5rem, 1vw, 0.75rem)',
                             color: 'rgba(255, 255, 255, 0.8)',
                             fontFamily: 'Lexend, Arial, sans-serif',
                             fontWeight: 500,
@@ -833,7 +835,7 @@ export default function Home() {
                             display: 'flex',
                             justifyContent: 'space-between',
                             alignItems: 'center',
-                            fontSize: '0.65rem',
+                            fontSize: 'clamp(0.5rem, 1vw, 0.75rem)',
                             color: 'rgba(255, 255, 255, 0.8)',
                             fontFamily: 'Lexend, Arial, sans-serif',
                             fontWeight: 500,
@@ -848,7 +850,7 @@ export default function Home() {
                             display: 'flex',
                             justifyContent: 'space-between',
                             alignItems: 'center',
-                            fontSize: '0.65rem',
+                            fontSize: 'clamp(0.5rem, 1vw, 0.75rem)',
                             color: 'rgba(255, 255, 255, 0.8)',
                             fontFamily: 'Lexend, Arial, sans-serif',
                             fontWeight: 500,
@@ -878,7 +880,7 @@ export default function Home() {
                         />
                         <span
                           style={{
-                            fontSize: '0.9rem',
+                            fontSize: 'clamp(0.8rem, 1.6vw, 1.1rem)',
                             color: 'rgba(255, 107, 107, 0.9)',
                             fontFamily: 'Lexend, Arial, sans-serif',
                             fontWeight: 600,
@@ -907,8 +909,8 @@ export default function Home() {
                   <div
                     style={{
                       position: 'absolute',
-                      left: 'calc(65% - 155px)',
-                      top: 'calc(20% - 50px + 2.5rem - 3.3125rem)',
+                      left: 'calc(clamp(60%, 65vw, 75%) - clamp(120px, 10vw, 180px))',
+                      top: 'calc(20% - clamp(2.5rem, 4vw, 3.5rem) + clamp(3.5rem, 6vh, 5rem) - 3.3125rem)',
                       opacity: showFeatureBadge ? 1 : 0,
                       transform: showFeatureBadge ? 'translateY(0)' : 'translateY(30px)',
                       transition: 'opacity 1.2s cubic-bezier(0.4,0,0.2,1), transform 1.2s cubic-bezier(0.4,0,0.2,1)',
@@ -917,6 +919,7 @@ export default function Home() {
                     }}
                   >
                     <div
+                      className="feature-badge"
                       style={{
                         background: 'rgba(113, 253, 8, 0.1)',
                         border: '2px solid rgba(113, 253, 8, 0.3)',
@@ -957,14 +960,14 @@ export default function Home() {
                       {/* Side-by-Side Player Cards */}
                       <div
                         style={{
-                          width: '190px',
-                          height: '100px',
+                          width: 'clamp(150px, 14vw, 220px)',
+                          height: 'clamp(80px, 8vh, 120px)',
                           background: 'rgba(113, 253, 8, 0.08)',
                           border: '2px solid rgba(113, 253, 8, 0.2)',
                           borderRadius: '12px',
-                          padding: '8px',
+                          padding: 'clamp(6px, 1vw, 12px)',
                           display: 'flex',
-                          gap: '8px',
+                          gap: 'clamp(6px, 1vw, 12px)',
                         }}
                       >
                         {/* Player A */}
@@ -979,24 +982,24 @@ export default function Home() {
                           }}
                         >
                           <div
-                            style={{
-                              width: '24px',
-                              height: '24px',
-                              borderRadius: '50%',
-                              background: 'linear-gradient(135deg, #FF6B6B, #FF8E8E)',
-                              display: 'flex',
-                              alignItems: 'center',
-                              justifyContent: 'center',
-                              fontSize: '0.7rem',
-                              color: 'white',
-                              fontWeight: 600,
-                            }}
+                          style={{
+                            width: 'clamp(20px, 2vw, 28px)',
+                            height: 'clamp(20px, 2vw, 28px)',
+                            borderRadius: '50%',
+                            background: 'linear-gradient(135deg, #FF6B6B, #FF8E8E)',
+                            display: 'flex',
+                            alignItems: 'center',
+                            justifyContent: 'center',
+                            fontSize: 'clamp(0.6rem, 1.2vw, 0.8rem)',
+                            color: 'white',
+                            fontWeight: 600,
+                          }}
                           >
                             A
                           </div>
                           <div
                             style={{
-                              fontSize: '0.8rem',
+                              fontSize: 'clamp(0.7rem, 1.4vw, 0.9rem)',
                               color: 'rgba(255, 255, 255, 0.8)',
                               fontFamily: 'Lexend, Arial, sans-serif',
                               fontWeight: 500,
@@ -1008,7 +1011,7 @@ export default function Home() {
                           </div>
                           <div
                             style={{
-                              fontSize: '0.9rem',
+                              fontSize: 'clamp(0.8rem, 1.6vw, 1.1rem)',
                               color: '#71FD08',
                               fontFamily: 'Lexend, Arial, sans-serif',
                               fontWeight: 600,
@@ -1066,7 +1069,7 @@ export default function Home() {
                           </div>
                           <div
                             style={{
-                              fontSize: '0.8rem',
+                              fontSize: 'clamp(0.7rem, 1.4vw, 0.9rem)',
                               color: 'rgba(255, 255, 255, 0.8)',
                               fontFamily: 'Lexend, Arial, sans-serif',
                               fontWeight: 500,
@@ -1078,7 +1081,7 @@ export default function Home() {
                           </div>
                           <div
                             style={{
-                              fontSize: '0.9rem',
+                              fontSize: 'clamp(0.8rem, 1.6vw, 1.1rem)',
                               color: '#4ECDC4',
                               fontFamily: 'Lexend, Arial, sans-serif',
                               fontWeight: 600,
@@ -1114,7 +1117,7 @@ export default function Home() {
                         </div>
                         <span
                           style={{
-                            fontSize: '0.9rem',
+                            fontSize: 'clamp(0.8rem, 1.6vw, 1.1rem)',
                             color: 'rgba(255, 107, 107, 0.9)',
                             fontFamily: 'Lexend, Arial, sans-serif',
                             fontWeight: 600,
@@ -1142,8 +1145,8 @@ export default function Home() {
                   <div
                     style={{
                       position: 'absolute',
-                      right: '10%',
-                      top: 'calc(20% - 50px + 2.5rem - 3.3125rem)',
+                      right: 'clamp(5%, 8vw, 12%)',
+                      top: 'calc(20% - clamp(2.5rem, 4vw, 3.5rem) + clamp(3.5rem, 6vh, 5rem) - 3.3125rem)',
                       opacity: showAIBadge ? 1 : 0,
                       transform: showAIBadge ? 'translateY(0)' : 'translateY(30px)',
                       transition: 'opacity 1.2s cubic-bezier(0.4,0,0.2,1), transform 1.2s cubic-bezier(0.4,0,0.2,1)',
@@ -1152,6 +1155,7 @@ export default function Home() {
                     }}
                   >
                     <div
+                      className="feature-badge"
                       style={{
                         background: 'rgba(113, 253, 8, 0.1)',
                         border: '2px solid rgba(113, 253, 8, 0.3)',
@@ -1190,23 +1194,23 @@ export default function Home() {
                       {/* Prediction Chart Graphic */}
                       <div
                         style={{
-                          width: '200px',
-                          height: '100px',
+                          width: 'clamp(160px, 15vw, 240px)',
+                          height: 'clamp(80px, 8vh, 120px)',
                           background: 'rgba(113, 253, 8, 0.08)',
                           border: '2px solid rgba(113, 253, 8, 0.2)',
                           borderRadius: '12px',
-                          padding: '8px 8px 2px 8px',
+                          padding: 'clamp(6px, 1vw, 12px) clamp(6px, 1vw, 12px) clamp(2px, 0.5vw, 4px) clamp(6px, 1vw, 12px)',
                           display: 'flex',
                           alignItems: 'flex-end',
                           justifyContent: 'space-between',
-                          gap: '4px',
+                          gap: 'clamp(3px, 0.5vw, 6px)',
                         }}
                       >
                         {/* Bar 1 */}
                         <div
                           style={{
-                            width: '8px',
-                            height: '20px',
+                            width: 'clamp(6px, 0.8vw, 10px)',
+                            height: 'clamp(16px, 2vh, 24px)',
                             background: 'linear-gradient(180deg,rgb(240, 0, 0) 0%,rgb(154, 0, 0) 100%)',
                             borderRadius: '2px',
                             animation: 'pulse 2s ease-in-out infinite',
@@ -1216,7 +1220,7 @@ export default function Home() {
                         <div
                           style={{
                             width: '8px',
-                            height: '30px',
+                            height: 'clamp(24px, 3vh, 36px)',
                             background: 'linear-gradient(180deg,rgb(240, 0, 0) 0%,rgb(154, 0, 0) 100%)',
                             borderRadius: '2px',
                             animation: 'pulse 2s ease-in-out infinite',
@@ -1226,7 +1230,7 @@ export default function Home() {
                         <div
                           style={{
                             width: '8px',
-                            height: '28px',
+                            height: 'clamp(22px, 2.8vh, 34px)',
                             background: 'linear-gradient(180deg,rgb(240, 0, 0) 0%,rgb(154, 0, 0) 100%)',
                             borderRadius: '2px',
                             animation: 'pulse 2s ease-in-out infinite 0.3s',
@@ -1236,7 +1240,7 @@ export default function Home() {
                         <div
                           style={{
                             width: '8px',
-                            height: '45px',
+                            height: 'clamp(36px, 4.5vh, 54px)',
                             background: 'linear-gradient(180deg, #71FD08 0%, #5CD607 100%)',
                             borderRadius: '2px',
                             animation: 'pulse 2s ease-in-out infinite 0.6s',
@@ -1246,7 +1250,7 @@ export default function Home() {
                         <div
                           style={{
                             width: '8px',
-                            height: '68px',
+                            height: 'clamp(54px, 6.8vh, 82px)',
                             background: 'linear-gradient(180deg, #71FD08 0%, #5CD607 100%)',
                             borderRadius: '2px',
                             animation: 'pulse 2s ease-in-out infinite 0.9s',
@@ -1256,7 +1260,7 @@ export default function Home() {
                         <div
                           style={{
                             width: '8px',
-                            height: '58px',
+                            height: 'clamp(46px, 5.8vh, 70px)',
                             background: 'linear-gradient(180deg, #71FD08 0%, #5CD607 100%)',
                             borderRadius: '2px',
                             animation: 'pulse 2s ease-in-out infinite 1.2s',
@@ -1266,7 +1270,7 @@ export default function Home() {
                         <div
                           style={{
                             width: '8px',
-                            height: '75px',
+                            height: 'clamp(60px, 7.5vh, 90px)',
                             background: 'linear-gradient(180deg, #71FD08 0%, #5CD607 100%)',
                             borderRadius: '2px',
                             animation: 'pulse 2s ease-in-out infinite 1.5s',
@@ -1276,7 +1280,7 @@ export default function Home() {
                         <div
                           style={{
                             width: '8px',
-                            height: '52px',
+                            height: 'clamp(42px, 5.2vh, 62px)',
                             background: 'linear-gradient(180deg, #71FD08 0%, #5CD607 100%)',
                             borderRadius: '2px',
                             animation: 'pulse 2s ease-in-out infinite 1.8s',
@@ -1286,7 +1290,7 @@ export default function Home() {
                         <div
                           style={{
                             width: '8px',
-                            height: '88px',
+                            height: 'clamp(70px, 8.8vh, 106px)',
                             background: 'linear-gradient(180deg, #71FD08 0%, #5CD607 100%)',
                             borderRadius: '2px',
                             animation: 'pulse 2s ease-in-out infinite 2.1s',
@@ -1296,7 +1300,7 @@ export default function Home() {
                         <div
                           style={{
                             width: '8px',
-                            height: '65px',
+                            height: 'clamp(52px, 6.5vh, 78px)',
                             background: 'linear-gradient(180deg, #71FD08 0%, #5CD607 100%)',
                             borderRadius: '2px',
                             animation: 'pulse 2s ease-in-out infinite 2.4s',
@@ -1306,7 +1310,7 @@ export default function Home() {
                         <div
                           style={{
                             width: '8px',
-                            height: '42px',
+                            height: 'clamp(34px, 4.2vh, 50px)',
                             background: 'linear-gradient(180deg, #71FD08 0%, #5CD607 100%)',
                             borderRadius: '2px',
                             animation: 'pulse 2s ease-in-out infinite 2.7s',
@@ -1316,7 +1320,7 @@ export default function Home() {
                         <div
                           style={{
                             width: '8px',
-                            height: '78px',
+                            height: 'clamp(62px, 7.8vh, 94px)',
                             background: 'linear-gradient(180deg, #71FD08 0%, #5CD607 100%)',
                             borderRadius: '2px',
                             animation: 'pulse 2s ease-in-out infinite 3.0s',
@@ -1326,10 +1330,10 @@ export default function Home() {
                         <div
                           style={{
                             position: 'absolute',
-                            top: '65px',
+                            top: 'clamp(52px, 6.5vh, 78px)',
                             left: '50%',
                             transform: 'translateX(-50%)',
-                            width: '219px',
+                            width: 'clamp(175px, 18vw, 263px)',
                             height: '2px',
                             background: 'rgb(171, 171, 171)',
                             borderRadius: '1px',
@@ -1367,7 +1371,7 @@ export default function Home() {
                         </div>
                         <span
                           style={{
-                            fontSize: '0.9rem',
+                            fontSize: 'clamp(0.8rem, 1.6vw, 1.1rem)',
                             color: 'rgba(113, 253, 8, 0.9)',
                             fontFamily: 'Lexend, Arial, sans-serif',
                             fontWeight: 600,
@@ -1396,7 +1400,7 @@ export default function Home() {
                         >
                           <span
                             style={{
-                              fontSize: '0.8rem',
+                              fontSize: 'clamp(0.7rem, 1.4vw, 0.9rem)',
                               color: 'rgba(255, 255, 255, 0.7)',
                               fontFamily: 'Lexend, Arial, sans-serif',
                               fontWeight: 500,
@@ -1407,7 +1411,7 @@ export default function Home() {
                           </span>
                           <span
                             style={{
-                              fontSize: '0.9rem',
+                              fontSize: 'clamp(0.8rem, 1.6vw, 1.1rem)',
                               color: '#71FD08',
                               fontFamily: 'Lexend, Arial, sans-serif',
                               fontWeight: 700,
@@ -1427,7 +1431,7 @@ export default function Home() {
                         >
                           <span
                             style={{
-                              fontSize: '0.8rem',
+                              fontSize: 'clamp(0.7rem, 1.4vw, 0.9rem)',
                               color: 'rgba(255, 255, 255, 0.7)',
                               fontFamily: 'Lexend, Arial, sans-serif',
                               fontWeight: 500,
@@ -1438,7 +1442,7 @@ export default function Home() {
                           </span>
                           <span
                             style={{
-                              fontSize: '0.9rem',
+                              fontSize: 'clamp(0.8rem, 1.6vw, 1.1rem)',
                               color: '#71FD08',
                               fontFamily: 'Lexend, Arial, sans-serif',
                               fontWeight: 700,
@@ -1458,7 +1462,7 @@ export default function Home() {
                         >
                           <span
                             style={{
-                              fontSize: '0.8rem',
+                              fontSize: 'clamp(0.7rem, 1.4vw, 0.9rem)',
                               color: 'rgba(255, 255, 255, 0.7)',
                               fontFamily: 'Lexend, Arial, sans-serif',
                               fontWeight: 500,
@@ -1469,7 +1473,7 @@ export default function Home() {
                           </span>
                           <span
                             style={{
-                              fontSize: '0.9rem',
+                              fontSize: 'clamp(0.8rem, 1.6vw, 1.1rem)',
                               color: '#71FD08',
                               fontFamily: 'Lexend, Arial, sans-serif',
                               fontWeight: 700,
@@ -1486,7 +1490,7 @@ export default function Home() {
                   {/* Get Started CTA Button - Centered */}
                   <div
                     style={{
-                      marginTop: '20.5rem',
+                      marginTop: 'clamp(18rem, 25vh, 25rem)',
                       opacity: showCTA ? 1 : 0,
                       transform: showCTA ? 'translateY(0)' : 'translateY(40px)',
                       transition: 'opacity 1.5s cubic-bezier(0.4,0,0.2,1), transform 1.5s cubic-bezier(0.4,0,0.2,1)',
@@ -1495,14 +1499,14 @@ export default function Home() {
                   >
                     <Link href="/auth/signin" style={{ textDecoration: 'none', display: 'block' }}>
                       <button
-                        className="rounded-full font-extrabold transition hover:scale-105 px-8 py-4 text-lg shadow-lg"
+                        className="cta-button rounded-full font-extrabold transition hover:scale-105 px-8 py-4 text-lg shadow-lg"
                         style={{
                           color: '#111',
                           border: '2px solid #71FD08',
                           cursor: 'pointer',
-                          fontSize: '1.125rem',
-                          padding: '1rem 2rem',
-                          minWidth: '160px',
+                          fontSize: 'clamp(1rem, 2vw, 1.25rem)',
+                          padding: 'clamp(0.75rem, 2vh, 1.25rem) clamp(1.5rem, 4vw, 2.5rem)',
+                          minWidth: 'clamp(140px, 20vw, 200px)',
                           lineHeight: 1.2,
                           fontWeight: 800,
                           fontFamily: 'Lexend, Arial, sans-serif',
@@ -1605,12 +1609,12 @@ export default function Home() {
                   <span
                     className={`explainer-text${showExplainer ? ' explainer-visible' : ''}`}
                     style={{
-                      fontSize: '1.25rem',
+                      fontSize: 'clamp(1rem, 2vw, 1.5rem)',
                       color: '#fff',
                       background: 'rgba(35, 39, 47, 0.85)',
                       filter: showExplainer ? 'brightness(0.92)' : 'blur(5px) brightness(0.92)',
                       textAlign: 'center',
-                      marginTop: 'calc(15rem - 120px)',
+                      marginTop: 'calc(clamp(12rem, 20vh, 18rem) - clamp(80px, 8vh, 120px))',
                       fontFamily: 'Lexend, Arial, sans-serif',
                       maxWidth: '80vw',
                       lineHeight: 1.4,
@@ -1620,7 +1624,7 @@ export default function Home() {
                       transform: showExplainer ? 'translateY(0)' : 'translateY(-12px)',
                       transition:
                         'opacity 1.4s cubic-bezier(0.4,0,0.2,1), transform 0.5s cubic-bezier(0.4,0,0.2,1), filter 0.5s cubic-bezier(0.4,0,0.2,1)',
-                      padding: '12px 24px',
+                      padding: 'clamp(8px, 1.5vw, 16px) clamp(16px, 3vw, 32px)',
                       borderRadius: '12px',
                       boxShadow: '0 8px 32px 0 #181C24cc, 0 2px 8px 0 #181C2499',
                     }}
@@ -1634,12 +1638,12 @@ export default function Home() {
                     ref={projectionsRef}
                     className={`explainer-text${showSecondExplainer ? ' explainer-visible' : ''}`}
                     style={{
-                      fontSize: '1.25rem',
+                      fontSize: 'clamp(1rem, 2vw, 1.5rem)',
                       color: '#fff',
                       background: 'rgba(35, 39, 47, 0.85)',
                       filter: showSecondExplainer ? 'brightness(0.92)' : 'blur(5px) brightness(0.92)',
                       textAlign: 'center',
-                      marginTop: '1.5rem',
+                      marginTop: 'clamp(1rem, 2vh, 2rem)',
                       fontFamily: 'Lexend, Arial, sans-serif',
                       maxWidth: '80vw',
                       lineHeight: 1.4,
@@ -1648,7 +1652,7 @@ export default function Home() {
                       opacity: showSecondExplainer ? 1 : 0,
                       transform: showSecondExplainer ? 'translateY(0)' : 'translateY(40px)',
                       transition: 'opacity 1.4s cubic-bezier(0.4,0,0.2,1), transform 1.4s cubic-bezier(0.4,0,0.2,1)',
-                      padding: '12px 24px',
+                      padding: 'clamp(8px, 1.5vw, 16px) clamp(16px, 3vw, 32px)',
                       borderRadius: '12px',
                       boxShadow: '0 8px 32px 0 #181C24cc, 0 2px 8px 0 #181C2499',
                     }}
@@ -1661,12 +1665,12 @@ export default function Home() {
                   <span
                     className={`explainer-text${showThirdExplainer ? ' explainer-visible' : ''}`}
                     style={{
-                      fontSize: '1.25rem',
+                      fontSize: 'clamp(1rem, 2vw, 1.5rem)',
                       color: '#fff',
                       background: 'rgba(35, 39, 47, 0.85)',
                       filter: showThirdExplainer ? 'brightness(0.92)' : 'blur(5px) brightness(0.92)',
                       textAlign: 'center',
-                      marginTop: '1.5rem',
+                      marginTop: 'clamp(1rem, 2vh, 2rem)',
                       fontFamily: 'Lexend, Arial, sans-serif',
                       maxWidth: '80vw',
                       lineHeight: 1.4,
@@ -1675,7 +1679,7 @@ export default function Home() {
                       opacity: showThirdExplainer ? 1 : 0,
                       transform: showThirdExplainer ? 'translateY(0)' : 'translateY(40px)',
                       transition: 'opacity 1.4s cubic-bezier(0.4,0,0.2,1), transform 1.4s cubic-bezier(0.4,0,0.2,1)',
-                      padding: '12px 24px',
+                      padding: 'clamp(8px, 1.5vw, 16px) clamp(16px, 3vw, 32px)',
                       borderRadius: '12px',
                       boxShadow: '0 8px 32px 0 #181C24cc, 0 2px 8px 0 #181C2499',
                     }}
@@ -1693,7 +1697,7 @@ export default function Home() {
             <div style={{
               position: 'absolute',
               left: '50%',
-              top: 'calc(20% + 325px + 150px)',
+              top: 'calc(20% + clamp(300px, 25vh, 400px) + clamp(200px, 25vh, 300px))',
               transform: 'translateX(-50%)',
               zIndex: 10,
               pointerEvents: 'none',
@@ -1701,7 +1705,7 @@ export default function Home() {
               opacity: showCTA && !showExplainer ? 1 : 0,
               transition: 'opacity 0.7s cubic-bezier(0.4,0,0.2,1)',
             }}>
-              <svg width="36" height="36" viewBox="0 0 24 24" fill="none">
+              <svg width="clamp(28px, 3vw, 48px)" height="clamp(28px, 3vw, 48px)" viewBox="0 0 24 24" fill="none">
                 <path d="M6 9l6 6 6-6" stroke="#71FD08" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/>
               </svg>
             </div>

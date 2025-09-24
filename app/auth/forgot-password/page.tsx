@@ -52,6 +52,7 @@ export default function ForgotPasswordPage() {
     <div className="bg-white min-h-screen">
       <div
         className="signin-page-override"
+        data-page="forgot-password"
         style={{
           minHeight: '100vh',
           width: '100vw',
@@ -59,32 +60,34 @@ export default function ForgotPasswordPage() {
           flexDirection: 'row',
           alignItems: 'center',
           justifyContent: 'flex-end',
-          paddingRight: '8rem',
-          background: '#fff !important',
+          paddingRight: 'clamp(2rem, 8vw, 8rem)',
+          background: 'transparent',
         }}
       >
-        <div style={{ flex: 1, display: 'flex', flexDirection: 'column', alignItems: 'flex-start', justifyContent: 'center', height: '100vh', paddingLeft: '6vw' }}>
+        <div style={{ flex: 1, display: 'flex', flexDirection: 'column', alignItems: 'flex-start', justifyContent: 'center', height: '100vh', paddingLeft: 'clamp(3vw, 6vw, 8vw)' }}>
           {/* NextGenHoops Logo */}
           <div className={showAnimation ? 'fade-in-from-left' : ''} style={{
             position: 'absolute',
-            top: '180px',
-            left: 'calc(6vw - 60px)',
+            top: 'clamp(120px, 18vh, 200px)',
+            left: 'calc(clamp(3vw, 6vw, 8vw) + clamp(200px, 25vw, 350px) - clamp(100px, 15vw, 200px))',
             zIndex: 2
           }}>
             <Image
               src="/NGH_Logo_Black.PNG"
               alt="NextGenHoops Logo"
-              width={400}
-              height={400}
-              style={{ 
-                objectFit: 'contain',
-                filter: 'drop-shadow(0 0 30px rgba(0, 0, 0, 0.4))'
-              }}
+            width={400}
+            height={400}
+            style={{ 
+              width: 'clamp(300px, 40vw, 500px)',
+              height: 'clamp(300px, 40vw, 500px)',
+              objectFit: 'contain',
+              filter: 'drop-shadow(0 0 30px rgba(0, 0, 0, 0.4))'
+            }}
             />
           </div>
           
 
-          <div className={showAnimation ? 'fade-in-from-left' : ''} style={{ fontSize: '1.25rem', color: '#555', fontWeight: 700, textShadow: '0 3px 16px rgba(0,0,0,0.10), 0 1.5px 0 rgba(0,0,0,0.13)', marginTop: '-25px', marginLeft: '310px' }}>Forgot your password?</div>
+          <div className={showAnimation ? 'fade-in-from-left' : ''} style={{ fontSize: 'clamp(1rem, 2vw, 1.5rem)', color: '#555', fontWeight: 700, textShadow: '0 3px 16px rgba(0,0,0,0.10), 0 1.5px 0 rgba(0,0,0,0.13)', marginTop: 'clamp(-15px, -2vh, -35px)', marginLeft: 'clamp(200px, 25vw, 350px)' }}>Forgot your password?</div>
         </div>
         <div
           className="sign-in-card"
@@ -92,22 +95,22 @@ export default function ForgotPasswordPage() {
             background: '#fff',
             borderRadius: '1rem',
             boxShadow: '0 12px 40px 0 rgba(0,0,0,0.22)',
-            maxWidth: '28rem',
-            minWidth: '400px',
-            width: '100%',
-            padding: '2.5rem',
+          maxWidth: 'clamp(24rem, 35vw, 32rem)',
+          minWidth: 'clamp(300px, 40vw, 450px)',
+          width: '100%',
+          padding: 'clamp(1.5rem, 3vw, 3rem)',
             border: '1px solid #e5e7eb',
             zIndex: 10,
-            minHeight: '24rem',
-            marginRight: '6vw',
+            minHeight: 'clamp(20rem, 30vh, 28rem)',
+            marginRight: 'clamp(3vw, 6vw, 8vw)',
           }}
         >
-          <h2 className="text-3xl font-extrabold text-gray-900 mb-2 tracking-tight">Reset your password</h2>
+          <h2 className="text-3xl font-extrabold text-gray-900 mb-2 tracking-tight" style={{ fontSize: 'clamp(1.75rem, 3vw, 2.25rem)' }}>Reset your password</h2>
           <form onSubmit={handleSubmit} className="flex flex-col h-full">
             <div>
               <label className="block mb-1 font-semibold text-gray-700 flex items-center gap-2">
                 {/* Email icon */}
-                <svg width="20" height="20" fill="none" viewBox="0 0 24 24"><path stroke="currentColor" strokeWidth="2" d="M3 7.5V17a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V7.5m-18 0A2 2 0 0 1 5 5.5h14a2 2 0 0 1 2 2m-18 0 9 6.5 9-6.5"/></svg>
+                <svg width="clamp(16px, 2vw, 24px)" height="clamp(16px, 2vw, 24px)" fill="none" viewBox="0 0 24 24"><path stroke="currentColor" strokeWidth="2" d="M3 7.5V17a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V7.5m-18 0A2 2 0 0 1 5 5.5h14a2 2 0 0 1 2 2m-18 0 9 6.5 9-6.5"/></svg>
                 Email
               </label>
               <input
@@ -118,10 +121,10 @@ export default function ForgotPasswordPage() {
                   setIsEmailValid(validateEmail(e.target.value));
                   if (!emailTouched) setEmailTouched(true);
                 }}
-                className="w-full border px-6 py-6 rounded-md focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition outline-none bg-gray-50 text-gray-900 placeholder-gray-400 text-xl"
-                style={{
-                  fontSize: '1.35rem',
-                  height: '3.75rem',
+                className="w-full border px-6 py-6 rounded-md focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition outline-none bg-gray-50 text-gray-900 placeholder-gray-400"
+              style={{
+                fontSize: 'clamp(1rem, 2vw, 1.5rem)',
+                height: 'clamp(3rem, 4vh, 4rem)',
                   borderRadius: '0.5rem',
                   border:
                     email.length === 0 || !emailTouched
@@ -135,19 +138,19 @@ export default function ForgotPasswordPage() {
                 required
               />
             </div>
-            {error && <div className="bg-red-100 text-red-700 px-4 py-2 rounded flex items-center gap-2 mt-4"><svg width="18" height="18" fill="none" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="2"/><path stroke="currentColor" strokeWidth="2" d="M12 8v4m0 4h.01"/></svg>{error}</div>}
-            {success && <div className="bg-green-100 text-green-700 px-4 py-2 rounded flex items-center gap-2 mt-4"><svg width="18" height="18" fill="none" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="2"/><path stroke="currentColor" strokeWidth="2" d="M12 8v4m0 4h.01"/></svg>{success}</div>}
+            {error && <div className="bg-red-100 text-red-700 px-4 py-2 rounded flex items-center gap-2 mt-4" style={{ fontSize: 'clamp(0.8rem, 1.3vw, 1rem)' }}><svg width="clamp(16px, 2vw, 20px)" height="clamp(16px, 2vw, 20px)" fill="none" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="2"/><path stroke="currentColor" strokeWidth="2" d="M12 8v4m0 4h.01"/></svg>{error}</div>}
+            {success && <div className="bg-green-100 text-green-700 px-4 py-2 rounded flex items-center gap-2 mt-4" style={{ fontSize: 'clamp(0.8rem, 1.3vw, 1rem)' }}><svg width="clamp(16px, 2vw, 20px)" height="clamp(16px, 2vw, 20px)" fill="none" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="2"/><path stroke="currentColor" strokeWidth="2" d="M12 8v4m0 4h.01"/></svg>{success}</div>}
             <button
               type="submit"
               className="rounded-full font-extrabold transition disabled:opacity-50 flex items-center justify-center gap-2 shadow-lg mx-auto hover:scale-105 animated-gradient shimmer-btn"
               style={{
-                height: '30px',
-                minHeight: '30px',
-                width: '100px',
-                fontSize: '1.1rem',
+                height: 'clamp(28px, 3vh, 35px)',
+                minHeight: 'clamp(28px, 3vh, 35px)',
+                width: 'clamp(90px, 12vw, 120px)',
+                fontSize: 'clamp(1rem, 1.8vw, 1.3rem)',
                 color: '#111',
                 border: '1.5px solid #111',
-                marginTop: '50px',
+                marginTop: 'clamp(40px, 4vh, 60px)',
                 boxShadow: '0 6px 24px 0 rgba(0,0,0,0.35)',
                 cursor: 'pointer'
               }}
@@ -155,14 +158,14 @@ export default function ForgotPasswordPage() {
             >
               {loading ? (
                 <>
-                  <svg className="animate-spin" width="20" height="20" fill="none" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" stroke="#fff" strokeWidth="4" opacity=".2"/><path d="M22 12a10 10 0 0 1-10 10" stroke="#fff" strokeWidth="4"/></svg>
+                  <svg className="animate-spin" width="clamp(18px, 2vw, 24px)" height="clamp(18px, 2vw, 24px)" fill="none" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" stroke="#fff" strokeWidth="4" opacity=".2"/><path d="M22 12a10 10 0 0 1-10 10" stroke="#fff" strokeWidth="4"/></svg>
                   <span style={{ marginLeft: 8 }}>Sending...</span>
                 </>
               ) : <span style={{ fontWeight: 800, color: '#111' }}>Send</span>}
             </button>
           </form>
-          <div style={{ width: '100%', display: 'flex', justifyContent: 'flex-end', marginTop: '2.5rem' }}>
-            <a href="/auth/signin" className="text-blue-600 hover:underline text-sm font-medium" onClick={e => { e.preventDefault(); router.push('/auth/signin'); }}>Back to sign in</a>
+          <div style={{ width: '100%', display: 'flex', justifyContent: 'flex-end', marginTop: 'clamp(2rem, 3vh, 3rem)' }}>
+            <a href="/auth/signin" className="text-blue-600 hover:underline text-sm font-medium" style={{ fontSize: 'clamp(0.8rem, 1.3vw, 1rem)' }} onClick={e => { e.preventDefault(); router.push('/auth/signin'); }}>Back to sign in</a>
           </div>
           <style>{`
             @keyframes gradient-move {

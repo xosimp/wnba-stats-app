@@ -4,10 +4,13 @@ import Image from "next/image";
 
 export default function AuthLayout({ children }: { children: ReactNode }) {
   useEffect(() => {
-    const prevBodyBg = document.body.style.background;
-    const prevHtmlBg = document.documentElement.style.background;
+    // Set background immediately to prevent flash
     document.body.style.background = '#fff';
     document.documentElement.style.background = '#fff';
+    
+    const prevBodyBg = document.body.style.background;
+    const prevHtmlBg = document.documentElement.style.background;
+    
     return () => {
       document.body.style.background = prevBodyBg;
       document.documentElement.style.background = prevHtmlBg;
@@ -82,15 +85,16 @@ export default function AuthLayout({ children }: { children: ReactNode }) {
         }}
       >
         <div
+          className="auth-layout auth-layout-background"
           style={{
             display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(120px, 1fr))',
-            gap: '2vw',
-            width: '98vw',
-            maxWidth: '1800px',
-            height: '98vh',
-            margin: '0 auto',
-            opacity: 0.09,
+            gridTemplateColumns: `repeat(auto-fit, minmax(clamp(100px, 12vw, 160px), 1fr))`,
+            gap: 'clamp(1.5vw, 2vw, 3vw)',
+            width: '100vw',
+            maxWidth: 'none',
+            height: '100vh',
+            margin: '0',
+            opacity: 0.18,
             filter: 'grayscale(1)',
           }}
         >
@@ -101,7 +105,13 @@ export default function AuthLayout({ children }: { children: ReactNode }) {
                 alt={file.replace(/_/g, ' ').replace(/\.svg\.png|\.png/g, '')}
                 width={110}
                 height={110}
-                style={{ objectFit: 'contain', width: '110px', height: '110px', maxWidth: '100%', maxHeight: '100%' }}
+                style={{ 
+                  objectFit: 'contain', 
+                  width: 'clamp(80px, 10vw, 140px)', 
+                  height: 'clamp(80px, 10vw, 140px)', 
+                  maxWidth: '100%', 
+                  maxHeight: '100%' 
+                }}
                 draggable={false}
               />
             </div>

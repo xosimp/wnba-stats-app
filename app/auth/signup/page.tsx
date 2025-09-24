@@ -56,6 +56,7 @@ export default function SignUpPage() {
     <div className="bg-white min-h-screen">
       <div
         className="signin-page-override"
+        data-page="signup"
         style={{
           minHeight: '100vh',
           width: '100vw',
@@ -63,32 +64,34 @@ export default function SignUpPage() {
           flexDirection: 'row',
           alignItems: 'center',
           justifyContent: 'flex-end',
-          paddingRight: '8rem',
-          background: '#fff !important',
+          paddingRight: 'clamp(2rem, 8vw, 8rem)',
+          background: 'transparent',
         }}
       >
-        <div style={{ flex: 1, display: 'flex', flexDirection: 'column', alignItems: 'flex-start', justifyContent: 'center', height: '100vh', paddingLeft: '6vw' }}>
+        <div style={{ flex: 1, display: 'flex', flexDirection: 'column', alignItems: 'flex-start', justifyContent: 'center', height: '100vh', paddingLeft: 'clamp(3vw, 6vw, 8vw)' }}>
           {/* NextGenHoops Logo */}
           <div className={showAnimation ? 'fade-in-from-left' : ''} style={{
             position: 'absolute',
-            top: '180px',
-            left: 'calc(6vw - 60px)',
+            top: 'clamp(120px, 18vh, 200px)',
+            left: 'calc(clamp(3vw, 6vw, 8vw) + clamp(200px, 25vw, 350px) - clamp(100px, 15vw, 200px))',
             zIndex: 2
           }}>
             <Image
               src="/NGH_Logo_Black.PNG"
               alt="NextGenHoops Logo"
-              width={400}
-              height={400}
-              style={{ 
-                objectFit: 'contain',
-                filter: 'drop-shadow(0 0 30px rgba(0, 0, 0, 0.4))'
-              }}
+            width={400}
+            height={400}
+            style={{ 
+              width: 'clamp(300px, 40vw, 500px)',
+              height: 'clamp(300px, 40vw, 500px)',
+              objectFit: 'contain',
+              filter: 'drop-shadow(0 0 30px rgba(0, 0, 0, 0.4))'
+            }}
             />
           </div>
           
 
-          <div className={showAnimation ? 'fade-in-from-left' : ''} style={{ fontSize: '1.25rem', color: '#555', fontWeight: 700, textShadow: '0 3px 16px rgba(0,0,0,0.10), 0 1.5px 0 rgba(0,0,0,0.13)', marginTop: '-25px', marginLeft: '310px' }}>Sign in or create an account</div>
+          <div className={showAnimation ? 'fade-in-from-left' : ''} style={{ fontSize: 'clamp(1rem, 2vw, 1.5rem)', color: '#555', fontWeight: 700, textShadow: '0 3px 16px rgba(0,0,0,0.10), 0 1.5px 0 rgba(0,0,0,0.13)', marginTop: 'clamp(-15px, -2vh, -35px)', marginLeft: 'clamp(200px, 25vw, 350px)' }}>Sign in or create an account</div>
         </div>
         <div
           className="sign-in-card"
@@ -96,40 +99,40 @@ export default function SignUpPage() {
             background: '#fff',
             borderRadius: '1rem',
             boxShadow: '0 12px 40px 0 rgba(0,0,0,0.32)',
-            maxWidth: '28rem',
-            minWidth: '400px',
-            width: '100%',
-            padding: '2.5rem',
+          maxWidth: 'clamp(24rem, 35vw, 32rem)',
+          minWidth: 'clamp(300px, 40vw, 450px)',
+          width: '100%',
+          padding: 'clamp(1.5rem, 3vw, 3rem)',
             border: '1px solid #e5e7eb',
             zIndex: 10,
-            minHeight: '28rem',
-            marginRight: '6vw',
+            minHeight: 'clamp(25rem, 35vh, 35rem)',
+            marginRight: 'clamp(3vw, 6vw, 8vw)',
           }}
         >
-          <h2 className="text-3xl font-extrabold text-gray-900 mb-2 tracking-tight">Sign up</h2>
-          <p className="text-gray-600 mb-6 text-base">Already have an account? <button onClick={() => router.push('/auth/signin')} className="text-blue-600 hover:underline font-semibold bg-transparent border-none cursor-pointer p-0">Sign in</button></p>
+          <h2 className="text-3xl font-extrabold text-gray-900 mb-2 tracking-tight" style={{ fontSize: 'clamp(1.75rem, 3vw, 2.25rem)' }}>Sign up</h2>
+          <p className="text-gray-600 mb-6 text-base" style={{ fontSize: 'clamp(0.9rem, 1.5vw, 1.1rem)' }}>Already have an account? <button onClick={() => router.push('/auth/signin')} className="text-blue-600 hover:underline font-semibold bg-transparent border-none cursor-pointer p-0">Sign in</button></p>
           
           <form onSubmit={handleSubmit} className="flex flex-col h-full">
             <div>
               <label className="block mb-1 font-semibold text-gray-700 flex items-center gap-2">
                 {/* User icon */}
-                <svg width="20" height="20" fill="none" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4" stroke="currentColor" strokeWidth="2"/><path stroke="currentColor" strokeWidth="2" d="M4 20c0-2.21 3.58-4 8-4s8 1.79 8 4"/></svg>
+                <svg width="clamp(16px, 2vw, 24px)" height="clamp(16px, 2vw, 24px)" fill="none" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4" stroke="currentColor" strokeWidth="2"/><path stroke="currentColor" strokeWidth="2" d="M4 20c0-2.21 3.58-4 8-4s8 1.79 8 4"/></svg>
                 Name
               </label>
               <input
                 type="text"
                 value={name}
                 onChange={e => setName(e.target.value)}
-                className="w-full border px-6 py-6 rounded-md focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition outline-none bg-gray-50 text-gray-900 placeholder-gray-400 text-xl"
-                style={{ fontSize: '1.35rem', height: '3.75rem', borderRadius: '0.5rem', border: '1.5px solid #111', boxShadow: '0 2px 8px 0 rgba(0,0,0,0.10)' }}
+                className="w-full border px-6 py-6 rounded-md focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition outline-none bg-gray-50 text-gray-900 placeholder-gray-400"
+                style={{ fontSize: 'clamp(1rem, 2vw, 1.5rem)', height: 'clamp(3rem, 4vh, 4rem)', borderRadius: '0.5rem', border: '1.5px solid #111', boxShadow: '0 2px 8px 0 rgba(0,0,0,0.10)' }}
                 placeholder="Your name"
                 required
               />
             </div>
-            <div style={{ marginTop: '44px' }}>
+            <div style={{ marginTop: 'clamp(30px, 4vh, 50px)' }}>
               <label className="block mb-1 font-semibold text-gray-700 flex items-center gap-2">
                 {/* Email icon */}
-                <svg width="20" height="20" fill="none" viewBox="0 0 24 24"><path stroke="currentColor" strokeWidth="2" d="M3 7.5V17a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V7.5m-18 0A2 2 0 0 1 5 5.5h14a2 2 0 0 1 2 2m-18 0 9 6.5 9-6.5"/></svg>
+                <svg width="clamp(16px, 2vw, 24px)" height="clamp(16px, 2vw, 24px)" fill="none" viewBox="0 0 24 24"><path stroke="currentColor" strokeWidth="2" d="M3 7.5V17a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V7.5m-18 0A2 2 0 0 1 5 5.5h14a2 2 0 0 1 2 2m-18 0 9 6.5 9-6.5"/></svg>
                 Email
               </label>
               <input
@@ -140,7 +143,7 @@ export default function SignUpPage() {
                   setIsEmailValid(validateEmail(e.target.value));
                   if (!emailTouched) setEmailTouched(true);
                 }}
-                className="w-full border px-6 py-6 rounded-md focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition outline-none bg-gray-50 text-gray-900 placeholder-gray-400 text-xl"
+                className="w-full border px-6 py-6 rounded-md focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition outline-none bg-gray-50 text-gray-900 placeholder-gray-400"
                 style={{
                   fontSize: '1.35rem',
                   height: '3.75rem',
@@ -157,61 +160,103 @@ export default function SignUpPage() {
                 required
               />
             </div>
-            <div style={{ marginTop: '40px', position: 'relative' }}>
-              <label className="block mb-1 font-semibold text-gray-700 flex items-center gap-2">
-                {/* Lock icon */}
-                <svg width="20" height="20" fill="none" viewBox="0 0 24 24"><rect x="5" y="11" width="14" height="8" rx="2" stroke="currentColor" strokeWidth="2"/><path stroke="currentColor" strokeWidth="2" d="M8 11V7a4 4 0 1 1 8 0v4"/></svg>
-                Password
-              </label>
-              <input
-                type={showPassword ? "text" : "password"}
-                value={password}
-                onChange={e => setPassword(e.target.value)}
-                className="w-full border border-gray-300 px-6 py-6 rounded-md focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition outline-none bg-gray-50 text-gray-900 placeholder-gray-400 text-xl pr-12"
-                style={{ fontSize: '1.35rem', height: '3.75rem', borderRadius: '0.5rem', border: '1.5px solid #111', boxShadow: '0 2px 8px 0 rgba(0,0,0,0.10)' }}
-                placeholder="Password"
-                required
-              />
+          <div style={{ marginTop: 'clamp(30px, 4vh, 50px)', position: 'relative' }}>
+            <label className="block mb-1 font-semibold text-gray-700 flex items-center gap-2">
+              {/* Lock icon */}
+              <svg width="clamp(16px, 2vw, 24px)" height="clamp(16px, 2vw, 24px)" fill="none" viewBox="0 0 24 24"><rect x="5" y="11" width="14" height="8" rx="2" stroke="currentColor" strokeWidth="2"/><path stroke="currentColor" strokeWidth="2" d="M8 11V7a4 4 0 1 1 8 0v4"/></svg>
+              Password
+              {/* Eye icon moved above password input */}
               <button
                 type="button"
                 onClick={() => setShowPassword(v => !v)}
                 tabIndex={-1}
-                style={{ position: 'absolute', top: '50%', right: '18px', transform: 'translateY(-50%)', background: 'none', border: 'none', padding: 0, cursor: 'pointer', outline: 'none' }}
+                style={{ 
+                  position: 'absolute', 
+                  top: 'clamp(-12px, -1.5vh, -16px)', 
+                  right: 'clamp(-32px, -6vw, -48px)', 
+                  background: 'none', 
+                  border: 'none', 
+                  padding: 'clamp(2px, 0.5vw, 4px)', 
+                  cursor: 'pointer', 
+                  outline: 'none',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  zIndex: 10
+                }}
                 aria-label={showPassword ? 'Hide password' : 'Show password'}
-                className="group"
+                className="eye-toggle-button"
+                onMouseEnter={(e) => {
+                  const tooltip = e.currentTarget.querySelector('.eye-tooltip') as HTMLElement;
+                  if (tooltip) tooltip.style.opacity = '1';
+                }}
+                onMouseLeave={(e) => {
+                  const tooltip = e.currentTarget.querySelector('.eye-tooltip') as HTMLElement;
+                  if (tooltip) tooltip.style.opacity = '0';
+                }}
               >
                 <span
-                  className="group-tooltip px-2 py-1 text-xs rounded bg-black text-white opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none whitespace-nowrap"
-                  style={{ fontSize: '0.75rem', fontWeight: 500, position: 'absolute', top: '-44px', right: '-8px', zIndex: 10, opacity: 0, transition: 'opacity 0.2s', pointerEvents: 'none' }}
+                  className="eye-tooltip"
+                  style={{ 
+                    fontSize: '0.75rem', 
+                    fontWeight: 500, 
+                    position: 'absolute', 
+                    top: '-32px', 
+                    right: '-4px', 
+                    zIndex: 20, 
+                    opacity: 0, 
+                    transition: 'opacity 0.2s', 
+                    pointerEvents: 'none',
+                    background: '#000',
+                    color: '#fff',
+                    padding: '4px 8px',
+                    borderRadius: '4px',
+                    whiteSpace: 'nowrap'
+                  }}
                 >
                   {showPassword ? 'Hide password' : 'Show password'}
                 </span>
                 {showPassword ? (
                   // Eye-off icon
-                  <svg width="24" height="24" fill="none" stroke="#111" strokeWidth="2" viewBox="0 0 24 24"><path d="M17.94 17.94A10.06 10.06 0 0 1 12 20c-5 0-9.27-3.11-11-8 1.09-2.86 3.09-5.18 5.66-6.53M1 1l22 22" stroke="#111" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/><path d="M9.53 9.53A3.5 3.5 0 0 0 12 15.5a3.5 3.5 0 0 0 2.47-5.97" stroke="#111" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/></svg>
+                  <svg width="clamp(20px, 2.5vw, 28px)" height="clamp(20px, 2.5vw, 28px)" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M13.875 18.825A10.05 10.05 0 0112 19c-4.478 0-8.268-2.943-9.543-7a9.97 9.97 0 011.563-3.029m5.858.908a3 3 0 114.243 4.243M9.878 9.878l4.242 4.242M9.878 9.878L3 3m6.878 6.878L21 21" />
+                  </svg>
                 ) : (
                   // Eye icon
-                  <svg width="24" height="24" fill="none" stroke="#111" strokeWidth="2" viewBox="0 0 24 24"><ellipse cx="12" cy="12" rx="10" ry="6" stroke="#111" strokeWidth="2"/><circle cx="12" cy="12" r="2.5" fill="#111"/></svg>
+                  <svg width="clamp(20px, 2.5vw, 28px)" height="clamp(20px, 2.5vw, 28px)" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+                  </svg>
                 )}
               </button>
+            </label>
+              <input
+                type={showPassword ? "text" : "password"}
+                value={password}
+                onChange={e => setPassword(e.target.value)}
+                className="w-full border border-gray-300 px-6 py-6 rounded-md focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition outline-none bg-gray-50 text-gray-900 placeholder-gray-400 pr-12"
+                style={{ fontSize: 'clamp(1rem, 2vw, 1.5rem)', height: 'clamp(3rem, 4vh, 4rem)', borderRadius: '0.5rem', border: '1.5px solid #111', boxShadow: '0 2px 8px 0 rgba(0,0,0,0.10)' }}
+                placeholder="Password"
+                required
+              />
             </div>
             {error && <div className="bg-red-100 text-red-700 px-4 py-2 rounded flex items-center gap-2 mt-4"><svg width="18" height="18" fill="none" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="2"/><path stroke="currentColor" strokeWidth="2" d="M12 8v4m0 4h.01"/></svg>{error}</div>}
             {success && <div className="bg-green-100 text-green-700 px-4 py-2 rounded flex items-center gap-2 mt-4"><svg width="18" height="18" fill="none" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="2"/><path stroke="currentColor" strokeWidth="2" d="M12 8v4m0 4h.01"/></svg>{success}</div>}
             
             {/* Social Sign In Buttons */}
-            <SocialSignInButtons className="signup-social-buttons mt-12 mb-8" />
+            <SocialSignInButtons className="signup-social-buttons" style={{ marginTop: 'clamp(1rem, 2vh, 1.5rem)', marginBottom: 'clamp(0.5rem, 1vh, 1rem)' }} />
             
             <button
               type="submit"
               className="rounded-full font-extrabold transition disabled:opacity-50 flex items-center justify-center gap-2 shadow-lg mx-auto hover:scale-105 animated-gradient shimmer-btn"
               style={{
-                height: '30px',
-                minHeight: '30px',
-                width: '100px',
-                fontSize: '1.1rem',
+                height: 'clamp(28px, 3vh, 35px)',
+                minHeight: 'clamp(28px, 3vh, 35px)',
+                width: 'clamp(90px, 12vw, 120px)',
+                fontSize: 'clamp(1rem, 1.8vw, 1.3rem)',
                 color: '#111',
                 border: '1.5px solid #111',
-                marginTop: '30px',
+                marginTop: 'clamp(25px, 3vh, 35px)',
                 boxShadow: '0 6px 24px 0 rgba(0,0,0,0.35)',
                 cursor: 'pointer'
               }}

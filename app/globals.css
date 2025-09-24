@@ -389,6 +389,267 @@ header {
   }
 }
 
+/* Responsive breakpoints for home page viewport scaling */
+@media (min-width: 1920px) {
+  /* Large desktop screens (27" monitors and above) */
+  .home-tagline {
+    font-size: clamp(2.5rem, 4vw, 4rem) !important;
+  }
+  
+  .feature-badge {
+    font-size: clamp(1rem, 1.5vw, 1.2rem) !important;
+    padding: clamp(10px, 1.5vw, 20px) clamp(18px, 2.5vw, 24px) !important;
+  }
+  
+  .cta-button {
+    font-size: clamp(1.2rem, 2.5vw, 1.5rem) !important;
+    padding: clamp(1rem, 2.5vh, 1.5rem) clamp(2rem, 5vw, 3rem) !important;
+  }
+  
+  .explainer-text {
+    font-size: clamp(1.2rem, 2.5vw, 1.8rem) !important;
+    padding: clamp(12px, 2vw, 20px) clamp(20px, 4vw, 40px) !important;
+  }
+}
+
+@media (min-width: 2560px) {
+  /* Ultra-wide and 4K displays */
+  .home-tagline {
+    font-size: clamp(3rem, 5vw, 6rem) !important;
+  }
+  
+  .feature-badge {
+    font-size: clamp(1.1rem, 1.8vw, 1.4rem) !important;
+  }
+  
+  .cta-button {
+    font-size: clamp(1.3rem, 3vw, 1.8rem) !important;
+  }
+  
+  .explainer-text {
+    font-size: clamp(1.3rem, 3vw, 2rem) !important;
+  }
+}
+
+@media (max-width: 768px) {
+  /* Mobile and tablet adjustments */
+  .home-tagline {
+    font-size: clamp(2rem, 6vw, 3rem) !important;
+  }
+  
+  .feature-badge {
+    font-size: clamp(0.8rem, 3vw, 1rem) !important;
+    padding: clamp(6px, 2vw, 12px) clamp(12px, 4vw, 18px) !important;
+  }
+  
+  .cta-button {
+    font-size: clamp(0.9rem, 4vw, 1.1rem) !important;
+    padding: clamp(0.6rem, 3vh, 1rem) clamp(1.2rem, 6vw, 1.8rem) !important;
+  }
+  
+  .explainer-text {
+    font-size: clamp(0.9rem, 4vw, 1.2rem) !important;
+    padding: clamp(6px, 2vw, 12px) clamp(12px, 4vw, 20px) !important;
+  }
+}
+
+/* Footer responsive adjustments */
+@media (min-width: 1920px) {
+  /* Large desktop screens - footer scaling */
+  footer h2 {
+    font-size: clamp(2rem, 3.5vw, 3rem) !important;
+  }
+  
+  footer .faq-question {
+    font-size: clamp(1.2rem, 2.2vw, 1.5rem) !important;
+  }
+  
+  footer .faq-answer {
+    font-size: clamp(1.1rem, 2vw, 1.4rem) !important;
+  }
+}
+
+@media (min-width: 2560px) {
+  /* Ultra-wide and 4K displays - footer scaling */
+  footer h2 {
+    font-size: clamp(2.5rem, 4vw, 3.5rem) !important;
+  }
+  
+  footer .faq-question {
+    font-size: clamp(1.3rem, 2.5vw, 1.7rem) !important;
+  }
+  
+  footer .faq-answer {
+    font-size: clamp(1.2rem, 2.3vw, 1.6rem) !important;
+  }
+}
+
+/* Auth pages responsive adjustments */
+@media (min-width: 1920px) {
+  /* Large desktop screens - auth page scaling */
+  .signin-page-override h2 {
+    font-size: clamp(2rem, 3.5vw, 2.5rem) !important;
+  }
+  
+  .signin-page-override input {
+    font-size: clamp(1.2rem, 2.2vw, 1.6rem) !important;
+    height: clamp(3.5rem, 4.5vh, 4.5rem) !important;
+  }
+  
+  .signin-page-override button {
+    font-size: clamp(1.1rem, 2vw, 1.4rem) !important;
+    height: clamp(32px, 3.5vh, 40px) !important;
+    width: clamp(100px, 13vw, 140px) !important;
+  }
+  
+  .signin-page-override p, .signin-page-override a {
+    font-size: clamp(1rem, 1.8vw, 1.2rem) !important;
+  }
+}
+
+@media (min-width: 2560px) {
+  /* Ultra-wide and 4K displays - auth page scaling */
+  .signin-page-override h2 {
+    font-size: clamp(2.5rem, 4vw, 3rem) !important;
+  }
+  
+  .signin-page-override input {
+    font-size: clamp(1.3rem, 2.5vw, 1.8rem) !important;
+    height: clamp(4rem, 5vh, 5rem) !important;
+  }
+  
+  .signin-page-override button {
+    font-size: clamp(1.2rem, 2.3vw, 1.6rem) !important;
+    height: clamp(36px, 4vh, 45px) !important;
+    width: clamp(110px, 15vw, 160px) !important;
+  }
+  
+  .signin-page-override p, .signin-page-override a {
+    font-size: clamp(1.1rem, 2vw, 1.3rem) !important;
+  }
+}
+
+@media (max-width: 768px) {
+  /* Mobile adjustments for auth pages */
+  .signin-page-override {
+    padding-right: clamp(1rem, 4vw, 2rem) !important;
+  }
+  
+  .signin-page-override .sign-in-card {
+    max-width: clamp(20rem, 90vw, 24rem) !important;
+    min-width: clamp(280px, 85vw, 350px) !important;
+    padding: clamp(1rem, 4vw, 2rem) !important;
+    margin-right: clamp(1rem, 4vw, 2rem) !important;
+  }
+  
+  .signin-page-override h2 {
+    font-size: clamp(1.5rem, 5vw, 2rem) !important;
+  }
+  
+  .signin-page-override input {
+    font-size: clamp(0.9rem, 3vw, 1.1rem) !important;
+    height: clamp(2.5rem, 6vh, 3rem) !important;
+  }
+  
+  .signin-page-override button {
+    font-size: clamp(0.9rem, 3vw, 1.1rem) !important;
+    height: clamp(24px, 4vh, 30px) !important;
+    width: clamp(80px, 20vw, 100px) !important;
+  }
+}
+
+/* Prevent dark background flash on auth pages */
+body {
+  background: #fff !important;
+}
+
+html {
+  background: #fff !important;
+}
+
+/* Fix auth input text size - override Tailwind defaults */
+.signin-page-override input[type="email"],
+.signin-page-override input[type="password"],
+.signin-page-override input[type="text"] {
+  font-size: clamp(1rem, 2vw, 1.5rem) !important;
+  line-height: 1.5 !important;
+  color: #111827 !important;
+  font-family: inherit !important;
+}
+
+/* Override any conflicting Tailwind input styles */
+input.bg-gray-50 {
+  font-size: clamp(1rem, 2vw, 1.5rem) !important;
+  color: #111827 !important;
+  font-family: inherit !important;
+}
+
+/* Ensure input text is visible on initial load - force font size */
+input[type="email"],
+input[type="password"],
+input[type="text"] {
+  font-size: clamp(1rem, 2vw, 1.5rem) !important;
+  color: #111827 !important;
+  font-family: inherit !important;
+  -webkit-text-size-adjust: 100% !important;
+  text-size-adjust: 100% !important;
+}
+
+/* Override Tailwind's px-6 py-6 classes specifically for auth inputs */
+.px-6.py-6 {
+  font-size: clamp(1rem, 2vw, 1.5rem) !important;
+  color: #111827 !important;
+}
+
+/* Force font size on all auth page inputs regardless of class conflicts */
+body input[type="email"],
+body input[type="password"],
+body input[type="text"] {
+  font-size: clamp(1rem, 2vw, 1.5rem) !important;
+  color: #111827 !important;
+}
+
+/* Nuclear option - force font size on ALL inputs in auth layout */
+.auth-layout input {
+  font-size: clamp(1rem, 2vw, 1.5rem) !important;
+  color: #111827 !important;
+}
+
+/* Target specific auth pages */
+[data-page="signin"] input,
+[data-page="signup"] input,
+[data-page="forgot-password"] input {
+  font-size: clamp(1rem, 2vw, 1.5rem) !important;
+  color: #111827 !important;
+}
+
+/* Auth background logos responsive adjustments */
+@media (min-width: 1920px) {
+  /* Large desktop screens - background logo scaling */
+  .auth-layout-background {
+    grid-template-columns: repeat(auto-fit, minmax(clamp(140px, 15vw, 180px), 1fr)) !important;
+    gap: clamp(2vw, 3vw, 4vw) !important;
+  }
+  
+  .auth-layout-background img {
+    width: clamp(120px, 12vw, 160px) !important;
+    height: clamp(120px, 12vw, 160px) !important;
+  }
+}
+
+@media (min-width: 2560px) {
+  /* Ultra-wide and 4K displays - background logo scaling */
+  .auth-layout-background {
+    grid-template-columns: repeat(auto-fit, minmax(clamp(160px, 18vw, 220px), 1fr)) !important;
+    gap: clamp(2.5vw, 4vw, 5vw) !important;
+  }
+  
+  .auth-layout-background img {
+    width: clamp(140px, 15vw, 180px) !important;
+    height: clamp(140px, 15vw, 180px) !important;
+  }
+}
+
 .animate-fade-in-out {
   animation: fadeInOut 3s ease-in-out;
 }

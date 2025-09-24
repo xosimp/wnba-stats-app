@@ -102,42 +102,37 @@ export default function SocialSignInButtons({ className = "" }: SocialSignInButt
 
   // Default rendering for other forms
   return (
-    <div className={`space-y-5 ${className}`}>
-      {/* Divider */}
-      <div className="flex items-center justify-center my-4">
-        <div style={{ flex: 1, height: '1px', backgroundColor: '#d1d5db', minHeight: '1px' }}></div>
-        <span style={{ paddingLeft: '24px', paddingRight: '24px', color: '#6b7280', fontWeight: 'bold', fontSize: '0.875rem' }}>OR</span>
-        <div style={{ flex: 1, height: '1px', backgroundColor: '#d1d5db', minHeight: '1px' }}></div>
-      </div>
+    <div className={className} style={{ display: 'flex', flexDirection: 'row', gap: 'clamp(10px, 2vw, 20px)', alignItems: 'center', justifyContent: 'center' }}>
       {/* Google Sign In Button */}
-      <div style={{ marginTop: '20px' }}>
-        <button
-          onClick={handleGoogleSignIn}
-          disabled={isGoogleLoading}
-          className="w-full flex items-center justify-center px-6 py-4 border border-gray-300 rounded-lg hover:bg-gray-50 transition-colors duration-200 disabled:opacity-50 disabled:cursor-not-allowed"
-          style={{
-            fontSize: '1.1rem',
-            height: '3.75rem',
-            borderRadius: '1.5rem',
-            border: '1.5px solid #e5e7eb',
-            boxShadow: '0 2px 8px 0 rgba(0,0,0,0.10)',
-            fontWeight: 600,
-            color: '#111',
-            backgroundColor: 'transparent',
-            cursor: 'pointer',
-            transition: 'border-color 0.2s ease',
-            gap: '17px'
-          }}
-          onMouseEnter={(e) => e.currentTarget.style.borderColor = '#000'}
-          onMouseLeave={(e) => e.currentTarget.style.borderColor = '#e5e7eb'}
+      <button
+        onClick={handleGoogleSignIn}
+        disabled={isGoogleLoading}
+        className="flex items-center justify-center border border-gray-300 rounded-lg hover:bg-gray-50 transition-colors duration-200 disabled:opacity-50 disabled:cursor-not-allowed"
+        style={{
+          fontSize: 'clamp(0.9rem, 1.5vw, 1.1rem)',
+          height: 'clamp(2.5rem, 3.5vh, 3.5rem)',
+          width: 'clamp(120px, 15vw, 180px)',
+          borderRadius: '1.5rem',
+          border: '1.5px solid #e5e7eb',
+          boxShadow: '0 2px 8px 0 rgba(0,0,0,0.10)',
+          fontWeight: 600,
+          color: '#111',
+          backgroundColor: 'transparent',
+          cursor: 'pointer',
+          transition: 'border-color 0.2s ease',
+          gap: 'clamp(8px, 1.5vw, 12px)',
+          padding: '0 clamp(8px, 1.5vw, 16px)'
+        }}
+        onMouseEnter={(e) => e.currentTarget.style.borderColor = '#000'}
+        onMouseLeave={(e) => e.currentTarget.style.borderColor = '#e5e7eb'}
       >
         {isGoogleLoading ? (
-          <svg className="animate-spin" width="20" height="20" fill="none" viewBox="0 0 24 24">
+          <svg className="animate-spin" width="clamp(16px, 2vw, 20px)" height="clamp(16px, 2vw, 20px)" fill="none" viewBox="0 0 24 24">
             <circle cx="12" cy="12" r="10" stroke="#111" strokeWidth="4" opacity=".2"/>
             <path d="M22 12a10 10 0 0 1-10 10" stroke="#111" strokeWidth="4"/>
           </svg>
         ) : (
-          <svg width="30" height="30" viewBox="0 0 24 24">
+          <svg width="clamp(20px, 2.5vw, 24px)" height="clamp(20px, 2.5vw, 24px)" viewBox="0 0 24 24">
             <path
               fill="#4285F4"
               d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"
@@ -156,45 +151,47 @@ export default function SocialSignInButtons({ className = "" }: SocialSignInButt
             />
           </svg>
         )}
-        {isGoogleLoading ? "Signing in..." : "Continue with Google"}
+        <span style={{ fontSize: 'clamp(0.8rem, 1.3vw, 1rem)' }}>
+          {isGoogleLoading ? "Signing..." : "Google"}
+        </span>
       </button>
-      </div>
       {/* Apple Sign In Button */}
-      <div style={{ marginTop: '20px' }}>
-        <button
-          onClick={handleAppleSignIn}
-          disabled={isAppleLoading}
-          className="w-full flex items-center justify-center px-6 py-4 border border-gray-300 rounded-lg hover:bg-gray-50 transition-colors duration-200 disabled:opacity-50 disabled:cursor-not-allowed"
-          style={{
-            fontSize: '1.1rem',
-            height: '3.75rem',
-            borderRadius: '1.5rem',
-            border: '1.5px solid #e5e7eb',
-            boxShadow: '0 2px 8px 0 rgba(0,0,0,0.10)',
-            fontWeight: 600,
-            color: '#111',
-            marginTop: '20px',
-            backgroundColor: 'transparent',
-            cursor: 'pointer',
-            transition: 'border-color 0.2s ease',
-            gap: '17px'
-          }}
-          onMouseEnter={(e) => e.currentTarget.style.borderColor = '#000'}
-          onMouseLeave={(e) => e.currentTarget.style.borderColor = '#e5e7eb'}
+      <button
+        onClick={handleAppleSignIn}
+        disabled={isAppleLoading}
+        className="flex items-center justify-center border border-gray-300 rounded-lg hover:bg-gray-50 transition-colors duration-200 disabled:opacity-50 disabled:cursor-not-allowed"
+        style={{
+          fontSize: 'clamp(0.9rem, 1.5vw, 1.1rem)',
+          height: 'clamp(2.5rem, 3.5vh, 3.5rem)',
+          width: 'clamp(120px, 15vw, 180px)',
+          borderRadius: '1.5rem',
+          border: '1.5px solid #e5e7eb',
+          boxShadow: '0 2px 8px 0 rgba(0,0,0,0.10)',
+          fontWeight: 600,
+          color: '#111',
+          backgroundColor: 'transparent',
+          cursor: 'pointer',
+          transition: 'border-color 0.2s ease',
+          gap: 'clamp(8px, 1.5vw, 12px)',
+          padding: '0 clamp(8px, 1.5vw, 16px)'
+        }}
+        onMouseEnter={(e) => e.currentTarget.style.borderColor = '#000'}
+        onMouseLeave={(e) => e.currentTarget.style.borderColor = '#e5e7eb'}
       >
         {isAppleLoading ? (
-          <svg className="animate-spin" width="20" height="20" fill="none" viewBox="0 0 24 24">
+          <svg className="animate-spin" width="clamp(16px, 2vw, 20px)" height="clamp(16px, 2vw, 20px)" fill="none" viewBox="0 0 24 24">
             <circle cx="12" cy="12" r="10" stroke="#111" strokeWidth="4" opacity=".2"/>
             <path d="M22 12a10 10 0 0 1-10 10" stroke="#111" strokeWidth="4"/>
           </svg>
         ) : (
-          <svg width="30" height="30" viewBox="0 0 24 24" fill="#000">
+          <svg width="clamp(20px, 2.5vw, 24px)" height="clamp(20px, 2.5vw, 24px)" viewBox="0 0 24 24" fill="#000">
             <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/>
           </svg>
         )}
-        {isAppleLoading ? "Signing in..." : "Continue with Apple"}
+        <span style={{ fontSize: 'clamp(0.8rem, 1.3vw, 1rem)' }}>
+          {isAppleLoading ? "Signing..." : "Apple"}
+        </span>
       </button>
-      </div>
     </div>
   );
 } 

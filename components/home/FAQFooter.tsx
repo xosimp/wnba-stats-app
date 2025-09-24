@@ -20,14 +20,14 @@ const FAQS = [
 
 export default function FAQFooter() {
   return (
-    <footer style={{ background: '#181C24', color: '#fff', padding: '2.5rem 0', marginTop: '3rem', borderTop: '2px solid #71FD08', position: 'relative' }}>
-      <div style={{ maxWidth: 900, margin: '0 auto', padding: '0 1.5rem' }}>
-        <h2 style={{ color: '#71FD08', fontWeight: 800, fontSize: '2rem', marginBottom: '1.5rem', letterSpacing: '0.01em', textShadow: '0 2px 8px #000, 0 1px 2px #000' }}>Frequently Asked Questions</h2>
-        <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
+    <footer style={{ background: '#181C24', color: '#fff', padding: 'clamp(2rem, 4vh, 3.5rem) 0', marginTop: 'clamp(2rem, 4vh, 4rem)', borderTop: '2px solid #71FD08', position: 'relative' }}>
+      <div style={{ maxWidth: 'clamp(800px, 80vw, 1200px)', margin: '0 auto', padding: '0 clamp(1rem, 3vw, 2rem)' }}>
+        <h2 style={{ color: '#71FD08', fontWeight: 800, fontSize: 'clamp(1.5rem, 3vw, 2.5rem)', marginBottom: 'clamp(1rem, 2vh, 2rem)', letterSpacing: '0.01em', textShadow: '0 2px 8px #000, 0 1px 2px #000' }}>Frequently Asked Questions</h2>
+        <div style={{ display: 'flex', flexDirection: 'column', gap: 'clamp(1rem, 2vh, 2rem)' }}>
           {FAQS.map((faq, idx) => (
             <div key={idx}>
-              <div style={{ fontWeight: 700, fontSize: '1.1rem', marginBottom: '0.3rem', color: '#71FD08' }}>{faq.question}</div>
-              <div style={{ fontWeight: 400, fontSize: '1rem', color: '#fff', opacity: 0.92 }}>{faq.answer}</div>
+              <div style={{ fontWeight: 700, fontSize: 'clamp(1rem, 2vw, 1.3rem)', marginBottom: 'clamp(0.25rem, 0.5vh, 0.5rem)', color: '#71FD08' }}>{faq.question}</div>
+              <div style={{ fontWeight: 400, fontSize: 'clamp(0.9rem, 1.8vw, 1.2rem)', color: '#fff', opacity: 0.92 }}>{faq.answer}</div>
             </div>
           ))}
         </div>
@@ -35,12 +35,12 @@ export default function FAQFooter() {
       {/* Social icons bottom right */}
       <div style={{
         position: 'absolute',
-        right: '2.5rem',
-        bottom: '2.5rem',
+        right: 'clamp(1.5rem, 3vw, 3rem)',
+        bottom: 'clamp(1.5rem, 3vh, 3rem)',
         zIndex: 10,
         display: 'flex',
         alignItems: 'center',
-        gap: '1.2rem',
+        gap: 'clamp(1rem, 2vw, 1.5rem)',
       }}>
         {/* Instagram icon as inline SVG */}
         <a
@@ -53,7 +53,7 @@ export default function FAQFooter() {
         >
           <svg
             className="instagram-logo-svg"
-            style={{ width: 50, height: 50, minWidth: 50, minHeight: 50, display: 'block', transition: 'filter 0.18s' }}
+            style={{ width: 'clamp(40px, 4vw, 60px)', height: 'clamp(40px, 4vw, 60px)', minWidth: 'clamp(40px, 4vw, 60px)', minHeight: 'clamp(40px, 4vw, 60px)', display: 'block', transition: 'filter 0.18s' }}
             viewBox="0 0 32 32"
             xmlns="http://www.w3.org/2000/svg"
             fill="#fff"
@@ -73,7 +73,7 @@ export default function FAQFooter() {
         >
           <svg
             className="x-logo-svg"
-            style={{ width: 32, height: 32, display: 'block', transition: 'stroke 0.18s' }}
+            style={{ width: 'clamp(28px, 3vw, 40px)', height: 'clamp(28px, 3vw, 40px)', display: 'block', transition: 'stroke 0.18s' }}
             viewBox="0 0 300 300.251"
             xmlns="http://www.w3.org/2000/svg"
           >
