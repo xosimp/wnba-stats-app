@@ -31,57 +31,76 @@ const statConfig = [
   { key: 'minutes', label: 'Minutes' },
 ];
 
+// Global cache for thresholds since they don't change often
+let globalThresholds: any = null;
+let thresholdsLoaded = false;
+
 export function AnimatedStats({ stats, playerName, playerId, onLoadingChange }: AnimatedStatsProps) {
-  const [thresholds, setThresholds] = useState<any>(null);
-  const [loading, setLoading] = useState(true);
+  const [thresholds, setThresholds] = useState<any>(globalThresholds);
+  const [loading, setLoading] = useState(!thresholdsLoaded);
 
   useEffect(() => {
-    if (!playerId) return;
+    // If thresholds are already loaded globally, use them immediately
+    if (thresholdsLoaded && globalThresholds) {
+      setThresholds(globalThresholds);
+      setLoading(false);
+      console.log('✅ Using cached thresholds for player:', playerId);
+      return;
+    }
     
-    setLoading(true);
-    fetch('/api/dynamic-thresholds')
-      .then(res => res.json())
-      .then(data => {
-        // Transform the API data to match StatAlgorithms expected format
-        const transformedThresholds = {
-          top1: {
-            points: data.points.excellent,
-            rebounds: data.rebounds.excellent,
-            assists: data.assists.excellent,
-            steals: data.steals.excellent,
-            blocks: data.blocks.excellent,
-            minutes: data.minutes.excellent,
-            turnovers: data.turnovers.excellent
-          },
-          bottom1: {
-            points: data.points.poor,
-            rebounds: data.rebounds.poor,
-            assists: data.assists.poor,
-            steals: data.steals.poor,
-            blocks: data.blocks.poor,
-            minutes: data.minutes.poor,
-            turnovers: data.turnovers.poor
-          },
-          leagueAvg: {
-            points: data.points.average,
-            rebounds: data.rebounds.average,
-            assists: data.assists.average,
-            steals: data.steals.average,
-            blocks: data.blocks.average,
-            minutes: data.minutes.average,
-            turnovers: data.turnovers.average
-          }
-        };
-        setThresholds(transformedThresholds);
-        setLoading(false);
-        console.log('✅ Loaded dynamic thresholds for player:', playerId, transformedThresholds);
-      })
-      .catch(error => {
-        console.error('Error fetching dynamic thresholds:', error);
-        // Fallback to built-in thresholds
-        setThresholds(null);
-        setLoading(false);
-      });
+    // Only fetch if not already loaded
+    if (!thresholdsLoaded) {
+      console.log('🔄 Fetching thresholds for first time...');
+      setLoading(true);
+      
+      fetch('/api/dynamic-thresholds')
+        .then(res => res.json())
+        .then(data => {
+          // Transform the API data to match StatAlgorithms expected format
+          const transformedThresholds = {
+            top1: {
+              points: data.points.excellent,
+              rebounds: data.rebounds.excellent,
+              assists: data.assists.excellent,
+              steals: data.steals.excellent,
+              blocks: data.blocks.excellent,
+              minutes: data.minutes.excellent,
+              turnovers: data.turnovers.excellent
+            },
+            bottom1: {
+              points: data.points.poor,
+              rebounds: data.rebounds.poor,
+              assists: data.assists.poor,
+              steals: data.steals.poor,
+              blocks: data.blocks.poor,
+              minutes: data.minutes.poor,
+              turnovers: data.turnovers.poor
+            },
+            leagueAvg: {
+              points: data.points.average,
+              rebounds: data.rebounds.average,
+              assists: data.assists.average,
+              steals: data.steals.average,
+              blocks: data.blocks.average,
+              minutes: data.minutes.average,
+              turnovers: data.turnovers.average
+            }
+          };
+          
+          // Cache globally for future use
+          globalThresholds = transformedThresholds;
+          thresholdsLoaded = true;
+          setThresholds(transformedThresholds);
+          setLoading(false);
+          console.log('✅ Loaded and cached thresholds:', transformedThresholds);
+        })
+        .catch(error => {
+          console.error('Error fetching dynamic thresholds:', error);
+          // Fallback to built-in thresholds
+          setThresholds(null);
+          setLoading(false);
+        });
+    }
   }, [playerId]);
 
   // Notify parent component when loading state changes
@@ -124,6 +143,8 @@ export function AnimatedStats({ stats, playerName, playerId, onLoadingChange }: 
                 const color = thresholds
                   ? StatAlgorithms.getStatColor(stat.key as keyof PlayerStats, value, thresholds)
                   : StatAlgorithms.getStatColor(stat.key as keyof PlayerStats, value);
+                  
+                console.log(`🎨 ${playerName}: ${stat.key} = ${value}, color = ${color}, hasThresholds = ${!!thresholds}`);
 
                 return (
                   <motion.div

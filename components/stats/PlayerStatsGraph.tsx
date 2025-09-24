@@ -64,9 +64,17 @@ export function PlayerStatsGraph({ gameLog, bookLine, playerName: propPlayerName
   
   // Track if this is initial load or stat switching
   const [isInitialLoad, setIsInitialLoad] = useState(true);
+  
+  // Add a force refresh timestamp to ensure calculations always recalculate
+  const [forceRefreshTimestamp, setForceRefreshTimestamp] = useState(Date.now());
+  
+  // Add a state to track when percentages are ready
+  const [percentagesReady, setPercentagesReady] = useState(false);
 
   // Clear database season stats and reset initial load when player changes
   useEffect(() => {
+    console.log('🔄 PlayerStatsGraph: Player changed, clearing all state and caches');
+    
     setDatabaseSeasonStats([]);
     setSeasonGameLog([]);
     setCurrentPeriodData([]);
@@ -77,7 +85,43 @@ export function PlayerStatsGraph({ gameLog, bookLine, playerName: propPlayerName
     // Clear all caches when player changes
     oddsCache.current = {};
     periodCache.current = {};
+    
+    // Reset selected period and stat type to defaults to ensure fresh calculations
+    setSelectedPeriod('L5');
+    setSelectedStatType('PTS');
+    
+    // Force refresh timestamp to ensure all calculations recalculate
+    setForceRefreshTimestamp(Date.now());
+    setPercentagesReady(false);
+    
+    // Force a small delay to ensure state is fully reset before proceeding
+    setTimeout(() => {
+      console.log('✅ PlayerStatsGraph: State reset complete, ready for fresh data');
+    }, 100);
   }, [propPlayerId]);
+
+  // Additional effect to ensure fresh calculations when component mounts
+  useEffect(() => {
+    console.log('🚀 PlayerStatsGraph: Component mounting, clearing all caches');
+    
+    // Force recalculation of percentages by clearing caches on mount
+    const clearCachesOnMount = () => {
+      oddsCache.current = {};
+      periodCache.current = {};
+      setIsInitialLoad(true);
+      setForceRefreshTimestamp(Date.now());
+      setPercentagesReady(false);
+    };
+    
+    clearCachesOnMount();
+    
+    // Cleanup function to clear caches when component unmounts
+    return () => {
+      console.log('🧹 PlayerStatsGraph: Component unmounting, cleaning up caches');
+      oddsCache.current = {};
+      periodCache.current = {};
+    };
+  }, []); // Empty dependency array means this runs only on mount
 
   // Fetch season stats from database API
   useEffect(() => {
@@ -149,12 +193,18 @@ export function PlayerStatsGraph({ gameLog, bookLine, playerName: propPlayerName
     // Cache per player, period, stat type, and opponent (for H2H)
     const cacheKey = `${playerId}|${period}|${selectedStatType}|${period === 'H2H' ? (upcomingOpponent || '') : ''}`;
     const now = Date.now();
-    // Check cache first
-    const cached = periodCache.current[cacheKey];
-    if (cached && (now - cached.timestamp) < PERIOD_CACHE_TTL) {
-      setCurrentPeriodData(cached.value);
-      setCurrentPeriodLoading(false);
-      return;
+    
+    // Skip cache during initial load to ensure fresh data
+    if (isInitialLoad) {
+      console.log('🔄 Skipping cache during initial load for fresh data');
+    } else {
+      // Check cache first only if not in initial load
+      const cached = periodCache.current[cacheKey];
+      if (cached && (now - cached.timestamp) < PERIOD_CACHE_TTL) {
+        setCurrentPeriodData(cached.value);
+        setCurrentPeriodLoading(false);
+        return;
+      }
     }
     try {
       const timestamp = Date.now();
@@ -235,12 +285,18 @@ export function PlayerStatsGraph({ gameLog, bookLine, playerName: propPlayerName
     // Cache per player and stat type
     const cacheKey = `${playerId}|Season|${selectedStatType}`;
     const now = Date.now();
-    // Check cache first
-    const cached = periodCache.current[cacheKey];
-    if (cached && (now - cached.timestamp) < PERIOD_CACHE_TTL) {
-      setSeasonGameLog(cached.value);
-      setSeasonLoading(false);
-      return;
+    
+    // Skip cache during initial load to ensure fresh data
+    if (isInitialLoad) {
+      console.log('🔄 Skipping season cache during initial load for fresh data');
+    } else {
+      // Check cache first only if not in initial load
+      const cached = periodCache.current[cacheKey];
+      if (cached && (now - cached.timestamp) < PERIOD_CACHE_TTL) {
+        setSeasonGameLog(cached.value);
+        setSeasonLoading(false);
+        return;
+      }
     }
     try {
       const timestamp = Date.now();
@@ -404,12 +460,17 @@ export function PlayerStatsGraph({ gameLog, bookLine, playerName: propPlayerName
     const cacheKey = `${playerName}|${marketType}`;
     const now = Date.now();
     
-    // Check cache first (with expiration)
-    const cached = oddsCache.current[cacheKey];
-    if (cached && (now - cached.timestamp) < ODDS_CACHE_TTL) {
-      setOddsLine(cached.value);
-      setOddsLineLoading(false);
-      return;
+    // Skip cache during initial load to ensure fresh data
+    if (isInitialLoad) {
+      console.log('🔄 Skipping odds cache during initial load for fresh data');
+    } else {
+      // Check cache first only if not in initial load
+      const cached = oddsCache.current[cacheKey];
+      if (cached && (now - cached.timestamp) < ODDS_CACHE_TTL) {
+        setOddsLine(cached.value);
+        setOddsLineLoading(false);
+        return;
+      }
     }
     
     // Use the real odds API for all stat types
@@ -464,20 +525,20 @@ export function PlayerStatsGraph({ gameLog, bookLine, playerName: propPlayerName
 
   // Function to get games based on selected period
   const getGamesForPeriod = () => {
-    // Prioritize new API data over old gameLog prop
+    // ALWAYS prioritize internal API data over prop data to ensure fresh calculations
     if (selectedPeriod === 'Season' && seasonGameLog.length > 0) {
-      console.log('Using season data with', seasonGameLog.length, 'games');
+      console.log('✅ Using fresh season API data with', seasonGameLog.length, 'games');
       return seasonGameLog;
     }
     
     if (selectedPeriod !== 'Season' && currentPeriodData.length > 0) {
-      console.log(`Using ${selectedPeriod} data with`, currentPeriodData.length, 'games');
+      console.log(`✅ Using fresh ${selectedPeriod} API data with`, currentPeriodData.length, 'games');
       return currentPeriodData;
     }
     
-    // Fallback to gameLog prop if no API data available
+    // Only use gameLog prop as absolute last resort when no API data is available
     if (Array.isArray(gameLog) && gameLog.length > 0) {
-      console.log('Using gameLog prop with', gameLog.length, 'games');
+      console.log('⚠️ Falling back to gameLog prop with', gameLog.length, 'games (this may cause stale calculations)');
       
       // Filter based on selected period
       if (selectedPeriod === 'L5') {
@@ -498,13 +559,13 @@ export function PlayerStatsGraph({ gameLog, bookLine, playerName: propPlayerName
     }
     
     // Return empty array if no data available
-    console.log('No data available for period:', selectedPeriod);
+    console.log('❌ No data available for period:', selectedPeriod);
     return emptyGames;
   };
 
-  // Get the games to display
+  // Get the games to display - prioritize internal API data over prop data
   const games = getGamesForPeriod();
-  console.log('PlayerStatsGraph - selectedPeriod:', selectedPeriod, 'games.length:', games.length, 'seasonGameLog.length:', seasonGameLog.length);
+  console.log('🎯 PlayerStatsGraph - selectedPeriod:', selectedPeriod, 'games.length:', games.length, 'seasonGameLog.length:', seasonGameLog.length, 'currentPeriodData.length:', currentPeriodData.length);
   
   // Add error boundary for games data
   if (!Array.isArray(games)) {
@@ -585,9 +646,17 @@ export function PlayerStatsGraph({ gameLog, bookLine, playerName: propPlayerName
   
 
   // Build a full-season statGames array independent of the selected period for accurate selector percentages
+  // ALWAYS prioritize internal API data for percentage calculations
   const fullSeasonGamesBase = seasonGameLog.length > 0
     ? seasonGameLog
     : (Array.isArray(gameLog) && gameLog.length > 0 ? getOrderedGames(gameLog) : currentPeriodData);
+    
+  console.log('📊 Full season games base:', {
+    seasonGameLogLength: seasonGameLog.length,
+    gameLogLength: Array.isArray(gameLog) ? gameLog.length : 0,
+    currentPeriodDataLength: currentPeriodData.length,
+    usingSeasonData: seasonGameLog.length > 0
+  });
   const fullSeasonFiltered = (fullSeasonGamesBase || []).filter(game => {
     try {
       if (!game.date || typeof game.date !== 'string') {
@@ -686,6 +755,7 @@ export function PlayerStatsGraph({ gameLog, bookLine, playerName: propPlayerName
   // Debug logs removed for cleaner console
 
   // Calculate percentages for all selectors from the full-season dataset so they are always correct
+  // Force recalculation by including forceRefreshTimestamp to ensure fresh calculations
   const l5Percentage = calculateOverPercentage(statGamesFull.slice(0, 5), 5, safeFinalBookLine);
   const l10Percentage = calculateOverPercentage(statGamesFull.slice(0, 10), 10, safeFinalBookLine);
   const seasonPercentage = calculateOverPercentage(statGamesFull, statGamesFull.length, safeFinalBookLine);
@@ -713,6 +783,36 @@ export function PlayerStatsGraph({ gameLog, bookLine, playerName: propPlayerName
       })
     : statGamesFull;
   const h2hPercentage = calculateOverPercentage(h2hGamesFull, h2hGamesFull.length, safeFinalBookLine);
+
+  // Debug log to track percentage calculations
+  console.log('🎯 Percentage calculations (timestamp:', forceRefreshTimestamp, '):', {
+    l5Percentage,
+    l10Percentage,
+    seasonPercentage,
+    h2hPercentage,
+    isInitialLoad,
+    statGamesFullLength: statGamesFull.length,
+    safeFinalBookLine,
+    forceRefreshTimestamp,
+    statGamesFullData: statGamesFull.slice(0, 3).map(g => ({ date: g.date, statValue: g.statValue }))
+  });
+
+  // Force percentage recalculation when data changes
+  useEffect(() => {
+    console.log('🔄 Data changed, forcing percentage recalculation:', {
+      statGamesFullLength: statGamesFull.length,
+      currentPeriodDataLength: currentPeriodData.length,
+      seasonGameLogLength: seasonGameLog.length,
+      selectedPeriod,
+      selectedStatType
+    });
+    
+    // Mark percentages as ready when we have data
+    if (statGamesFull.length > 0) {
+      setPercentagesReady(true);
+      console.log('✅ Percentages ready with', statGamesFull.length, 'games');
+    }
+  }, [statGamesFull.length, currentPeriodData.length, seasonGameLog.length, selectedPeriod, selectedStatType]);
 
   // Determine maxVisibleValue for the chart
   let maxVisibleValue = 50;
@@ -793,6 +893,7 @@ export function PlayerStatsGraph({ gameLog, bookLine, playerName: propPlayerName
           {/* Move PeriodSelector up by 10px without affecting the rest of the graph */}
       <div style={{ position: 'relative', top: '-10px', zIndex: 20 }}>
             <PeriodSelector
+              key={`${propPlayerId}-${selectedStatType}-${isInitialLoad}-${forceRefreshTimestamp}-${percentagesReady}-${statGamesFull.length}`}
               selectedPeriod={selectedPeriod}
               onSelect={handlePeriodSelect}
               h2hPercentage={h2hPercentage}

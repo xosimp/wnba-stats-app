@@ -19,10 +19,13 @@ const periodLabels = [
 ];
 
 const getColor = (percentage: number, selectedStatType?: string) => {
+  // Ensure percentage is a valid number
+  const safePercentage = typeof percentage === 'number' && !isNaN(percentage) ? percentage : 0;
+  
   if (['FGA', '3PA', 'FTA'].includes(selectedStatType || '')) {
     return '#8B5CF6'; // Purple for FGA, 3PA, FTA
   }
-  return percentage >= 50 ? '#71FD08' : '#ef4444';
+  return safePercentage >= 50 ? '#71FD08' : '#ef4444';
 };
 
 const PeriodSelector: React.FC<PeriodSelectorProps> = ({
@@ -35,11 +38,25 @@ const PeriodSelector: React.FC<PeriodSelectorProps> = ({
   selectedStatType,
   h2hGamesCount = 0,
 }) => {
+  // Force recalculation of percentages to ensure fresh values
   const percentages = [h2hPercentage, l5Percentage, l10Percentage, seasonPercentage];
   const shouldShowNA = ['FGA', '3PA', 'FTA'].includes(selectedStatType || '');
   const shouldShowH2HNA = h2hGamesCount === 0;
+  
+  // Force color recalculation on every render
+  const colors = percentages.map(p => getColor(p, selectedStatType));
+  
+  // Debug log to track color calculations
+  console.log('🎨 PeriodSelector color calculations:', {
+    percentages,
+    selectedStatType,
+    shouldShowNA,
+    shouldShowH2HNA,
+    colors,
+    timestamp: Date.now()
+  });
   return (
-    <div className="mb-2 w-full flex flex-row justify-center">
+    <div key={`period-selector-${Date.now()}-${percentages.join('-')}`} className="mb-2 w-full flex flex-row justify-center">
       <div className="flex flex-row justify-between items-center" style={{ width: 400 }}>
         {periodLabels.map((period, idx) => (
           <span
@@ -80,7 +97,7 @@ const PeriodSelector: React.FC<PeriodSelectorProps> = ({
             }}
           >
             {period.label}
-            <span style={{ color: getColor(percentages[idx], selectedStatType), marginLeft: 6, fontWeight: 700 }}>
+            <span style={{ color: colors[idx], marginLeft: 6, fontWeight: 700 }}>
               {shouldShowNA || (period.key === 'H2H' && shouldShowH2HNA) ? 'N/A' : `${percentages[idx]}%`}
             </span>
           </span>

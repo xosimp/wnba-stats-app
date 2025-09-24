@@ -289,26 +289,37 @@ const ProjectionHistory = forwardRef<ProjectionHistoryRef, ProjectionHistoryProp
       <div style={{
         backgroundColor: '#0A0718',
         border: '1px solid #1F2937',
-        borderRadius: '12px',
-        padding: '-13px 16px 4px 16px',
-        marginTop: '10px',
-        marginBottom: '8px',
-        marginLeft: '40px',
-        marginRight: '40px',
+        borderRadius: '16px',
+        padding: '16px',
+        marginTop: '0px',
+        marginBottom: '0px',
+        marginLeft: '0px',
+        marginRight: '0px',
         animation: 'fadeInUp 0.8s ease-out'
       }}>
         
         {/* Player Name Header */}
         <div style={{
           textAlign: 'center',
-          marginBottom: '12px',
-          padding: '4px 8px',
-          marginTop: '3px'
+          marginBottom: '20px',
+          padding: '8px 16px',
+          marginTop: '0px'
         }}>
-          <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '8px' }}>
+          <div style={{ 
+            display: 'flex', 
+            alignItems: 'center', 
+            justifyContent: 'center', 
+            gap: '12px',
+            backgroundColor: '#0A0718',
+            padding: '8px 16px',
+            borderRadius: '12px',
+            border: '1px solid #1F2937',
+            width: 'fit-content',
+            margin: '0 auto'
+          }}>
             <span style={{
-              color: '#E6E6FA',
-              fontSize: '16px',
+              color: '#71FD08',
+              fontSize: '20px',
               fontWeight: 'bold',
               textShadow: '2px 2px 4px rgba(0, 0, 0, 0.8)'
             }}>
@@ -319,8 +330,8 @@ const ProjectionHistory = forwardRef<ProjectionHistoryRef, ProjectionHistoryProp
                 src={getTeamLogo(recentProjections[0].team)!} 
                 alt={`${recentProjections[0].team} logo`}
                 style={{
-                  width: '24px',
-                  height: '24px',
+                  width: '28px',
+                  height: '28px',
                   objectFit: 'contain'
                 }}
               />
@@ -361,7 +372,8 @@ const ProjectionHistory = forwardRef<ProjectionHistoryRef, ProjectionHistoryProp
         maxHeight: '400px',
         overflowY: 'auto',
         scrollbarWidth: 'thin',
-        scrollbarColor: '#71FD08 #1F2937'
+        scrollbarColor: '#71FD08 #1F2937',
+        paddingTop: '8px'
       }} className="custom-scrollbar">
         {/* Projection count removed for cleaner UI */}
         
@@ -374,12 +386,14 @@ const ProjectionHistory = forwardRef<ProjectionHistoryRef, ProjectionHistoryProp
           <div className="space-y-3">
             {recentProjections.map((projection, index) => (
               <div key={index} style={{
-                backgroundColor: 'transparent',
-                padding: '16px 24px 5px 24px',
+                backgroundColor: 'rgba(55, 65, 81, 0.25)',
+                padding: '12px',
                 borderRadius: '12px',
-                marginBottom: '16px'
+                marginBottom: '12px',
+                transform: 'translateY(-4px)',
+                position: 'relative'
               }}>
-                <div className="flex justify-between items-start mb-2">
+                <div className="flex justify-between items-start mb-2" style={{ transform: 'translateY(8px)' }}>
                   <div>
                     <div className="text-sm" style={{color: '#FFB366', transform: 'translateY(-15px)'}}>
                       {formatDate(projection.created_at)}
@@ -389,7 +403,7 @@ const ProjectionHistory = forwardRef<ProjectionHistoryRef, ProjectionHistoryProp
                         Matchup:
                       </div>
                     )}
-                    <div className="text-xs" style={{color: '#d1d5db'}}>
+                    <div className="text-xs" style={{color: '#d1d5db', marginBottom: '8px'}}>
                       Stat:
                     </div>
                   </div>
@@ -399,7 +413,7 @@ const ProjectionHistory = forwardRef<ProjectionHistoryRef, ProjectionHistoryProp
                         {getTeamAbbreviation(projection.opponent)}
                       </div>
                     )}
-                    <div className="text-xs" style={{color: '#d1d5db', transform: 'translateY(20px)'}}>
+                    <div className="text-xs" style={{color: '#d1d5db', transform: 'translateY(20px)', marginBottom: '8px'}}>
                       {getStatTypeAbbreviation(projection.stat_type)}
                     </div>
                   </div>
@@ -410,7 +424,7 @@ const ProjectionHistory = forwardRef<ProjectionHistoryRef, ProjectionHistoryProp
                   <div className="mt-2 pt-2">
                     {/* Line first */}
                     {projection.sportsbook_line !== undefined && (
-                      <div className="flex justify-between items-center">
+                      <div className="flex justify-between items-center mt-2 mb-2">
                         <div className="text-xs" style={{color: '#d1d5db'}}>Line:</div>
                         <div className="text-xs" style={{color: '#d1d5db'}}>{projection.sportsbook_line}</div>
                       </div>

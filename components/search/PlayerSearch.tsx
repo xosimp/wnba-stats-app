@@ -922,7 +922,7 @@ function PlayerSearchContent() {
                 }
               }}
               onFocus={() => setIsSuccess(false)}
-              className="w-full px-4 py-3 rounded-2xl text-[0.875rem] font-medium font-['Lexend'] text-[#f3f3f3] border-2 transition-all duration-300 focus:outline-none text-center pr-10"
+              className="search-input w-full px-4 py-3 rounded-2xl font-medium font-['Lexend'] border-2 transition-all duration-300 focus:outline-none text-center pr-10"
               style={{
                 borderRadius: '16px',
                 paddingTop: '12px',
@@ -935,8 +935,11 @@ function PlayerSearchContent() {
                   : '0 4px 12px rgba(0,0,0,0.8), 0 2px 6px rgba(0,0,0,0.9)',
                 animation: isShaking ? 'shake 0.5s ease-in-out' : 'none',
                 transform: isSearching ? 'scale(0.85)' : (isSuccess ? 'scale(1.02)' : 'scale(1)'),
+                caretColor: '#71FD08',
+                color: '#71FD08 !important',
+                fontSize: '0.75rem'
               }}
-              placeholder="Start typing.."
+              placeholder="Start typing..."
             />
             {/* Error message */}
             {notFound && hasSearched && (
@@ -1053,11 +1056,35 @@ function PlayerSearchContent() {
           </div>
         )}
         
-        {/* Add CSS for spinner animation */}
+        {/* Add CSS for spinner animation and search input styling */}
         <style jsx>{`
           @keyframes spin {
             0% { transform: rotate(0deg); }
             100% { transform: rotate(360deg); }
+          }
+          
+          /* Search input styling - force font size with high specificity */
+          div input[type="text"] {
+            font-size: 0.75rem !important;
+            color: #71FD08 !important;
+          }
+          
+          /* More specific selector for search input */
+          .search-input {
+            font-size: 0.75rem !important;
+            color: #71FD08 !important;
+          }
+          
+          /* Even more specific with class and type */
+          .search-input[type="text"] {
+            font-size: 0.75rem !important;
+            color: #71FD08 !important;
+          }
+          
+          /* Search input placeholder styling */
+          input::placeholder {
+            color: rgba(243, 243, 243, 0.6) !important;
+            font-size: 0.75rem !important;
           }
         `}</style>
 

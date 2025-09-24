@@ -276,8 +276,8 @@ export function Header() {
     }}>
       <div className="flex w-full items-center" style={{ 
         overflow: 'visible',
-        paddingLeft: 'clamp(0.75rem, 2vw, 1.5rem)',
-        paddingRight: 'clamp(0.75rem, 2vw, 1.5rem)'
+        paddingLeft: 'clamp(1rem, 2.5vw, 2rem)',
+        paddingRight: 'clamp(2rem, 5vw, 3rem)'
       }}>
         <span
           className="nextgenhoops-title font-extrabold font-sans text-secondary select-none"
@@ -329,11 +329,11 @@ export function Header() {
         {/*Nav Border*/}
         <div className="flex-1 flex items-center">
           <nav className="flex items-end justify-between w-full" style={{ 
-            paddingRight: 'clamp(0.125rem, 0.5vw, 0.5rem)', 
+            paddingRight: 'clamp(1rem, 2.5vw, 1.5rem)', 
             marginTop: 'clamp(4px, 0.5vh, 8px)',
-            marginRight: 'clamp(0.0625rem, 0.25vw, 0.25rem)',
+            marginRight: 'clamp(0.5rem, 1.5vw, 1rem)',
             marginLeft: 'clamp(0.5rem, 1.5vw, 1rem)',
-            padding: 'clamp(0.375rem, 0.75vw, 0.5rem) clamp(0.125rem, 0.5vw, 0.375rem)',
+            padding: 'clamp(0.375rem, 0.75vw, 0.5rem) clamp(0.5rem, 1.5vw, 1rem)',
             backgroundColor: '#1A1E28',
             borderRadius: 'clamp(6px, 0.8vw, 10px)',
             border: '1px solid #2A2F3A',
@@ -372,7 +372,7 @@ export function Header() {
                 userSelect: 'none', 
                 whiteSpace: 'nowrap', 
                 textShadow: '0 1px 4px rgba(0,0,0,0.45)', 
-                marginLeft: 'clamp(0.0625rem, 0.3vw, 0.25rem)', 
+                marginLeft: 'clamp(0.5rem, 1vw, 0.75rem)', 
                 transform: session ? 'translateY(-7px)' : 'none',
                 transition: 'all 0.2s ease-in-out !important',
                 fontSize: 'clamp(0.875rem, 1.2vw, 1rem)'
@@ -400,7 +400,7 @@ export function Header() {
                   userSelect: 'none', 
                   whiteSpace: 'nowrap', 
                   textShadow: '0 1px 4px rgba(0,0,0,0.45)', 
-                  marginLeft: 'clamp(0.0625rem, 0.3vw, 0.25rem)', 
+                  marginLeft: 'clamp(0.5rem, 1vw, 0.75rem)', 
                   transform: session ? 'translateY(-7px)' : 'none',
                   transition: 'all 0.2s ease-in-out !important',
                   fontSize: 'clamp(0.875rem, 1.2vw, 1rem)'
@@ -428,7 +428,7 @@ export function Header() {
                   style={{ 
                     userSelect: 'none', 
                     whiteSpace: 'nowrap', 
-                    marginLeft: 'clamp(0.0625rem, 0.3vw, 0.25rem)', 
+                    marginLeft: 'clamp(0.5rem, 1vw, 0.75rem)', 
                     transform: session ? 'translateY(-7px)' : 'none',
                     transition: 'all 0.2s ease-in-out !important',
                     fontSize: 'clamp(0.875rem, 1.2vw, 1rem)'
@@ -475,7 +475,7 @@ export function Header() {
                 <div className="animate-pulse bg-gray-600 h-8 w-20 rounded" style={{ marginRight: '20px' }}></div>
               </div>
             ) : session ? (
-              <div className="relative flex flex-col items-center" style={{ marginLeft: 'clamp(-1rem, -2vw, -0.5rem)' }}>
+              <div className="relative flex flex-col items-center" style={{ marginLeft: 'clamp(-0.5rem, -1vw, 0rem)' }}>
                 <span
                   role="button"
                   tabIndex={0}
@@ -872,7 +872,8 @@ export function Header() {
                   textShadow: '0 1px 4px rgba(0,0,0,0.45)',
                   transition: 'all 0.2s ease-in-out !important',
                   fontSize: 'clamp(0.875rem, 1.2vw, 1rem)',
-                  marginLeft: 'clamp(0.0625rem, 0.3vw, 0.25rem)'
+                  marginLeft: 'clamp(0.5rem, 1vw, 0.75rem)',
+                  paddingRight: 'clamp(0.5rem, 1vw, 0.75rem)'
                 }}
                 onMouseEnter={(e) => {
                   e.currentTarget.style.transform = 'scale(1.15)';

@@ -477,7 +477,7 @@ export default function Home() {
                   <span
                     className={`home-tagline${showTagline ? ' fade-in' : ''}`}
                     style={{
-                      fontSize: 'clamp(2rem, 3vw, 3.5rem)',
+                      fontSize: 'clamp(2.5rem, 4vw, 3.5rem)',
                       fontWeight: 700,
                       color: '#D1D5DB',
                       letterSpacing: '-0.5px',
@@ -1609,7 +1609,7 @@ export default function Home() {
                   <span
                     className={`explainer-text${showExplainer ? ' explainer-visible' : ''}`}
                     style={{
-                      fontSize: 'clamp(1rem, 2vw, 1.5rem)',
+                      fontSize: 'clamp(0.875rem, 1.5vw, 1.25rem)',
                       color: '#fff',
                       background: 'rgba(35, 39, 47, 0.85)',
                       filter: showExplainer ? 'brightness(0.92)' : 'blur(5px) brightness(0.92)',
@@ -1638,7 +1638,7 @@ export default function Home() {
                     ref={projectionsRef}
                     className={`explainer-text${showSecondExplainer ? ' explainer-visible' : ''}`}
                     style={{
-                      fontSize: 'clamp(1rem, 2vw, 1.5rem)',
+                      fontSize: 'clamp(0.875rem, 1.5vw, 1.25rem)',
                       color: '#fff',
                       background: 'rgba(35, 39, 47, 0.85)',
                       filter: showSecondExplainer ? 'brightness(0.92)' : 'blur(5px) brightness(0.92)',
@@ -1665,7 +1665,7 @@ export default function Home() {
                   <span
                     className={`explainer-text${showThirdExplainer ? ' explainer-visible' : ''}`}
                     style={{
-                      fontSize: 'clamp(1rem, 2vw, 1.5rem)',
+                      fontSize: 'clamp(0.875rem, 1.5vw, 1.25rem)',
                       color: '#fff',
                       background: 'rgba(35, 39, 47, 0.85)',
                       filter: showThirdExplainer ? 'brightness(0.92)' : 'blur(5px) brightness(0.92)',

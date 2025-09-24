@@ -81,11 +81,11 @@ export function ProjectionInputForm(props: ProjectionInputFormProps) {
   return (
     <div className="bg-gray-800/50 backdrop-blur-sm rounded-2xl mb-8 border-2 relative" style={{
       borderColor: '#71FD08', 
-      borderRadius: '16px', 
-      maxWidth: '576px', 
+      borderRadius: 'clamp(12px, 1.5vw, 16px)', 
+      maxWidth: 'clamp(500px, 45vw, 576px)', 
       margin: '0 auto', 
       boxShadow: '0 0 20px rgba(113, 253, 8, 0.3), 0 0 40px rgba(113, 253, 8, 0.1)', 
-      padding: '32px',
+      padding: 'clamp(1.5rem, 3vw, 2rem)',
       backgroundImage: `
         radial-gradient(circle at 20% 20%, rgba(113, 253, 8, 0.04) 1px, transparent 1px),
         radial-gradient(circle at 80% 80%, rgba(113, 253, 8, 0.04) 1px, transparent 1px),
@@ -96,8 +96,12 @@ export function ProjectionInputForm(props: ProjectionInputFormProps) {
       backgroundPosition: '0 0, 12px 12px, 0 0, 25px 25px'
     }}>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-4xl mx-auto">
-        <div style={{marginBottom: '24px'}}>
-          <label className="block font-medium mb-2" style={{color: '#d1d5db', fontSize: '24px', marginBottom: '12px'}}>
+        <div style={{marginBottom: 'clamp(1rem, 2vw, 1.5rem)'}}>
+          <label className="block font-medium mb-2" style={{
+            color: '#d1d5db', 
+            fontSize: 'clamp(1.25rem, 2vw, 1.5rem)', 
+            marginBottom: 'clamp(0.5rem, 1vw, 0.75rem)'
+          }}>
             Player
           </label>
           <div style={{ position: 'relative', width: '119px' }} data-dropdown="player">

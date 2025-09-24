@@ -365,7 +365,7 @@ export default function ProjectionsPage() {
           <p style={{
             fontStyle: 'italic',
             color: '#9ca3af',
-            fontSize: '18px',
+            fontSize: 'clamp(1rem, 1.5vw, 1.125rem)',
             textShadow: '1px 1px 2px rgba(0,0,0,0.8)'
           }}>
             NBA projections coming soon
@@ -380,13 +380,14 @@ export default function ProjectionsPage() {
               height: '4px',
               backgroundColor: '#71FD08',
               borderRadius: '2px',
-              marginLeft: '32px'
+              marginLeft: 'clamp(1rem, 2vw, 2rem)'
             }}></div>
-            <h2 className="text-6xl font-bold text-gray-300 flex-shrink-0" style={{
+            <h2 className="font-bold text-gray-300 flex-shrink-0" style={{
               textShadow: '2px 2px 4px rgba(0,0,0,0.8), -2px -2px 4px rgba(0,0,0,0.8)',
               color: '#d1d5db',
-              marginLeft: '32px',
-              marginRight: '32px'
+              marginLeft: 'clamp(1rem, 2vw, 2rem)',
+              marginRight: 'clamp(1rem, 2vw, 2rem)',
+              fontSize: 'clamp(2rem, 4vw, 3rem)'
             }}>
               Projections
             </h2>
@@ -395,7 +396,7 @@ export default function ProjectionsPage() {
               height: '4px',
               backgroundColor: '#71FD08',
               borderRadius: '2px',
-              marginRight: '32px'
+              marginRight: 'clamp(1rem, 2vw, 2rem)'
             }}></div>
           </div>
         </div>
@@ -405,10 +406,14 @@ export default function ProjectionsPage() {
         {/* Main Content and Projection Results */}
         <div className="flex gap-8 justify-between" style={{ minHeight: 'auto' }}>
           {/* Projection History - Left Side */}
-          <div className="w-[290px] flex-shrink-0" style={{paddingLeft: '32px'}}>
-            <div className="bg-gray-800/50 backdrop-blur-sm border-2 border-[#71FD08] p-6 shadow-xl relative" style={{
-              borderRadius: '16px',
-              minHeight: '636.2px',
+          <div className="flex-shrink-0" style={{
+            width: 'clamp(250px, 20vw, 290px)',
+            paddingLeft: 'clamp(1rem, 2vw, 2rem)'
+          }}>
+            <div className="bg-gray-800/50 backdrop-blur-sm border-2 border-[#71FD08] shadow-xl relative" style={{
+              borderRadius: 'clamp(12px, 1.5vw, 16px)',
+              height: 'clamp(589px, 69vh, 735px)',
+              padding: 'clamp(1rem, 2vw, 1.5rem)',
               boxShadow: '0 4px 12px rgba(0,0,0,0.8), 0 2px 6px rgba(0,0,0,0.9), 0 0 20px rgba(113, 253, 8, 0.3)',
               backgroundImage: `
                 radial-gradient(circle at 25% 25%, rgba(113, 253, 8, 0.03) 1px, transparent 1px),
@@ -419,15 +424,16 @@ export default function ProjectionsPage() {
               backgroundSize: '20px 20px, 20px 20px, 40px 40px, 40px 40px',
               backgroundPosition: '0 0, 10px 10px, 0 0, 20px 20px'
             }}>
-              <h3 className="text-xl font-bold mb-4 text-center" style={{
+              <h3 className="font-bold text-center" style={{
                 color: '#71FD08',
                 textShadow: '2px 2px 4px rgba(0,0,0,0.8), -2px -2px 4px rgba(0,0,0,0.8), 2px -2px 4px rgba(0,0,0,0.8), -2px 2px 4px rgba(0,0,0,0.8)',
                 backgroundColor: '#0A0718',
-                padding: '8px 16px',
-                borderRadius: '12px',
+                padding: 'clamp(6px, 1vw, 8px) clamp(12px, 1.5vw, 16px)',
+                borderRadius: 'clamp(8px, 1vw, 12px)',
                 border: '1px solid #1F2937',
                 width: 'fit-content',
-                margin: '10px auto 0 auto'
+                margin: '-16px auto 16px auto',
+                fontSize: 'clamp(1rem, 1.5vw, 1.25rem)'
               }}>Projection History</h3>
               {selectedPlayer ? (
                 <ProjectionHistory 
@@ -444,7 +450,10 @@ export default function ProjectionsPage() {
           </div>
 
           {/* Main Content */}
-          <div className="flex-1 max-w-4xl" style={{marginLeft: '0px'}}>
+          <div className="flex-1" style={{
+            marginLeft: '0px',
+            maxWidth: 'clamp(600px, 50vw, 800px)'
+          }}>
             {/* Projection Input Form */}
             <ProjectionInputForm
               selectedPlayer={selectedPlayer}
@@ -521,19 +530,19 @@ export default function ProjectionsPage() {
       </div>
 
       {/* Notes positioned outside main container to avoid affecting background */}
-      {/* Center Information Section - Aligned with notes */}
+      {/* Center Information Section - Moved down below columns */}
       <div style={{
         position: 'absolute',
-        top: 'calc(100vh + 125px)',
+        top: 'calc(100vh + 200px)',
         left: '50%',
         transform: 'translateX(-50%)',
-        padding: '8px 12px',
+        padding: 'clamp(6px, 1vw, 8px) clamp(8px, 1.5vw, 12px)',
         backgroundColor: 'rgba(59, 130, 246, 0.1)',
         border: '1px solid rgba(59, 130, 246, 0.3)',
-        borderRadius: '8px',
-        fontSize: '12px',
+        borderRadius: 'clamp(6px, 1vw, 8px)',
+        fontSize: 'clamp(0.75rem, 1vw, 0.875rem)',
         color: '#93c5fd',
-        width: '620px',
+        width: 'clamp(500px, 40vw, 620px)',
         textAlign: 'center',
         zIndex: 2
       }}>
@@ -542,36 +551,36 @@ export default function ProjectionsPage() {
         Always use projections as one tool in your betting strategy, not as the sole decision maker.
       </div>
 
-      {/* Note about projection limits - Outside green border */}
+      {/* Note about projection limits - Moved down below columns */}
       <div style={{
         position: 'absolute',
-        top: 'calc(100vh + 125px)',
-        left: '32px',
-        padding: '8px 12px',
+        top: 'calc(100vh + 200px)',
+        left: 'clamp(1rem, 2vw, 2rem)',
+        padding: 'clamp(6px, 1vw, 8px) clamp(8px, 1.5vw, 12px)',
         backgroundColor: 'rgba(59, 130, 246, 0.1)',
         border: '1px solid rgba(59, 130, 246, 0.3)',
-        borderRadius: '8px',
-        fontSize: '12px',
+        borderRadius: 'clamp(6px, 1vw, 8px)',
+        fontSize: 'clamp(0.75rem, 1vw, 0.875rem)',
         color: '#93c5fd',
-        width: '265px',
+        width: 'clamp(200px, 18vw, 265px)',
         textAlign: 'center',
         zIndex: 2
       }}>
         💡 <strong>Note:</strong> Only one projection per player/stat per day is saved to prevent duplicate history entries.
       </div>
 
-      {/* Note about hovering over i icons - Under projection results */}
+      {/* Note about hovering over i icons - Moved down below columns */}
       <div style={{
         position: 'absolute',
-        top: 'calc(100vh + 125px)',
-        right: '32px',
-        padding: '8px 12px',
+        top: 'calc(100vh + 200px)',
+        right: 'clamp(1rem, 2vw, 2rem)',
+        padding: 'clamp(6px, 1vw, 8px) clamp(8px, 1.5vw, 12px)',
         backgroundColor: 'rgba(59, 130, 246, 0.1)',
         border: '1px solid rgba(59, 130, 246, 0.3)',
-        borderRadius: '8px',
-        fontSize: '12px',
+        borderRadius: 'clamp(6px, 1vw, 8px)',
+        fontSize: 'clamp(0.75rem, 1vw, 0.875rem)',
         color: '#93c5fd',
-        width: '265px',
+        width: 'clamp(200px, 18vw, 265px)',
         textAlign: 'center',
         zIndex: 2
       }}>
