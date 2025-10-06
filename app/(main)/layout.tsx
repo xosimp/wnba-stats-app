@@ -1,5 +1,5 @@
-import { ClientLayout } from '../ClientLayout';
 import { Header } from '../Header';
+import { ClientLayout } from '../ClientLayout';
 
 export default function MainLayout({
   children,
@@ -9,7 +9,9 @@ export default function MainLayout({
   return (
     <ClientLayout>
       <Header />
-      {children}
+      <main className="min-h-screen bg-gray-900">
+        {children}
+      </main>
     </ClientLayout>
   );
 } 

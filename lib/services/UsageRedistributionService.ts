@@ -1,9 +1,11 @@
 import { createClient } from '@supabase/supabase-js';
 
-const supabase = createClient(
-  process.env.NEXT_PUBLIC_SUPABASE_URL as string,
-  process.env.SUPABASE_SERVICE_ROLE_KEY as string
-);
+function getSupabase() {
+  return createClient(
+    process.env.NEXT_PUBLIC_SUPABASE_URL as string,
+    process.env.SUPABASE_SERVICE_ROLE_KEY as string
+  );
+}
 
 export interface UsageDelta {
   playerName: string;
@@ -44,6 +46,7 @@ export class UsageRedistributionService {
       console.log(`📊 USAGE REDISTRIBUTION: Calculating historical deltas for ${playerName} (${statType})`);
 
       // Get player's base usage rate
+      const supabase = getSupabase();
       const { data: playerStats, error: playerError } = await supabase
         .from('player_advanced_stats')
         .select('usage_percentage, position')
@@ -145,6 +148,8 @@ export class UsageRedistributionService {
     position: string
   ): Promise<UsageDelta | null> {
     try {
+      const supabase = getSupabase();
+      
       // Get games where teammate was out (injured or didn't play)
       const { data: gamesWithTeammateOut, error: outError } = await supabase
         .from('wnba_game_logs')
@@ -352,6 +357,7 @@ export class UsageRedistributionService {
       }
 
       // Get base usage for comparison
+      const supabase = getSupabase();
       const { data: playerStats } = await supabase
         .from('player_advanced_stats')
         .select('usage_percentage')

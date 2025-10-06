@@ -1,7 +1,7 @@
+import Redis from 'ioredis';
+
 const ODDS_API_KEY = 'd5d24c02b387d3128b68efea627057cb';
 const ODDS_API_BASE_URL = 'https://api.the-odds-api.com/v4';
-
-import Redis from 'ioredis';
 
 export interface OddsApiResponse {
   id: string;

@@ -2,17 +2,7 @@
 
 import React, { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
-import { StatAlgorithms } from '../../lib/algorithms/Algorithms';
-
-interface PlayerStats {
-  points?: number;
-  rebounds?: number;
-  assists?: number;
-  turnovers?: number;
-  steals?: number;
-  blocks?: number;
-  minutes?: number;
-}
+import { getStatColor, PlayerStats } from '../../lib/utils/statColors';
 
 interface AnimatedStatsProps {
   stats: PlayerStats | null;
@@ -141,8 +131,8 @@ export function AnimatedStats({ stats, playerName, playerId, onLoadingChange }: 
                 }
 
                 const color = thresholds
-                  ? StatAlgorithms.getStatColor(stat.key as keyof PlayerStats, value, thresholds)
-                  : StatAlgorithms.getStatColor(stat.key as keyof PlayerStats, value);
+                  ? getStatColor(stat.key as keyof PlayerStats, value, thresholds)
+                  : getStatColor(stat.key as keyof PlayerStats, value);
                   
                 console.log(`🎨 ${playerName}: ${stat.key} = ${value}, color = ${color}, hasThresholds = ${!!thresholds}`);
 

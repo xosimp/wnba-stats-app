@@ -8,7 +8,28 @@ interface GlobalImagePreloaderProps {
 }
 
 export default function GlobalImagePreloader({ children }: GlobalImagePreloaderProps) {
-  const { status, progress, isPreloading, clearPreloadSession, preloadAllPlayerImages } = usePlayerImagePreloader();
+  const [preloaderError, setPreloaderError] = useState(false);
+  
+  // Safely use the hook with error handling
+  let status, progress, isPreloading, clearPreloadSession, preloadAllPlayerImages;
+  
+  try {
+    const preloaderHook = usePlayerImagePreloader();
+    status = preloaderHook.status;
+    progress = preloaderHook.progress;
+    isPreloading = preloaderHook.isPreloading;
+    clearPreloadSession = preloaderHook.clearPreloadSession;
+    preloadAllPlayerImages = preloaderHook.preloadAllPlayerImages;
+  } catch (error) {
+    console.warn('GlobalImagePreloader: Hook initialization failed, using fallback:', error);
+    setPreloaderError(true);
+    status = { total: 0, loaded: 0, failed: 0, isComplete: true };
+    progress = '0.0%';
+    isPreloading = false;
+    clearPreloadSession = () => {};
+    preloadAllPlayerImages = () => {};
+  }
+  
   const [showIndicator, setShowIndicator] = useState(false);
 
   // Show indicator only if preloading takes more than 500ms

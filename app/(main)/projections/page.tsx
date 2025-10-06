@@ -32,10 +32,11 @@ export default function ProjectionsPage() {
   const [opponentDropdownOpen, setOpponentDropdownOpen] = useState(false);
   const [upcomingOpponent, setUpcomingOpponent] = useState<string | null>(null);
   const [logoAnimation, setLogoAnimation] = useState(false);
-  const [playerTeam, setPlayerTeam] = useState<string | null>(null);
+  const [playerTeam] = useState<string | null>(null);
 
   // Add CSS keyframes for animations and remove extra spacing
   useEffect(() => {
+    if (typeof window === 'undefined') return;
     const style = document.createElement('style');
     style.textContent = `
       @keyframes pulse {
@@ -52,11 +53,13 @@ export default function ProjectionsPage() {
         padding-bottom: 0 !important;
       }
     `;
-    document.head.appendChild(style);
-    
-    return () => {
-      document.head.removeChild(style);
-    };
+    if (typeof window !== 'undefined') {
+      document.head.appendChild(style);
+      
+      return () => {
+        document.head.removeChild(style);
+      };
+    }
   }, []);
   
   // Ref for ProjectionHistory component to refresh after new projections
@@ -121,7 +124,7 @@ export default function ProjectionsPage() {
       try {
         
         // Check what seasons are available
-        const availableSeasons = await projectionService.getAvailableSeasons();
+        await projectionService.getAvailableSeasons();
         
         const [players, teams] = await Promise.all([
           projectionService.getAvailablePlayers(),
@@ -140,7 +143,7 @@ export default function ProjectionsPage() {
     };
 
     loadAvailableData();
-  }, []);
+  }, [projectionService]);
 
   // Close dropdown when clicking outside
   useEffect(() => {
@@ -163,10 +166,12 @@ export default function ProjectionsPage() {
       }
     };
     
-    document.addEventListener('mousedown', handleClickOutside);
-    return () => {
-      document.removeEventListener('mousedown', handleClickOutside);
-    };
+    if (typeof window !== 'undefined') {
+      document.addEventListener('mousedown', handleClickOutside);
+      return () => {
+        document.removeEventListener('mousedown', handleClickOutside);
+      };
+    }
   }, [playerDropdownOpen, statDropdownOpen, opponentDropdownOpen]);
 
   const generateProjection = async () => {
@@ -222,7 +227,7 @@ export default function ProjectionsPage() {
         playerName: selectedPlayer,
         team: playerTeam,
         opponent: selectedOpponent,
-        statType: selectedStat as any, // Type assertion to handle assists
+        statType: selectedStat as any,
         isHome,
         gameDate: new Date().toISOString().split('T')[0],
         gameId: gameId,
@@ -363,7 +368,10 @@ export default function ProjectionsPage() {
         }}>
         
         {/* NBA Projections Coming Soon Text */}
-        <div className="text-center mb-4">
+        <div className="text-center" style={{
+          marginBottom: 'clamp(1rem, 2vh, 2rem)',
+          paddingTop: 'clamp(2rem, 4vh, 3rem)'
+        }}>
           <p style={{
             fontStyle: 'italic',
             color: '#9ca3af',
@@ -461,7 +469,7 @@ export default function ProjectionsPage() {
               selectedPlayer={selectedPlayer}
               setSelectedPlayer={setSelectedPlayer}
               selectedStat={selectedStat}
-              setSelectedStat={(v) => setSelectedStat(v as any)}
+              setSelectedStat={(v) => setSelectedStat(v as StatType)}
               selectedOpponent={selectedOpponent}
               setSelectedOpponent={setSelectedOpponent}
               isHome={isHome}
@@ -521,7 +529,7 @@ export default function ProjectionsPage() {
 
           {/* Projection Results Sidebar */}
           <ProjectionResultsSidebar
-            projection={projection as any}
+            projection={projection}
             sportsbookLine={sportsbookLine}
             getRecommendationColor={getRecommendationColor}
             getRiskLevelColor={getRiskLevelColor}
@@ -535,7 +543,7 @@ export default function ProjectionsPage() {
       {/* Center Information Section */}
       <div style={{
         position: 'absolute',
-        top: 'calc(clamp(75vh, 80vh, 85vh))',
+        top: 'calc(100vh + 25vh)',
         left: '50%',
         transform: 'translateX(-50%)',
         padding: 'clamp(6px, 1vw, 8px) clamp(8px, 1.5vw, 12px)',
@@ -556,7 +564,7 @@ export default function ProjectionsPage() {
       {/* Note about projection limits */}
       <div style={{
         position: 'absolute',
-        top: 'calc(clamp(75vh, 80vh, 85vh))',
+        top: 'calc(100vh + 25vh)',
         left: 'clamp(1rem, 2vw, 2rem)',
         padding: 'clamp(6px, 1vw, 8px) clamp(8px, 1.5vw, 12px)',
         backgroundColor: 'rgba(59, 130, 246, 0.1)',
@@ -574,7 +582,7 @@ export default function ProjectionsPage() {
       {/* Note about hovering over i icons */}
       <div style={{
         position: 'absolute',
-        top: 'calc(clamp(75vh, 80vh, 85vh))',
+        top: 'calc(100vh + 25vh)',
         right: 'clamp(1rem, 2vw, 2rem)',
         padding: 'clamp(6px, 1vw, 8px) clamp(8px, 1.5vw, 12px)',
         backgroundColor: 'rgba(59, 130, 246, 0.1)',

@@ -98,7 +98,6 @@ async function validateCacheData(): Promise<ValidationIssue[]> {
       redis = new Redis(process.env.REDIS_URL || 'redis://localhost:6379', {
         lazyConnect: true,
         maxRetriesPerRequest: 0,
-        retryDelayOnFailover: 0,
         enableReadyCheck: false,
         connectTimeout: 1000,
         commandTimeout: 1000,

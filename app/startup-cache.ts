@@ -17,5 +17,5 @@ export async function initializeAppCache() {
   }
 }
 
-// Auto-initialize when this module is imported (non-blocking)
-initializeAppCache(); 
+// Note: Auto-initialization removed to prevent module initialization issues
+// Call initializeAppCache() manually when needed 

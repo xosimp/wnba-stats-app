@@ -57,6 +57,7 @@ export function usePlayerSearch(blurInput?: () => void, league: 'WNBA' | 'NBA' =
 
       if (data.results && Array.isArray(data.results)) {
         console.log(`✅ Found ${data.results.length} results`);
+        console.log('📊 First result details:', data.results[0]);
         setResults(data.results);
         if (data.results.length > 0) {
           setStats(data.stats || null);
@@ -65,6 +66,8 @@ export function usePlayerSearch(blurInput?: () => void, league: 'WNBA' | 'NBA' =
           setQuery(data.results[0].name); // Set input to full player name
           if (blurInput) blurInput();
           console.log('✅ Player found, set notFound to false');
+          console.log('📊 Results state after setResults:', data.results);
+          console.log('📊 Player ID:', data.results[0].playerId || data.results[0].id);
         } else {
           console.log('❌ No results found, setting notFound to true');
           setNotFound(true);

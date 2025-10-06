@@ -72,7 +72,7 @@ function PlayerImageComponent({ playerName, onLoadingChange }: { playerName: str
     async function loadPlayerImage() {
       // Check cache first
       const cacheKey = `player_image_${playerName}`;
-      const cachedUrl = sessionStorage.getItem(cacheKey);
+      const cachedUrl = typeof window !== 'undefined' ? sessionStorage.getItem(cacheKey) : null;
       
       if (cachedUrl) {
         setImageUrl(cachedUrl);
@@ -86,7 +86,9 @@ function PlayerImageComponent({ playerName, onLoadingChange }: { playerName: str
         // Image is already cached by browser, use it directly
         const directUrl = `/api/images/player/${encodeURIComponent(playerName)}`;
         setImageUrl(directUrl);
-        sessionStorage.setItem(cacheKey, directUrl);
+        if (typeof window !== 'undefined') {
+          sessionStorage.setItem(cacheKey, directUrl);
+        }
         setIsLoading(false);
       };
       
@@ -224,30 +226,21 @@ function PlayerSearchContent() {
   const [isInjured, setIsInjured] = useState<boolean>(false);
   // Removed isComponentMounted state and effect
 
-  // Load user's favorites on component mount
-  useEffect(() => {
-    if (session?.user?.id) {
-      loadFavorites();
-    }
-  }, [session]);
-
-  // Reload favorites when search results change to ensure star states are correct
-  useEffect(() => {
-    if (session?.user?.id && results && results.length > 0) {
-      console.log('Search results changed:', results);
-      console.log('First result:', results[0]);
-      loadFavorites();
-    }
-  }, [session, results]);
-
-  const loadFavorites = async () => {
+  // Load favorites function (hoisted to avoid TDZ error)
+  async function loadFavorites() {
     if (!session?.user?.id) return;
     
+    // Check if environment variables are available
+    const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
+    const supabaseKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
+    
+    if (!supabaseUrl || !supabaseKey) {
+      console.warn('Supabase environment variables not configured');
+      return;
+    }
+    
     try {
-      const supabase = createClient(
-        process.env.NEXT_PUBLIC_SUPABASE_URL!,
-        process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!
-      );
+      const supabase = createClient(supabaseUrl, supabaseKey);
       
       const { data, error } = await supabase
         .from('user_favorites')
@@ -268,7 +261,23 @@ function PlayerSearchContent() {
     } catch (error) {
       console.error('Error loading favorites:', error);
     }
-  };
+  }
+
+  // Load user's favorites on component mount
+  useEffect(() => {
+    if (session?.user?.id) {
+      loadFavorites();
+    }
+  }, [session]);
+
+  // Reload favorites when search results change to ensure star states are correct
+  useEffect(() => {
+    if (session?.user?.id && results && results.length > 0) {
+      console.log('Search results changed:', results);
+      console.log('First result:', results[0]);
+      loadFavorites();
+    }
+  }, [session, results]);
 
   const toggleFavorite = async (player: Player, event?: React.MouseEvent) => {
     console.log('toggleFavorite called for player:', player.name);
@@ -289,7 +298,7 @@ function PlayerSearchContent() {
       });
       
       // Get the home/dashboard link position
-      const homeLink = document.querySelector('a[href="/"]') || document.querySelector('a[href="/dashboard"]');
+      const homeLink = typeof window !== 'undefined' ? (document.querySelector('a[href="/"]') || document.querySelector('a[href="/dashboard"]')) : null;
       if (homeLink) {
         const homeRect = homeLink.getBoundingClientRect();
         setHomeLinkPosition({
@@ -299,11 +308,17 @@ function PlayerSearchContent() {
       }
     }
     
+    // Check if environment variables are available
+    const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
+    const supabaseKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
+    
+    if (!supabaseUrl || !supabaseKey) {
+      console.warn('Supabase environment variables not configured');
+      return;
+    }
+    
     try {
-      const supabase = createClient(
-        process.env.NEXT_PUBLIC_SUPABASE_URL!,
-        process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!
-      );
+      const supabase = createClient(supabaseUrl, supabaseKey);
       
       const isFavorited = favorites.has(player.name);
       console.log('Is currently favorited:', isFavorited);
@@ -460,8 +475,23 @@ function PlayerSearchContent() {
 
   // Fetch L5 average points and full game log when results[0] changes
   useEffect(() => {
+    console.log('=== fetchGameLog useEffect triggered ===', { 
+      hasResults: results && results.length > 0,
+      resultsLength: results?.length || 0,
+      firstResult: results?.[0],
+      timestamp: new Date().toISOString()
+    });
+    
     async function fetchGameLog() {
-      if (!results || results.length === 0) return;
+      if (!results || results.length === 0) {
+        console.log('No results, skipping fetchGameLog');
+        setPlayerPointsLog([]);
+        setL5AvgPoints('--');
+        setBookLine(null);
+        setUpcomingOpponent(null);
+        return;
+      }
+      
       setInsightsLoading(true);
       try {
         console.log('=== FETCHING GAME LOG ===');
@@ -497,25 +527,23 @@ function PlayerSearchContent() {
         console.log('Player game log response ok:', res.ok);
         
         if (!res.ok) {
-          console.error('API returned error status:', res.status);
-          const errorText = await res.text();
-          console.error('API error text:', errorText);
+          console.error('API error:', res.status, await res.text());
           setPlayerPointsLog([]);
           setL5AvgPoints('--');
+          setBookLine(null);
+          setUpcomingOpponent(null);
           return;
         }
         
         const data = await res.json();
-        console.log('Player game log response:', data);
-        console.log('📊 Games data from API:', data.games);
-        console.log('📊 First game from API:', data.games?.[0]);
-        console.log('Player game log response type:', typeof data);
-        console.log('Player game log response keys:', Object.keys(data));
+        console.log('Raw API response:', JSON.stringify(data, null, 2));
         
-        if (data.error) {
-          console.error('API returned error:', data.error);
+        if (data.error || !data.games || !Array.isArray(data.games)) {
+          console.error('Invalid API response:', data);
           setPlayerPointsLog([]);
           setL5AvgPoints('--');
+          setBookLine(null);
+          setUpcomingOpponent(null);
           return;
         }
 
@@ -527,19 +555,31 @@ function PlayerSearchContent() {
             // Convert the games data to the format expected by PlayerStatsGraph
             const pointsLog = games.map((game: any, index: number) => {
               try {
+                const points = Number(game.points || 0);
+                const assists = Number(game.assists || 0);
+                const rebounds = Number(game.rebounds || 0);
+                const steals = Number(game.steals || 0);
+                const blocks = Number(game.blocks || 0);
+                const fieldGoalsAttempted = Number(game.fieldGoalsAttempted || 0);
+                const threePointersAttempted = Number(game.threePointersAttempted || 0);
+                const freeThrowsAttempted = Number(game.freeThrowsAttempted || 0);
+                
                 return {
-                  date: game.date || game.gameDate,
-                  points: Number(game.points || 0),
-                  assists: Number(game.assists || 0),
-                  rebounds: Number(game.rebounds || 0),
-                  steals: Number(game.steals || 0),
-                  blocks: Number(game.blocks || 0),
-                  fieldGoalsAttempted: Number(game.fieldGoalsAttempted || 0),
-                  threePointersAttempted: Number(game.threePointersAttempted || 0),
-                  freeThrowsAttempted: Number(game.freeThrowsAttempted || 0),
+                  date: game.date || game.gameDate || 'Unknown Date',
+                  points,
+                  assists,
+                  rebounds,
+                  steals,
+                  blocks,
+                  fieldGoalsAttempted,
+                  threePointersAttempted,
+                  freeThrowsAttempted,
                   opp: game.opponent || game.opponent_abbr || game.opp || 'Unknown',
                   homeAway: game.homeAway || game.home_away || 'home',
                   eventId: game.gameId || game.eventId || `game_${index}`,
+                  statValue: points, // Default to points for initial load (PTS is default stat type)
+                  playerName: results[0]?.name || 'Unknown Player',
+                  playerId: results[0]?.playerId || results[0]?.id || 'unknown',
                 };
               } catch (parseError: any) {
                 console.error('❌ Error parsing individual game data:', parseError);
@@ -553,25 +593,33 @@ function PlayerSearchContent() {
                   rebounds: 0,
                   steals: 0,
                   blocks: 0,
+                  fieldGoalsAttempted: 0,
+                  threePointersAttempted: 0,
+                  freeThrowsAttempted: 0,
                   opp: 'Unknown',
                   homeAway: 'home',
                   eventId: `game_${index}_error`,
+                  statValue: 0,
+                  playerName: results[0]?.name || 'Unknown Player',
+                  playerId: results[0]?.playerId || results[0]?.id || 'unknown',
                 };
               }
             });
             
-            console.log('Processed game log:', pointsLog);
-            console.log('Sample game with rebounds:', pointsLog[0]);
-            console.log('Rebounds data check:', pointsLog.map(g => ({ date: g.date, rebounds: g.rebounds })));
-            console.log('FGA data check:', pointsLog.map(g => ({ date: g.date, fga: g.fieldGoalsAttempted })));
-            console.log('3PA data check:', pointsLog.map(g => ({ date: g.date, threePA: g.threePointersAttempted })));
-            console.log('FTA data check:', pointsLog.map(g => ({ date: g.date, fta: g.freeThrowsAttempted })));
-            console.log('Raw API response games data:', games);
-            console.log('First raw game data:', games[0]);
+            console.log('Processed pointsLog:', pointsLog);
             setPlayerPointsLog(pointsLog);
+
+            // Calculate L5 average
+            const lastFiveGames = pointsLog.slice(0, 5);
+            const l5Avg = lastFiveGames.length > 0
+              ? Math.round(lastFiveGames.reduce((sum, game) => sum + game.points, 0) / lastFiveGames.length)
+              : '--';
+            setL5AvgPoints(l5Avg);
+            console.log('Calculated L5 average:', l5Avg);
           } else {
             console.log('No games found in API response');
             setPlayerPointsLog([]);
+            setL5AvgPoints('--');
           }
         } catch (processingError: any) {
           console.error('❌ Error processing game log data:', processingError);
@@ -582,33 +630,61 @@ function PlayerSearchContent() {
           });
           console.error('🔍 Raw API response data:', data);
           setPlayerPointsLog([]);
+          setL5AvgPoints('--');
         }
         
         // Extract book line from API response
         if (data.nextGamePointsLine !== undefined && data.nextGamePointsLine !== null) {
           setBookLine(data.nextGamePointsLine);
-          console.log('Set book line to:', data.nextGamePointsLine);
+          console.log('Set bookLine:', data.nextGamePointsLine);
         } else {
           setBookLine(null);
-          console.log('No book line found in API response');
+          console.log('No bookLine in response');
         }
 
-      } catch (e: any) {
-        console.error('❌ Error fetching game log:', e);
+        // Set upcoming opponent if available
+        if (data.nextGameOpponent) {
+          setUpcomingOpponent(data.nextGameOpponent);
+          console.log('Set upcomingOpponent:', data.nextGameOpponent);
+        } else {
+          setUpcomingOpponent(null);
+          console.log('No upcomingOpponent in response');
+        }
+
+        // Log successful completion with actual state values
+        console.log('=== fetchGameLog completed (success) ===', {
+          playerPointsLogSet: true,
+          gamesCount: data.games?.length || 0,
+          bookLine: data.nextGamePointsLine || null,
+          upcomingOpponent: data.nextGameOpponent || null,
+          timestamp: new Date().toISOString()
+        });
+
+      } catch (error: any) {
+        console.error('❌ Error fetching game log:', error);
         console.error('🔍 Full error details:', {
-          message: e?.message || 'Unknown error',
-          stack: e?.stack || 'No stack trace',
-          name: e?.name || 'Unknown error type',
-          cause: e?.cause || 'No cause'
+          message: error?.message || 'Unknown error',
+          stack: error?.stack || 'No stack trace',
+          name: error?.name || 'Unknown error type',
+          cause: error?.cause || 'No cause'
         });
         console.error('📊 Player ID that caused error:', results[0]?.id);
         setPlayerPointsLog([]);
         setL5AvgPoints('--');
         setBookLine(null);
+        setUpcomingOpponent(null);
+        console.log('=== fetchGameLog completed (error) ===', {
+          playerPointsLogLength: 0,
+          l5AvgPoints: '--',
+          bookLine: null,
+          upcomingOpponent: null,
+          timestamp: new Date().toISOString()
+        });
       } finally {
         setInsightsLoading(false);
       }
     }
+
     fetchGameLog();
   }, [results]);
 
@@ -1162,8 +1238,17 @@ function PlayerSearchContent() {
       )}
       {/* Player Stats Graph - fixed and centered at top, aligned with Player Search */}
       {(() => {
-        if (results.length > 0) {
+        // Only render PlayerStatsGraph if we have both results AND game log data
+        if (results.length > 0 && memoizedGameLog.length > 0) {
           const teamColors = getTeamGradient(results[0].team);
+          console.log('📊 Rendering PlayerStatsGraph with:', {
+            playerName: results[0]?.name,
+            playerId: results[0]?.playerId || results[0]?.id,
+            gameLogLength: memoizedGameLog.length,
+            bookLine,
+            upcomingOpponent,
+            timestamp: new Date().toISOString()
+          });
           return (
             <>
               <div

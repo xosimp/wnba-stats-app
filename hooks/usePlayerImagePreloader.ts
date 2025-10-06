@@ -119,8 +119,10 @@ export function usePlayerImagePreloader() {
       
       // Mark that we've preloaded images this session
       try {
-        sessionStorage.setItem('player_images_preloaded', 'true');
-        console.log('💾 Marked images as preloaded for this session');
+        if (typeof window !== 'undefined') {
+          sessionStorage.setItem('player_images_preloaded', 'true');
+          console.log('💾 Marked images as preloaded for this session');
+        }
       } catch (error) {
         console.warn('⚠️ Could not save preload status to sessionStorage:', error);
       }
@@ -162,7 +164,7 @@ export function usePlayerImagePreloader() {
   // Auto-start preloading when hook is used, with a small delay to ensure server is ready
   useEffect(() => {
     // Check if we've already preloaded images this session
-    const hasPreloadedThisSession = sessionStorage.getItem('player_images_preloaded');
+    const hasPreloadedThisSession = typeof window !== 'undefined' ? sessionStorage.getItem('player_images_preloaded') : null;
     
     if (hasPreloadedThisSession === 'true') {
       console.log('🔄 Images already preloaded this session, skipping...');
@@ -201,8 +203,10 @@ export function usePlayerImagePreloader() {
   // Function to manually clear session preload flag (useful for testing or force refresh)
   const clearPreloadSession = () => {
     try {
-      sessionStorage.removeItem('player_images_preloaded');
-      console.log('🧹 Cleared preload session flag');
+      if (typeof window !== 'undefined') {
+        sessionStorage.removeItem('player_images_preloaded');
+        console.log('🧹 Cleared preload session flag');
+      }
     } catch (error) {
       console.warn('⚠️ Could not clear preload session flag:', error);
     }

@@ -23,6 +23,11 @@ export const authOptions: AuthOptions = {
         }
 
         try {
+          if (!supabase) {
+            console.error('Supabase client not initialized');
+            return null;
+          }
+          
           const { data: user, error } = await supabase
             .from('User')
             .select('*')

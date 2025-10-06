@@ -1,5 +1,5 @@
-// Import the dynamic league averages service
-import { PlayerLeagueAveragesService } from '../services/PlayerLeagueAveragesService';
+// Import React for the hook
+import React from 'react';
 
 // Legacy constants - now replaced by dynamic calculations
 // These are kept as fallbacks only
@@ -179,17 +179,8 @@ export class StatAlgorithms {
     let top1PercentThreshold = dynamicThresholds?.top1?.[statKey];
     let bottom1PercentThreshold = dynamicThresholds?.bottom1?.[statKey];
 
-    // If no dynamic thresholds provided, try to get from service
-    if (!leagueAverage || !top1PercentThreshold || !bottom1PercentThreshold) {
-      try {
-        const service = PlayerLeagueAveragesService.getInstance();
-        leagueAverage = leagueAverage ?? service.getLeagueAverage(statKey);
-        top1PercentThreshold = top1PercentThreshold ?? service.getTop1PercentThreshold(statKey);
-        bottom1PercentThreshold = bottom1PercentThreshold ?? service.getBottom1PercentThreshold(statKey);
-      } catch (error) {
-        console.warn('⚠️ Could not get dynamic thresholds, using fallback values:', error);
-      }
-    }
+    // Skip dynamic service calls to avoid module initialization issues
+    // Use hardcoded values for now
 
     // Final fallback to hardcoded values
     leagueAverage = leagueAverage ?? LEAGUE_AVERAGES[statKey];
@@ -270,13 +261,8 @@ export class StatAlgorithms {
     return comparison.percentageDifference;
   }
   static getLeagueAverage(statKey: keyof PlayerStats): number {
-    try {
-      const service = PlayerLeagueAveragesService.getInstance();
-      return service.getLeagueAverage(statKey) || LEAGUE_AVERAGES[statKey] || 0;
-    } catch (error) {
-      console.warn('⚠️ Could not get dynamic league average, using fallback:', error);
-      return LEAGUE_AVERAGES[statKey] || 0;
-    }
+    // Use hardcoded values to avoid module initialization issues
+    return LEAGUE_AVERAGES[statKey] || 0;
   }
   static compareAllStats(playerStats: PlayerStats): Record<string, StatComparison> {
     const comparisons: Record<string, StatComparison> = {};
@@ -460,12 +446,6 @@ export class ProjectionEngine {
     
     // Convert to factor (higher allowed = better for offensive player)
     let leagueAverage = LEAGUE_AVERAGES[statType];
-    try {
-      const service = PlayerLeagueAveragesService.getInstance();
-      leagueAverage = service.getLeagueAverage(statType) || leagueAverage;
-    } catch (error) {
-      console.warn('⚠️ Could not get dynamic league average for opponent defense calculation:', error);
-    }
     const opponentAllowed = opponentStats.overall_avg_allowed;
     
     const factor = opponentAllowed / leagueAverage;
@@ -981,4 +961,19 @@ export class ProjectionEngine {
       return 1.0; // No boost on error
     }
   }
+}
+
+// React hook for stat comparison
+export function useStatComparison(statKey: keyof PlayerStats, playerValue: number) {
+  const comparison = StatAlgorithms.compareToLeagueAverage(statKey, playerValue);
+  
+  return {
+    color: comparison.color,
+    isAboveAverage: comparison.isAboveAverage,
+    isTop1Percent: comparison.isTop1Percent,
+    percentageDifference: comparison.percentageDifference,
+    leagueAverage: StatAlgorithms.getLeagueAverage(statKey),
+    performanceIndicator: StatAlgorithms.getPerformanceIndicator(statKey, playerValue),
+    performanceLabel: comparison.performanceLabel
+  };
 } 

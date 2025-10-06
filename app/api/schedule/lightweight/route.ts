@@ -10,7 +10,6 @@ function getRedis(): Redis | null {
       redis = new Redis(process.env.REDIS_URL || 'redis://localhost:6379', {
         lazyConnect: true,
         maxRetriesPerRequest: 0, // Don't retry on connection failure
-        retryDelayOnFailover: 0,
         enableReadyCheck: false,
         connectTimeout: 1000, // 1 second timeout
         commandTimeout: 1000,

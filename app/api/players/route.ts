@@ -3,6 +3,11 @@ import { supabase } from '../../../lib/supabase';
 
 export async function GET() {
   try {
+    if (!supabase) {
+      console.error('Supabase client not initialized');
+      return NextResponse.json({ error: 'Database not available' }, { status: 500 });
+    }
+
     const { data: players, error } = await supabase
       .from('players')
       .select('*')

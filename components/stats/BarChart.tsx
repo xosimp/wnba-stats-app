@@ -1,7 +1,8 @@
+"use client";
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { getTeamAbbreviation } from '../../lib/utils/team-abbreviations';
-import { GameLogEntry } from './PlayerStatsGraph.helpers';
+import { GameLogEntry } from './GameLogEntry';
 
 interface BarChartProps {
   games: GameLogEntry[];
@@ -40,7 +41,7 @@ const BarChart: React.FC<BarChartProps> = ({
   maxVisibleValue = 50, // Default to 50
 }) => {
   // Add CSS keyframes for spinner animation
-  React.useEffect(() => {
+  useEffect(() => {
     const style = document.createElement('style');
     style.textContent = `
       @keyframes spin {

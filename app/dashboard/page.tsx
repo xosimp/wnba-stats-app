@@ -73,11 +73,17 @@ export default function DashboardHome() {
 
   const fetchFavoritePlayers = async () => {
     if (session?.user?.id) {
+      // Check if environment variables are available
+      const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
+      const supabaseKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
+      
+      if (!supabaseUrl || !supabaseKey) {
+        console.warn('Supabase environment variables not configured');
+        return;
+      }
+      
       try {
-        const supabase = createClient(
-          process.env.NEXT_PUBLIC_SUPABASE_URL!,
-          process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!
-        );
+        const supabase = createClient(supabaseUrl, supabaseKey);
 
         const { data, error } = await supabase
           .from('user_favorites')
@@ -252,7 +258,7 @@ export default function DashboardHome() {
       
       // Simple in-memory cache for book lines
       const bookLinesCacheKey = `${playerName}_booklines`;
-      const cachedBookLines = sessionStorage.getItem(bookLinesCacheKey);
+      const cachedBookLines = typeof window !== 'undefined' ? sessionStorage.getItem(bookLinesCacheKey) : null;
       const bookLinesCacheDuration = 3 * 60 * 60 * 1000; // 3 hours
       
       console.log(`🔥 🔍 CHECKING BOOK LINES CACHE for ${playerName}:`, {
@@ -347,15 +353,17 @@ export default function DashboardHome() {
           }
           
           // Cache the book lines
-          sessionStorage.setItem(bookLinesCacheKey, JSON.stringify({
-            pointsLine,
-            assistsLine,
-            reboundsLine,
-            paLine,
-            prLine,
-            praLine,
-            timestamp: Date.now()
-          }));
+          if (typeof window !== 'undefined') {
+            sessionStorage.setItem(bookLinesCacheKey, JSON.stringify({
+              pointsLine,
+              assistsLine,
+              reboundsLine,
+              paLine,
+              prLine,
+              praLine,
+              timestamp: Date.now()
+            }));
+          }
           console.log(`🔥 💾 CACHED: Book lines for ${playerName} (points: ${pointsLine}, assists: ${assistsLine}, rebounds: ${reboundsLine}, PA: ${paLine}, PR: ${prLine}, PRA: ${praLine})`);
         } catch (error) {
           console.error('Error fetching book lines for', playerName, ':', error);
@@ -486,11 +494,13 @@ export default function DashboardHome() {
       fetchFavoritePlayers();
     };
     
-    window.addEventListener('favorites-updated', handleFavoritesUpdate);
-    
-    return () => {
-      window.removeEventListener('favorites-updated', handleFavoritesUpdate);
-    };
+    if (typeof window !== 'undefined') {
+      window.addEventListener('favorites-updated', handleFavoritesUpdate);
+      
+      return () => {
+        window.removeEventListener('favorites-updated', handleFavoritesUpdate);
+      };
+    }
   }, [session?.user?.id]);
 
   return (
@@ -738,11 +748,17 @@ export default function DashboardHome() {
                   onClick={async (e) => {
                     e.stopPropagation();
                     if (session?.user?.id) {
+                      // Check if environment variables are available
+                      const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
+                      const supabaseKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
+                      
+                      if (!supabaseUrl || !supabaseKey) {
+                        console.warn('Supabase environment variables not configured');
+                        return;
+                      }
+                      
                       try {
-                        const supabase = createClient(
-                          process.env.NEXT_PUBLIC_SUPABASE_URL!,
-                          process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!
-                        );
+                        const supabase = createClient(supabaseUrl, supabaseKey);
                         
                         const { error } = await supabase
                           .from('user_favorites')
@@ -754,7 +770,9 @@ export default function DashboardHome() {
                           // Refresh the favorites list
                           fetchFavoritePlayers();
                           // Dispatch event to update search page
-                          window.dispatchEvent(new CustomEvent('favorites-updated'));
+                          if (typeof window !== 'undefined') {
+                            window.dispatchEvent(new CustomEvent('favorites-updated'));
+                          }
                         } else {
                           console.error('Error removing favorite:', error);
                         }

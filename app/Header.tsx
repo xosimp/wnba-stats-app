@@ -1,5 +1,5 @@
 "use client";
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import { usePathname, useRouter } from 'next/navigation';
 import { UserCircle2, Lock, XCircle } from 'lucide-react';
 import { useSession, signOut, signIn } from 'next-auth/react';
@@ -181,7 +181,7 @@ export function Header() {
   };
 
   // Fetch user's subscription status
-  const fetchSubscriptionStatus = async () => {
+  const fetchSubscriptionStatus = useCallback(async () => {
     if (!session?.user?.email) return;
     
     try {
@@ -221,7 +221,7 @@ export function Header() {
     } catch (error) {
       console.error('Error fetching subscription status:', error);
     }
-  };
+  }, [session?.user?.email]);
 
   // Handle plan upgrade arrow click - show plan modal
   const handlePlanArrowClick = async (e: React.MouseEvent<HTMLAnchorElement>) => {

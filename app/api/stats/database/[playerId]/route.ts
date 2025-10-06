@@ -20,8 +20,8 @@ function cleanupCache() {
   }
 }
 
-// Clean up cache every 10 minutes
-setInterval(cleanupCache, 10 * 60 * 1000);
+// Note: Cache cleanup is handled by the cleanupCache function when called
+// Removed module-level setInterval to prevent initialization issues
 
 // WNBA API configuration
 const RAPIDAPI_KEY = 'b9fef5cbcbmsh3ae24f367e6e0acp12f58ejsn3c7ad2cc0f9f';

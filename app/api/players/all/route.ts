@@ -3,6 +3,11 @@ import { supabase } from '../../../../lib/supabase';
 
 export async function GET(request: NextRequest) {
   try {
+    if (!supabase) {
+      console.error('Supabase client not initialized');
+      return NextResponse.json({ error: 'Database not available' }, { status: 500 });
+    }
+
     console.log('🔄 Fetching all players for preloading...');
     
     // Get all players from the players table

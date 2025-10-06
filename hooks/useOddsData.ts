@@ -47,8 +47,8 @@ export function useOddsData<T>(options: UseOddsDataOptions = {}) {
           throw new Error(result.error);
         }
 
-        // Extract the appropriate data based on action
-        let data: T;
+        // Extract the appropriate data based on action (initialized to avoid TDZ)
+        let data: T | null = null;
         switch (action) {
           case 'player-line':
             data = result.pointsLine as T;
@@ -64,7 +64,7 @@ export function useOddsData<T>(options: UseOddsDataOptions = {}) {
             data = result as T;
         }
 
-        setState({ data, loading: false, error: null });
+        setState({ data: data as T, loading: false, error: null });
       } catch (error) {
         console.error('Failed to fetch odds data:', error);
         setState({
